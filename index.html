@@ -1,640 +1,14 @@
-<style>
-  /* Deliberately single-theme: a trading terminal doesn't have a light mode
-     (Bloomberg, ThinkOrSwim, an exchange floor board - all dark by nature),
-     so this commits to one dark palette regardless of viewer OS/toggle
-     preference rather than half-heartedly inverting it. */
-  :root {
-    color-scheme: dark;
-    --paper: #0a0d12;
-    --paper-raised: #10141b;
-    --ink: #e7ebf2;
-    --ink-soft: #8892a3;
-    --navy: #3e7cb1;
-    --navy-deep: #05070a;
-    --stamp: #e8a33d;
-    --stamp-soft: #2e2415;
-    --signal: #35c77a;
-    --loss: #ff6b5e;
-    --line: #212836;
-    --line-soft: #171d29;
-    --focus: #e8a33d;
-  }
-
-  * { box-sizing: border-box; }
-
-  .il-root {
-    --font-display: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
-    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
-    background: var(--paper);
-    background-image:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-    background-size: 42px 42px;
-    background-position: -1px -1px;
-    color: var(--ink);
-    font-family: var(--font-body);
-    line-height: 1.55;
-    font-size: 16px;
-    overflow-x: hidden;
-  }
-
-  .il-root h1, .il-root h2, .il-root h3 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    text-wrap: balance;
-    margin: 0;
-    color: var(--ink);
-  }
-
-  .il-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--stamp);
-    font-weight: 600;
-  }
-
-  .il-container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 clamp(20px, 4vw, 48px);
-  }
-
-  /* ---------- TOP UTILITY BAR ---------- */
-  .il-topbar {
-    background: var(--navy-deep);
-    color: #dfe6ee;
-  }
-  .il-topbar-inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 7px clamp(20px, 4vw, 48px);
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.04em;
-  }
-  .il-topbar-inner span:last-child { color: #a9c3de; }
-  .il-market {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .il-market-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--line);
-    display: inline-block;
-  }
-  .il-market-dot.il-open { background: var(--signal); box-shadow: 0 0 6px var(--signal); }
-  .il-market-dot.il-closed { background: var(--loss); }
-
-  /* ---------- NAV / LETTERHEAD ---------- */
-  .il-nav {
-    border-bottom: 1px solid var(--line);
-    background: var(--paper);
-  }
-  .il-nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px clamp(20px, 4vw, 48px);
-    max-width: 1080px;
-    margin: 0 auto;
-    gap: 24px;
-  }
-  .il-wordmark {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    white-space: nowrap;
-    text-decoration: none;
-    color: var(--ink);
-  }
-  .il-logomark { flex-shrink: 0; display: block; }
-  .il-logomark .il-lm-bezel { fill: var(--paper-raised); stroke: var(--line); }
-  .il-logomark .il-lm-z { stroke: var(--stamp); }
-  .il-logomark .il-lm-cursor { fill: var(--signal); animation: il-blink 1.2s steps(1) infinite; }
-  @media (prefers-reduced-motion: reduce) {
-    .il-logomark .il-lm-cursor { animation: none; }
-  }
-  .il-brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-    gap: 1px;
-  }
-  .il-brand-name {
-    font-family: var(--font-display);
-    font-size: 1.26rem;
-    letter-spacing: 0.005em;
-  }
-  .il-brand-url {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.05em;
-    color: var(--ink-soft);
-  }
-  .il-wordmark .il-mark {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--ink-soft);
-    border: 1px solid var(--line);
-    padding: 2px 6px;
-    border-radius: 2px;
-    margin-left: 4px;
-  }
-  .il-navlinks {
-    display: flex;
-    align-items: center;
-    gap: clamp(12px, 2vw, 32px);
-    font-size: 0.92rem;
-  }
-  @media (max-width: 980px) {
-    .il-navlinks a[href="#how"], .il-navlinks a[href="#faq"] { display: none; }
-  }
-  @media (max-width: 760px) {
-    .il-navlinks a[href="#activity"] { display: none; }
-  }
-  .il-navlinks a {
-    color: var(--ink-soft);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .il-navlinks a:hover, .il-navlinks a:focus-visible { color: var(--ink); }
-
-  .il-btn {
-    font-family: var(--font-body);
-    font-size: 0.92rem;
-    font-weight: 600;
-    border: 1px solid var(--ink);
-    background: transparent;
-    color: var(--ink);
-    padding: 10px 18px;
-    border-radius: 2px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
-  }
-  .il-btn:hover { background: var(--ink); color: var(--paper); }
-  .il-btn:focus-visible, .il-root a:focus-visible, .il-root button:focus-visible, .il-root input:focus-visible {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
-  }
-  .il-btn-primary {
-    background: var(--stamp);
-    border-color: var(--stamp);
-    color: #fff9f7;
-  }
-  .il-btn-primary:hover { background: var(--navy-deep); border-color: var(--navy-deep); color: #fff; transform: translateY(-1px); }
-
-  /* ---------- HERO ---------- */
-  .il-hero {
-    padding: clamp(56px, 9vw, 108px) 0 clamp(40px, 6vw, 64px);
-    border-bottom: 1px solid var(--line);
-  }
-  .il-hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
-    gap: clamp(32px, 5vw, 64px);
-    align-items: start;
-  }
-  .il-hero h1 {
-    font-size: clamp(2.3rem, 4.6vw, 3.6rem);
-    line-height: 1.08;
-    margin-top: 14px;
-    letter-spacing: -0.01em;
-  }
-  .il-hero h1 em {
-    font-style: normal;
-    color: var(--stamp);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-    text-decoration-color: var(--stamp-soft);
-  }
-  .il-hero-sub {
-    margin-top: 22px;
-    font-size: 1.1rem;
-    color: var(--ink-soft);
-    max-width: 46ch;
-  }
-  .il-hero-cta {
-    display: flex;
-    gap: 14px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .il-hero-cta .il-link {
-    font-size: 0.92rem;
-    color: var(--ink-soft);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: var(--line);
-  }
-
-  .il-docstamp {
-    border: 1px solid var(--line);
-    background: var(--paper-raised);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.3), 0 20px 48px -24px rgba(0,0,0,0.6);
-  }
-  .il-term-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--line);
-    background: var(--navy-deep);
-  }
-  .il-term-dots { display: flex; gap: 6px; }
-  .il-term-dots span { width: 9px; height: 9px; border-radius: 50%; display: block; }
-  .il-term-dots span:nth-child(1) { background: var(--loss); }
-  .il-term-dots span:nth-child(2) { background: var(--stamp); }
-  .il-term-dots span:nth-child(3) { background: var(--signal); }
-  .il-term-title {
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
-  }
-  .il-term-status {
-    margin-left: auto;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    color: var(--line);
-  }
-  .il-term-src {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: var(--ink-soft);
-    text-decoration: none;
-    padding-left: 12px;
-    border-left: 1px solid var(--line);
-  }
-  .il-term-src:hover, .il-term-src:focus-visible { color: var(--stamp); }
-  .il-docstamp.il-live .il-term-status { color: var(--signal); }
-  .il-docstamp.il-live .il-term-status::before {
-    content: "\25CF ";
-    animation: il-blink 1.4s steps(1) infinite;
-  }
-  @keyframes il-blink { 50% { opacity: 0.2; } }
-  @media (prefers-reduced-motion: reduce) {
-    .il-docstamp.il-live .il-term-status::before { animation: none; }
-  }
-  .il-docstamp dl { margin: 0; display: grid; gap: 12px; padding: 20px 22px 22px; }
-  .il-docstamp dt { color: var(--ink-soft); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; }
-  .il-docstamp dd { margin: 2px 0 0; color: var(--ink); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
-  .il-docstamp .il-arrow { color: var(--stamp); }
-
-  /* ---------- PORTFOLIO CHART ---------- */
-  .il-docstamp .il-chart-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    border-bottom: 1px solid var(--line);
-    padding: 18px 22px;
-    margin: 0;
-  }
-  .il-chart-stats dd.il-negative { color: var(--loss); }
-  .il-chart-stats dd.il-positive { color: var(--signal); }
-  .il-chart-canvas-wrap { padding: 20px 22px 22px; }
-  .il-chart-canvas { width: 100%; height: auto; display: block; }
-  @media (max-width: 640px) {
-    .il-docstamp .il-chart-stats { grid-template-columns: 1fr; gap: 10px; }
-  }
-
-  /* ---------- LIVE ACTIVITY FEED ---------- */
-  .il-activity-list {
-    border: 1px solid var(--line);
-    background: var(--paper-raised);
-    max-height: 420px;
-    overflow-y: auto;
-  }
-  .il-activity-empty {
-    padding: 32px;
-    text-align: center;
-    color: var(--ink-soft);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-  }
-  .il-activity-row {
-    display: grid;
-    grid-template-columns: 90px 100px minmax(0, 1fr) auto;
-    gap: 16px;
-    align-items: center;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--line-soft);
-    font-size: 0.86rem;
-  }
-  .il-activity-row:last-child { border-bottom: none; }
-  .il-activity-ticker { font-family: var(--font-mono); font-weight: 600; }
-  .il-activity-badge {
-    font-family: var(--font-mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.06em;
-    padding: 3px 8px;
-    border-radius: 2px;
-    justify-self: start;
-    white-space: nowrap;
-  }
-  .il-activity-badge.il-entry { background: var(--stamp-soft); color: var(--stamp); }
-  .il-activity-badge.il-skip { background: var(--line-soft); color: var(--ink-soft); }
-  .il-activity-badge.il-exit { background: rgba(255,107,94,0.12); color: var(--loss); }
-  .il-activity-detail { color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .il-activity-time { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); white-space: nowrap; }
-  @media (max-width: 640px) {
-    .il-activity-row { grid-template-columns: 1fr; gap: 4px; }
-    .il-activity-time { justify-self: start; }
-  }
-
-  /* ---------- TICKER STRIP ---------- */
-  .il-ticker-wrap {
-    border-bottom: 1px solid var(--line);
-    background: var(--navy-deep);
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .il-ticker {
-    display: inline-flex;
-    padding: 10px 0;
-    animation: il-scroll 38s linear infinite;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: #dfe6ee;
-  }
-  .il-ticker span {
-    padding: 0 22px;
-    border-right: 1px solid rgba(255,255,255,0.14);
-    font-variant-numeric: tabular-nums;
-  }
-  .il-ticker .il-up { color: var(--signal); }
-  .il-ticker .il-up::before { content: "\25B2 "; font-size: 0.7em; }
-  .il-ticker .il-down { color: var(--loss); }
-  .il-ticker .il-down::before { content: "\25BC "; font-size: 0.7em; }
-  @keyframes il-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .il-ticker { animation: none; }
-  }
-
-  /* ---------- SECTION SHELL ---------- */
-  .il-section {
-    padding: clamp(48px, 7vw, 88px) 0;
-    border-bottom: 1px solid var(--line);
-  }
-  /* Scroll-reveal: JS adds .il-reveal-init only after confirming it can run,
-     so content stays visible by default if JS is disabled or fails. */
-  .il-section.il-reveal-init {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .il-section.il-reveal-init.il-visible {
-    opacity: 1;
-    transform: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .il-section.il-reveal-init { opacity: 1; transform: none; transition: none; }
-  }
-  .il-section-head {
-    display: grid;
-    grid-template-columns: minmax(0, 0.55fr) minmax(0, 0.45fr);
-    gap: 32px;
-    align-items: end;
-    margin-bottom: clamp(32px, 5vw, 52px);
-  }
-  .il-section-head h2 {
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    margin-top: 10px;
-  }
-  .il-section-head p { color: var(--ink-soft); margin: 0; max-width: 42ch; }
-
-  /* ---------- HOW IT WORKS ---------- */
-  .il-steps {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .il-step {
-    background: var(--paper);
-    padding: 26px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: background 0.15s ease, box-shadow 0.15s ease;
-  }
-  .il-step:hover {
-    background: var(--paper-raised);
-    box-shadow: inset 2px 0 0 var(--stamp);
-  }
-  .il-step .il-step-no {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--stamp);
-    letter-spacing: 0.08em;
-  }
-  .il-step h3 { font-size: 1.08rem; }
-  .il-step p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
-
-  @media (max-width: 760px) {
-    .il-steps { grid-template-columns: 1fr 1fr; }
-    .il-section-head { grid-template-columns: 1fr; }
-    .il-hero-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 520px) {
-    .il-steps { grid-template-columns: 1fr; }
-  }
-
-  /* ---------- SIGNALS TABLE ---------- */
-  .il-tablewrap {
-    overflow-x: auto;
-    border: 1px solid var(--line);
-    background: var(--paper-raised);
-  }
-  table.il-signals {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-    min-width: 640px;
-    color: var(--ink);
-  }
-  table.il-signals th {
-    text-align: left;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--line);
-    white-space: nowrap;
-  }
-  table.il-signals td {
-    padding: 13px 16px;
-    border-bottom: 1px solid var(--line-soft);
-    vertical-align: top;
-    color: var(--ink);
-  }
-  table.il-signals tr:last-child td { border-bottom: none; }
-  table.il-signals .il-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
-  table.il-signals .il-ticker-cell { font-family: var(--font-mono); font-weight: 600; white-space: nowrap; }
-  table.il-signals .il-flag { color: var(--stamp); font-size: 0.75em; margin-left: 4px; }
-  .il-caption {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-top: 14px;
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    flex-wrap: wrap;
-  }
-  .il-caption .il-tag {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    border: 1px solid var(--line);
-    padding: 3px 8px;
-    border-radius: 2px;
-  }
-
-  /* ---------- PRICING ---------- */
-  .il-tiers {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-  }
-  @media (max-width: 860px) { .il-tiers { grid-template-columns: 1fr; } }
-  .il-tier {
-    border: 1px solid var(--line);
-    background: var(--paper-raised);
-    padding: 28px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: relative;
-    transition: transform 0.15s ease, border-color 0.15s ease;
-  }
-  .il-tier:hover { transform: translateY(-3px); border-color: var(--stamp); }
-  .il-tier.il-tier-featured:hover { border-color: var(--navy); }
-  .il-tier.il-tier-featured { border-color: var(--navy); }
-  .il-tier.il-tier-featured::after {
-    content: "MOST MIRRORED";
-    position: absolute;
-    top: -11px;
-    left: 24px;
-    background: var(--navy);
-    color: #fff;
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    padding: 4px 8px;
-  }
-  .il-tier-name { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
-  .il-tier-price { font-family: var(--font-display); font-size: 2.2rem; }
-  .il-tier-price span { font-family: var(--font-body); font-size: 0.95rem; color: var(--ink-soft); font-weight: 400; }
-  .il-tier ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; }
-  .il-tier li { display: flex; gap: 10px; }
-  .il-tier li::before { content: "—"; color: var(--ink-soft); flex-shrink: 0; }
-  .il-tier .il-btn { margin-top: auto; width: 100%; text-align: center; }
-
-  /* ---------- FAQ ---------- */
-  .il-faq { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  .il-faq-item { background: var(--paper); }
-  .il-faq-item summary {
-    cursor: pointer;
-    padding: 18px 22px;
-    font-family: var(--font-display);
-    font-size: 1.02rem;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
-  .il-faq-item summary::-webkit-details-marker { display: none; }
-  .il-faq-item summary::after {
-    content: "+";
-    font-family: var(--font-mono);
-    color: var(--stamp);
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-  .il-faq-item[open] summary::after { content: "\2212"; }
-  .il-faq-item .il-faq-body {
-    padding: 0 22px 20px;
-    color: var(--ink-soft);
-    font-size: 0.94rem;
-    max-width: 68ch;
-  }
-
-  /* ---------- FOOTER / FINE PRINT ---------- */
-  .il-footer {
-    padding: 44px 0 64px;
-    font-family: var(--font-mono);
-  }
-  .il-footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-    font-family: var(--font-body);
-  }
-  .il-footer-brand { font-family: var(--font-display); font-size: 1.1rem; }
-  .il-footer-links { display: flex; gap: 20px; font-size: 0.86rem; }
-  .il-footer-links a { color: var(--ink-soft); text-decoration: none; }
-  .il-footer-links a:hover { color: var(--ink); }
-  .il-finetext {
-    font-size: 0.72rem;
-    line-height: 1.7;
-    color: var(--ink-soft);
-    border-top: 1px solid var(--line);
-    padding-top: 22px;
-    max-width: 82ch;
-  }
-
-  /* ---------- TOAST / MODAL ---------- */
-  .il-toast {
-    position: fixed;
-    left: 50%;
-    bottom: 28px;
-    transform: translate(-50%, 12px);
-    background: var(--ink);
-    color: var(--paper);
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    padding: 14px 20px;
-    border-radius: 3px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 40;
-    max-width: min(90vw, 420px);
-    text-align: center;
-  }
-  .il-toast.il-show {
-    opacity: 1;
-    transform: translate(-50%, 0);
-    pointer-events: auto;
-  }
-</style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZycaAlgo &mdash; SEC Form 4 insider-buy signals, paper-traded</title>
+<meta name="description" content="ZycaAlgo screens every SEC Form 4 filing for genuine officer/director open-market buys and mirrors qualifying signals into a live Alpaca paper trading account.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='5' fill='%2315130f' stroke='%2315130f' stroke-width='1.4'/%3E%3Cpolyline points='12,13 26,13 12,27 26,27' stroke='%23e6391d' stroke-width='3.2' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3Crect x='28' y='24' width='5' height='7' fill='%232e7d4f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
 
 <div class="il-root" id="top">
 
@@ -651,7 +25,7 @@
 
   <nav class="il-nav">
     <div class="il-nav-inner">
-      <a class="il-wordmark" href="#top" aria-label="ZycaAlgo home">
+      <a class="il-wordmark" href="/" aria-label="ZycaAlgo home">
         <svg class="il-logomark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
           <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
@@ -664,6 +38,7 @@
         <span class="il-mark">FORM 4</span>
       </a>
       <div class="il-navlinks">
+        <a href="/about">About</a>
         <a href="#how">How it works</a>
         <a href="#signals">Signals</a>
         <a href="#portfolio">Portfolio</a>
@@ -743,7 +118,7 @@
     <div class="il-container">
       <div class="il-section-head">
         <div>
-          <div class="il-eyebrow">The pipeline</div>
+          <div class="il-eyebrow">01 &mdash; The pipeline</div>
           <h2>Four filters between a filing and your portfolio.</h2>
         </div>
         <p>Most Form 4s aren't signal. Compensation grants, tax-withholding sales, and pre-scheduled plan trades outnumber real conviction buys by roughly 250 to 1 — the pipeline exists to throw the rest away.</p>
@@ -777,7 +152,7 @@
     <div class="il-container">
       <div class="il-section-head">
         <div>
-          <div class="il-eyebrow">Live output</div>
+          <div class="il-eyebrow">02 &mdash; Live output</div>
           <h2>What actually cleared the desk.</h2>
         </div>
         <p>The six positions below are the real result of running the full pipeline against a single session's filings — not a backtest, not a curated example.</p>
@@ -857,7 +232,7 @@
     <div class="il-container">
       <div class="il-section-head">
         <div>
-          <div class="il-eyebrow">Live equity</div>
+          <div class="il-eyebrow">03 &mdash; Live equity</div>
           <h2>Watch the account, not just the picks.</h2>
         </div>
         <p>Signals are easy to cherry-pick after the fact. This is the actual paper account's equity curve, pulled live from Alpaca every time this page loads.</p>
@@ -893,7 +268,7 @@
     <div class="il-container">
       <div class="il-section-head">
         <div>
-          <div class="il-eyebrow">Live feed</div>
+          <div class="il-eyebrow">Activity log</div>
           <h2>Every entry, skip, and exit &mdash; logged.</h2>
         </div>
         <p>Nothing gets cleaned up after the fact. Skipped signals stay in the log with the exact reason they were rejected.</p>
@@ -908,7 +283,7 @@
     <div class="il-container">
       <div class="il-section-head">
         <div>
-          <div class="il-eyebrow">Access</div>
+          <div class="il-eyebrow">04 &mdash; Access</div>
           <h2>Watch it, or connect it.</h2>
         </div>
         <p>Every tier runs the same pipeline. The difference is whether it stops at a report, or reaches into your own paper account.</p>
@@ -995,6 +370,7 @@
           </span>
         </div>
         <div class="il-footer-links">
+          <a href="/about">About</a>
           <a href="#how">How it works</a>
           <a href="#signals">Signals</a>
           <a href="#portfolio">Portfolio</a>
@@ -1326,3 +702,5 @@
   });
 })();
 </script>
+</body>
+</html>

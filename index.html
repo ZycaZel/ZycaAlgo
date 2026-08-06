@@ -1091,7 +1091,7 @@
 // ---------------------------------------------------------------------
 (function () {
   function fmtMoney(n) {
-    return '$' + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
   Promise.all([
@@ -1127,7 +1127,7 @@
     if (tradeable) tradeable.textContent = entriesToday.length;
     if (screened) {
       var d = new Date(signals.date + 'T00:00:00Z');
-      screened.textContent = d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+      screened.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
     }
 
     if (mirrored) {
@@ -1173,7 +1173,7 @@
 // ---------------------------------------------------------------------
 (function () {
   function fmtMoney(n) {
-    return '$' + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
   function drawEquityChart(canvas, points) {

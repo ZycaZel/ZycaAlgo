@@ -9,7 +9,7 @@
     "insider": "Mahoney Michael F",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/885725/000122520826006950/0001225208-26-006950-index.htm",
     "buy_order_id": "8757458f-eb25-49d2-898a-4312824804c1",
-    "stop_order_id": null
+    "stop_order_id": "d57d7dad-bb4f-4602-8e2a-f6d62c0097e3"
   },
   "CSGP": {
     "entry_date": "2026-08-05",
@@ -21,7 +21,7 @@
     "insider": "FLORANCE ANDREW C",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1057352/000162828026052968/0001628280-26-052968-index.htm",
     "buy_order_id": "a10e7e45-415c-4a70-b6a6-c61ea484973a",
-    "stop_order_id": null
+    "stop_order_id": "beea3863-140c-47b0-9221-b134cfd62d1b"
   },
   "IR": {
     "entry_date": "2026-08-05",
@@ -33,7 +33,7 @@
     "insider": "Satpathy Aurobind",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1699150/000114036126031457/0001140361-26-031457-index.htm",
     "buy_order_id": "46050132-8970-4c31-a05c-32993c5aa862",
-    "stop_order_id": null
+    "stop_order_id": "1f182b8f-a0fe-4519-a3a0-d63730fef265"
   },
   "PFE": {
     "entry_date": "2026-08-05",
@@ -45,7 +45,7 @@
     "insider": "BLAYLOCK RONALD E",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm",
     "buy_order_id": "6db25fcb-225e-44d5-888c-fb77b0ea8872",
-    "stop_order_id": null
+    "stop_order_id": "81dc5b4d-9c3b-4445-bcbb-22d020442312"
   },
   "TSCO": {
     "entry_date": "2026-08-05",
@@ -57,7 +57,7 @@
     "insider": "Lawton III Harry A",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1647222/000164722226000012/0001647222-26-000012-index.htm",
     "buy_order_id": "e4e402e5-7341-42f5-b7b1-4f8c5b3baf66",
-    "stop_order_id": null
+    "stop_order_id": "734a121f-9a5e-4056-95d9-0ea381a8dcf2"
   },
   "JBL": {
     "entry_date": "2026-08-05",
@@ -69,6 +69,6 @@
     "insider": "Tyagarajan N. V.",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/898293/000122520826006945/0001225208-26-006945-index.htm",
     "buy_order_id": "a7401179-4dba-49da-bcb6-686445e17cfa",
-    "stop_order_id": null
+    "stop_order_id": "830a9910-c870-4176-927d-69959d1d532d"
   }
 }

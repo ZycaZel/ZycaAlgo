@@ -108,5 +108,49 @@
     "stop": "$287.70",
     "event": "ENTRY",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/898293/000122520826006945/0001225208-26-006945-index.htm"
+  },
+  {
+    "timestamp": "2026-08-06T15:55:26.090924+00:00",
+    "date": "2026-08-05",
+    "ticker": "XIIIU",
+    "insider": "Klein Michael Stuart",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2124749/000121390026085827/0001213900-26-085827-index.htm"
+  },
+  {
+    "timestamp": "2026-08-06T15:55:26.773517+00:00",
+    "date": "2026-08-05",
+    "ticker": "TLSA",
+    "insider": "Elrifi Ivor",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $123,520,086 < $1B; avg volume 266,204 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2136241/000121390026085710/0001213900-26-085710-index.htm"
+  },
+  {
+    "timestamp": "2026-08-06T15:55:27.590452+00:00",
+    "date": "2026-08-05",
+    "ticker": "EVGN",
+    "insider": "RECANATI LEON",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $5,845,548 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1574565/000117891326003859/0001178913-26-003859-index.htm"
+  },
+  {
+    "timestamp": "2026-08-06T15:55:28.167737+00:00",
+    "date": "2026-08-05",
+    "ticker": "GBFH",
+    "insider": "NEWGARD JEFFREY K",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $317,262,468 < $1B; avg volume 74,116 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1791145/000119312526335471/0001193125-26-335471-index.htm"
   }
 ]

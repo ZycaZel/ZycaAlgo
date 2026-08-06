@@ -695,8 +695,8 @@
         </div>
         <dl>
           <div>
-            <dt>Filings screened, last session</dt>
-            <dd id="stat-screened">1,491</dd>
+            <dt>Scan data as of</dt>
+            <dd id="stat-screened">Aug 5, 2026</dd>
           </div>
           <div>
             <dt>Passed code&nbsp;P + officer/director + $100K floor</dt>
@@ -1098,10 +1098,12 @@
     fetch('/api/signals').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
     fetch('/api/positions').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
     fetch('/api/account').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('/api/trades').then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
   ]).then(function (results) {
     var signals = results[0];
     var positions = results[1];
     var account = results[2];
+    var trades = Array.isArray(results[3]) ? results[3] : [];
     if (!signals || !signals.date) return; // no successful run yet - keep the specimen
 
     var stamp = document.getElementById('il-docstamp');
@@ -1110,26 +1112,32 @@
     if (termStatus) termStatus.textContent = 'LIVE';
 
     var buys = signals.qualifying_buys || [];
-    var tradeableCount = Array.isArray(positions) ? positions.length : buys.length;
+    // Use the trade log for "passed the liquidity filter" rather than live
+    // Alpaca positions - a same-day entry that hasn't filled yet (e.g. job
+    // ran while markets were closed) is still a real ENTRY, just not a
+    // position yet, and shouldn't read as "0 passed."
+    var todaysTrades = trades.filter(function (t) { return t.date === signals.date; });
+    var entriesToday = todaysTrades.filter(function (t) { return /^ENTRY/i.test(t.event); });
+
     var screened = document.getElementById('stat-screened');
     var qualifying = document.getElementById('stat-qualifying');
     var tradeable = document.getElementById('stat-tradeable');
     var mirrored = document.getElementById('stat-mirrored');
     if (qualifying) qualifying.textContent = buys.length;
-    if (tradeable) tradeable.textContent = tradeableCount;
-    if (screened) screened.textContent = signals.date;
+    if (tradeable) tradeable.textContent = entriesToday.length;
+    if (screened) {
+      var d = new Date(signals.date + 'T00:00:00Z');
+      screened.textContent = d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+    }
 
-    if (account && account.equity) {
-      var equity = parseFloat(account.equity);
-      var deployed = Array.isArray(positions)
-        ? positions.reduce(function (sum, p) { return sum + Math.abs(parseFloat(p.market_value || 0)); }, 0)
-        : 0;
-      var pct = equity ? ((deployed / equity) * 100).toFixed(1) : '0.0';
-      if (mirrored) {
-        mirrored.textContent = (Array.isArray(positions) ? positions.length : 0) +
-          ' position' + ((positions && positions.length === 1) ? '' : 's') +
-          ' · ' + pct + '% deployed';
-      }
+    if (mirrored) {
+      var intendedDollars = entriesToday.reduce(function (sum, t) {
+        var m = /\(\$([0-9,]+)\)/.exec(t.size || '');
+        return sum + (m ? parseInt(m[1].replace(/,/g, ''), 10) : 0);
+      }, 0);
+      var equity = account && account.equity ? parseFloat(account.equity) : null;
+      var pctText = equity ? ((intendedDollars / equity) * 100).toFixed(1) + '% deployed' : 'orders placed';
+      mirrored.textContent = entriesToday.length + ' position' + (entriesToday.length === 1 ? '' : 's') + ' · ' + pctText;
     }
 
     if (Array.isArray(positions) && positions.length) {

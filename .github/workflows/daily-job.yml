@@ -2,8 +2,8 @@ name: ZycaAlgo daily scan + paper trade
 
 on:
   schedule:
-    # 03:00 UTC = 10:00am Asia/Bangkok, weekdays only.
-    - cron: "0 3 * * 1-5"
+    # 15:00 UTC = 22:00 Asia/Bangkok, weekdays only.
+    - cron: "0 15 * * 1-5"
   workflow_dispatch: {}   # lets you click "Run workflow" manually in the Actions tab
 
 permissions:

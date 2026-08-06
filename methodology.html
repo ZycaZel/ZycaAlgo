@@ -153,7 +153,7 @@
 &nbsp;&nbsp;liquidity filter, sizing, entries<br>
 &nbsp;&nbsp;log to trades.md + trades.json
     </div>
-    <p>This sequence runs on GitHub Actions every weekday at 10:00am Bangkok time (03:00 UTC), on GitHub's servers &mdash; not on anyone's laptop, so it fires whether or not a machine happens to be on. Every run commits its own output back to the repository, so any position can be traced to the exact filing and commit that produced it.</p>
+    <p>This sequence runs on GitHub Actions every weekday at 22:00 Bangkok time (15:00 UTC), on GitHub's servers &mdash; not on anyone's laptop, so it fires whether or not a machine happens to be on. Every run commits its own output back to the repository, so any position can be traced to the exact filing and commit that produced it.</p>
 
     <h2>The Alpaca connection</h2>
     <p>The trading job authenticates to Alpaca with a key/secret pair stored as encrypted secrets (GitHub Actions secrets for the scheduled job, Vercel environment variables for this website's live dashboard). Neither is ever written to a file in the repository or exposed to the browser.</p>

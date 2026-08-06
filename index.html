@@ -77,6 +77,20 @@
     letter-spacing: 0.04em;
   }
   .il-topbar-inner span:last-child { color: #a9c3de; }
+  .il-market {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .il-market-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+    display: inline-block;
+  }
+  .il-market-dot.il-open { background: var(--signal); box-shadow: 0 0 6px var(--signal); }
+  .il-market-dot.il-closed { background: var(--loss); }
 
   /* ---------- NAV / LETTERHEAD ---------- */
   .il-nav {
@@ -249,6 +263,18 @@
     letter-spacing: 0.1em;
     color: var(--line);
   }
+  .il-term-src {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding-left: 12px;
+    border-left: 1px solid var(--line);
+  }
+  .il-term-src:hover, .il-term-src:focus-visible { color: var(--stamp); }
   .il-docstamp.il-live .il-term-status { color: var(--signal); }
   .il-docstamp.il-live .il-term-status::before {
     content: "\25CF ";
@@ -300,6 +326,20 @@
     padding: clamp(48px, 7vw, 88px) 0;
     border-bottom: 1px solid var(--line);
   }
+  /* Scroll-reveal: JS adds .il-reveal-init only after confirming it can run,
+     so content stays visible by default if JS is disabled or fails. */
+  .il-section.il-reveal-init {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .il-section.il-reveal-init.il-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-section.il-reveal-init { opacity: 1; transform: none; transition: none; }
+  }
   .il-section-head {
     display: grid;
     grid-template-columns: minmax(0, 0.55fr) minmax(0, 0.45fr);
@@ -327,6 +367,11 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+  }
+  .il-step:hover {
+    background: var(--paper-raised);
+    box-shadow: inset 2px 0 0 var(--stamp);
   }
   .il-step .il-step-no {
     font-family: var(--font-mono);
@@ -412,7 +457,10 @@
     flex-direction: column;
     gap: 16px;
     position: relative;
+    transition: transform 0.15s ease, border-color 0.15s ease;
   }
+  .il-tier:hover { transform: translateY(-3px); border-color: var(--stamp); }
+  .il-tier.il-tier-featured:hover { border-color: var(--navy); }
   .il-tier.il-tier-featured { border-color: var(--navy); }
   .il-tier.il-tier-featured::after {
     content: "MOST MIRRORED";
@@ -523,7 +571,11 @@
   <div class="il-topbar">
     <div class="il-container il-topbar-inner">
       <span>www.zycaalgo.com</span>
-      <span>Paper Trading Environment &middot; Preview Build</span>
+      <span class="il-market">
+        <span class="il-market-dot" id="market-dot"></span>
+        <span id="market-status">Checking market&hellip;</span>
+        <span>&middot; Paper Trading Environment</span>
+      </span>
     </div>
   </div>
 
@@ -567,6 +619,10 @@
           <span class="il-term-dots"><span></span><span></span><span></span></span>
           <span class="il-term-title">zycaalgo &mdash; feed.log</span>
           <span class="il-term-status" id="il-term-status">PREVIEW</span>
+          <a class="il-term-src" href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener" aria-label="View source on GitHub">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span>Source</span>
+          </a>
         </div>
         <dl>
           <div>
@@ -820,6 +876,7 @@
           <a href="#signals">Signals</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
+          <a href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener">GitHub &#8599;</a>
         </div>
       </div>
       <p class="il-finetext">
@@ -848,6 +905,60 @@
       toast.classList.add('il-show');
       timer = setTimeout(function () { toast.classList.remove('il-show'); }, 3200);
     });
+  });
+})();
+
+// Live NYSE market-hours indicator (9:30am-4:00pm ET, Mon-Fri). Doesn't
+// account for market holidays - a small honest simplification for a
+// preview page, not something to rely on for real trading decisions.
+(function () {
+  function updateMarketStatus() {
+    var dot = document.getElementById('market-dot');
+    var status = document.getElementById('market-status');
+    if (!dot || !status) return;
+
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', hour12: false,
+      hour: '2-digit', minute: '2-digit', weekday: 'short',
+    }).formatToParts(new Date());
+    var map = {};
+    parts.forEach(function (p) { map[p.type] = p.value; });
+
+    var hour = parseInt(map.hour, 10);
+    var minute = parseInt(map.minute, 10);
+    var minutesNow = hour * 60 + minute;
+    var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(map.weekday) !== -1;
+    var isOpen = isWeekday && minutesNow >= 9 * 60 + 30 && minutesNow < 16 * 60;
+
+    dot.className = 'il-market-dot ' + (isOpen ? 'il-open' : 'il-closed');
+    var displayHour = hour % 12 || 12;
+    var displayMinute = minute < 10 ? '0' + minute : minute;
+    var timeLabel = displayHour + ':' + displayMinute + (hour >= 12 ? 'pm' : 'am') + ' ET';
+    status.textContent = (isOpen ? 'Market open' : 'Market closed') + ' — ' + timeLabel;
+  }
+  updateMarketStatus();
+  setInterval(updateMarketStatus, 30000);
+})();
+
+// Scroll-reveal for sections - only activates if IntersectionObserver
+// exists and the visitor hasn't asked for reduced motion.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var sections = document.querySelectorAll('.il-section');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('il-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  sections.forEach(function (section) {
+    section.classList.add('il-reveal-init');
+    observer.observe(section);
   });
 })();
 

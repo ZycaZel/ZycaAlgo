@@ -52,6 +52,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
 STATE_PATH = os.path.join(DATA_DIR, "positions_state.json")
 TRADES_MD_PATH = os.path.join(DATA_DIR, "..", "trades.md")
+TRADES_JSON_PATH = os.path.join(DATA_DIR, "trades.json")
 
 
 def _headers():
@@ -115,6 +116,27 @@ def append_trade_log(row):
             f"{row.get('entry', '')} | {row.get('size', '')} | {row.get('stop', '')} | "
             f"{row['event']} | {row.get('filing_url', '')} |\n"
         )
+
+    # Structured twin for the live activity feed on the website - append-only,
+    # newest last (the frontend reverses it for display).
+    os.makedirs(DATA_DIR, exist_ok=True)
+    entries = []
+    if os.path.exists(TRADES_JSON_PATH):
+        with open(TRADES_JSON_PATH, "r", encoding="utf-8") as f:
+            entries = json.load(f)
+    entries.append({
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "date": row["date"],
+        "ticker": row["ticker"],
+        "insider": row["insider"],
+        "entry": row.get("entry", ""),
+        "size": row.get("size", ""),
+        "stop": row.get("stop", ""),
+        "event": row["event"],
+        "filing_url": row.get("filing_url", ""),
+    })
+    with open(TRADES_JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(entries, f, indent=2)
 
 
 # ---------------------------------------------------------------------------

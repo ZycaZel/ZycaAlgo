@@ -151,8 +151,14 @@
   .il-navlinks {
     display: flex;
     align-items: center;
-    gap: clamp(16px, 2.5vw, 32px);
+    gap: clamp(12px, 2vw, 32px);
     font-size: 0.92rem;
+  }
+  @media (max-width: 980px) {
+    .il-navlinks a[href="#how"], .il-navlinks a[href="#faq"] { display: none; }
+  }
+  @media (max-width: 760px) {
+    .il-navlinks a[href="#activity"] { display: none; }
   }
   .il-navlinks a {
     color: var(--ink-soft);
@@ -288,6 +294,67 @@
   .il-docstamp dt { color: var(--ink-soft); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; }
   .il-docstamp dd { margin: 2px 0 0; color: var(--ink); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
   .il-docstamp .il-arrow { color: var(--stamp); }
+
+  /* ---------- PORTFOLIO CHART ---------- */
+  .il-docstamp .il-chart-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    padding: 18px 22px;
+    margin: 0;
+  }
+  .il-chart-stats dd.il-negative { color: var(--loss); }
+  .il-chart-stats dd.il-positive { color: var(--signal); }
+  .il-chart-canvas-wrap { padding: 20px 22px 22px; }
+  .il-chart-canvas { width: 100%; height: auto; display: block; }
+  @media (max-width: 640px) {
+    .il-docstamp .il-chart-stats { grid-template-columns: 1fr; gap: 10px; }
+  }
+
+  /* ---------- LIVE ACTIVITY FEED ---------- */
+  .il-activity-list {
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    max-height: 420px;
+    overflow-y: auto;
+  }
+  .il-activity-empty {
+    padding: 32px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+  .il-activity-row {
+    display: grid;
+    grid-template-columns: 90px 100px minmax(0, 1fr) auto;
+    gap: 16px;
+    align-items: center;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 0.86rem;
+  }
+  .il-activity-row:last-child { border-bottom: none; }
+  .il-activity-ticker { font-family: var(--font-mono); font-weight: 600; }
+  .il-activity-badge {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    justify-self: start;
+    white-space: nowrap;
+  }
+  .il-activity-badge.il-entry { background: var(--stamp-soft); color: var(--stamp); }
+  .il-activity-badge.il-skip { background: var(--line-soft); color: var(--ink-soft); }
+  .il-activity-badge.il-exit { background: rgba(255,107,94,0.12); color: var(--loss); }
+  .il-activity-detail { color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .il-activity-time { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); white-space: nowrap; }
+  @media (max-width: 640px) {
+    .il-activity-row { grid-template-columns: 1fr; gap: 4px; }
+    .il-activity-time { justify-self: start; }
+  }
 
   /* ---------- TICKER STRIP ---------- */
   .il-ticker-wrap {
@@ -596,6 +663,8 @@
       <div class="il-navlinks">
         <a href="#how">How it works</a>
         <a href="#signals">Signals</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#activity">Activity</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <button class="il-btn" data-il-cta>Get started</button>
@@ -781,6 +850,57 @@
     </div>
   </section>
 
+  <section class="il-section" id="portfolio">
+    <div class="il-container">
+      <div class="il-section-head">
+        <div>
+          <div class="il-eyebrow">Live equity</div>
+          <h2>Watch the account, not just the picks.</h2>
+        </div>
+        <p>Signals are easy to cherry-pick after the fact. This is the actual paper account's equity curve, pulled live from Alpaca every time this page loads.</p>
+      </div>
+      <div class="il-docstamp">
+        <div class="il-term-bar">
+          <span class="il-term-dots"><span></span><span></span><span></span></span>
+          <span class="il-term-title">zycaalgo &mdash; equity.chart</span>
+          <span class="il-term-status" id="chart-term-status">PREVIEW</span>
+        </div>
+        <dl class="il-chart-stats">
+          <div>
+            <dt>Equity</dt>
+            <dd id="chart-equity">$100,000.00</dd>
+          </div>
+          <div>
+            <dt>Since period start</dt>
+            <dd id="chart-change">+0.00%</dd>
+          </div>
+          <div>
+            <dt>Open positions</dt>
+            <dd id="chart-positions">0</dd>
+          </div>
+        </dl>
+        <div class="il-chart-canvas-wrap">
+          <canvas id="equity-canvas" class="il-chart-canvas" width="1000" height="260" role="img" aria-label="Account equity over the last month"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="il-section" id="activity">
+    <div class="il-container">
+      <div class="il-section-head">
+        <div>
+          <div class="il-eyebrow">Live feed</div>
+          <h2>Every entry, skip, and exit &mdash; logged.</h2>
+        </div>
+        <p>Nothing gets cleaned up after the fact. Skipped signals stay in the log with the exact reason they were rejected.</p>
+      </div>
+      <div class="il-activity-list" id="activity-list">
+        <div class="il-activity-empty">Loading activity&hellip;</div>
+      </div>
+    </div>
+  </section>
+
   <section class="il-section" id="pricing">
     <div class="il-container">
       <div class="il-section-head">
@@ -874,6 +994,8 @@
         <div class="il-footer-links">
           <a href="#how">How it works</a>
           <a href="#signals">Signals</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#activity">Activity</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
           <a href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener">GitHub &#8599;</a>
@@ -1033,6 +1155,163 @@
 
     var asof = document.getElementById('signals-asof');
     if (asof) asof.textContent = ' — live as of ' + signals.date;
+  });
+})();
+
+// ---------------------------------------------------------------------
+// Portfolio equity chart. Canvas-drawn (not an SVG path) since this is
+// data-driven, not decorative: a faint grid, an area fill, and an
+// emphasized endpoint dot on the most recent equity value.
+// ---------------------------------------------------------------------
+(function () {
+  function fmtMoney(n) {
+    return '$' + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function drawEquityChart(canvas, points) {
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+    var pad = { top: 16, right: 16, bottom: 16, left: 16 };
+    ctx.clearRect(0, 0, w, h);
+
+    var styles = getComputedStyle(document.documentElement);
+    var lineColor = styles.getPropertyValue('--stamp').trim() || '#e8a33d';
+    var gridColor = styles.getPropertyValue('--line').trim() || '#222';
+    var gain = points[points.length - 1] >= points[0];
+    var accentColor = (styles.getPropertyValue(gain ? '--signal' : '--loss').trim()) || lineColor;
+
+    var min = Math.min.apply(null, points);
+    var max = Math.max.apply(null, points);
+    var range = max - min || 1;
+    var innerW = w - pad.left - pad.right;
+    var innerH = h - pad.top - pad.bottom;
+
+    // Faint horizontal grid (4 lines)
+    ctx.strokeStyle = gridColor;
+    ctx.lineWidth = 1;
+    for (var g = 0; g <= 3; g++) {
+      var gy = pad.top + (innerH / 3) * g;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, gy);
+      ctx.lineTo(w - pad.right, gy);
+      ctx.stroke();
+    }
+
+    var isFlat = max - min === 0;
+    function xAt(i) { return pad.left + (innerW * i) / (points.length - 1 || 1); }
+    function yAt(v) {
+      if (isFlat) return pad.top + innerH / 2; // no variation yet - center it, don't pin to the floor
+      return pad.top + innerH - ((v - min) / range) * innerH;
+    }
+
+    // Area fill under the line
+    ctx.beginPath();
+    ctx.moveTo(xAt(0), yAt(points[0]));
+    points.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
+    ctx.lineTo(xAt(points.length - 1), pad.top + innerH);
+    ctx.lineTo(xAt(0), pad.top + innerH);
+    ctx.closePath();
+    var gradient = ctx.createLinearGradient(0, pad.top, 0, pad.top + innerH);
+    gradient.addColorStop(0, accentColor + '33');
+    gradient.addColorStop(1, accentColor + '00');
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    // The line itself
+    ctx.beginPath();
+    ctx.moveTo(xAt(0), yAt(points[0]));
+    points.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
+    ctx.strokeStyle = accentColor;
+    ctx.lineWidth = 2;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // Emphasized endpoint
+    var lastX = xAt(points.length - 1), lastY = yAt(points[points.length - 1]);
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 4, 0, Math.PI * 2);
+    ctx.fillStyle = accentColor;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 8, 0, Math.PI * 2);
+    ctx.strokeStyle = accentColor;
+    ctx.globalAlpha = 0.35;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+
+  Promise.all([
+    fetch('/api/portfolio-history').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('/api/positions').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('/api/account').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+  ]).then(function (results) {
+    var history = results[0];
+    var positions = results[1];
+    var account = results[2];
+    var canvas = document.getElementById('equity-canvas');
+    if (!canvas) return;
+
+    var equityPoints = history && Array.isArray(history.equity) ? history.equity.filter(function (v) { return v != null; }) : null;
+    if (!equityPoints || equityPoints.length < 2) {
+      // No history yet (brand-new account) - draw a flat reference line at
+      // current equity rather than pretending there's a curve.
+      var flat = account && account.equity ? parseFloat(account.equity) : 100000;
+      equityPoints = [flat, flat];
+    }
+    drawEquityChart(canvas, equityPoints);
+
+    var statusEl = document.getElementById('chart-term-status');
+    if (statusEl && history) statusEl.textContent = 'LIVE';
+
+    var equityEl = document.getElementById('chart-equity');
+    var changeEl = document.getElementById('chart-change');
+    var positionsEl = document.getElementById('chart-positions');
+    if (equityEl && account && account.equity) equityEl.textContent = fmtMoney(parseFloat(account.equity));
+    if (positionsEl) positionsEl.textContent = Array.isArray(positions) ? positions.length : 0;
+    if (changeEl) {
+      var first = equityPoints[0], last = equityPoints[equityPoints.length - 1];
+      var pct = first ? ((last - first) / first) * 100 : 0;
+      changeEl.textContent = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+      changeEl.className = pct >= 0 ? 'il-positive' : 'il-negative';
+    }
+  });
+})();
+
+// ---------------------------------------------------------------------
+// Live trade activity feed.
+// ---------------------------------------------------------------------
+(function () {
+  function badgeFor(event) {
+    if (/^ENTRY/i.test(event)) return { cls: 'il-entry', label: 'ENTRY' };
+    if (/^SKIPPED/i.test(event)) return { cls: 'il-skip', label: 'SKIP' };
+    return { cls: 'il-exit', label: 'EXIT' };
+  }
+
+  fetch('/api/trades').then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (trades) {
+    var list = document.getElementById('activity-list');
+    if (!list) return;
+    if (!Array.isArray(trades) || !trades.length) {
+      list.innerHTML = '<div class="il-activity-empty">No activity logged yet.</div>';
+      return;
+    }
+    var rows = trades.slice().reverse().slice(0, 30).map(function (t) {
+      var badge = badgeFor(t.event);
+      var detailParts = [];
+      if (t.insider) detailParts.push(t.insider);
+      var reason = t.event.replace(/^(ENTRY|SKIPPED - |TIME STOP - |STOP - )/i, '');
+      if (reason && !/^ENTRY$/i.test(reason)) detailParts.push(reason);
+      var when = t.date || (t.timestamp ? t.timestamp.slice(0, 10) : '');
+      return (
+        '<div class="il-activity-row">' +
+        '<span class="il-activity-ticker">' + t.ticker + '</span>' +
+        '<span class="il-activity-badge ' + badge.cls + '">' + badge.label + '</span>' +
+        '<span class="il-activity-detail" title="' + detailParts.join(' — ').replace(/"/g, '&quot;') + '">' + detailParts.join(' — ') + '</span>' +
+        '<span class="il-activity-time">' + when + '</span>' +
+        '</div>'
+      );
+    });
+    list.innerHTML = rows.join('');
   });
 })();
 </script>

@@ -98,6 +98,17 @@ def fetch(url, tries=5, missing_codes=(404,)):
             print(f"  [warn] network error ({e.reason}) on {url} - retrying in "
                   f"{backoff}s (attempt {attempt}/{tries})")
             time.sleep(backoff)
+        except (TimeoutError, ConnectionError, OSError) as e:
+            # A timeout while reading the response body (as opposed to while
+            # connecting) surfaces as a bare TimeoutError/OSError, not a
+            # URLError - SEC's slower endpoints (company filing history) hit
+            # this occasionally. Without this handler it crashes the whole
+            # scan instead of just retrying this one request.
+            _last_request_time[0] = time.time()
+            backoff = 2 ** attempt
+            print(f"  [warn] connection error ({e}) on {url} - retrying in "
+                  f"{backoff}s (attempt {attempt}/{tries})")
+            time.sleep(backoff)
     print(f"  [error] giving up on {url} after {tries} attempts")
     return None
 

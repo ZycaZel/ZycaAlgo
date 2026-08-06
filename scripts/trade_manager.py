@@ -303,6 +303,17 @@ def ensure_stop_order(ticker, qty, stop_price, existing_order_id):
     return order["id"]
 
 
+def order_status(order_id):
+    """Returns an order's current status string, or None if it can't be found."""
+    try:
+        return _get(TRADING_BASE, f"/v2/orders/{order_id}").get("status")
+    except RuntimeError:
+        return None
+
+
+STILL_PENDING_STATUSES = {"new", "accepted", "pending_new", "partially_filled", "held"}
+
+
 def manage_exits():
     state = load_state()
     positions = {p["symbol"]: p for p in get_positions()}
@@ -312,7 +323,13 @@ def manage_exits():
     for ticker, info in list(state.items()):
         position = positions.get(ticker)
         if position is None:
-            # Position is gone (stopped out or otherwise closed) - drop state.
+            # No open position - but that's ALSO what a same-day entry looks
+            # like before the market has had a chance to fill it (e.g. the
+            # job ran while markets were closed). Only treat this as "closed"
+            # if we can confirm the original buy order isn't still pending.
+            buy_id = info.get("buy_order_id")
+            if buy_id and order_status(buy_id) in STILL_PENDING_STATUSES:
+                continue  # entry order hasn't filled yet - leave state alone
             del state[ticker]
             changed = True
             continue

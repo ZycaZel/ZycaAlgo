@@ -48,6 +48,20 @@ jobs:
           APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
         run: python trade_manager.py enter ../data/latest.json
 
+      - name: Place initial stops for today's new entries
+        # manage() only places a position's first stop order once it sees the
+        # position exist with stop_order_id still null - that's true right
+        # after a same-day entry. Give paper-market fills a few seconds, then
+        # run manage() again so today's new positions aren't left unprotected
+        # until tomorrow's scheduled run.
+        working-directory: scripts
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: |
+          sleep 15
+          python trade_manager.py manage
+
       - name: Friday weekly summary
         working-directory: scripts
         env:

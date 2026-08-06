@@ -1,0 +1,67 @@
+name: ZycaAlgo daily scan + paper trade
+
+on:
+  schedule:
+    # 03:00 UTC = 10:00am Asia/Bangkok, weekdays only.
+    - cron: "0 3 * * 1-5"
+  workflow_dispatch: {}   # lets you click "Run workflow" manually in the Actions tab
+
+permissions:
+  contents: write   # needed so the job can commit updated data/ and trades.md back
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run SEC Form 4 scan
+        working-directory: scripts
+        run: python insider_buys.py
+
+      - name: Publish today's scan to data/latest.json
+        working-directory: scripts
+        run: |
+          latest=$(ls -t insider-buys-*.json | head -n 1)
+          mkdir -p ../data/archive
+          cp "$latest" ../data/latest.json
+          cp "$latest" "../data/archive/$latest"
+
+      - name: Manage existing positions (stops / trailing / time-stop)
+        working-directory: scripts
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: python trade_manager.py manage
+
+      - name: Enter today's qualifying signals
+        working-directory: scripts
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: python trade_manager.py enter ../data/latest.json
+
+      - name: Friday weekly summary
+        working-directory: scripts
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: |
+          if [ "$(date -u +%a)" = "Fri" ]; then
+            python trade_manager.py summary >> ../data/weekly-summaries.md
+          fi
+
+      - name: Commit updated data
+        run: |
+          git config user.name "zycaalgo-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ trades.md
+          git diff --cached --quiet || git commit -m "Daily scan + paper trade update ($(date -u +%Y-%m-%d))"
+          git push

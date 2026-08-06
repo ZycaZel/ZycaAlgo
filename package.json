@@ -1,0 +1,9 @@
+{
+  "name": "zycaalgo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ZycaAlgo - SEC Form 4 insider-buy scanner mirrored into an Alpaca paper trading account.",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}

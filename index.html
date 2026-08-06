@@ -1,0 +1,927 @@
+<style>
+  /* Deliberately single-theme: a trading terminal doesn't have a light mode
+     (Bloomberg, ThinkOrSwim, an exchange floor board - all dark by nature),
+     so this commits to one dark palette regardless of viewer OS/toggle
+     preference rather than half-heartedly inverting it. */
+  :root {
+    --paper: #0a0d12;
+    --paper-raised: #10141b;
+    --ink: #e7ebf2;
+    --ink-soft: #8892a3;
+    --navy: #3e7cb1;
+    --navy-deep: #05070a;
+    --stamp: #e8a33d;
+    --stamp-soft: #2e2415;
+    --signal: #35c77a;
+    --loss: #ff6b5e;
+    --line: #212836;
+    --line-soft: #171d29;
+    --focus: #e8a33d;
+  }
+
+  * { box-sizing: border-box; }
+
+  .il-root {
+    --font-display: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+    background: var(--paper);
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 42px 42px;
+    background-position: -1px -1px;
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  .il-root h1, .il-root h2, .il-root h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .il-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stamp);
+    font-weight: 600;
+  }
+
+  .il-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 48px);
+  }
+
+  /* ---------- TOP UTILITY BAR ---------- */
+  .il-topbar {
+    background: var(--navy-deep);
+    color: #dfe6ee;
+  }
+  .il-topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 7px clamp(20px, 4vw, 48px);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+  }
+  .il-topbar-inner span:last-child { color: #a9c3de; }
+
+  /* ---------- NAV / LETTERHEAD ---------- */
+  .il-nav {
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .il-nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px clamp(20px, 4vw, 48px);
+    max-width: 1080px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+  .il-wordmark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .il-logomark { flex-shrink: 0; display: block; }
+  .il-logomark .il-lm-bezel { fill: var(--paper-raised); stroke: var(--line); }
+  .il-logomark .il-lm-z { stroke: var(--stamp); }
+  .il-logomark .il-lm-cursor { fill: var(--signal); animation: il-blink 1.2s steps(1) infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .il-logomark .il-lm-cursor { animation: none; }
+  }
+  .il-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    gap: 1px;
+  }
+  .il-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.26rem;
+    letter-spacing: 0.005em;
+  }
+  .il-brand-url {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+  .il-wordmark .il-mark {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-left: 4px;
+  }
+  .il-navlinks {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.5vw, 32px);
+    font-size: 0.92rem;
+  }
+  .il-navlinks a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .il-navlinks a:hover, .il-navlinks a:focus-visible { color: var(--ink); }
+
+  .il-btn {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    padding: 10px 18px;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
+  }
+  .il-btn:hover { background: var(--ink); color: var(--paper); }
+  .il-btn:focus-visible, .il-root a:focus-visible, .il-root button:focus-visible, .il-root input:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  .il-btn-primary {
+    background: var(--stamp);
+    border-color: var(--stamp);
+    color: #fff9f7;
+  }
+  .il-btn-primary:hover { background: var(--navy-deep); border-color: var(--navy-deep); color: #fff; transform: translateY(-1px); }
+
+  /* ---------- HERO ---------- */
+  .il-hero {
+    padding: clamp(56px, 9vw, 108px) 0 clamp(40px, 6vw, 64px);
+    border-bottom: 1px solid var(--line);
+  }
+  .il-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+  .il-hero h1 {
+    font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+    line-height: 1.08;
+    margin-top: 14px;
+    letter-spacing: -0.01em;
+  }
+  .il-hero h1 em {
+    font-style: normal;
+    color: var(--stamp);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--stamp-soft);
+  }
+  .il-hero-sub {
+    margin-top: 22px;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .il-hero-cta {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .il-hero-cta .il-link {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+  }
+
+  .il-docstamp {
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.3), 0 20px 48px -24px rgba(0,0,0,0.6);
+  }
+  .il-term-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    background: var(--navy-deep);
+  }
+  .il-term-dots { display: flex; gap: 6px; }
+  .il-term-dots span { width: 9px; height: 9px; border-radius: 50%; display: block; }
+  .il-term-dots span:nth-child(1) { background: var(--loss); }
+  .il-term-dots span:nth-child(2) { background: var(--stamp); }
+  .il-term-dots span:nth-child(3) { background: var(--signal); }
+  .il-term-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+  .il-term-status {
+    margin-left: auto;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--line);
+  }
+  .il-docstamp.il-live .il-term-status { color: var(--signal); }
+  .il-docstamp.il-live .il-term-status::before {
+    content: "\25CF ";
+    animation: il-blink 1.4s steps(1) infinite;
+  }
+  @keyframes il-blink { 50% { opacity: 0.2; } }
+  @media (prefers-reduced-motion: reduce) {
+    .il-docstamp.il-live .il-term-status::before { animation: none; }
+  }
+  .il-docstamp dl { margin: 0; display: grid; gap: 12px; padding: 20px 22px 22px; }
+  .il-docstamp dt { color: var(--ink-soft); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .il-docstamp dd { margin: 2px 0 0; color: var(--ink); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+  .il-docstamp .il-arrow { color: var(--stamp); }
+
+  /* ---------- TICKER STRIP ---------- */
+  .il-ticker-wrap {
+    border-bottom: 1px solid var(--line);
+    background: var(--navy-deep);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .il-ticker {
+    display: inline-flex;
+    padding: 10px 0;
+    animation: il-scroll 38s linear infinite;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: #dfe6ee;
+  }
+  .il-ticker span {
+    padding: 0 22px;
+    border-right: 1px solid rgba(255,255,255,0.14);
+    font-variant-numeric: tabular-nums;
+  }
+  .il-ticker .il-up { color: var(--signal); }
+  .il-ticker .il-up::before { content: "\25B2 "; font-size: 0.7em; }
+  .il-ticker .il-down { color: var(--loss); }
+  .il-ticker .il-down::before { content: "\25BC "; font-size: 0.7em; }
+  @keyframes il-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .il-ticker { animation: none; }
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  .il-section {
+    padding: clamp(48px, 7vw, 88px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .il-section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.55fr) minmax(0, 0.45fr);
+    gap: 32px;
+    align-items: end;
+    margin-bottom: clamp(32px, 5vw, 52px);
+  }
+  .il-section-head h2 {
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin-top: 10px;
+  }
+  .il-section-head p { color: var(--ink-soft); margin: 0; max-width: 42ch; }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .il-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .il-step {
+    background: var(--paper);
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .il-step .il-step-no {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--stamp);
+    letter-spacing: 0.08em;
+  }
+  .il-step h3 { font-size: 1.08rem; }
+  .il-step p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+  @media (max-width: 760px) {
+    .il-steps { grid-template-columns: 1fr 1fr; }
+    .il-section-head { grid-template-columns: 1fr; }
+    .il-hero-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .il-steps { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- SIGNALS TABLE ---------- */
+  .il-tablewrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+  }
+  table.il-signals {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 640px;
+  }
+  table.il-signals th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  table.il-signals td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  table.il-signals tr:last-child td { border-bottom: none; }
+  table.il-signals .il-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  table.il-signals .il-ticker-cell { font-family: var(--font-mono); font-weight: 600; white-space: nowrap; }
+  table.il-signals .il-flag { color: var(--stamp); font-size: 0.75em; margin-left: 4px; }
+  .il-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    flex-wrap: wrap;
+  }
+  .il-caption .il-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--line);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  /* ---------- PRICING ---------- */
+  .il-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  @media (max-width: 860px) { .il-tiers { grid-template-columns: 1fr; } }
+  .il-tier {
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+  .il-tier.il-tier-featured { border-color: var(--navy); }
+  .il-tier.il-tier-featured::after {
+    content: "MOST MIRRORED";
+    position: absolute;
+    top: -11px;
+    left: 24px;
+    background: var(--navy);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 4px 8px;
+  }
+  .il-tier-name { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+  .il-tier-price { font-family: var(--font-display); font-size: 2.2rem; }
+  .il-tier-price span { font-family: var(--font-body); font-size: 0.95rem; color: var(--ink-soft); font-weight: 400; }
+  .il-tier ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; }
+  .il-tier li { display: flex; gap: 10px; }
+  .il-tier li::before { content: "—"; color: var(--ink-soft); flex-shrink: 0; }
+  .il-tier .il-btn { margin-top: auto; width: 100%; text-align: center; }
+
+  /* ---------- FAQ ---------- */
+  .il-faq { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .il-faq-item { background: var(--paper); }
+  .il-faq-item summary {
+    cursor: pointer;
+    padding: 18px 22px;
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .il-faq-item summary::-webkit-details-marker { display: none; }
+  .il-faq-item summary::after {
+    content: "+";
+    font-family: var(--font-mono);
+    color: var(--stamp);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .il-faq-item[open] summary::after { content: "\2212"; }
+  .il-faq-item .il-faq-body {
+    padding: 0 22px 20px;
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    max-width: 68ch;
+  }
+
+  /* ---------- FOOTER / FINE PRINT ---------- */
+  .il-footer {
+    padding: 44px 0 64px;
+    font-family: var(--font-mono);
+  }
+  .il-footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    font-family: var(--font-body);
+  }
+  .il-footer-brand { font-family: var(--font-display); font-size: 1.1rem; }
+  .il-footer-links { display: flex; gap: 20px; font-size: 0.86rem; }
+  .il-footer-links a { color: var(--ink-soft); text-decoration: none; }
+  .il-footer-links a:hover { color: var(--ink); }
+  .il-finetext {
+    font-size: 0.72rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+    max-width: 82ch;
+  }
+
+  /* ---------- TOAST / MODAL ---------- */
+  .il-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 12px);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 14px 20px;
+    border-radius: 3px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 40;
+    max-width: min(90vw, 420px);
+    text-align: center;
+  }
+  .il-toast.il-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+  }
+</style>
+
+<div class="il-root" id="top">
+
+  <div class="il-topbar">
+    <div class="il-container il-topbar-inner">
+      <span>www.zycaalgo.com</span>
+      <span>Paper Trading Environment &middot; Preview Build</span>
+    </div>
+  </div>
+
+  <nav class="il-nav">
+    <div class="il-nav-inner">
+      <a class="il-wordmark" href="#top" aria-label="ZycaAlgo home">
+        <svg class="il-logomark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+          <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+        </svg>
+        <span class="il-brand-text">
+          <span class="il-brand-name">ZycaAlgo</span>
+          <span class="il-brand-url">www.zycaalgo.com</span>
+        </span>
+        <span class="il-mark">FORM 4</span>
+      </a>
+      <div class="il-navlinks">
+        <a href="#how">How it works</a>
+        <a href="#signals">Signals</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <button class="il-btn" data-il-cta>Get started</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="il-hero">
+    <div class="il-container il-hero-grid">
+      <div>
+        <div class="il-eyebrow">SEC Form 4 · Officer &amp; Director Purchases</div>
+        <h1>Insiders buy their own stock for <em>one</em> reason.<br>We read every filing to find out which ones mean it.</h1>
+        <p class="il-hero-sub">ZycaAlgo watches every Form 4 filed with the SEC, keeps only the open-market buys that carry real conviction, and mirrors them into your own Alpaca paper account — sized, stopped, and logged automatically.</p>
+        <div class="il-hero-cta">
+          <button class="il-btn il-btn-primary" data-il-cta>Start free trial</button>
+          <a class="il-link" href="#how">See how filtering works &darr;</a>
+        </div>
+      </div>
+      <div class="il-docstamp" id="il-docstamp">
+        <div class="il-term-bar">
+          <span class="il-term-dots"><span></span><span></span><span></span></span>
+          <span class="il-term-title">zycaalgo &mdash; feed.log</span>
+          <span class="il-term-status" id="il-term-status">PREVIEW</span>
+        </div>
+        <dl>
+          <div>
+            <dt>Filings screened, last session</dt>
+            <dd id="stat-screened">1,491</dd>
+          </div>
+          <div>
+            <dt>Passed code&nbsp;P + officer/director + $100K floor</dt>
+            <dd><span class="il-arrow">&darr;</span> <span id="stat-qualifying">18</span></dd>
+          </div>
+          <div>
+            <dt>Passed $1B cap &amp; 500K volume floor</dt>
+            <dd><span class="il-arrow">&darr;</span> <span id="stat-tradeable">6</span></dd>
+          </div>
+          <div>
+            <dt>Mirrored to paper account</dt>
+            <dd id="stat-mirrored">6 positions &middot; 11.6% deployed</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <div class="il-ticker-wrap" aria-hidden="true">
+    <div class="il-ticker">
+      <span>BSX <span class="il-up">+2.9%</span></span>
+      <span>CSGP <span class="il-down">&minus;0.4%</span></span>
+      <span>PFE <span class="il-up">+1.1%</span></span>
+      <span>IR <span class="il-up">+0.7%</span></span>
+      <span>TSCO <span class="il-up">+3.9%</span></span>
+      <span>JBL <span class="il-down">&minus;1.2%</span></span>
+      <span>GBFH — excluded, sub-$1B</span>
+      <span>TLSA — excluded, thin volume</span>
+      <span>BSX <span class="il-up">+2.9%</span></span>
+      <span>CSGP <span class="il-down">&minus;0.4%</span></span>
+      <span>PFE <span class="il-up">+1.1%</span></span>
+      <span>IR <span class="il-up">+0.7%</span></span>
+      <span>TSCO <span class="il-up">+3.9%</span></span>
+      <span>JBL <span class="il-down">&minus;1.2%</span></span>
+      <span>GBFH — excluded, sub-$1B</span>
+      <span>TLSA — excluded, thin volume</span>
+    </div>
+  </div>
+
+  <section class="il-section" id="how">
+    <div class="il-container">
+      <div class="il-section-head">
+        <div>
+          <div class="il-eyebrow">The pipeline</div>
+          <h2>Four filters between a filing and your portfolio.</h2>
+        </div>
+        <p>Most Form 4s aren't signal. Compensation grants, tax-withholding sales, and pre-scheduled plan trades outnumber real conviction buys by roughly 250 to 1 — the pipeline exists to throw the rest away.</p>
+      </div>
+      <div class="il-steps">
+        <div class="il-step">
+          <span class="il-step-no">01 / Monitor</span>
+          <h3>Every filing, all day</h3>
+          <p>We pull SEC's daily Form 4 index continuously and open each one — no sampling, no delay past what EDGAR itself publishes.</p>
+        </div>
+        <div class="il-step">
+          <span class="il-step-no">02 / Filter</span>
+          <h3>Code P, no exceptions</h3>
+          <p>Open-market buys only, $100K minimum, filed by an officer or director, and never a pre-scheduled 10b5-1 plan trade.</p>
+        </div>
+        <div class="il-step">
+          <span class="il-step-no">03 / Qualify</span>
+          <h3>Liquid enough to matter</h3>
+          <p>S&amp;P 500 or NASDAQ-listed, $1B+ market cap, 500K+ average volume. If we can't trade it in size, we don't pretend we can.</p>
+        </div>
+        <div class="il-step">
+          <span class="il-step-no">04 / Mirror</span>
+          <h3>Sized, stopped, logged</h3>
+          <p>2% of equity per name, max 15 open positions, a 15% stop that trails once you're up 15%, and a 90-day exit if nothing happens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="il-section" id="signals">
+    <div class="il-container">
+      <div class="il-section-head">
+        <div>
+          <div class="il-eyebrow">Live output</div>
+          <h2>What actually cleared the desk.</h2>
+        </div>
+        <p>The six positions below are the real result of running the full pipeline against a single session's filings — not a backtest, not a curated example.</p>
+      </div>
+      <div class="il-tablewrap">
+        <table class="il-signals">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Company</th>
+              <th>Insider</th>
+              <th class="il-num">Entry</th>
+              <th class="il-num">Size</th>
+              <th class="il-num">Stop&nbsp;(&minus;15%)</th>
+            </tr>
+          </thead>
+          <tbody id="signals-tbody" data-live="false">
+            <tr>
+              <td class="il-ticker-cell">PFE<span class="il-flag">&#9679; cluster</span></td>
+              <td>Pfizer Inc.</td>
+              <td>Blaylock, Buckley — directors</td>
+              <td class="il-num">$25.79</td>
+              <td class="il-num">$1,986</td>
+              <td class="il-num">$21.92</td>
+            </tr>
+            <tr>
+              <td class="il-ticker-cell">BSX<span class="il-flag">&#9679; cluster</span></td>
+              <td>Boston Scientific</td>
+              <td>Mahoney — Chair/CEO</td>
+              <td class="il-num">$47.74</td>
+              <td class="il-num">$1,957</td>
+              <td class="il-num">$40.58</td>
+            </tr>
+            <tr>
+              <td class="il-ticker-cell">CSGP</td>
+              <td>CoStar Group</td>
+              <td>Florance — Founder/CEO</td>
+              <td class="il-num">$30.22</td>
+              <td class="il-num">$1,994</td>
+              <td class="il-num">$25.68</td>
+            </tr>
+            <tr>
+              <td class="il-ticker-cell">TSCO</td>
+              <td>Tractor Supply</td>
+              <td>Lawton — President/CEO</td>
+              <td class="il-num">$33.41</td>
+              <td class="il-num">$1,971</td>
+              <td class="il-num">$28.40</td>
+            </tr>
+            <tr>
+              <td class="il-ticker-cell">IR</td>
+              <td>Ingersoll Rand</td>
+              <td>Satpathy — Director</td>
+              <td class="il-num">$90.00</td>
+              <td class="il-num">$1,980</td>
+              <td class="il-num">$76.50</td>
+            </tr>
+            <tr>
+              <td class="il-ticker-cell">JBL</td>
+              <td>Jabil Inc.</td>
+              <td>Tyagarajan — Director</td>
+              <td class="il-num">$338.48</td>
+              <td class="il-num">$1,692</td>
+              <td class="il-num">$287.70</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="il-caption">
+        <span>&#9679; cluster = 2+ different insiders buying the same name within 30 days<span id="signals-asof"></span></span>
+        <span class="il-tag">PAPER ACCOUNT &middot; NOT INVESTMENT ADVICE</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="il-section" id="pricing">
+    <div class="il-container">
+      <div class="il-section-head">
+        <div>
+          <div class="il-eyebrow">Access</div>
+          <h2>Watch it, or connect it.</h2>
+        </div>
+        <p>Every tier runs the same pipeline. The difference is whether it stops at a report, or reaches into your own paper account.</p>
+      </div>
+      <div class="il-tiers">
+        <div class="il-tier">
+          <span class="il-tier-name">Watchlist</span>
+          <div class="il-tier-price">$0<span>/mo</span></div>
+          <ul>
+            <li>Daily filtered signal report</li>
+            <li>Cluster-buying alerts</li>
+            <li>Full filing links &amp; insider detail</li>
+            <li>No account connection</li>
+          </ul>
+          <button class="il-btn" data-il-cta>Get started</button>
+        </div>
+        <div class="il-tier il-tier-featured">
+          <span class="il-tier-name">Mirror</span>
+          <div class="il-tier-price">$29<span>/mo</span></div>
+          <ul>
+            <li>Everything in Watchlist</li>
+            <li>Signals mirrored into your Alpaca paper account</li>
+            <li>Automatic sizing, stops &amp; trailing exits</li>
+            <li>Weekly performance summary</li>
+          </ul>
+          <button class="il-btn il-btn-primary" data-il-cta>Start free trial</button>
+        </div>
+        <div class="il-tier">
+          <span class="il-tier-name">Desk</span>
+          <div class="il-tier-price">$79<span>/mo</span></div>
+          <ul>
+            <li>Everything in Mirror</li>
+            <li>Custom position sizing &amp; liquidity floors</li>
+            <li>Priority signal delivery</li>
+            <li>Trade log export</li>
+          </ul>
+          <button class="il-btn" data-il-cta>Get started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="il-section" id="faq" style="border-bottom:none;">
+    <div class="il-container">
+      <div class="il-section-head">
+        <div>
+          <div class="il-eyebrow">Before you connect anything</div>
+          <h2>Questions worth asking.</h2>
+        </div>
+      </div>
+      <div class="il-faq">
+        <details class="il-faq-item">
+          <summary>Is this real trading, or simulated?</summary>
+          <div class="il-faq-body">Every position shown mirrors into an Alpaca <strong>paper</strong> account — simulated fills, real market prices, zero real capital. Nothing here places a live order unless you explicitly connect and configure a live endpoint yourself, which ZycaAlgo does not do on your behalf.</div>
+        </details>
+        <details class="il-faq-item">
+          <summary>Is this investment advice?</summary>
+          <div class="il-faq-body">No. ZycaAlgo applies a mechanical filter to public SEC filings and reports the result. It is not a registered investment adviser, does not know your financial situation, and nothing here is a recommendation to buy or sell any security.</div>
+        </details>
+        <details class="il-faq-item">
+          <summary>What actually counts as a "genuine" buy?</summary>
+          <div class="il-faq-body">Transaction code P (open-market purchase) only — not option exercises, not compensation grants. Filed by an officer or director, worth at least $100,000, and explicitly <em>not</em> flagged as part of a pre-scheduled 10b5-1 plan, since those decisions were made months earlier and carry far less signal.</div>
+        </details>
+        <details class="il-faq-item">
+          <summary>Where does the data come from?</summary>
+          <div class="il-faq-body">Directly from SEC EDGAR's public daily filing index and each filing's underlying XML — the same data anyone can pull for free. ZycaAlgo does the fetching, filtering, and bookkeeping so you don't read filings by hand at 7am.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="il-footer">
+    <div class="il-container">
+      <div class="il-footer-top">
+        <div class="il-wordmark il-footer-brand">
+          <svg class="il-logomark" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+            <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+            <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+          </svg>
+          <span class="il-brand-text">
+            <span class="il-brand-name">ZycaAlgo</span>
+            <span class="il-brand-url">www.zycaalgo.com</span>
+          </span>
+        </div>
+        <div class="il-footer-links">
+          <a href="#how">How it works</a>
+          <a href="#signals">Signals</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <p class="il-finetext">
+        THIS PAGE IS A PRODUCT PREVIEW. Sign-ups referenced above are not yet open and no payment is collected anywhere on this
+        page. ZycaAlgo is not a registered investment adviser or broker-dealer and this page does not constitute
+        investment, legal, or tax advice. All positions referenced are held in a simulated Alpaca paper-trading account;
+        simulated results do not reflect slippage, liquidity constraints, or execution costs of live trading and are not a
+        guarantee of future performance. Data is derived from public filings made available by the U.S. Securities and
+        Exchange Commission via EDGAR; ZycaAlgo is not affiliated with, endorsed by, or sponsored by the SEC, EDGAR,
+        or Alpaca Securities LLC. Past filing patterns do not predict future stock performance.
+      </p>
+    </div>
+  </footer>
+
+  <div class="il-toast" data-il-toast role="status" aria-live="polite">Sign-ups aren't open yet — this is a preview of ZycaAlgo's pricing.</div>
+</div>
+
+<script>
+(function () {
+  var toast = document.querySelector('[data-il-toast]');
+  var timer = null;
+  document.querySelectorAll('[data-il-cta]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!toast) return;
+      clearTimeout(timer);
+      toast.classList.add('il-show');
+      timer = setTimeout(function () { toast.classList.remove('il-show'); }, 3200);
+    });
+  });
+})();
+
+// ---------------------------------------------------------------------
+// Live data. Falls back silently to the static specimen numbers already
+// in the page if the API isn't reachable yet (e.g. before the GitHub
+// Actions job has run once, or before APCA secrets are configured).
+// ---------------------------------------------------------------------
+(function () {
+  function fmtMoney(n) {
+    return '$' + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  Promise.all([
+    fetch('/api/signals').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('/api/positions').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('/api/account').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+  ]).then(function (results) {
+    var signals = results[0];
+    var positions = results[1];
+    var account = results[2];
+    if (!signals || !signals.date) return; // no successful run yet - keep the specimen
+
+    var stamp = document.getElementById('il-docstamp');
+    if (stamp) stamp.classList.add('il-live');
+    var termStatus = document.getElementById('il-term-status');
+    if (termStatus) termStatus.textContent = 'LIVE';
+
+    var buys = signals.qualifying_buys || [];
+    var tradeableCount = Array.isArray(positions) ? positions.length : buys.length;
+    var screened = document.getElementById('stat-screened');
+    var qualifying = document.getElementById('stat-qualifying');
+    var tradeable = document.getElementById('stat-tradeable');
+    var mirrored = document.getElementById('stat-mirrored');
+    if (qualifying) qualifying.textContent = buys.length;
+    if (tradeable) tradeable.textContent = tradeableCount;
+    if (screened) screened.textContent = signals.date;
+
+    if (account && account.equity) {
+      var equity = parseFloat(account.equity);
+      var deployed = Array.isArray(positions)
+        ? positions.reduce(function (sum, p) { return sum + Math.abs(parseFloat(p.market_value || 0)); }, 0)
+        : 0;
+      var pct = equity ? ((deployed / equity) * 100).toFixed(1) : '0.0';
+      if (mirrored) {
+        mirrored.textContent = (Array.isArray(positions) ? positions.length : 0) +
+          ' position' + ((positions && positions.length === 1) ? '' : 's') +
+          ' · ' + pct + '% deployed';
+      }
+    }
+
+    if (Array.isArray(positions) && positions.length) {
+      var tbody = document.getElementById('signals-tbody');
+      var cluster = signals.cluster_tickers || {};
+      if (tbody) {
+        tbody.dataset.live = 'true';
+        tbody.innerHTML = positions.map(function (p) {
+          var isCluster = cluster[p.symbol];
+          var entry = parseFloat(p.avg_entry_price);
+          var qty = parseFloat(p.qty);
+          return '<tr>' +
+            '<td class="il-ticker-cell">' + p.symbol + (isCluster ? '<span class="il-flag">&#9679; cluster</span>' : '') + '</td>' +
+            '<td>' + p.symbol + '</td>' +
+            '<td>Live position</td>' +
+            '<td class="il-num">' + fmtMoney(entry) + '</td>' +
+            '<td class="il-num">' + qty + ' sh</td>' +
+            '<td class="il-num">' + fmtMoney(parseFloat(p.current_price)) + '</td>' +
+            '</tr>';
+        }).join('');
+      }
+    }
+
+    var asof = document.getElementById('signals-asof');
+    if (asof) asof.textContent = ' — live as of ' + signals.date;
+  });
+})();
+</script>

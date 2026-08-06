@@ -4,6 +4,7 @@
      so this commits to one dark palette regardless of viewer OS/toggle
      preference rather than half-heartedly inverting it. */
   :root {
+    color-scheme: dark;
     --paper: #0a0d12;
     --paper-raised: #10141b;
     --ink: #e7ebf2;
@@ -469,6 +470,7 @@
     border-collapse: collapse;
     font-size: 0.88rem;
     min-width: 640px;
+    color: var(--ink);
   }
   table.il-signals th {
     text-align: left;
@@ -485,6 +487,7 @@
     padding: 13px 16px;
     border-bottom: 1px solid var(--line-soft);
     vertical-align: top;
+    color: var(--ink);
   }
   table.il-signals tr:last-child td { border-bottom: none; }
   table.il-signals .il-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }

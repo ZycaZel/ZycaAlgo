@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology &mdash; ZycaAlgo</title>
+<meta name="description" content="Exactly how ZycaAlgo filters SEC Form 4 filings, sizes and exits positions, and connects to Alpaca's paper trading API.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='5' fill='%2315130f' stroke='%2315130f' stroke-width='1.4'/%3E%3Cpolyline points='12,13 26,13 12,27 26,27' stroke='%23e6391d' stroke-width='3.2' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3Crect x='28' y='24' width='5' height='7' fill='%232e7d4f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .il-endpoint-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 20px 0 32px;
+    border: 1px solid var(--line);
+  }
+  .il-endpoint-table th {
+    text-align: left;
+    background: var(--navy-deep);
+    color: var(--ink-invert);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+  }
+  .il-endpoint-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  .il-endpoint-table code {
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    background: var(--paper-raised);
+    padding: 1px 5px;
+  }
+  .il-safety-box {
+    background: var(--stamp);
+    color: #fff9f7;
+    padding: 28px 26px;
+    margin: 8px 0 40px;
+  }
+  .il-safety-box h3 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    opacity: 0.85;
+  }
+  .il-safety-box p { color: #fff9f7; margin-bottom: 10px; max-width: none; }
+  .il-safety-box code {
+    font-family: var(--font-mono);
+    background: rgba(0,0,0,0.18);
+    padding: 1px 6px;
+  }
+  .il-safety-box p:last-child { margin-bottom: 0; }
+  .il-log-block {
+    background: var(--navy-deep);
+    color: var(--ink-invert);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    padding: 22px 24px;
+    margin: 20px 0 32px;
+    overflow-x: auto;
+  }
+  .il-log-block .il-prompt { color: var(--stamp); }
+  .il-log-block .il-ok { color: #7fd4a6; }
+  .il-navlinks a[aria-current="page"] { color: var(--stamp); }
+</style>
+</head>
+<body>
+
+<div class="il-root" id="top">
+
+  <div class="il-topbar">
+    <div class="il-container il-topbar-inner">
+      <span>www.zycaalgo.com</span>
+      <span class="il-market">
+        <span class="il-market-dot" id="market-dot"></span>
+        <span id="market-status">Checking market&hellip;</span>
+        <span>&middot; Paper Trading Environment</span>
+      </span>
+    </div>
+  </div>
+
+  <nav class="il-nav">
+    <div class="il-nav-inner">
+      <a class="il-wordmark" href="/" aria-label="ZycaAlgo home">
+        <svg class="il-logomark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+          <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+        </svg>
+        <span class="il-brand-text">
+          <span class="il-brand-name">ZycaAlgo</span>
+          <span class="il-brand-url">www.zycaalgo.com</span>
+        </span>
+        <span class="il-mark">FORM 4</span>
+      </a>
+      <div class="il-navlinks">
+        <a href="/about">About</a>
+        <a href="/methodology" aria-current="page">Methodology</a>
+        <a href="/legal">Legal</a>
+        <a href="/#pricing">Pricing</a>
+        <button class="il-btn" data-il-cta>Get started</button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="il-essay">
+    <div class="il-eyebrow">Methodology</div>
+    <h1>The pipeline, the exits, and exactly what talks to Alpaca.</h1>
+    <p class="il-lede">This is the technical layer under the home page's summary &mdash; the actual filter logic, the exit state machine, and every API call the trading job makes, with nothing abstracted away.</p>
+
+    <h2>Reading a Form 4 correctly</h2>
+    <p>SEC filings are public but not always clean. Building this pipeline surfaced real data-quality issues worth being upfront about: some filers encode boolean fields like <code style="font-family: var(--font-mono); background: var(--paper-raised); padding: 1px 5px;">isDirector</code> as <code style="font-family: var(--font-mono); background: var(--paper-raised); padding: 1px 5px;">"1"</code>, others as the literal string <code style="font-family: var(--font-mono); background: var(--paper-raised); padding: 1px 5px;">"true"</code> &mdash; a scanner that only checks for <code style="font-family: var(--font-mono); background: var(--paper-raised); padding: 1px 5px;">"1"</code> silently drops every filer using the other convention. Joint filings (common for SPACs) list the same accession number under multiple CIKs, so a naive scanner double- or triple-counts the same real-world transaction. The issuer CIK in SEC's daily index file isn't always the actual issuer &mdash; it can be a reporting owner's own CIK instead, which breaks any lookup that assumes otherwise.</p>
+    <p class="il-muted">None of this is exotic. It's just the ordinary cost of parsing real government data instead of a clean API, and it's the reason a naive version of this scanner can report zero results on a day that actually had genuine signal.</p>
+
+    <h2>The four filters, precisely</h2>
+    <ul class="il-plain">
+      <li><strong>Transaction code = P, exactly.</strong> Not A (grants), M (option exercises), S (sales), F (tax withholding), or G (gifts). Code P is the SEC's own designation for an open-market purchase.</li>
+      <li><strong>Filer is an officer or director, purchase &ge; $100,000.</strong> Computed as shares &times; price per share from the filing itself, not an estimate.</li>
+      <li><strong>Not part of a 10b5-1 plan.</strong> Checked via the filing's own <code style="font-family: var(--font-mono); background: var(--paper-raised); padding: 1px 5px;">aff10b5One</code> field.</li>
+      <li><strong>$1B+ market cap, 500K+ average daily volume, S&amp;P 500 or NASDAQ-listed.</strong> Market cap is computed from SEC XBRL shares-outstanding data (the issuer's own most recent 10-Q/10-K filing) multiplied by the latest traded price from Alpaca's market data API. Average volume is the trailing 21 trading days.</li>
+    </ul>
+
+    <h2>Sizing and exits</h2>
+    <p>Every qualifying signal is sized at 2% of current account equity, capped at 15 simultaneously open positions, and never added to a ticker already held. On entry, a plain stop-sell order is placed at 15% below the fill price.</p>
+    <p>The exit logic isn't a single order type, because no broker order natively expresses "flat stop, then switch to trailing once profitable enough." It's a small state machine, re-evaluated daily:</p>
+    <ul class="il-plain">
+      <li>Below +15% gain: the original 15% stop-loss stands, unchanged.</li>
+      <li>At or above +15% gain: switch to trailing mode. The stop becomes 10% below the position's high-water mark, and that floor only ever moves up &mdash; a pullback never lowers it.</li>
+      <li>90 days after entry, if the position is still within &plusmn;3% of its entry price (effectively flat), it closes regardless of the stop levels above.</li>
+    </ul>
+
+    <h2>What runs, and when</h2>
+    <div class="il-log-block">
+<span class="il-prompt">$</span> python scripts/insider_buys.py<br>
+&nbsp;&nbsp;fetch SEC daily index .......... <span class="il-ok">ok</span><br>
+&nbsp;&nbsp;parse Form 4 filings ........... <span class="il-ok">ok</span><br>
+&nbsp;&nbsp;apply filters, dedupe .......... <span class="il-ok">ok</span><br>
+&nbsp;&nbsp;write data/latest.json<br>
+<br>
+<span class="il-prompt">$</span> python scripts/trade_manager.py manage<br>
+&nbsp;&nbsp;check open positions for exits<br>
+&nbsp;&nbsp;place/replace stop orders<br>
+<br>
+<span class="il-prompt">$</span> python scripts/trade_manager.py enter data/latest.json<br>
+&nbsp;&nbsp;liquidity filter, sizing, entries<br>
+&nbsp;&nbsp;log to trades.md + trades.json
+    </div>
+    <p>This sequence runs on GitHub Actions every weekday at 10:00am Bangkok time (03:00 UTC), on GitHub's servers &mdash; not on anyone's laptop, so it fires whether or not a machine happens to be on. Every run commits its own output back to the repository, so any position can be traced to the exact filing and commit that produced it.</p>
+
+    <h2>The Alpaca connection</h2>
+    <p>The trading job authenticates to Alpaca with a key/secret pair stored as encrypted secrets (GitHub Actions secrets for the scheduled job, Vercel environment variables for this website's live dashboard). Neither is ever written to a file in the repository or exposed to the browser.</p>
+    <table class="il-endpoint-table">
+      <thead>
+        <tr><th>Endpoint</th><th>What it's used for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>/v2/account</code></td><td>Equity, cash, and buying power &mdash; used for position sizing and the dashboard's live stats.</td></tr>
+        <tr><td><code>/v2/positions</code></td><td>Currently open positions and unrealized P/L.</td></tr>
+        <tr><td><code>/v2/orders</code></td><td>Placing entry and stop-loss orders, and checking whether an entry has filled yet.</td></tr>
+        <tr><td><code>/v2/account/portfolio/history</code></td><td>The equity curve drawn on the home page.</td></tr>
+        <tr><td><code>/v2/stocks/bars</code>, <code>/v2/stocks/trades/latest</code></td><td>Price and volume data for the liquidity filter.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="il-safety-box">
+      <h3>Safety guarantee</h3>
+      <p>The trading script's base URL is hard-coded to <code>https://paper-api.alpaca.markets</code> &mdash; Alpaca's simulated-money endpoint. There is no live-trading endpoint anywhere in this codebase, and no configuration flag that switches it. Turning this into real-money trading would require someone to deliberately rewrite that constant and redeploy &mdash; it cannot happen by accident, by a bad setting, or by a bug in the filter logic.</p>
+    </div>
+
+    <div class="il-essay-cta">
+      <a class="il-btn il-btn-primary" href="/#signals">See today's actual output</a>
+      <a class="il-btn" href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener">Read the source &#8599;</a>
+    </div>
+  </article>
+
+  <footer class="il-footer">
+    <div class="il-container">
+      <div class="il-footer-top">
+        <div class="il-wordmark il-footer-brand">
+          <svg class="il-logomark" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+            <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+            <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+          </svg>
+          <span class="il-brand-text">
+            <span class="il-brand-name">ZycaAlgo</span>
+            <span class="il-brand-url">www.zycaalgo.com</span>
+          </span>
+        </div>
+        <div class="il-footer-links">
+          <a href="/about">About</a>
+          <a href="/methodology" aria-current="page">Methodology</a>
+          <a href="/legal">Legal</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+      <p class="il-finetext">
+        THIS PAGE IS A PRODUCT PREVIEW. Sign-ups referenced above are not yet open and no payment is collected anywhere on this
+        page. ZycaAlgo is not a registered investment adviser or broker-dealer and this page does not constitute
+        investment, legal, or tax advice. All positions referenced are held in a simulated Alpaca paper-trading account.
+        See <a href="/legal" style="color: inherit;">/legal</a> for the full disclosures.
+      </p>
+    </div>
+  </footer>
+
+  <div class="il-toast" data-il-toast role="status" aria-live="polite">Sign-ups aren't open yet — this is a preview of ZycaAlgo's pricing.</div>
+</div>
+
+<script>
+(function () {
+  var toast = document.querySelector('[data-il-toast]');
+  var timer = null;
+  document.querySelectorAll('[data-il-cta]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!toast) return;
+      clearTimeout(timer);
+      toast.classList.add('il-show');
+      timer = setTimeout(function () { toast.classList.remove('il-show'); }, 3200);
+    });
+  });
+})();
+
+(function () {
+  function updateMarketStatus() {
+    var dot = document.getElementById('market-dot');
+    var status = document.getElementById('market-status');
+    if (!dot || !status) return;
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', hour12: false,
+      hour: '2-digit', minute: '2-digit', weekday: 'short',
+    }).formatToParts(new Date());
+    var map = {};
+    parts.forEach(function (p) { map[p.type] = p.value; });
+    var hour = parseInt(map.hour, 10);
+    var minute = parseInt(map.minute, 10);
+    var minutesNow = hour * 60 + minute;
+    var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(map.weekday) !== -1;
+    var isOpen = isWeekday && minutesNow >= 9 * 60 + 30 && minutesNow < 16 * 60;
+    dot.className = 'il-market-dot ' + (isOpen ? 'il-open' : 'il-closed');
+    var displayHour = hour % 12 || 12;
+    var displayMinute = minute < 10 ? '0' + minute : minute;
+    var timeLabel = displayHour + ':' + displayMinute + (hour >= 12 ? 'pm' : 'am') + ' ET';
+    status.textContent = (isOpen ? 'Market open' : 'Market closed') + ' — ' + timeLabel;
+  }
+  updateMarketStatus();
+  setInterval(updateMarketStatus, 30000);
+})();
+</script>
+</body>
+</html>

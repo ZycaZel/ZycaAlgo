@@ -2,8 +2,13 @@ name: ZycaAlgo daily scan + paper trade
 
 on:
   schedule:
-    # 15:00 UTC = 22:00 Asia/Bangkok, weekdays only.
-    - cron: "0 15 * * 1-5"
+    # 08:00 UTC = 15:00 Asia/Bangkok. Runs Tue-Sat (UTC), not Mon-Fri, because
+    # SEC's daily index for a trading day isn't published until after their
+    # 10pm ET same-day filing cutoff - it's only actually ready the *next*
+    # UTC morning. So a Tuesday run picks up Monday's filings, Wednesday
+    # picks up Tuesday's, etc., through Saturday picking up Friday's.
+    # (No Sunday/Monday runs - there's no new trading-day data to catch.)
+    - cron: "0 8 * * 2-6"
   workflow_dispatch: {}   # lets you click "Run workflow" manually in the Actions tab
 
 permissions:

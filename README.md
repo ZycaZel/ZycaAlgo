@@ -15,7 +15,9 @@ This account is always paper-only. `scripts/trade_manager.py` hard-codes
   manages exits (15% stop -> trails 10% below the high once up 15% -> closes
   after 90 days flat).
 - **`.github/workflows/daily-job.yml`** — runs both scripts on GitHub's
-  servers every weekday at 22:00 Bangkok time (15:00 UTC), then commits
+  servers Tuesday-Saturday at 15:00 Bangkok time (08:00 UTC) - shifted a day
+  from the trading week because SEC's daily index for a trading day isn't
+  ready until the following UTC morning - then commits
   the results back to this repo. Runs whether or not your computer is on.
 - **`api/*.js`** — small serverless functions (deployed by Vercel) that read
   your live Alpaca account and today's scan results.

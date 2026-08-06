@@ -153,7 +153,7 @@
 &nbsp;&nbsp;liquidity filter, sizing, entries<br>
 &nbsp;&nbsp;log to trades.md + trades.json
     </div>
-    <p>This sequence runs on GitHub Actions every weekday at 22:00 Bangkok time (15:00 UTC), on GitHub's servers &mdash; not on anyone's laptop, so it fires whether or not a machine happens to be on. Every run commits its own output back to the repository, so any position can be traced to the exact filing and commit that produced it.</p>
+    <p>This sequence runs on GitHub Actions Tuesday&ndash;Saturday at 15:00 Bangkok time (08:00 UTC), on GitHub's servers &mdash; not on anyone's laptop, so it fires whether or not a machine happens to be on. It's shifted a day off the trading week on purpose: SEC's daily filing index for a given trading day isn't published until after their 10pm ET same-day filing cutoff, so it's only actually ready the following UTC morning &mdash; a Tuesday run is what picks up Monday's filings. Every run commits its own output back to the repository, so any position can be traced to the exact filing and commit that produced it.</p>
 
     <h2>The Alpaca connection</h2>
     <p>The trading job authenticates to Alpaca with a key/secret pair stored as encrypted secrets (GitHub Actions secrets for the scheduled job, Vercel environment variables for this website's live dashboard). Neither is ever written to a file in the repository or exposed to the browser.</p>

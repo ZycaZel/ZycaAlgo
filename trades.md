@@ -20,3 +20,8 @@
 | 2026-08-05 | TLSA | Elrifi Ivor |  |  |  | SKIPPED - market cap $119,061,312 < $1B; avg volume 262,964 < 500K | https://www.sec.gov/Archives/edgar/data/2136241/000121390026085710/0001213900-26-085710-index.htm |
 | 2026-08-05 | EVGN | RECANATI LEON |  |  |  | SKIPPED - market cap $6,145,454 < $1B | https://www.sec.gov/Archives/edgar/data/1574565/000117891326003859/0001178913-26-003859-index.htm |
 | 2026-08-05 | GBFH | NEWGARD JEFFREY K |  |  |  | SKIPPED - market cap $301,996,246 < $1B; avg volume 74,625 < 500K | https://www.sec.gov/Archives/edgar/data/1791145/000119312526335471/0001193125-26-335471-index.htm |
+| 2026-08-06 | REBN | Lim Jung Jae |  |  |  | SKIPPED - market cap $12,155,913 < $1B; avg volume 93,241 < 500K | https://www.sec.gov/Archives/edgar/data/2122599/000121390026086304/0001213900-26-086304-index.htm |
+| 2026-08-06 | APTV | MEISTER PAUL M | $48.81 | 41 sh ($2,001) | $41.49 | ENTRY | https://www.sec.gov/Archives/edgar/data/1521332/000119312526337965/0001193125-26-337965-index.htm |
+| 2026-08-06 | TLSA | Elrifi Ivor |  |  |  | SKIPPED - market cap $116,892,179 < $1B; avg volume 262,964 < 500K | https://www.sec.gov/Archives/edgar/data/2136241/000121390026085950/0001213900-26-085950-index.htm |
+| 2026-08-06 | SAGT | Ng Chen Lok |  |  |  | SKIPPED - market cap $9,677,305 < $1B; avg volume 378,053 < 500K | https://www.sec.gov/Archives/edgar/data/2070001/000121390026086253/0001213900-26-086253-index.htm |
+| 2026-08-06 | ETR | Ropp Ralph Lewis | $107.85 | 18 sh ($1,941) | $91.67 | ENTRY | https://www.sec.gov/Archives/edgar/data/65984/000006598426000287/0000065984-26-000287-index.htm |

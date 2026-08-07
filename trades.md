@@ -16,3 +16,7 @@
 | 2026-08-05 | TLSA | Elrifi Ivor |  |  |  | SKIPPED - market cap $123,520,086 < $1B; avg volume 266,204 < 500K | https://www.sec.gov/Archives/edgar/data/2136241/000121390026085710/0001213900-26-085710-index.htm |
 | 2026-08-05 | EVGN | RECANATI LEON |  |  |  | SKIPPED - market cap $5,845,548 < $1B | https://www.sec.gov/Archives/edgar/data/1574565/000117891326003859/0001178913-26-003859-index.htm |
 | 2026-08-05 | GBFH | NEWGARD JEFFREY K |  |  |  | SKIPPED - market cap $317,262,468 < $1B; avg volume 74,116 < 500K | https://www.sec.gov/Archives/edgar/data/1791145/000119312526335471/0001193125-26-335471-index.htm |
+| 2026-08-05 | XIIIU | Klein Michael Stuart |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2124749/000121390026085827/0001213900-26-085827-index.htm |
+| 2026-08-05 | TLSA | Elrifi Ivor |  |  |  | SKIPPED - market cap $119,061,312 < $1B; avg volume 262,964 < 500K | https://www.sec.gov/Archives/edgar/data/2136241/000121390026085710/0001213900-26-085710-index.htm |
+| 2026-08-05 | EVGN | RECANATI LEON |  |  |  | SKIPPED - market cap $6,145,454 < $1B | https://www.sec.gov/Archives/edgar/data/1574565/000117891326003859/0001178913-26-003859-index.htm |
+| 2026-08-05 | GBFH | NEWGARD JEFFREY K |  |  |  | SKIPPED - market cap $301,996,246 < $1B; avg volume 74,625 < 500K | https://www.sec.gov/Archives/edgar/data/1791145/000119312526335471/0001193125-26-335471-index.htm |

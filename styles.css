@@ -150,7 +150,7 @@
     font-size: 0.92rem;
   }
   @media (max-width: 980px) {
-    .il-navlinks a[href="#how"], .il-navlinks a[href="#faq"], .il-navlinks a[href="/methodology"] { display: none; }
+    .il-navlinks a[href="#how"], .il-navlinks a[href="#faq"], .il-navlinks a[href="/methodology"], .il-navlinks a[href="/explorer"] { display: none; }
   }
   @media (max-width: 760px) {
     .il-navlinks a[href="#activity"] { display: none; }

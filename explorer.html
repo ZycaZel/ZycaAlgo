@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insider Buy Explorer &mdash; ZycaAlgo</title>
+<meta name="description" content="Look up any ticker and see its genuine insider open-market buys plotted against price history - a data indicator, not a trade recommendation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='5' fill='%2315130f' stroke='%2315130f' stroke-width='1.4'/%3E%3Cpolyline points='12,13 26,13 12,27 26,27' stroke='%23e6391d' stroke-width='3.2' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3Crect x='28' y='24' width='5' height='7' fill='%232e7d4f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .il-navlinks a[aria-current="page"] { color: var(--stamp); }
+
+  .il-explorer-hero {
+    padding: clamp(48px, 7vw, 80px) 0 clamp(32px, 5vw, 48px);
+    border-bottom: 1px solid var(--line);
+  }
+  .il-explorer-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin: 14px 0 18px; }
+  .il-explorer-hero p { color: var(--ink-soft); max-width: 62ch; margin: 0 0 28px; font-size: 1.05rem; }
+
+  .il-search-row { display: flex; gap: 10px; max-width: 440px; flex-wrap: wrap; }
+  .il-search-row input {
+    flex: 1;
+    min-width: 160px;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    color: var(--ink);
+  }
+  .il-search-row input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .il-search-hint { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft); margin-top: 10px; }
+  .il-search-hint button {
+    background: none; border: none; padding: 0; margin: 0 4px;
+    color: var(--stamp); font-family: var(--font-mono); font-size: 0.78rem; cursor: pointer; text-decoration: underline;
+  }
+
+  .il-explorer-body { padding: clamp(32px, 5vw, 56px) 0 clamp(56px, 8vw, 88px); }
+  .il-explorer-state { font-family: var(--font-mono); font-size: 0.92rem; color: var(--ink-soft); padding: 40px 0; }
+  .il-explorer-state.il-error { color: var(--loss); }
+
+  .il-marker-legend { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); margin-top: 12px; }
+  .il-marker-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--stamp); display: inline-block; }
+</style>
+</head>
+<body>
+
+<div class="il-root" id="top">
+
+  <div class="il-topbar">
+    <div class="il-container il-topbar-inner">
+      <span>www.zycaalgo.com</span>
+      <span class="il-market">
+        <span class="il-market-dot" id="market-dot"></span>
+        <span id="market-status">Checking market&hellip;</span>
+        <span>&middot; Paper Trading Environment</span>
+      </span>
+    </div>
+  </div>
+
+  <nav class="il-nav">
+    <div class="il-nav-inner">
+      <a class="il-wordmark" href="/" aria-label="ZycaAlgo home">
+        <svg class="il-logomark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+          <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+        </svg>
+        <span class="il-brand-text">
+          <span class="il-brand-name">ZycaAlgo</span>
+          <span class="il-brand-url">www.zycaalgo.com</span>
+        </span>
+        <span class="il-mark">FORM 4</span>
+      </a>
+      <div class="il-navlinks">
+        <a href="/about">About</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/explorer" aria-current="page">Explorer</a>
+        <a href="/legal">Legal</a>
+        <a href="/#pricing">Pricing</a>
+        <button class="il-btn" data-il-cta>Get started</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="il-explorer-hero">
+    <div class="il-container">
+      <div class="il-eyebrow">Indicator &middot; not a recommendation</div>
+      <h1>Look up any ticker's real insider buying.</h1>
+      <p>This is a data overlay, not a trade signal: pick a ticker and see every genuine open-market buy (code P, officer or director, not a 10b5-1 plan) plotted against its price history. No filtering by size or liquidity here &mdash; that's specific to the paper-trading pipeline, not to looking at the raw data.</p>
+      <form class="il-search-row" id="search-form">
+        <input type="text" id="ticker-input" placeholder="e.g. AAPL" maxlength="10" autocomplete="off" spellcheck="false" aria-label="Ticker symbol">
+        <button class="il-btn il-btn-primary" type="submit">Look up</button>
+      </form>
+      <div class="il-search-hint">Try <button type="button" data-example="BSX">BSX</button> <button type="button" data-example="PFE">PFE</button> <button type="button" data-example="AAPL">AAPL</button></div>
+    </div>
+  </header>
+
+  <section class="il-explorer-body">
+    <div class="il-container">
+      <div id="explorer-results">
+        <div class="il-explorer-state">Enter a ticker above to see its insider buying history.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="il-footer">
+    <div class="il-container">
+      <div class="il-footer-top">
+        <div class="il-wordmark il-footer-brand">
+          <svg class="il-logomark" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+            <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+            <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+          </svg>
+          <span class="il-brand-text">
+            <span class="il-brand-name">ZycaAlgo</span>
+            <span class="il-brand-url">www.zycaalgo.com</span>
+          </span>
+        </div>
+        <div class="il-footer-links">
+          <a href="/about">About</a>
+          <a href="/methodology">Methodology</a>
+          <a href="/explorer" aria-current="page">Explorer</a>
+          <a href="/legal">Legal</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+      <p class="il-finetext">
+        THIS PAGE IS A PRODUCT PREVIEW. ZycaAlgo is not a registered investment adviser or broker-dealer and this page does
+        not constitute investment, legal, or tax advice. Data shown is derived from public filings made available by the
+        U.S. Securities and Exchange Commission via EDGAR and market data from Alpaca; ZycaAlgo is not affiliated with,
+        endorsed by, or sponsored by either. See <a href="/legal" style="color: inherit;">/legal</a> for full disclosures.
+      </p>
+    </div>
+  </footer>
+
+  <div class="il-toast" data-il-toast role="status" aria-live="polite">Sign-ups aren't open yet — this is a preview of ZycaAlgo's pricing.</div>
+</div>
+
+<script>
+(function () {
+  var toast = document.querySelector('[data-il-toast]');
+  var timer = null;
+  document.querySelectorAll('[data-il-cta]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!toast) return;
+      clearTimeout(timer);
+      toast.classList.add('il-show');
+      timer = setTimeout(function () { toast.classList.remove('il-show'); }, 3200);
+    });
+  });
+})();
+
+(function () {
+  function updateMarketStatus() {
+    var dot = document.getElementById('market-dot');
+    var status = document.getElementById('market-status');
+    if (!dot || !status) return;
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', hour12: false,
+      hour: '2-digit', minute: '2-digit', weekday: 'short',
+    }).formatToParts(new Date());
+    var map = {};
+    parts.forEach(function (p) { map[p.type] = p.value; });
+    var hour = parseInt(map.hour, 10);
+    var minute = parseInt(map.minute, 10);
+    var minutesNow = hour * 60 + minute;
+    var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(map.weekday) !== -1;
+    var isOpen = isWeekday && minutesNow >= 9 * 60 + 30 && minutesNow < 16 * 60;
+    dot.className = 'il-market-dot ' + (isOpen ? 'il-open' : 'il-closed');
+    var displayHour = hour % 12 || 12;
+    var displayMinute = minute < 10 ? '0' + minute : minute;
+    var timeLabel = displayHour + ':' + displayMinute + (hour >= 12 ? 'pm' : 'am') + ' ET';
+    status.textContent = (isOpen ? 'Market open' : 'Market closed') + ' — ' + timeLabel;
+  }
+  updateMarketStatus();
+  setInterval(updateMarketStatus, 30000);
+})();
+
+// ---------------------------------------------------------------------
+// Explorer: search a ticker, fetch its insider-buy history + price bars,
+// draw a chart with buy markers, list the transactions.
+// ---------------------------------------------------------------------
+(function () {
+  var form = document.getElementById('search-form');
+  var input = document.getElementById('ticker-input');
+  var resultsEl = document.getElementById('explorer-results');
+
+  function fmtMoney(n) {
+    return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function drawChart(canvas, bars, buys) {
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+    var pad = { top: 16, right: 16, bottom: 16, left: 16 };
+    ctx.clearRect(0, 0, w, h);
+    if (!bars.length) return;
+
+    var styles = getComputedStyle(document.documentElement);
+    var lineColor = styles.getPropertyValue('--ink').trim();
+    var gridColor = styles.getPropertyValue('--line-soft').trim();
+    var markerColor = styles.getPropertyValue('--stamp').trim();
+
+    var closes = bars.map(function (b) { return b.c; });
+    var min = Math.min.apply(null, closes);
+    var max = Math.max.apply(null, closes);
+    var range = (max - min) || 1;
+    var innerW = w - pad.left - pad.right;
+    var innerH = h - pad.top - pad.bottom;
+
+    ctx.strokeStyle = gridColor;
+    ctx.lineWidth = 1;
+    for (var g = 0; g <= 3; g++) {
+      var gy = pad.top + (innerH / 3) * g;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, gy);
+      ctx.lineTo(w - pad.right, gy);
+      ctx.stroke();
+    }
+
+    function xAtIndex(i) { return pad.left + (innerW * i) / (bars.length - 1 || 1); }
+    function yAt(v) { return pad.top + innerH - ((v - min) / range) * innerH; }
+
+    ctx.beginPath();
+    ctx.moveTo(xAtIndex(0), yAt(closes[0]));
+    closes.forEach(function (v, i) { ctx.lineTo(xAtIndex(i), yAt(v)); });
+    ctx.strokeStyle = lineColor;
+    ctx.lineWidth = 1.6;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // Map each buy's date to the nearest bar index, then mark it.
+    var dateIndex = {};
+    bars.forEach(function (b, i) { dateIndex[b.t.slice(0, 10)] = i; });
+    buys.forEach(function (buy) {
+      var idx = dateIndex[buy.date];
+      if (idx === undefined) return;
+      var x = xAtIndex(idx), y = yAt(closes[idx]);
+      ctx.beginPath();
+      ctx.arc(x, y, 4.5, 0, Math.PI * 2);
+      ctx.fillStyle = markerColor;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(x, y, 8, 0, Math.PI * 2);
+      ctx.strokeStyle = markerColor;
+      ctx.globalAlpha = 0.3;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    });
+  }
+
+  function renderResults(data) {
+    var lastClose = data.bars.length ? data.bars[data.bars.length - 1].c : null;
+    var buyRows = data.buys.slice().reverse().map(function (b) {
+      return '<tr>' +
+        '<td>' + b.date + '</td>' +
+        '<td>' + b.insider + '</td>' +
+        '<td>' + b.title + '</td>' +
+        '<td class="il-num">' + fmtMoney(b.price) + '</td>' +
+        '<td class="il-num">' + Math.round(b.shares).toLocaleString('en-US') + '</td>' +
+        '<td class="il-num">' + fmtMoney(b.total) + '</td>' +
+        '<td><a href="' + b.filing_url + '" target="_blank" rel="noopener" style="color: var(--stamp)">Filing</a></td>' +
+        '</tr>';
+    }).join('');
+
+    resultsEl.innerHTML =
+      '<div class="il-docstamp il-live">' +
+      '  <div class="il-term-bar">' +
+      '    <span class="il-term-dots"><span></span><span></span><span></span></span>' +
+      '    <span class="il-term-title">' + data.ticker + ' &mdash; ' + data.company + '</span>' +
+      '    <span class="il-term-status">LIVE</span>' +
+      '  </div>' +
+      '  <div class="il-chart-canvas-wrap">' +
+      '    <canvas id="explorer-canvas" class="il-chart-canvas" width="1000" height="280" role="img" aria-label="Price history with insider buy markers"></canvas>' +
+      '    <div class="il-marker-legend"><span class="il-marker-dot"></span> Genuine insider buy (code P, officer/director, not a 10b5-1 plan)</div>' +
+      '  </div>' +
+      '</div>' +
+      '<div class="il-caption" style="margin-top:18px;">' +
+      '  <span>' + data.buys.length + ' genuine buy' + (data.buys.length === 1 ? '' : 's') + ' found across ' + data.filings_checked + ' Form 4 filings, last ' + data.since + ' to today' + (lastClose ? ' &middot; last close ' + fmtMoney(lastClose) : '') + '</span>' +
+      '</div>' +
+      (data.buys.length
+        ? '<div class="il-tablewrap" style="margin-top:14px;"><table class="il-signals"><thead><tr>' +
+          '<th>Date</th><th>Insider</th><th>Title</th><th class="il-num">Price</th><th class="il-num">Shares</th><th class="il-num">Total</th><th>Filing</th>' +
+          '</tr></thead><tbody>' + buyRows + '</tbody></table></div>'
+        : '<div class="il-explorer-state">No genuine open-market buys by an officer or director in this window.</div>');
+
+    var canvas = document.getElementById('explorer-canvas');
+    if (canvas) drawChart(canvas, data.bars, data.buys);
+  }
+
+  function search(ticker) {
+    resultsEl.innerHTML = '<div class="il-explorer-state">Scanning SEC filings for ' + ticker + '&hellip; (this takes a few seconds, live lookup)</div>';
+    fetch('/api/insider-history?ticker=' + encodeURIComponent(ticker) + '&months=12')
+      .then(function (r) { return r.json().then(function (body) { return { ok: r.ok, body: body }; }); })
+      .then(function (result) {
+        if (!result.ok) {
+          resultsEl.innerHTML = '<div class="il-explorer-state il-error">' + (result.body.error || 'Something went wrong.') + '</div>';
+          return;
+        }
+        renderResults(result.body);
+      })
+      .catch(function () {
+        resultsEl.innerHTML = '<div class="il-explorer-state il-error">Network error - try again.</div>';
+      });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ticker = input.value.trim().toUpperCase();
+    if (ticker) search(ticker);
+  });
+
+  document.querySelectorAll('[data-example]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      input.value = btn.dataset.example;
+      search(btn.dataset.example);
+    });
+  });
+
+  var params = new URLSearchParams(location.search);
+  if (params.get('ticker')) {
+    input.value = params.get('ticker').toUpperCase();
+    search(input.value);
+  }
+})();
+</script>
+</body>
+</html>

@@ -10,6 +10,7 @@ import os
 import sys
 
 import notion_client as nc
+import yahoo_finance
 
 
 def main():
@@ -23,6 +24,17 @@ def main():
 
     buys = report.get("qualifying_buys", [])
     print(f"Pushing {len(buys)} signal(s) from {report.get('date')} to Notion...")
+
+    tickers = sorted({b["ticker"] for b in buys})
+    try:
+        fundamentals = yahoo_finance.get_fundamentals(tickers)
+    except Exception as e:
+        # Fundamentals are a nice-to-have on top of the core signal sync -
+        # if Yahoo Finance is unreachable/blocked entirely, still push the
+        # signals themselves rather than failing the whole sync.
+        print(f"  [warn] Yahoo Finance fundamentals unavailable: {e}")
+        fundamentals = {}
+
     for buy in buys:
         note = (
             f"Insider buy detected (filed {buy['date_filed']}): "
@@ -31,7 +43,11 @@ def main():
             f"on {buy['txn_date']}."
         )
         try:
-            nc.upsert_signal(buy["ticker"], buy["company"], note, filing_url=buy["filing_url"])
+            nc.upsert_signal(
+                buy["ticker"], buy["company"], note,
+                filing_url=buy["filing_url"],
+                fundamentals=fundamentals.get(buy["ticker"]),
+            )
             print(f"  {buy['ticker']}: ok")
         except Exception as e:
             # Notion sync is a nice-to-have, not a critical trading step -

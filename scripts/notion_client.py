@@ -55,31 +55,59 @@ def find_row_by_ticker(ticker):
     return results[0] if results else None
 
 
-def upsert_signal(ticker, company, note_text, filing_url=None):
+def upsert_signal(ticker, company, note_text=None, filing_url=None, fundamentals=None):
     """Add a new Stock Watchlist row for `ticker` if one doesn't exist
     (status defaults to 'Researching' - flagged, not a recommendation),
-    then append `note_text` as a callout block on that row's page so a
+    then append `note_text` as a callout block on that row's page (skipped
+    if `note_text` is None - used for fundamentals-only refreshes) so a
     running log builds up without ever overwriting the user's own
-    Recommendation/Conviction/Status fields on an existing row."""
+    Recommendation/Conviction/Status fields on an existing row.
+
+    `fundamentals`, if given, is {'sector': str|None, 'price': float|None}
+    from Yahoo Finance. Current Price is refreshed every time (it's meant
+    to be live data). Sector is only ever written once - on a brand new
+    row, or on an existing row that doesn't have one set yet - so it never
+    overwrites a value the user has manually corrected. Price Target,
+    Recommendation, and Conviction are never touched here; those read as
+    the user's own research judgment, not something to auto-fill."""
+    fundamentals = fundamentals or {}
     existing = find_row_by_ticker(ticker)
     if existing:
         page_id = existing["id"]
+        update_props = {}
+        if fundamentals.get("price") is not None:
+            update_props["Current Price"] = {"number": fundamentals["price"]}
+        if fundamentals.get("sector") and not existing["properties"].get("Sector", {}).get("select"):
+            update_props["Sector"] = {"select": {"name": fundamentals["sector"]}}
+        if update_props:
+            r = requests.patch(
+                f"{API}/pages/{page_id}",
+                headers=_headers(),
+                json={"properties": update_props},
+                timeout=30,
+            )
+            r.raise_for_status()
     else:
+        props = {
+            "Ticker": {"title": _rich_text(ticker)},
+            "Company Name": {"rich_text": _rich_text(company)},
+            "Status": {"status": {"name": "Researching"}},
+        }
+        if fundamentals.get("price") is not None:
+            props["Current Price"] = {"number": fundamentals["price"]}
+        if fundamentals.get("sector"):
+            props["Sector"] = {"select": {"name": fundamentals["sector"]}}
         r = requests.post(
             f"{API}/pages",
             headers=_headers(),
-            json={
-                "parent": {"database_id": WATCHLIST_DB_ID},
-                "properties": {
-                    "Ticker": {"title": _rich_text(ticker)},
-                    "Company Name": {"rich_text": _rich_text(company)},
-                    "Status": {"status": {"name": "Researching"}},
-                },
-            },
+            json={"parent": {"database_id": WATCHLIST_DB_ID}, "properties": props},
             timeout=30,
         )
         r.raise_for_status()
         page_id = r.json()["id"]
+
+    if note_text is None:
+        return page_id
 
     blocks = [{
         "object": "block",

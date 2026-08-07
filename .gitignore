@@ -5,3 +5,4 @@ node_modules/
 scripts/insider-buys-*.json
 scripts/insider-buys-*.md
 scripts/run_log*.txt
+data/backtest/_quarters_cache/

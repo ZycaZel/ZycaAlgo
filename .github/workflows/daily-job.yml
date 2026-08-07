@@ -39,6 +39,12 @@ jobs:
           cp "$latest" ../data/latest.json
           cp "$latest" "../data/archive/$latest"
 
+      - name: Push today's signals to Notion watchlist
+        working-directory: scripts
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python push_signals_to_notion.py ../data/latest.json
+
       - name: Manage existing positions (stops / trailing / time-stop)
         working-directory: scripts
         env:

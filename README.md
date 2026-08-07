@@ -22,6 +22,10 @@ This account is always paper-only. `scripts/trade_manager.py` hard-codes
 - **`api/*.js`** — small serverless functions (deployed by Vercel) that read
   your live Alpaca account and today's scan results.
 - **`index.html`** — the ZycaAlgo page itself, which calls those functions.
+- **`scripts/notion_client.py`** / **`scripts/push_signals_to_notion.py`** —
+  optional: if `NOTION_TOKEN` is set, each day's qualifying signals are also
+  added to a personal Notion "Stock Watchlist" database (one row per ticker,
+  a note per signal). No-op if the env var isn't set.
 
 ## One-time setup
 
@@ -51,6 +55,9 @@ secret**. Add two:
 - `APCA_API_KEY_ID`
 - `APCA_API_SECRET_KEY`
 
+Optional third secret, only if you want the Notion watchlist sync (see
+below): `NOTION_TOKEN`.
+
 You can test the workflow immediately without waiting for the schedule:
 **Actions tab -> ZycaAlgo daily scan + paper trade -> Run workflow.**
 
@@ -71,6 +78,22 @@ You can test the workflow immediately without waiting for the schedule:
 3. Vercel shows you the DNS records to add (usually an A record or CNAME) —
    add those in your registrar's DNS settings.
 4. DNS can take a few minutes to a few hours to propagate.
+
+### 6. Optional: sync signals to a Notion watchlist
+1. [notion.so/my-integrations](https://www.notion.so/my-integrations) ->
+   **New integration** -> name it -> capabilities: Read/Update/Insert
+   content (comments and user info not needed).
+2. Copy the integration's access token.
+3. In Notion, open the page containing your watchlist database -> **Share
+   -> Connections** -> add the integration. It needs to be connected both
+   to the parent page (so new research write-ups can be filed under it) and
+   to the watchlist database itself (so rows can be added).
+4. Your watchlist database needs at minimum a `Ticker` title property and a
+   `Company Name` rich-text property; a `Status` status property with a
+   `Researching` option is used for auto-added rows if present.
+5. Add `NOTION_TOKEN` as a GitHub Actions secret (step 3 above) to enable
+   the daily sync. Edit the two page/database IDs at the top of
+   `scripts/notion_client.py` to point at your own workspace.
 
 ## Running locally (optional)
 

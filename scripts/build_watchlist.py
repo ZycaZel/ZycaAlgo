@@ -40,6 +40,7 @@ def main():
         fu = fundamentals.get(t, {})
         entry["sector"] = fu.get("sector")
         entry["price"] = fu.get("price")
+        entry["change_pct"] = fu.get("change_pct")
 
     watchlist = sorted(tickers.values(), key=lambda e: e["last_seen"], reverse=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:

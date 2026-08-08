@@ -97,23 +97,8 @@
   </header>
 
   <div class="il-ticker-wrap" aria-hidden="true">
-    <div class="il-ticker">
-      <span>BSX <span class="il-up">+2.9%</span></span>
-      <span>CSGP <span class="il-down">&minus;0.4%</span></span>
-      <span>PFE <span class="il-up">+1.1%</span></span>
-      <span>IR <span class="il-up">+0.7%</span></span>
-      <span>TSCO <span class="il-up">+3.9%</span></span>
-      <span>JBL <span class="il-down">&minus;1.2%</span></span>
-      <span>GBFH — excluded, sub-$1B</span>
-      <span>TLSA — excluded, thin volume</span>
-      <span>BSX <span class="il-up">+2.9%</span></span>
-      <span>CSGP <span class="il-down">&minus;0.4%</span></span>
-      <span>PFE <span class="il-up">+1.1%</span></span>
-      <span>IR <span class="il-up">+0.7%</span></span>
-      <span>TSCO <span class="il-up">+3.9%</span></span>
-      <span>JBL <span class="il-down">&minus;1.2%</span></span>
-      <span>GBFH — excluded, sub-$1B</span>
-      <span>TLSA — excluded, thin volume</span>
+    <div class="il-ticker" id="il-ticker-track">
+      <span>Loading watchlist&hellip;</span>
     </div>
   </div>
 
@@ -403,6 +388,30 @@
 </div>
 
 <script>
+// Animates a number from its current displayed value (or 0) up to `end`
+// over ~700ms, using `fmt` to render each intermediate frame. Respects
+// prefers-reduced-motion by jumping straight to the end value.
+function ilAnimateCount(el, end, fmt, duration) {
+  if (!el) return;
+  duration = duration || 700;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = fmt(end);
+    return;
+  }
+  var start = 0;
+  var startTime = null;
+  function tick(now) {
+    if (startTime === null) startTime = now;
+    var elapsed = now - startTime;
+    var progress = Math.min(1, elapsed / duration);
+    var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    el.textContent = fmt(start + (end - start) * eased);
+    if (progress < 1) requestAnimationFrame(tick);
+    else el.textContent = fmt(end);
+  }
+  requestAnimationFrame(tick);
+}
+
 (function () {
   var toast = document.querySelector('[data-il-toast]');
   var timer = null;
@@ -446,6 +455,31 @@
   }
   updateMarketStatus();
   setInterval(updateMarketStatus, 30000);
+})();
+
+// ---------------------------------------------------------------------
+// Ticker tape: real tickers from the watchlist, not placeholder data.
+// Duplicated once so the CSS scroll animation (-50% translateX) loops
+// seamlessly without a visible seam.
+// ---------------------------------------------------------------------
+(function () {
+  var track = document.getElementById('il-ticker-track');
+  if (!track) return;
+  fetch('/data/watchlist.json')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      var tickers = (data && data.tickers || []).slice(0, 16);
+      if (!tickers.length) return;
+      function itemHtml(t) {
+        var hasChange = typeof t.change_pct === 'number';
+        var cls = hasChange ? (t.change_pct >= 0 ? 'il-up' : 'il-down') : '';
+        var changeText = hasChange ? (t.change_pct >= 0 ? '+' : '') + t.change_pct.toFixed(1) + '%' : 'flagged';
+        return '<span>' + t.ticker + ' <span class="' + cls + '">' + changeText + '</span></span>';
+      }
+      var html = tickers.map(itemHtml).join('');
+      track.innerHTML = html + html; // duplicate for the seamless loop
+    })
+    .catch(function () { /* leave the loading text - non-critical decoration */ });
 })();
 
 // Scroll-reveal for sections - only activates if IntersectionObserver
@@ -509,8 +543,8 @@
     var qualifying = document.getElementById('stat-qualifying');
     var tradeable = document.getElementById('stat-tradeable');
     var mirrored = document.getElementById('stat-mirrored');
-    if (qualifying) qualifying.textContent = buys.length;
-    if (tradeable) tradeable.textContent = entriesToday.length;
+    if (qualifying) ilAnimateCount(qualifying, buys.length, function (v) { return Math.round(v); });
+    if (tradeable) ilAnimateCount(tradeable, entriesToday.length, function (v) { return Math.round(v); });
     if (screened) {
       var d = new Date(signals.date + 'T00:00:00Z');
       screened.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
@@ -562,11 +596,16 @@
     return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
-  function drawEquityChart(canvas, points) {
+  function drawEquityChart(canvas, points, progress) {
+    progress = progress == null ? 1 : progress;
     var ctx = canvas.getContext('2d');
     var w = canvas.width, h = canvas.height;
     var pad = { top: 16, right: 16, bottom: 16, left: 16 };
     ctx.clearRect(0, 0, w, h);
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, 0, pad.left + (w - pad.left - pad.right) * progress, h);
+    ctx.clip(); // reveal the chart left-to-right as `progress` goes 0 -> 1
 
     var styles = getComputedStyle(document.documentElement);
     var lineColor = styles.getPropertyValue('--stamp').trim() || '#e8a33d';
@@ -620,19 +659,40 @@
     ctx.lineJoin = 'round';
     ctx.stroke();
 
-    // Emphasized endpoint
-    var lastX = xAt(points.length - 1), lastY = yAt(points[points.length - 1]);
-    ctx.beginPath();
-    ctx.arc(lastX, lastY, 4, 0, Math.PI * 2);
-    ctx.fillStyle = accentColor;
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(lastX, lastY, 8, 0, Math.PI * 2);
-    ctx.strokeStyle = accentColor;
-    ctx.globalAlpha = 0.35;
-    ctx.lineWidth = 1;
-    ctx.stroke();
-    ctx.globalAlpha = 1;
+    ctx.restore(); // lift the reveal clip before drawing the endpoint dot
+
+    // Emphasized endpoint - only once the reveal has essentially finished,
+    // so it doesn't flash into view mid-animation ahead of the line.
+    if (progress > 0.98) {
+      var lastX = xAt(points.length - 1), lastY = yAt(points[points.length - 1]);
+      ctx.beginPath();
+      ctx.arc(lastX, lastY, 4, 0, Math.PI * 2);
+      ctx.fillStyle = accentColor;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(lastX, lastY, 8, 0, Math.PI * 2);
+      ctx.strokeStyle = accentColor;
+      ctx.globalAlpha = 0.35;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function animateEquityChart(canvas, points) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      drawEquityChart(canvas, points, 1);
+      return;
+    }
+    var duration = 900;
+    var startTime = null;
+    function tick(now) {
+      if (startTime === null) startTime = now;
+      var progress = Math.min(1, (now - startTime) / duration);
+      drawEquityChart(canvas, points, 1 - Math.pow(1 - progress, 3)); // ease-out cubic
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
   Promise.all([
@@ -653,7 +713,7 @@
       var flat = account && account.equity ? parseFloat(account.equity) : 100000;
       equityPoints = [flat, flat];
     }
-    drawEquityChart(canvas, equityPoints);
+    animateEquityChart(canvas, equityPoints);
 
     var statusEl = document.getElementById('chart-term-status');
     if (statusEl && history) statusEl.textContent = 'LIVE';
@@ -661,13 +721,13 @@
     var equityEl = document.getElementById('chart-equity');
     var changeEl = document.getElementById('chart-change');
     var positionsEl = document.getElementById('chart-positions');
-    if (equityEl && account && account.equity) equityEl.textContent = fmtMoney(parseFloat(account.equity));
-    if (positionsEl) positionsEl.textContent = Array.isArray(positions) ? positions.length : 0;
+    if (equityEl && account && account.equity) ilAnimateCount(equityEl, parseFloat(account.equity), fmtMoney, 900);
+    if (positionsEl) ilAnimateCount(positionsEl, Array.isArray(positions) ? positions.length : 0, function (v) { return Math.round(v); });
     if (changeEl) {
       var first = equityPoints[0], last = equityPoints[equityPoints.length - 1];
       var pct = first ? ((last - first) / first) * 100 : 0;
-      changeEl.textContent = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
       changeEl.className = pct >= 0 ? 'il-positive' : 'il-negative';
+      ilAnimateCount(changeEl, pct, function (v) { return (v >= 0 ? '+' : '') + v.toFixed(2) + '%'; }, 900);
     }
   });
 })();

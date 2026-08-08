@@ -325,8 +325,13 @@
     padding: 14px 18px;
     border-bottom: 1px solid var(--line-soft);
     font-size: 0.86rem;
+    transition: background-color 0.15s ease;
   }
   .il-activity-row:last-child { border-bottom: none; }
+  .il-activity-row:hover { background: var(--stamp-soft); }
+  @media (prefers-reduced-motion: reduce) {
+    .il-activity-row { transition: none; }
+  }
   .il-activity-ticker { font-family: var(--font-mono); font-weight: 600; }
   .il-activity-badge {
     font-family: var(--font-mono);
@@ -480,6 +485,11 @@
     color: var(--ink);
   }
   table.il-signals tr:last-child td { border-bottom: none; }
+  table.il-signals tbody tr { transition: background-color 0.15s ease; }
+  table.il-signals tbody tr:hover { background: var(--stamp-soft); }
+  @media (prefers-reduced-motion: reduce) {
+    table.il-signals tbody tr { transition: none; }
+  }
   table.il-signals .il-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
   table.il-signals .il-ticker-cell { font-family: var(--font-mono); font-weight: 600; white-space: nowrap; }
   table.il-signals .il-flag { color: var(--stamp); font-size: 0.75em; margin-left: 4px; }

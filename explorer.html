@@ -261,7 +261,8 @@
     };
   }
 
-  function drawChart(canvas, bars, buys) {
+  function drawChart(canvas, bars, buys, progress) {
+    progress = progress == null ? 1 : progress;
     var ctx = canvas.getContext('2d');
     var w = canvas.width, h = canvas.height;
     var pad = { top: 16, right: 14, bottom: 26, left: 58 };
@@ -309,6 +310,11 @@
       ctx.textAlign = n === 0 ? 'left' : (n === xTickIndices.length - 1 ? 'right' : 'center');
       ctx.fillText(fmtAxisDate(bars[i].t), xAtIndex(i), pad.top + innerH + 8);
     });
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, 0, pad.left + innerW * progress, h);
+    ctx.clip(); // reveal levels/line/markers left-to-right as `progress` goes 0 -> 1
 
     var levels = findSupportResistance(closes);
     var signalColor = styles.getPropertyValue('--signal').trim();
@@ -359,6 +365,23 @@
       ctx.stroke();
       ctx.globalAlpha = 1;
     });
+    ctx.restore(); // lift the reveal clip
+  }
+
+  function animateChart(canvas, bars, buys) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      drawChart(canvas, bars, buys, 1);
+      return;
+    }
+    var duration = 800;
+    var startTime = null;
+    function tick(now) {
+      if (startTime === null) startTime = now;
+      var progress = Math.min(1, (now - startTime) / duration);
+      drawChart(canvas, bars, buys, 1 - Math.pow(1 - progress, 3)); // ease-out cubic
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
   function renderResults(data) {
@@ -407,7 +430,7 @@
         : '<div class="il-explorer-state" style="padding:20px 0;">No recent news found for this ticker.</div>');
 
     var canvas = document.getElementById('explorer-canvas');
-    if (canvas) drawChart(canvas, data.bars, data.buys);
+    if (canvas) animateChart(canvas, data.bars, data.buys);
   }
 
   function search(ticker) {

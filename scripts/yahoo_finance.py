@@ -35,18 +35,18 @@ def _session_with_crumb():
 
 
 def get_fundamentals(tickers):
-    """tickers: list of symbols. Returns {ticker: {'sector': str|None, 'price': float|None}}.
-    Best-effort: a ticker Yahoo doesn't recognize (or a transient failure)
-    just gets an empty entry rather than raising, so one bad symbol doesn't
-    stop the whole daily sync."""
+    """tickers: list of symbols. Returns {ticker: {'sector', 'price', 'change_pct'}},
+    each value None if unavailable. Best-effort: a ticker Yahoo doesn't
+    recognize (or a transient failure) just gets an empty entry rather than
+    raising, so one bad symbol doesn't stop the whole daily sync."""
     session, crumb = _session_with_crumb()
     out = {}
     for ticker in tickers:
-        entry = {"sector": None, "price": None}
+        entry = {"sector": None, "price": None, "change_pct": None}
         try:
             r = session.get(
                 f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{ticker}",
-                params={"modules": "summaryProfile,financialData", "crumb": crumb},
+                params={"modules": "summaryProfile,financialData,price", "crumb": crumb},
                 timeout=15,
             )
             if r.status_code == 200:
@@ -58,6 +58,9 @@ def get_fundamentals(tickers):
                         entry["sector"] = SECTOR_MAP.get(raw_sector, raw_sector)
                     price = data.get("financialData", {}).get("currentPrice", {})
                     entry["price"] = price.get("raw")
+                    change_pct = data.get("price", {}).get("regularMarketChangePercent", {})
+                    if "raw" in change_pct:
+                        entry["change_pct"] = change_pct["raw"] * 100
         except (requests.RequestException, ValueError, KeyError, IndexError) as e:
             print(f"  [warn] Yahoo Finance lookup failed for {ticker}: {e}")
         out[ticker] = entry

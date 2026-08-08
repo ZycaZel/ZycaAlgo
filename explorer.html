@@ -214,6 +214,51 @@
     return new Date(iso).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' });
   }
 
+  // Finds swing highs/lows (a bar whose close is the max/min within a window
+  // on both sides), then clusters nearby swing prices together - a cluster
+  // with more touches is a stronger support/resistance level. Returns the
+  // top 2 support levels (from swing lows) and top 2 resistance levels
+  // (from swing highs), each requiring at least 2 touches to filter noise.
+  function findSupportResistance(closes) {
+    var windowSize = Math.max(2, Math.round(closes.length / 30));
+    function swings(kind) {
+      var pivots = [];
+      for (var i = windowSize; i < closes.length - windowSize; i++) {
+        var isPivot = true;
+        for (var j = i - windowSize; j <= i + windowSize; j++) {
+          if (j === i) continue;
+          if (kind === 'high' && closes[j] > closes[i]) { isPivot = false; break; }
+          if (kind === 'low' && closes[j] < closes[i]) { isPivot = false; break; }
+        }
+        if (isPivot) pivots.push(closes[i]);
+      }
+      return pivots;
+    }
+    function clusterAndRank(prices) {
+      if (!prices.length) return [];
+      var sorted = prices.slice().sort(function (a, b) { return a - b; });
+      var clusters = [[sorted[0]]];
+      var tolerance = 0.015; // prices within 1.5% of each other count as the same level
+      for (var i = 1; i < sorted.length; i++) {
+        var cluster = clusters[clusters.length - 1];
+        var clusterAvg = cluster.reduce(function (a, b) { return a + b; }, 0) / cluster.length;
+        if ((sorted[i] - clusterAvg) / clusterAvg <= tolerance) {
+          cluster.push(sorted[i]);
+        } else {
+          clusters.push([sorted[i]]);
+        }
+      }
+      return clusters
+        .map(function (c) { return { price: c.reduce(function (a, b) { return a + b; }, 0) / c.length, touches: c.length }; })
+        .filter(function (l) { return l.touches >= 2; })
+        .sort(function (a, b) { return b.touches - a.touches; });
+    }
+    return {
+      support: clusterAndRank(swings('low')).slice(0, 2),
+      resistance: clusterAndRank(swings('high')).slice(0, 2),
+    };
+  }
+
   function drawChart(canvas, bars, buys) {
     var ctx = canvas.getContext('2d');
     var w = canvas.width, h = canvas.height;
@@ -262,6 +307,29 @@
       ctx.textAlign = n === 0 ? 'left' : (n === xTickIndices.length - 1 ? 'right' : 'center');
       ctx.fillText(fmtAxisDate(bars[i].t), xAtIndex(i), pad.top + innerH + 8);
     });
+
+    var levels = findSupportResistance(closes);
+    var signalColor = styles.getPropertyValue('--signal').trim();
+    var lossColor = styles.getPropertyValue('--loss').trim();
+    function drawLevel(level, color) {
+      if (level.price < min || level.price > max) return; // outside the visible range
+      var ly = yAt(level.price);
+      ctx.save();
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, ly);
+      ctx.lineTo(w - pad.right, ly);
+      ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle = color;
+      ctx.textAlign = 'left';
+      ctx.textBaseline = ly < pad.top + 10 ? 'top' : 'bottom';
+      ctx.fillText('$' + level.price.toFixed(2), pad.left + 4, ly - 2);
+    }
+    levels.support.forEach(function (l) { drawLevel(l, signalColor); });
+    levels.resistance.forEach(function (l) { drawLevel(l, lossColor); });
 
     ctx.beginPath();
     ctx.moveTo(xAtIndex(0), yAt(closes[0]));
@@ -315,6 +383,7 @@
       '  <div class="il-chart-canvas-wrap">' +
       '    <canvas id="explorer-canvas" class="il-chart-canvas" width="1000" height="280" role="img" aria-label="Price history with insider buy markers"></canvas>' +
       '    <div class="il-marker-legend"><span class="il-marker-dot"></span> Genuine insider buy (code P, officer/director, not a 10b5-1 plan)</div>' +
+      '    <div class="il-marker-legend" style="margin-top:6px;"><span class="il-marker-dot" style="background: var(--signal); border-radius: 0; width: 12px; height: 2px;"></span> Support &nbsp;&nbsp;<span class="il-marker-dot" style="background: var(--loss); border-radius: 0; width: 12px; height: 2px;"></span> Resistance <span style="margin-left:4px;">(algorithmic swing-level clusters - not a trade signal)</span></div>' +
       '  </div>' +
       '</div>' +
       '<div class="il-caption" style="margin-top:18px;">' +

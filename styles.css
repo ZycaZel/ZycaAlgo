@@ -1,37 +1,67 @@
-  /* Deliberately single-theme: a printed trading desk memo, not a dashboard
-     that needs to negotiate with the OS. Off-white stock, black type, one
-     red the whole system agrees to use for exactly one thing: attention. */
+  /* Dark trading-terminal theme: near-black stock, off-white type, a
+     brighter red accent that can actually glow. Cards read as glass
+     panels floating over a starfield rather than flat fills. */
   :root {
-    color-scheme: light;
-    --paper: #f1efe9;
-    --paper-raised: #f8f6f1;
-    --ink: #15130f;
-    --ink-soft: #5a564d;
-    --navy: #e6391d;
-    --navy-deep: #15130f;
-    --stamp: #e6391d;
-    --stamp-soft: #fbe3dc;
-    --signal: #2e7d4f;
-    --loss: #9a3324;
-    --line: #15130f;
-    --line-soft: #ddd8ce;
-    --focus: #e6391d;
-    --ink-invert: #f1efe9;
+    color-scheme: dark;
+    --paper: #0a0b10;
+    --paper-raised: #15161d;
+    --ink: #edeef2;
+    --ink-soft: #8d90a0;
+    --navy: #ff5240;
+    --navy-deep: #050509;
+    --stamp: #ff5240;
+    --stamp-soft: rgba(255, 82, 64, 0.14);
+    --signal: #35d488;
+    --loss: #f2545b;
+    --line: rgba(255, 255, 255, 0.14);
+    --line-soft: rgba(255, 255, 255, 0.08);
+    --focus: #ff5240;
+    --ink-invert: #edeef2;
+    --glass-bg: rgba(255, 255, 255, 0.045);
+    --glass-border: rgba(255, 255, 255, 0.1);
   }
 
   * { box-sizing: border-box; }
 
   .il-root {
     --font-display: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
-    background: var(--paper);
+    position: relative;
+    isolation: isolate;
+    background-color: var(--paper);
+    /* Starfield: three layered radial-gradient tiles at different scales/
+       opacities so the dots read as depth rather than a flat repeat. */
+    background-image:
+      radial-gradient(1.2px 1.2px at 20px 30px, rgba(255,255,255,0.9) 100%, transparent),
+      radial-gradient(1px 1px at 90px 110px, rgba(255,255,255,0.6) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 150px 60px, rgba(255,255,255,0.5) 100%, transparent),
+      radial-gradient(1px 1px at 60px 170px, rgba(255,255,255,0.7) 100%, transparent),
+      radial-gradient(1px 1px at 190px 190px, rgba(255,255,255,0.4) 100%, transparent);
+    background-size: 220px 220px;
+    background-repeat: repeat;
     color: var(--ink);
     font-family: var(--font-body);
     line-height: 1.55;
     font-size: 16px;
     overflow-x: hidden;
   }
+  .il-root::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    width: 900px;
+    height: 640px;
+    transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgba(255,82,64,0.22), rgba(255,82,64,0.08) 55%, transparent 75%);
+    filter: blur(10px);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .il-root > * { position: relative; }
+  h1 em, h2 em, .il-lede em { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--stamp); }
 
   .il-root h1, .il-root h2, .il-root h3 {
     font-family: var(--font-display);
@@ -110,7 +140,7 @@
     color: var(--ink);
   }
   .il-logomark { flex-shrink: 0; display: block; }
-  .il-logomark .il-lm-bezel { fill: var(--navy-deep); stroke: var(--navy-deep); }
+  .il-logomark .il-lm-bezel { fill: var(--paper-raised); stroke: var(--stamp); }
   .il-logomark .il-lm-z { stroke: var(--stamp); }
   .il-logomark .il-lm-cursor { fill: var(--signal); animation: il-blink 1.2s steps(1) infinite; }
   @media (prefers-reduced-motion: reduce) {
@@ -205,8 +235,10 @@
     letter-spacing: -0.01em;
   }
   .il-hero h1 em {
-    font-style: normal;
-    color: inherit;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--stamp);
   }
   .il-hero-sub {
     margin-top: 22px;
@@ -230,11 +262,15 @@
   }
 
   .il-docstamp {
-    border: 1px solid var(--line);
-    background: var(--paper-raised);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     font-family: var(--font-mono);
     font-size: 0.78rem;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.3), 0 20px 48px -24px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.3), 0 24px 60px -24px rgba(0,0,0,0.7);
   }
   .il-term-bar {
     display: flex;

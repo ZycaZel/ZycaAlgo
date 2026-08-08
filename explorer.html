@@ -208,16 +208,23 @@
     }) + ' ET';
   }
 
+  var CHART_FONT = 'ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace';
+
+  function fmtAxisDate(iso) {
+    return new Date(iso).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' });
+  }
+
   function drawChart(canvas, bars, buys) {
     var ctx = canvas.getContext('2d');
     var w = canvas.width, h = canvas.height;
-    var pad = { top: 16, right: 16, bottom: 16, left: 16 };
+    var pad = { top: 16, right: 14, bottom: 26, left: 58 };
     ctx.clearRect(0, 0, w, h);
     if (!bars.length) return;
 
     var styles = getComputedStyle(document.documentElement);
     var lineColor = styles.getPropertyValue('--ink').trim();
     var gridColor = styles.getPropertyValue('--line-soft').trim();
+    var labelColor = styles.getPropertyValue('--ink-soft').trim();
     var markerColor = styles.getPropertyValue('--stamp').trim();
 
     var closes = bars.map(function (b) { return b.c; });
@@ -227,6 +234,7 @@
     var innerW = w - pad.left - pad.right;
     var innerH = h - pad.top - pad.bottom;
 
+    ctx.font = '11px ' + CHART_FONT;
     ctx.strokeStyle = gridColor;
     ctx.lineWidth = 1;
     for (var g = 0; g <= 3; g++) {
@@ -235,10 +243,25 @@
       ctx.moveTo(pad.left, gy);
       ctx.lineTo(w - pad.right, gy);
       ctx.stroke();
+
+      var priceAtLine = max - (range / 3) * g;
+      ctx.fillStyle = labelColor;
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('$' + priceAtLine.toFixed(2), pad.left - 8, gy);
     }
 
     function xAtIndex(i) { return pad.left + (innerW * i) / (bars.length - 1 || 1); }
     function yAt(v) { return pad.top + innerH - ((v - min) / range) * innerH; }
+
+    // X-axis date labels: first, middle, last bar.
+    var xTickIndices = bars.length > 1 ? [0, Math.floor((bars.length - 1) / 2), bars.length - 1] : [0];
+    ctx.fillStyle = labelColor;
+    ctx.textBaseline = 'top';
+    xTickIndices.forEach(function (i, n) {
+      ctx.textAlign = n === 0 ? 'left' : (n === xTickIndices.length - 1 ? 'right' : 'center');
+      ctx.fillText(fmtAxisDate(bars[i].t), xAtIndex(i), pad.top + innerH + 8);
+    });
 
     ctx.beginPath();
     ctx.moveTo(xAtIndex(0), yAt(closes[0]));

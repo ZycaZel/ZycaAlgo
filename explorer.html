@@ -42,6 +42,13 @@
 
   .il-marker-legend { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); margin-top: 12px; }
   .il-marker-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--stamp); display: inline-block; }
+
+  .il-news-list { border: 1px solid var(--line); background: var(--paper-raised); }
+  .il-news-row { padding: 14px 18px; border-bottom: 1px solid var(--line-soft); }
+  .il-news-row:last-child { border-bottom: none; }
+  .il-news-title { display: block; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.92rem; line-height: 1.4; }
+  .il-news-title:hover, .il-news-title:focus-visible { color: var(--stamp); }
+  .il-news-meta { font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); margin-top: 5px; }
 </style>
 </head>
 <body>
@@ -130,9 +137,10 @@
       </div>
       <p class="il-finetext">
         THIS PAGE IS A PRODUCT PREVIEW. ZycaAlgo is not a registered investment adviser or broker-dealer and this page does
-        not constitute investment, legal, or tax advice. Data shown is derived from public filings made available by the
-        U.S. Securities and Exchange Commission via EDGAR and market data from Alpaca; ZycaAlgo is not affiliated with,
-        endorsed by, or sponsored by either. See <a href="/legal" style="color: inherit;">/legal</a> for full disclosures.
+        not constitute investment, legal, or tax advice. Insider-buy data is derived from public filings made available by
+        the U.S. Securities and Exchange Commission via EDGAR. Price history and news on this page are sourced from Yahoo
+        Finance. ZycaAlgo is not affiliated with, endorsed by, or sponsored by the SEC or Yahoo Finance. See
+        <a href="/legal" style="color: inherit;">/legal</a> for full disclosures.
       </p>
     </div>
   </footer>
@@ -191,6 +199,13 @@
 
   function fmtMoney(n) {
     return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function fmtNewsDate(iso) {
+    if (!iso) return '';
+    return new Date(iso).toLocaleString('en-US', {
+      timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit',
+    }) + ' ET';
   }
 
   function drawChart(canvas, bars, buys) {
@@ -286,7 +301,16 @@
         ? '<div class="il-tablewrap" style="margin-top:14px;"><table class="il-signals"><thead><tr>' +
           '<th>Date</th><th>Insider</th><th>Title</th><th class="il-num">Price</th><th class="il-num">Shares</th><th class="il-num">Total</th><th>Filing</th>' +
           '</tr></thead><tbody>' + buyRows + '</tbody></table></div>'
-        : '<div class="il-explorer-state">No genuine open-market buys by an officer or director in this window.</div>');
+        : '<div class="il-explorer-state">No genuine open-market buys by an officer or director in this window.</div>') +
+      '<div class="il-caption" style="margin-top:28px;"><span>Recent news</span></div>' +
+      (data.news && data.news.length
+        ? '<div class="il-news-list" style="margin-top:14px;">' + data.news.map(function (n) {
+            return '<div class="il-news-row">' +
+              '<a class="il-news-title" href="' + n.link + '" target="_blank" rel="noopener">' + n.title + '</a>' +
+              '<div class="il-news-meta">' + (n.publisher || '') + (n.published ? ' &middot; ' + fmtNewsDate(n.published) : '') + '</div>' +
+              '</div>';
+          }).join('') + '</div>'
+        : '<div class="il-explorer-state" style="padding:20px 0;">No recent news found for this ticker.</div>');
 
     var canvas = document.getElementById('explorer-canvas');
     if (canvas) drawChart(canvas, data.bars, data.buys);

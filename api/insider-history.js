@@ -10,10 +10,26 @@ const SEC_HEADERS = {
   "Accept-Encoding": "gzip, deflate",
 };
 
+// Yahoo Finance's unofficial endpoints expect a normal-looking browser
+// request, not an identifying bot User-Agent like SEC requires.
+const YAHOO_HEADERS = {
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+};
+
 async function fetchText(url) {
   const r = await fetch(url, { headers: SEC_HEADERS });
   if (!r.ok) return null;
   return await r.text();
+}
+
+async function fetchYahooJson(url) {
+  const r = await fetch(url, { headers: YAHOO_HEADERS });
+  if (!r.ok) return null;
+  try {
+    return await r.json();
+  } catch {
+    return null;
+  }
 }
 
 function extract(re, text) {
@@ -137,16 +153,31 @@ async function mapWithConcurrency(items, limit, fn) {
 }
 
 async function getPriceBars(ticker, start) {
-  const url = `https://data.alpaca.markets/v2/stocks/bars?symbols=${ticker}&timeframe=1Day&start=${start}&limit=1000`;
-  const r = await fetch(url, {
-    headers: {
-      "APCA-API-KEY-ID": process.env.APCA_API_KEY_ID,
-      "APCA-API-SECRET-KEY": process.env.APCA_API_SECRET_KEY,
-    },
-  });
-  if (!r.ok) return [];
-  const data = await r.json();
-  return (data.bars && data.bars[ticker]) || [];
+  const period1 = Math.floor(new Date(start).getTime() / 1000);
+  const period2 = Math.floor(Date.now() / 1000);
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}`
+    + `?period1=${period1}&period2=${period2}&interval=1d`;
+  const data = await fetchYahooJson(url);
+  const result = data && data.chart && data.chart.result && data.chart.result[0];
+  if (!result || !result.timestamp) return [];
+  const closes = result.indicators.quote[0].close;
+  const volumes = result.indicators.quote[0].volume;
+  return result.timestamp
+    .map((t, i) => ({ t: new Date(t * 1000).toISOString(), c: closes[i], v: volumes[i] }))
+    .filter((b) => b.c != null);
+}
+
+async function getNews(ticker) {
+  const url = `https://query1.finance.yahoo.com/v1/finance/search`
+    + `?q=${encodeURIComponent(ticker)}&newsCount=8&quotesCount=0`;
+  const data = await fetchYahooJson(url);
+  const items = (data && data.news) || [];
+  return items.map((n) => ({
+    title: n.title,
+    publisher: n.publisher,
+    link: n.link,
+    published: n.providerPublishTime ? new Date(n.providerPublishTime * 1000).toISOString() : null,
+  }));
 }
 
 export default async function handler(req, res) {
@@ -172,7 +203,10 @@ export default async function handler(req, res) {
     const perFilingResults = await mapWithConcurrency(filings, 5, processFiling);
     const buys = perFilingResults.flat().sort((a, b) => (a.date < b.date ? -1 : 1));
 
-    const bars = await getPriceBars(ticker, sinceStr);
+    const [bars, news] = await Promise.all([
+      getPriceBars(ticker, sinceStr),
+      getNews(ticker),
+    ]);
 
     res.setHeader("Cache-Control", "s-maxage=600, stale-while-revalidate=1800");
     res.status(200).json({
@@ -183,6 +217,7 @@ export default async function handler(req, res) {
       filings_checked: filings.length,
       buys,
       bars: bars.map((b) => ({ t: b.t, c: b.c, v: b.v })),
+      news,
     });
   } catch (err) {
     res.status(500).json({ error: String(err) });

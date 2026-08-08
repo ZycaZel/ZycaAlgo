@@ -1,0 +1,130 @@
+{
+  "tickers": [
+    {
+      "ticker": "TLSA",
+      "company": "Tiziana Life Sciences Ltd",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
+      "signal_count": 2,
+      "sector": "Healthcare",
+      "price": 1.0
+    },
+    {
+      "ticker": "REBN",
+      "company": "Reborn Coffee, Inc.",
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "signal_count": 1,
+      "sector": "Consumer Discretionary",
+      "price": 1.51
+    },
+    {
+      "ticker": "APTV",
+      "company": "Aptiv PLC",
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "signal_count": 1,
+      "sector": "Consumer Discretionary",
+      "price": 49.55
+    },
+    {
+      "ticker": "SAGT",
+      "company": "SAGTEC GLOBAL Ltd",
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "signal_count": 1,
+      "sector": "Technology",
+      "price": 0.75
+    },
+    {
+      "ticker": "ETR",
+      "company": "ENTERGY CORP /DE/",
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "signal_count": 1,
+      "sector": "Utilities",
+      "price": 107.18
+    },
+    {
+      "ticker": "BSX",
+      "company": "BOSTON SCIENTIFIC CORP",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 1,
+      "sector": "Healthcare",
+      "price": 49.31
+    },
+    {
+      "ticker": "XIIIU",
+      "company": "Churchill Capital Corp XIII",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 1,
+      "sector": "Financials",
+      "price": 10.45
+    },
+    {
+      "ticker": "CSGP",
+      "company": "COSTAR GROUP, INC.",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 1,
+      "sector": "Real Estate",
+      "price": 30.24
+    },
+    {
+      "ticker": "IR",
+      "company": "Ingersoll Rand Inc.",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 1,
+      "sector": "Industrials",
+      "price": 86.97
+    },
+    {
+      "ticker": "PFE",
+      "company": "PFIZER INC",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 2,
+      "sector": "Healthcare",
+      "price": 26.76
+    },
+    {
+      "ticker": "TSCO",
+      "company": "TRACTOR SUPPLY CO /DE/",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 1,
+      "sector": "Consumer Discretionary",
+      "price": 34.56
+    },
+    {
+      "ticker": "EVGN",
+      "company": "Evogene Ltd.",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 1,
+      "sector": "Healthcare",
+      "price": 0.6001
+    },
+    {
+      "ticker": "GBFH",
+      "company": "GBank Financial Holdings Inc.",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 6,
+      "sector": "Financials",
+      "price": 20.88
+    },
+    {
+      "ticker": "JBL",
+      "company": "JABIL INC",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "signal_count": 1,
+      "sector": "Technology",
+      "price": 341.22
+    }
+  ]
+}

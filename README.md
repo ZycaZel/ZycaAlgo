@@ -26,6 +26,10 @@ This account is always paper-only. `scripts/trade_manager.py` hard-codes
   optional: if `NOTION_TOKEN` is set, each day's qualifying signals are also
   added to a personal Notion "Stock Watchlist" database (one row per ticker,
   a note per signal). No-op if the env var isn't set.
+- **`scripts/build_watchlist.py`** — aggregates every archived daily scan
+  into `data/watchlist.json`: one row per ticker ever flagged, enriched with
+  sector/price from Yahoo Finance. Read directly by `watchlist.html` (no
+  live API calls on page load).
 
 ## One-time setup
 

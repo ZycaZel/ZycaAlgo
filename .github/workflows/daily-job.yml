@@ -39,6 +39,10 @@ jobs:
           cp "$latest" ../data/latest.json
           cp "$latest" "../data/archive/$latest"
 
+      - name: Rebuild the public watchlist
+        working-directory: scripts
+        run: python build_watchlist.py
+
       - name: Push today's signals to Notion watchlist
         working-directory: scripts
         env:

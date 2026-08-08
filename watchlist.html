@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watchlist &mdash; ZycaAlgo</title>
+<meta name="description" content="Every ticker ZycaAlgo has flagged via a genuine insider open-market buy, updated daily.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='5' fill='%2315130f' stroke='%2315130f' stroke-width='1.4'/%3E%3Cpolyline points='12,13 26,13 12,27 26,27' stroke-width='3.2' stroke='%23e6391d' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3Crect x='28' y='24' width='5' height='7' fill='%232e7d4f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .il-navlinks a[aria-current="page"] { color: var(--stamp); }
+
+  .il-explorer-hero {
+    padding: clamp(48px, 7vw, 80px) 0 clamp(32px, 5vw, 48px);
+    border-bottom: 1px solid var(--line);
+  }
+  .il-explorer-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin: 14px 0 18px; }
+  .il-explorer-hero p { color: var(--ink-soft); max-width: 62ch; margin: 0 0 8px; font-size: 1.05rem; }
+
+  .il-explorer-body { padding: clamp(32px, 5vw, 56px) 0 clamp(56px, 8vw, 88px); }
+  .il-explorer-state { font-family: var(--font-mono); font-size: 0.92rem; color: var(--ink-soft); padding: 40px 0; }
+  .il-explorer-state.il-error { color: var(--loss); }
+
+  table.il-watchlist th { cursor: default; }
+  table.il-watchlist .il-ticker-link { color: var(--ink); text-decoration: none; font-weight: 600; }
+  table.il-watchlist .il-ticker-link:hover, table.il-watchlist .il-ticker-link:focus-visible { color: var(--stamp); }
+  .il-sector-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    background: var(--stamp-soft);
+    color: var(--stamp);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="il-root" id="top">
+
+  <div class="il-topbar">
+    <div class="il-container il-topbar-inner">
+      <span>www.zycaalgo.com</span>
+      <span class="il-market">
+        <span class="il-market-dot" id="market-dot"></span>
+        <span id="market-status">Checking market&hellip;</span>
+        <span>&middot; Paper Trading Environment</span>
+      </span>
+    </div>
+  </div>
+
+  <nav class="il-nav">
+    <div class="il-nav-inner">
+      <a class="il-wordmark" href="/" aria-label="ZycaAlgo home">
+        <svg class="il-logomark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+          <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+        </svg>
+        <span class="il-brand-text">
+          <span class="il-brand-name">ZycaAlgo</span>
+          <span class="il-brand-url">www.zycaalgo.com</span>
+        </span>
+        <span class="il-mark">FORM 4</span>
+      </a>
+      <div class="il-navlinks">
+        <a href="/about">About</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/explorer">Explorer</a>
+        <a href="/watchlist" aria-current="page">Watchlist</a>
+        <a href="/legal">Legal</a>
+        <a href="/#pricing">Pricing</a>
+        <button class="il-btn" data-il-cta>Get started</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="il-explorer-hero">
+    <div class="il-container">
+      <div class="il-eyebrow">Indicator &middot; not a recommendation</div>
+      <h1>Every ticker the system has flagged.</h1>
+      <p>One row per ticker that's ever had a genuine insider open-market buy (code P, officer/director, not a 10b5-1 plan) since ZycaAlgo started scanning. Updated by the same daily job that runs the scanner &mdash; not curated, not filtered by conviction, just every ticker that has cleared the bar at least once.</p>
+    </div>
+  </header>
+
+  <section class="il-explorer-body">
+    <div class="il-container">
+      <div id="watchlist-results">
+        <div class="il-explorer-state">Loading watchlist&hellip;</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="il-footer">
+    <div class="il-container">
+      <div class="il-footer-top">
+        <div class="il-wordmark il-footer-brand">
+          <svg class="il-logomark" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+            <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+            <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+          </svg>
+          <span class="il-brand-text">
+            <span class="il-brand-name">ZycaAlgo</span>
+            <span class="il-brand-url">www.zycaalgo.com</span>
+          </span>
+        </div>
+        <div class="il-footer-links">
+          <a href="/about">About</a>
+          <a href="/methodology">Methodology</a>
+          <a href="/explorer">Explorer</a>
+          <a href="/watchlist" aria-current="page">Watchlist</a>
+          <a href="/legal">Legal</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+      <p class="il-finetext">
+        THIS PAGE IS A PRODUCT PREVIEW. ZycaAlgo is not a registered investment adviser or broker-dealer and this page does
+        not constitute investment, legal, or tax advice. Insider-buy data is derived from public filings made available by
+        the U.S. Securities and Exchange Commission via EDGAR. Sector and price data are sourced from Yahoo Finance.
+        Appearing on this list reflects only that a filing matched the stated filters at least once &mdash; it is not a
+        recommendation, ranking, or endorsement of any kind. See <a href="/legal" style="color: inherit;">/legal</a> for
+        full disclosures.
+      </p>
+    </div>
+  </footer>
+
+  <div class="il-toast" data-il-toast role="status" aria-live="polite">Sign-ups aren't open yet — this is a preview of ZycaAlgo's pricing.</div>
+</div>
+
+<script>
+(function () {
+  var toast = document.querySelector('[data-il-toast]');
+  var timer = null;
+  document.querySelectorAll('[data-il-cta]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!toast) return;
+      clearTimeout(timer);
+      toast.classList.add('il-show');
+      timer = setTimeout(function () { toast.classList.remove('il-show'); }, 3200);
+    });
+  });
+})();
+
+(function () {
+  function updateMarketStatus() {
+    var dot = document.getElementById('market-dot');
+    var status = document.getElementById('market-status');
+    if (!dot || !status) return;
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', hour12: false,
+      hour: '2-digit', minute: '2-digit', weekday: 'short',
+    }).formatToParts(new Date());
+    var map = {};
+    parts.forEach(function (p) { map[p.type] = p.value; });
+    var hour = parseInt(map.hour, 10);
+    var minute = parseInt(map.minute, 10);
+    var minutesNow = hour * 60 + minute;
+    var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(map.weekday) !== -1;
+    var isOpen = isWeekday && minutesNow >= 9 * 60 + 30 && minutesNow < 16 * 60;
+    dot.className = 'il-market-dot ' + (isOpen ? 'il-open' : 'il-closed');
+    var displayHour = hour % 12 || 12;
+    var displayMinute = minute < 10 ? '0' + minute : minute;
+    var timeLabel = displayHour + ':' + displayMinute + (hour >= 12 ? 'pm' : 'am') + ' ET';
+    status.textContent = (isOpen ? 'Market open' : 'Market closed') + ' — ' + timeLabel;
+  }
+  updateMarketStatus();
+  setInterval(updateMarketStatus, 30000);
+})();
+
+(function () {
+  var resultsEl = document.getElementById('watchlist-results');
+
+  function fmtMoney(n) {
+    if (n == null) return '&mdash;';
+    return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function fmtDate(d) {
+    return new Date(d + 'T00:00:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' });
+  }
+
+  fetch('/data/watchlist.json')
+    .then(function (r) { if (!r.ok) throw new Error('failed to load'); return r.json(); })
+    .then(function (data) {
+      var rows = (data.tickers || []).map(function (t) {
+        return '<tr>' +
+          '<td class="il-ticker-cell"><a class="il-ticker-link" href="/explorer?ticker=' + encodeURIComponent(t.ticker) + '">' + t.ticker + '</a></td>' +
+          '<td>' + (t.company || '') + '</td>' +
+          '<td>' + (t.sector ? '<span class="il-sector-tag">' + t.sector + '</span>' : '&mdash;') + '</td>' +
+          '<td class="il-num">' + fmtMoney(t.price) + '</td>' +
+          '<td class="il-num">' + t.signal_count + '</td>' +
+          '<td>' + fmtDate(t.last_seen) + '</td>' +
+          '</tr>';
+      }).join('');
+
+      resultsEl.innerHTML =
+        '<div class="il-caption"><span>' + (data.tickers || []).length + ' ticker' + ((data.tickers || []).length === 1 ? '' : 's') + ' flagged since scanning began</span></div>' +
+        (data.tickers && data.tickers.length
+          ? '<div class="il-tablewrap" style="margin-top:14px;"><table class="il-signals il-watchlist"><thead><tr>' +
+            '<th>Ticker</th><th>Company</th><th>Sector</th><th class="il-num">Price</th><th class="il-num">Signals</th><th>Last flagged</th>' +
+            '</tr></thead><tbody>' + rows + '</tbody></table></div>'
+          : '<div class="il-explorer-state">No tickers flagged yet.</div>');
+    })
+    .catch(function () {
+      resultsEl.innerHTML = '<div class="il-explorer-state il-error">Couldn&rsquo;t load the watchlist &mdash; try refreshing.</div>';
+    });
+})();
+</script>
+</body>
+</html>

@@ -251,5 +251,60 @@
     "stop": "$91.67",
     "event": "ENTRY",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/65984/000006598426000287/0000065984-26-000287-index.htm"
+  },
+  {
+    "timestamp": "2026-08-08T10:02:22.581988+00:00",
+    "date": "2026-08-07",
+    "ticker": "BRVE",
+    "insider": "Murdoch Travis",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2131524/000147083126000798/0001470831-26-000798-index.htm"
+  },
+  {
+    "timestamp": "2026-08-08T10:02:22.895858+00:00",
+    "date": "2026-08-07",
+    "ticker": "ABTC",
+    "insider": "Mateen Justin",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $536,559,591 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1755953/000119312526340270/0001193125-26-340270-index.htm"
+  },
+  {
+    "timestamp": "2026-08-08T10:02:23.226963+00:00",
+    "date": "2026-08-07",
+    "ticker": "ONMD",
+    "insider": "Kosasa Thomas",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $33,748,712 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1989846/000149315226036660/0001493152-26-036660-index.htm"
+  },
+  {
+    "timestamp": "2026-08-08T10:02:23.504818+00:00",
+    "date": "2026-08-07",
+    "ticker": "GBFH",
+    "insider": "Griege Charles William Jr.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $303,081,523 < $1B; avg volume 59,771 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2058876/000119312526340296/0001193125-26-340296-index.htm"
+  },
+  {
+    "timestamp": "2026-08-08T10:02:23.838955+00:00",
+    "date": "2026-08-07",
+    "ticker": "CCB",
+    "insider": "Sprink Eric M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $692,699,908 < $1B; avg volume 110,525 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1437958/000129964726000020/0001299647-26-000020-index.htm"
   }
 ]

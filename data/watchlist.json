@@ -1,6 +1,51 @@
 {
   "tickers": [
     {
+      "ticker": "GBFH",
+      "company": "GBank Financial Holdings Inc.",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-07",
+      "signal_count": 7,
+      "sector": "Financials",
+      "price": 20.88
+    },
+    {
+      "ticker": "BRVE",
+      "company": "Braveheart Bio, Inc.",
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07",
+      "signal_count": 4,
+      "sector": "Healthcare",
+      "price": 30.0
+    },
+    {
+      "ticker": "ABTC",
+      "company": "American Bitcoin Corp.",
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07",
+      "signal_count": 2,
+      "sector": "Financials",
+      "price": 6.47
+    },
+    {
+      "ticker": "ONMD",
+      "company": "OneMedNet Corp",
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07",
+      "signal_count": 1,
+      "sector": "Healthcare",
+      "price": 0.6245
+    },
+    {
+      "ticker": "CCB",
+      "company": "COASTAL FINANCIAL CORP",
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07",
+      "signal_count": 3,
+      "sector": "Financials",
+      "price": 45.34
+    },
+    {
       "ticker": "TLSA",
       "company": "Tiziana Life Sciences Ltd",
       "first_seen": "2026-08-05",
@@ -107,15 +152,6 @@
       "signal_count": 1,
       "sector": "Healthcare",
       "price": 0.6001
-    },
-    {
-      "ticker": "GBFH",
-      "company": "GBank Financial Holdings Inc.",
-      "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
-      "signal_count": 6,
-      "sector": "Financials",
-      "price": 20.88
     },
     {
       "ticker": "JBL",

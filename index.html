@@ -145,6 +145,10 @@
         </div>
         <p>The six positions below are the real result of running the full pipeline against a single session's filings — not a backtest, not a curated example.</p>
       </div>
+      <div id="cluster-highlight" class="il-cluster-highlight" hidden>
+        <div class="il-cluster-highlight-head">&#128293; Cluster buys today</div>
+        <div id="cluster-highlight-list" class="il-cluster-highlight-list"></div>
+      </div>
       <div class="il-tablewrap">
         <table class="il-signals">
           <thead>
@@ -532,6 +536,24 @@ function ilAnimateCount(el, end, fmt, duration) {
     if (termStatus) termStatus.textContent = 'LIVE';
 
     var buys = signals.qualifying_buys || [];
+    var clusterTickers = signals.cluster_tickers || {};
+    var clusterBox = document.getElementById('cluster-highlight');
+    var clusterList = document.getElementById('cluster-highlight-list');
+    var clusterEntries = Object.keys(clusterTickers);
+    if (clusterBox && clusterList && clusterEntries.length) {
+      clusterList.innerHTML = clusterEntries.map(function (ticker) {
+        var buy = buys.filter(function (b) { return b.ticker === ticker; })[0];
+        var company = buy ? buy.company : '';
+        var names = clusterTickers[ticker];
+        return '<div class="il-cluster-item">' +
+          '<span class="il-cluster-ticker">' + ticker + '</span>' +
+          (company ? '<span class="il-cluster-company">' + company + '</span>' : '') +
+          '<span class="il-cluster-insiders">' + names.length + ' insiders: ' + names.join(', ') + '</span>' +
+          '</div>';
+      }).join('');
+      clusterBox.hidden = false;
+    }
+
     // Use the trade log for "passed the liquidity filter" rather than live
     // Alpaca positions - a same-day entry that hasn't filled yet (e.g. job
     // ran while markets were closed) is still a real ENTRY, just not a

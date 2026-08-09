@@ -529,6 +529,34 @@
   table.il-signals .il-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
   table.il-signals .il-ticker-cell { font-family: var(--font-mono); font-weight: 600; white-space: nowrap; }
   table.il-signals .il-flag { color: var(--stamp); font-size: 0.75em; margin-left: 4px; }
+  .il-cluster-highlight {
+    border: 1px solid var(--stamp);
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 32px -8px rgba(255, 82, 64, 0.35);
+  }
+  .il-cluster-highlight-head {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--stamp);
+    margin-bottom: 12px;
+  }
+  .il-cluster-highlight-list { display: flex; flex-direction: column; gap: 10px; }
+  .il-cluster-item { font-size: 0.88rem; line-height: 1.5; }
+  .il-cluster-ticker { font-family: var(--font-mono); font-weight: 700; color: var(--ink); margin-right: 8px; }
+  .il-cluster-company { color: var(--ink-soft); margin-right: 8px; }
+  .il-cluster-insiders { color: var(--ink-soft); display: block; font-size: 0.84rem; }
+  @media (min-width: 640px) {
+    .il-cluster-insiders { display: inline; }
+    .il-cluster-insiders::before { content: "— "; }
+  }
+
   .il-caption {
     display: flex;
     justify-content: space-between;

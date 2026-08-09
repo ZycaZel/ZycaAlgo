@@ -49,6 +49,12 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: python push_signals_to_notion.py ../data/latest.json
 
+      - name: Post today's signals to Discord
+        working-directory: scripts
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python discord_notify.py ../data/latest.json
+
       - name: Manage existing positions (stops / trailing / time-stop)
         working-directory: scripts
         env:

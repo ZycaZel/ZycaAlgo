@@ -30,6 +30,10 @@ This account is always paper-only. `scripts/trade_manager.py` hard-codes
   into `data/watchlist.json`: one row per ticker ever flagged, enriched with
   sector/price from Yahoo Finance. Read directly by `watchlist.html` (no
   live API calls on page load).
+- **`scripts/discord_notify.py`** — optional: if `DISCORD_WEBHOOK_URL` is
+  set, each day's qualifying signals are posted to a Discord channel via
+  webhook, with cluster buys (2+ different insiders on the same ticker
+  within 30 days) called out first. No-op if the env var isn't set.
 
 ## One-time setup
 
@@ -59,8 +63,9 @@ secret**. Add two:
 - `APCA_API_KEY_ID`
 - `APCA_API_SECRET_KEY`
 
-Optional third secret, only if you want the Notion watchlist sync (see
-below): `NOTION_TOKEN`.
+Optional additional secrets:
+- `NOTION_TOKEN` — for the Notion watchlist sync (see below)
+- `DISCORD_WEBHOOK_URL` — for Discord alerts on new signals
 
 You can test the workflow immediately without waiting for the schedule:
 **Actions tab -> ZycaAlgo daily scan + paper trade -> Run workflow.**

@@ -18,6 +18,7 @@ keys - only used here for historical market data, read-only).
 
 import csv
 import io
+import json
 import os
 import sys
 import time
@@ -49,6 +50,28 @@ def quarters_between(start_year, start_q, end_year, end_q):
             q = 1
             y += 1
     return out
+
+
+def latest_available_quarter():
+    """SEC publishes each quarter's bulk dataset with a lag after quarter-end
+    (typically a few weeks). Starting from the current calendar quarter, walk
+    backward until one actually exists, so a scheduled refresh never hard-codes
+    an assumption about exactly how long that lag is."""
+    now = datetime.now(timezone.utc)
+    y, q = now.year, (now.month - 1) // 3 + 1
+    for _ in range(4):  # look back at most a year
+        url = DATA_URL.format(q=f"{y}q{q}")
+        try:
+            r = requests.head(url, headers=SEC_HEADERS, timeout=15, allow_redirects=True)
+            if r.status_code == 200:
+                return y, q
+        except requests.RequestException:
+            pass
+        q -= 1
+        if q < 1:
+            q = 4
+            y -= 1
+    raise RuntimeError("Could not find any published quarterly dataset in the last year.")
 
 
 def download_quarter(q):
@@ -211,7 +234,7 @@ def main():
         sys.exit(1)
 
     start_year, start_q = 2023, 3
-    end_year, end_q = 2025, 2
+    end_year, end_q = latest_available_quarter()
     quarters = quarters_between(start_year, start_q, end_year, end_q)
     print(f"Building signal set from {quarters[0]} to {quarters[-1]} ({len(quarters)} quarters)...")
 
@@ -300,6 +323,15 @@ def write_report(signals, results, window_label):
     cutoff = signals["filing_date"].quantile(0.7)
     print(f"\nIn-sample: filing_date < {cutoff.date()}  |  Out-of-sample: filing_date >= {cutoff.date()}\n")
 
+    summary = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "window_label": window_label,
+        "signal_count": len(signals),
+        "signals_with_price_data": len(results),
+        "in_sample_cutoff": str(cutoff.date()),
+        "horizons": {},
+    }
+
     report_lines = []
     report_lines.append(f"# ZycaAlgo insider-buy signal backtest\n")
     report_lines.append(f"Window: {window_label}  |  Signals: {len(signals)}  |  With price data: {len(results)}\n")
@@ -320,15 +352,18 @@ def write_report(signals, results, window_label):
             "t-stat | t-test p | Wilcoxon p |"
         )
         report_lines.append("|---|---|---|---|---|---|---|---|")
+        summary["horizons"][str(h)] = {}
         for label, sub in [
-            ("Full sample", results),
-            ("In-sample", results[results["filing_date"] < cutoff]),
-            ("Out-of-sample", results[results["filing_date"] >= cutoff]),
+            ("full_sample", results),
+            ("in_sample", results[results["filing_date"] < cutoff]),
+            ("out_of_sample", results[results["filing_date"] >= cutoff]),
         ]:
+            display_label = {"full_sample": "Full sample", "in_sample": "In-sample", "out_of_sample": "Out-of-sample"}[label]
             col = f"excess_ret_{h}d"
             vals = sub[col].dropna()
             if len(vals) < 2:
-                report_lines.append(f"| {label} | {len(vals)} | - | - | - | - | - | - |")
+                report_lines.append(f"| {display_label} | {len(vals)} | - | - | - | - | - | - |")
+                summary["horizons"][str(h)][label] = {"n": len(vals)}
                 continue
             mean = vals.mean()
             median = vals.median()
@@ -339,9 +374,13 @@ def write_report(signals, results, window_label):
             except ValueError:
                 wpval = float("nan")
             report_lines.append(
-                f"| {label} | {len(vals)} | {mean:+.2%} | {median:+.2%} | {hit:.1%} | "
+                f"| {display_label} | {len(vals)} | {mean:+.2%} | {median:+.2%} | {hit:.1%} | "
                 f"{tstat:.2f} | {tpval:.4f} | {wpval:.4f} |"
             )
+            summary["horizons"][str(h)][label] = {
+                "n": len(vals), "mean": mean, "median": median, "hit_rate": hit,
+                "t_stat": tstat, "t_test_p": tpval, "wilcoxon_p": wpval,
+            }
 
     report = "\n".join(report_lines) + "\n"
     report_path = os.path.join(OUT_DIR, "backtest_report.md")
@@ -349,6 +388,11 @@ def write_report(signals, results, window_label):
         f.write(report)
     print(f"\nWrote {report_path}")
     print(report)
+
+    summary_path = os.path.join(OUT_DIR, "summary.json")
+    with open(summary_path, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2)
+    print(f"Wrote {summary_path}")
 
 
 if __name__ == "__main__":

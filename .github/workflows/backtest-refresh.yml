@@ -1,0 +1,47 @@
+name: ZycaAlgo backtest refresh
+
+on:
+  schedule:
+    # 1st of each month, 06:00 UTC. Monthly (not daily) because the
+    # underlying data is quarterly and the full run downloads SEC's bulk
+    # datasets + pulls price history for every signal - not something to
+    # repeat more often than the data actually changes.
+    - cron: "0 6 1 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Rerun the backtest through the latest published SEC quarter
+        working-directory: scripts
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: python backtest_insider_signals.py
+
+      - name: Regenerate the results chart
+        working-directory: scripts
+        run: python plot_backtest_results.py
+
+      - name: Commit updated backtest data
+        run: |
+          git config user.name "zycaalgo-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/backtest/backtest_report.md data/backtest/summary.json \
+                   data/backtest/signals_raw.csv data/backtest/signals_with_returns.csv \
+                   data/backtest/backtest_chart.png
+          git diff --cached --quiet || git commit -m "Backtest refresh ($(date -u +%Y-%m-%d))"
+          git push

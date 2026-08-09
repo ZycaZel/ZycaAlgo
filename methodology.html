@@ -148,21 +148,23 @@
     </ul>
 
     <h2>Does the signal actually work? A backtest</h2>
-    <p>The filter definition above isn't just a hypothesis. It was tested against SEC's official historical bulk Form 3/4/5 dataset &mdash; the same officer/director, code-P, non-10b5-1, $100K+ definition, reconstructed for every qualifying signal from 2023 Q3 through 2025 Q2 (4,014 signals after collapsing duplicate line items down to one per ticker per filing day). Forward returns were measured against SPY from the first trading day <em>on or after the filing date</em> &mdash; not the transaction date &mdash; since that's the earliest point a real-time scanner could actually have acted.</p>
+    <p>The filter definition above isn't just a hypothesis. It was tested against SEC's official historical bulk Form 3/4/5 dataset &mdash; the same officer/director, code-P, non-10b5-1, $100K+ definition, reconstructed for every qualifying signal <span id="backtest-window">from 2023 Q3 through 2025 Q2 (4,014 signals after collapsing duplicate line items down to one per ticker per filing day)</span>. Forward returns were measured against SPY from the first trading day <em>on or after the filing date</em> &mdash; not the transaction date &mdash; since that's the earliest point a real-time scanner could actually have acted.</p>
     <table class="il-endpoint-table">
       <thead>
         <tr><th>Horizon</th><th>Mean excess return</th><th>Median excess return</th><th>Hit rate</th><th>Out-of-sample significance</th></tr>
       </thead>
-      <tbody>
+      <tbody id="backtest-table-body">
         <tr><td>5 trading days</td><td>+2.38%</td><td>+0.92%</td><td>57.1%</td><td>p &lt; 0.0001 (both tests agree)</td></tr>
         <tr><td>30 trading days</td><td>+0.90%</td><td>&minus;1.58%</td><td>44.6%</td><td>Tests disagree &mdash; see below</td></tr>
         <tr><td>90 trading days</td><td>+0.80%</td><td>&minus;4.53%</td><td>40.8%</td><td>Tests disagree &mdash; see below</td></tr>
       </tbody>
     </table>
+    <p class="il-muted" id="backtest-refreshed" style="margin-top:-24px;">Table shown reflects the last completed run; see the note below for how it's kept current.</p>
     <p>The most recent 30% of signals by filing date (from 2024-12-18 on) were held out and never used while defining the filter above &mdash; the 5-day result replicates on that untouched data (+2.54% mean, 58.8% hit rate, p &lt; 0.0001), which is the strongest evidence this isn't curve-fit.</p>
     <p>The 30- and 90-day rows need a caveat the mean alone hides. A standard t-test on those two horizons comes back <em>not</em> significant out-of-sample (p = 0.70 and p = 0.87) &mdash; that reads as "the edge fades and disappears." But a distribution-free test on the median (Wilcoxon signed-rank) stays highly significant at every horizon past 5 days (p &lt; 0.0001), and since the median itself is negative, that significance runs the other way: the <em>typical</em> signal is significantly behind SPY by 90 days, even though a handful of large winners keep dragging the mean back up to a small positive number. A test built on the mean misses this; a test built on ranks doesn't.</p>
     <p class="il-muted">Practical reading: the data supports treating this as a short-horizon (roughly one-week) drift signal, not a long-term stock pick &mdash; consistent with "a genuine, non-scheduled purchase carries real information" rather than "insiders are always right." This backtest measures the entry signal in isolation against fixed horizons; it is not a backtest of the live system's actual exit logic (trailing stop, 90-day flat-timeout) above, so it will not exactly match the paper account's realized returns. Full methodology, limitations, and raw signal-level data: <a href="https://github.com/ZycaZel/ZycaAlgo/blob/main/data/backtest/writeup.md" target="_blank" rel="noopener">the backtest write-up on GitHub</a>.</p>
     <img src="/data/backtest/backtest_chart.png" alt="Mean vs. median excess return by horizon, and in-sample vs. out-of-sample decay" style="width:100%; height:auto; border:1px solid var(--line); margin: 8px 0 40px;">
+    <p class="il-muted">The table and chart above rerun automatically on the 1st of each month against whatever quarter SEC has most recently published, so the numbers stay current rather than describing a one-time snapshot. The specific figures cited in the paragraphs above (the +2.38% five-day result, the 30/90-day reversal) reflect the run as of this page's last edit &mdash; they'll drift slightly from the live table as new data comes in, though the qualitative finding (short-horizon drift, longer-horizon reversal caught only by the rank-based test) is not expected to flip from one month of additional data. Check the table itself, not this paragraph, for the exact current numbers.</p>
 
     <h2>What runs, and when</h2>
     <div class="il-log-block">
@@ -283,6 +285,66 @@
   }
   updateMarketStatus();
   setInterval(updateMarketStatus, 30000);
+})();
+
+// ---------------------------------------------------------------------
+// Backtest table: replaces the static specimen numbers with the latest
+// auto-refreshed run (data/backtest/summary.json), if it's reachable.
+// Leaves the specimen in place otherwise, so the page never shows a
+// broken/empty table.
+// ---------------------------------------------------------------------
+(function () {
+  function fmtPct(v) { return (v >= 0 ? '+' : '') + (v * 100).toFixed(2) + '%'; }
+
+  function fmtWindow(label, signalCount) {
+    var m = /^(\d{4})q(\d) - (\d{4})q(\d)$/.exec(label || '');
+    var span = m ? ('from ' + m[1] + ' Q' + m[2] + ' through ' + m[3] + ' Q' + m[4]) : 'across the full historical window';
+    return span + ' (' + signalCount.toLocaleString('en-US') + ' signals after collapsing duplicate line items down to one per ticker per filing day)';
+  }
+
+  function significanceLabel(outOfSample) {
+    if (!outOfSample || outOfSample.n == null || outOfSample.n < 2) return 'Insufficient out-of-sample data';
+    var tSig = outOfSample.t_test_p < 0.05;
+    var wSig = outOfSample.wilcoxon_p < 0.05;
+    if (tSig && wSig) {
+      var p = Math.max(outOfSample.t_test_p, outOfSample.wilcoxon_p);
+      return (p < 0.0001 ? 'p &lt; 0.0001' : 'p &lt; 0.05') + ' (both tests agree)';
+    }
+    if (!tSig && !wSig) return 'Not significant out-of-sample';
+    return 'Tests disagree &mdash; see below';
+  }
+
+  fetch('/data/backtest/summary.json')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (summary) {
+      if (!summary || !summary.horizons) return; // keep the specimen numbers
+
+      var windowEl = document.getElementById('backtest-window');
+      if (windowEl) windowEl.textContent = fmtWindow(summary.window_label, summary.signal_count);
+
+      var tbody = document.getElementById('backtest-table-body');
+      if (tbody) {
+        var horizonOrder = ['5', '30', '90'];
+        tbody.innerHTML = horizonOrder.map(function (h) {
+          var horizon = summary.horizons[h];
+          if (!horizon) return '';
+          var full = horizon.full_sample, oos = horizon.out_of_sample;
+          if (!full || full.n == null) return '<tr><td>' + h + ' trading days</td><td colspan="4">Not enough data yet</td></tr>';
+          return '<tr><td>' + h + ' trading days</td>' +
+            '<td>' + fmtPct(full.mean) + '</td>' +
+            '<td>' + fmtPct(full.median) + '</td>' +
+            '<td>' + (full.hit_rate * 100).toFixed(1) + '%</td>' +
+            '<td>' + significanceLabel(oos) + '</td></tr>';
+        }).join('');
+      }
+
+      var refreshedEl = document.getElementById('backtest-refreshed');
+      if (refreshedEl && summary.generated_at) {
+        var d = new Date(summary.generated_at);
+        refreshedEl.textContent = 'Table last refreshed ' + d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) + ' (reruns automatically on the 1st of each month).';
+      }
+    })
+    .catch(function () { /* keep the specimen numbers */ });
 })();
 </script>
 </body>

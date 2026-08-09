@@ -106,6 +106,12 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    min-width: 0;
+  }
+  @media (max-width: 480px) {
+    .il-topbar-inner { flex-wrap: nowrap; }
+    .il-topbar-inner > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .il-market > span:last-child { display: none; } /* "· Paper Trading Environment" - already stated on the page itself */
   }
   .il-market-dot {
     width: 6px;
@@ -191,6 +197,46 @@
     white-space: nowrap;
   }
   .il-navlinks a:hover, .il-navlinks a:focus-visible { color: var(--ink); }
+
+  /* ---------- MOBILE NAV (checkbox-driven, no JS required) ---------- */
+  .il-nav-toggle-input { position: absolute; opacity: 0; pointer-events: none; }
+  .il-nav-toggle-label {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--glass-bg);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .il-nav-toggle-label svg { display: block; }
+  .il-nav-toggle-input:focus-visible ~ .il-nav-toggle-label { outline: 2px solid var(--focus); outline-offset: 2px; }
+  @media (max-width: 640px) {
+    .il-nav {  position: relative; }
+    .il-nav-toggle-label { display: flex; }
+    .il-navlinks {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--paper-raised);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 16px 32px -12px rgba(0,0,0,0.5);
+      padding: 6px clamp(20px, 4vw, 48px) 16px;
+      z-index: 60;
+    }
+    /* every link shows in the mobile menu, overriding the desktop-only breakpoint hides above */
+    .il-navlinks a { display: block !important; padding: 13px 0; border-bottom: 1px solid var(--line-soft); }
+    .il-navlinks .il-btn { margin-top: 12px; text-align: center; }
+    .il-nav-toggle-input:checked ~ .il-navlinks { display: flex; }
+  }
 
   .il-btn {
     font-family: var(--font-body);

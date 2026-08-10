@@ -83,6 +83,22 @@ jobs:
           sleep 15
           python trade_manager.py manage
 
+      - name: Manage AI-managed traders' own accounts
+        # Optional layer on top of the demo account above: every trader who
+        # selected AI-managed mode and connected their own Alpaca paper
+        # account (via /account) gets the same enter+manage logic run
+        # against their own account, in their own separate state files
+        # (data/users/<id>/) - never touches data/positions_state.json or
+        # trades.md, which stay specific to the site's own demo account.
+        # No-op (prints a message, exits 0) if the Supabase/encryption
+        # secrets below aren't set, so this is fully optional infrastructure.
+        working-directory: scripts
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CREDENTIAL_ENCRYPTION_KEY: ${{ secrets.CREDENTIAL_ENCRYPTION_KEY }}
+        run: python run_for_ai_managed_users.py ../data/latest.json
+
       - name: Friday weekly summary
         working-directory: scripts
         env:

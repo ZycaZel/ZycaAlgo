@@ -37,6 +37,19 @@ This account is always paper-only. `scripts/trade_manager.py` hard-codes
 - Both scheduled workflows (`daily-job.yml`, `backtest-refresh.yml`) post
   a failure alert to the same Discord webhook if any step fails, so a
   broken run doesn't just sit there unnoticed.
+- **`account.html`** — real accounts (Supabase Auth), a per-user mode
+  choice (manual vs AI-managed), a personal watchlist, and - if a trader
+  connects their own Alpaca paper account - AI-managed mode. See
+  "Optional: accounts and AI-managed trading" below.
+- **`api/alpaca-connection.js`** — the only code path that ever touches a
+  trader's Alpaca credentials: verifies their Supabase session, validates
+  the keys against Alpaca before saving, encrypts them (AES-256-GCM), and
+  stores them in a table with no client-readable RLS policies at all.
+- **`scripts/run_for_ai_managed_users.py`** — runs the same enter/manage
+  logic as `trade_manager.py`, once per AI-managed trader with a connected
+  account, each in their own state files under `data/users/<id>/` -
+  completely separate from the site's own demo account. No-op if the
+  Supabase/encryption secrets aren't set.
 
 ## One-time setup
 

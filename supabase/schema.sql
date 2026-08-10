@@ -89,3 +89,23 @@ create policy "insert own watchlist items"
 create policy "delete own watchlist items"
   on public.watchlist_items for delete
   using (auth.uid() = user_id);
+
+-- ---------------------------------------------------------------------
+-- Phase 3: each AI-managed trader's own Alpaca paper credentials,
+-- encrypted (AES-256-GCM) before they ever reach this table. Deliberately
+-- has NO row level security policies at all - not "users can read their
+-- own row," genuinely zero policies - which means the anon/authenticated
+-- roles used by the site's own client-side JS can never read or write
+-- this table under any circumstances, full stop. The only way in or out
+-- is the service_role key, which is never sent to a browser: it lives in
+-- Vercel's server-side env (for the connect/disconnect API) and as a
+-- GitHub Actions secret (for the daily job that actually trades).
+-- ---------------------------------------------------------------------
+create table if not exists public.alpaca_connections (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  encrypted_api_key text not null,
+  encrypted_api_secret text not null,
+  connected_at timestamptz not null default now()
+);
+
+alter table public.alpaca_connections enable row level security;

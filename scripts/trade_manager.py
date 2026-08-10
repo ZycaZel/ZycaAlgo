@@ -55,6 +55,25 @@ TRADES_MD_PATH = os.path.join(DATA_DIR, "..", "trades.md")
 TRADES_JSON_PATH = os.path.join(DATA_DIR, "trades.json")
 
 
+def configure(api_key, api_secret, state_path, trades_md_path, trades_json_path):
+    """Repoints this module at a different account and a different set of
+    state/log files. Used by run_for_ai_managed_users.py to process each
+    AI-managed trader's own Alpaca account in turn, one at a time, fully
+    completing one user's enter+manage cycle before reconfiguring for the
+    next - never two users' credentials or state files active at once.
+
+    The default CLI usage (`python trade_manager.py enter|manage|summary`,
+    which is what the daily job runs for the site's own demo account) never
+    calls this and is completely unaffected - it keeps using the
+    APCA_API_KEY_ID / APCA_API_SECRET_KEY env vars and the paths above."""
+    global API_KEY, API_SECRET, STATE_PATH, TRADES_MD_PATH, TRADES_JSON_PATH
+    API_KEY = api_key
+    API_SECRET = api_secret
+    STATE_PATH = state_path
+    TRADES_MD_PATH = trades_md_path
+    TRADES_JSON_PATH = trades_json_path
+
+
 def _headers():
     if not API_KEY or not API_SECRET:
         raise RuntimeError(

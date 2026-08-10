@@ -163,9 +163,9 @@
 
   <header class="il-explorer-hero">
     <div class="il-container">
-      <div class="il-eyebrow">Account &middot; Phase 1 preview</div>
+      <div class="il-eyebrow">Account</div>
       <h1>Choose how ZycaAlgo works for you.</h1>
-      <p>Create an account and pick a mode. This is the first phase of a real, functional account system - not the UI-only "Get started" preview elsewhere on the site.</p>
+      <p>Create an account, follow specific tickers, and optionally connect your own Alpaca paper account for automated management. A real, functional account system - not the UI-only "Get started" preview elsewhere on the site.</p>
     </div>
   </header>
 
@@ -203,11 +203,17 @@
           <div class="il-mode-card" data-mode="ai_managed" id="mode-ai">
             <span class="il-mode-tag">AI-managed</span>
             <h3>Let ZycaAlgo trade your paper account</h3>
-            <p>Connect your own Alpaca paper account and the daily job mirrors qualifying signals into it automatically, with the same sizing and exit rules as the demo account. <strong>Broker connection isn't built yet</strong> - selecting this now just saves your preference.</p>
+            <p>Connect your own Alpaca paper account below and the daily job mirrors qualifying signals into it automatically, with the same sizing and exit rules as the demo account, in your own separate paper account.</p>
           </div>
         </div>
 
         <div id="mode-msg" class="il-auth-msg"></div>
+
+        <div id="alpaca-section" class="il-dashboard-section" style="display:none;">
+          <h2>Your Alpaca paper account</h2>
+          <p>Your keys are validated against Alpaca before saving, encrypted before storage, and never sent back to any browser once saved &mdash; only a connected/not-connected status. <strong>Paper trading only</strong>: the daily job hard-codes Alpaca's simulated-money endpoint, the same as the demo account.</p>
+          <div id="alpaca-status"><div class="il-explorer-state">Checking&hellip;</div></div>
+        </div>
 
         <div class="il-dashboard-section">
           <h2>Your watchlist</h2>
@@ -253,9 +259,12 @@
         </div>
       </div>
       <p class="il-finetext">
-        THIS PAGE IS A PRODUCT PREVIEW. Accounts and mode selection are real and stored securely, but AI-managed mode does
-        not yet execute any trades on your behalf - broker connection is a later phase. ZycaAlgo is not a registered
-        investment adviser or broker-dealer. See <a href="/legal" style="color: inherit;">/legal</a> for full disclosures.
+        Accounts, mode selection, and AI-managed trading are real. If you connect your own Alpaca account in AI-managed
+        mode, the daily job mirrors qualifying signals into <strong>your own separate paper (simulated-money) account</strong>
+        using the same sizing and exit rules as the site's own demo account - it never touches real money, the same
+        hard-coded paper-only guarantee described in <a href="/methodology" style="color: inherit;">/methodology</a>
+        applies to every connected account. ZycaAlgo is not a registered investment adviser or broker-dealer. See
+        <a href="/legal" style="color: inherit;">/legal</a> for full disclosures.
       </p>
     </div>
   </footer>
@@ -381,6 +390,9 @@
   function setModeUI(m) {
     document.getElementById('mode-manual').classList.toggle('il-selected', m === 'manual');
     document.getElementById('mode-ai').classList.toggle('il-selected', m === 'ai_managed');
+    var alpacaSection = document.getElementById('alpaca-section');
+    alpacaSection.style.display = m === 'ai_managed' ? 'block' : 'none';
+    if (m === 'ai_managed') loadAlpacaStatus();
   }
 
   document.querySelectorAll('.il-mode-card').forEach(function (card) {
@@ -403,6 +415,84 @@
       });
     });
   });
+
+  // -------------------------------------------------------------------
+  // Alpaca connection: the actual credential submission goes through
+  // /api/alpaca-connection (server-side), never directly to Supabase from
+  // here - the alpaca_connections table has no RLS policies for this
+  // client's role at all, so there's no way to write to it except through
+  // that endpoint, which verifies the caller's session token itself.
+  // -------------------------------------------------------------------
+  function authedFetch(path, options) {
+    return client.auth.getSession().then(function (result) {
+      var token = result.data && result.data.session && result.data.session.access_token;
+      options = options || {};
+      options.headers = Object.assign({ Authorization: 'Bearer ' + token }, options.headers || {});
+      return fetch(path, options);
+    });
+  }
+
+  function loadAlpacaStatus() {
+    var el = document.getElementById('alpaca-status');
+    authedFetch('/api/alpaca-connection')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.connected) {
+          renderAlpacaConnected(data.connected_at);
+        } else {
+          renderAlpacaForm();
+        }
+      })
+      .catch(function () { renderAlpacaForm(); });
+  }
+
+  function renderAlpacaConnected(connectedAt) {
+    var el = document.getElementById('alpaca-status');
+    var dateStr = connectedAt ? new Date(connectedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+    el.innerHTML =
+      '<div class="il-auth-msg il-ok" style="margin-bottom:12px;">&#9679; Connected' + (dateStr ? ' since ' + dateStr : '') + '</div>' +
+      '<button class="il-btn" id="alpaca-disconnect-btn" type="button">Disconnect</button>';
+    document.getElementById('alpaca-disconnect-btn').addEventListener('click', function () {
+      authedFetch('/api/alpaca-connection', { method: 'DELETE' }).then(function () { renderAlpacaForm(); });
+    });
+  }
+
+  function renderAlpacaForm() {
+    var el = document.getElementById('alpaca-status');
+    el.innerHTML =
+      '<form id="alpaca-connect-form">' +
+      '  <div class="il-field"><label for="alpaca-key">Alpaca API Key ID (paper)</label><input type="text" id="alpaca-key" autocomplete="off" required></div>' +
+      '  <div class="il-field"><label for="alpaca-secret">Alpaca Secret Key (paper)</label><input type="password" id="alpaca-secret" autocomplete="off" required></div>' +
+      '  <button class="il-btn il-btn-primary" type="submit">Connect</button>' +
+      '</form>' +
+      '<div id="alpaca-connect-msg" class="il-auth-msg"></div>';
+    document.getElementById('alpaca-connect-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = document.getElementById('alpaca-connect-msg');
+      msg.textContent = 'Validating against Alpaca…';
+      msg.className = 'il-auth-msg';
+      var apiKey = document.getElementById('alpaca-key').value.trim();
+      var apiSecret = document.getElementById('alpaca-secret').value.trim();
+      authedFetch('/api/alpaca-connection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_key_id: apiKey, api_secret_key: apiSecret }),
+      })
+        .then(function (r) { return r.json().then(function (body) { return { ok: r.ok, body: body }; }); })
+        .then(function (result) {
+          if (!result.ok) {
+            msg.textContent = result.body.error || 'Could not connect.';
+            msg.className = 'il-auth-msg il-error';
+            return;
+          }
+          renderAlpacaConnected(new Date().toISOString());
+        })
+        .catch(function () {
+          msg.textContent = 'Network error - try again.';
+          msg.className = 'il-auth-msg il-error';
+        });
+    });
+  }
 
   // -------------------------------------------------------------------
   // Personal watchlist: stored per-user in Supabase (RLS-protected), then

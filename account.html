@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account &mdash; ZycaAlgo</title>
+<meta name="description" content="Sign in to choose how ZycaAlgo works for you: manual signals, or fully automated.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='5' fill='%23ff5240' stroke='%23ff5240' stroke-width='1.4'/%3E%3Cpolyline points='12,13 26,13 12,27 26,27' stroke-width='3.2' stroke='%230a0b10' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3Crect x='28' y='24' width='5' height='7' fill='%2335d488'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .il-navlinks a[aria-current="page"] { color: var(--stamp); }
+
+  .il-explorer-hero {
+    padding: clamp(48px, 7vw, 80px) 0 clamp(32px, 5vw, 48px);
+    border-bottom: 1px solid var(--line);
+  }
+  .il-explorer-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin: 14px 0 18px; }
+  .il-explorer-hero p { color: var(--ink-soft); max-width: 62ch; margin: 0 0 8px; font-size: 1.05rem; }
+  .il-explorer-body { padding: clamp(32px, 5vw, 56px) 0 clamp(56px, 8vw, 88px); }
+
+  .il-auth-card {
+    max-width: 440px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 10px;
+    padding: 28px 26px;
+  }
+  .il-auth-tabs { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--line-soft); }
+  .il-auth-tab {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    padding: 8px 4px 12px;
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-right: 20px;
+  }
+  .il-auth-tab.il-active { color: var(--ink); border-bottom-color: var(--stamp); }
+  .il-field { margin-bottom: 14px; }
+  .il-field label { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+  .il-field input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.96rem;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    color: var(--ink);
+  }
+  .il-field input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .il-auth-msg { font-family: var(--font-mono); font-size: 0.82rem; margin: 10px 0; min-height: 1.2em; }
+  .il-auth-msg.il-error { color: var(--loss); }
+  .il-auth-msg.il-ok { color: var(--signal); }
+
+  .il-mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  @media (max-width: 560px) { .il-mode-grid { grid-template-columns: 1fr; } }
+  .il-mode-card {
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    border-radius: 10px;
+    padding: 20px 18px;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .il-mode-card.il-selected { border-color: var(--stamp); box-shadow: 0 0 24px -10px rgba(255,82,64,0.4); }
+  .il-mode-card h3 { margin: 0 0 8px; font-size: 1.02rem; }
+  .il-mode-card p { margin: 0; color: var(--ink-soft); font-size: 0.86rem; line-height: 1.5; }
+  .il-mode-card .il-mode-tag { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stamp); margin-bottom: 8px; display: block; }
+</style>
+</head>
+<body>
+
+<div class="il-root" id="top">
+
+  <div class="il-topbar">
+    <div class="il-container il-topbar-inner">
+      <span>www.zycaalgo.com</span>
+      <span class="il-market">
+        <span class="il-market-dot" id="market-dot"></span>
+        <span id="market-status">Checking market&hellip;</span>
+        <span>&middot; Paper Trading Environment</span>
+      </span>
+    </div>
+  </div>
+
+  <nav class="il-nav">
+    <div class="il-nav-inner">
+      <a class="il-wordmark" href="/" aria-label="ZycaAlgo home">
+        <svg class="il-logomark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+          <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+        </svg>
+        <span class="il-brand-text">
+          <span class="il-brand-name">ZycaAlgo</span>
+          <span class="il-brand-url">www.zycaalgo.com</span>
+        </span>
+        <span class="il-mark">FORM 4</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="il-nav-toggle-input">
+      <label for="nav-toggle" class="il-nav-toggle-label" aria-label="Toggle menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 1H18" stroke="currentColor" stroke-width="2"/>
+          <path d="M0 7H18" stroke="currentColor" stroke-width="2"/>
+          <path d="M0 13H18" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </label>
+      <div class="il-navlinks">
+        <a href="/about">About</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/explorer">Explorer</a>
+        <a href="/watchlist">Watchlist</a>
+        <a href="/legal">Legal</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/account" aria-current="page">Account</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="il-explorer-hero">
+    <div class="il-container">
+      <div class="il-eyebrow">Account &middot; Phase 1 preview</div>
+      <h1>Choose how ZycaAlgo works for you.</h1>
+      <p>Create an account and pick a mode. This is the first phase of a real, functional account system - not the UI-only "Get started" preview elsewhere on the site.</p>
+    </div>
+  </header>
+
+  <section class="il-explorer-body">
+    <div class="il-container">
+
+      <div id="auth-card" class="il-auth-card">
+        <div class="il-auth-tabs">
+          <button class="il-auth-tab il-active" data-tab="login" type="button">Log in</button>
+          <button class="il-auth-tab" data-tab="signup" type="button">Sign up</button>
+        </div>
+        <form id="auth-form">
+          <div class="il-field">
+            <label for="auth-email">Email</label>
+            <input type="email" id="auth-email" autocomplete="email" required>
+          </div>
+          <div class="il-field">
+            <label for="auth-password">Password</label>
+            <input type="password" id="auth-password" autocomplete="current-password" required minlength="6">
+          </div>
+          <button class="il-btn il-btn-primary" type="submit" id="auth-submit" style="width:100%;">Log in</button>
+        </form>
+        <div id="auth-msg" class="il-auth-msg"></div>
+      </div>
+
+      <div id="dashboard" style="display:none;">
+        <div class="il-caption"><span id="dashboard-email"></span></div>
+
+        <div class="il-mode-grid">
+          <div class="il-mode-card" data-mode="manual" id="mode-manual">
+            <span class="il-mode-tag">Manual</span>
+            <h3>See the signals, trade yourself</h3>
+            <p>You get the same watchlist, explorer, and alerts as everyone else, personalized to your account. ZycaAlgo never places an order on your behalf in this mode.</p>
+          </div>
+          <div class="il-mode-card" data-mode="ai_managed" id="mode-ai">
+            <span class="il-mode-tag">AI-managed</span>
+            <h3>Let ZycaAlgo trade your paper account</h3>
+            <p>Connect your own Alpaca paper account and the daily job mirrors qualifying signals into it automatically, with the same sizing and exit rules as the demo account. <strong>Broker connection isn't built yet</strong> - selecting this now just saves your preference.</p>
+          </div>
+        </div>
+
+        <div id="mode-msg" class="il-auth-msg"></div>
+        <button class="il-btn" id="sign-out-btn" type="button">Sign out</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="il-footer">
+    <div class="il-container">
+      <div class="il-footer-top">
+        <div class="il-wordmark il-footer-brand">
+          <svg class="il-logomark" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+            <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+            <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+          </svg>
+          <span class="il-brand-text">
+            <span class="il-brand-name">ZycaAlgo</span>
+            <span class="il-brand-url">www.zycaalgo.com</span>
+          </span>
+        </div>
+        <div class="il-footer-links">
+          <a href="/about">About</a>
+          <a href="/methodology">Methodology</a>
+          <a href="/explorer">Explorer</a>
+          <a href="/watchlist">Watchlist</a>
+          <a href="/legal">Legal</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="https://github.com/ZycaZel/ZycaAlgo" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+      <p class="il-finetext">
+        THIS PAGE IS A PRODUCT PREVIEW. Accounts and mode selection are real and stored securely, but AI-managed mode does
+        not yet execute any trades on your behalf - broker connection is a later phase. ZycaAlgo is not a registered
+        investment adviser or broker-dealer. See <a href="/legal" style="color: inherit;">/legal</a> for full disclosures.
+      </p>
+    </div>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function () {
+  function updateMarketStatus() {
+    var dot = document.getElementById('market-dot');
+    var status = document.getElementById('market-status');
+    if (!dot || !status) return;
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', hour12: false,
+      hour: '2-digit', minute: '2-digit', weekday: 'short',
+    }).formatToParts(new Date());
+    var map = {};
+    parts.forEach(function (p) { map[p.type] = p.value; });
+    var hour = parseInt(map.hour, 10);
+    var minute = parseInt(map.minute, 10);
+    var minutesNow = hour * 60 + minute;
+    var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(map.weekday) !== -1;
+    var isOpen = isWeekday && minutesNow >= 9 * 60 + 30 && minutesNow < 16 * 60;
+    dot.className = 'il-market-dot ' + (isOpen ? 'il-open' : 'il-closed');
+    var displayHour = hour % 12 || 12;
+    var displayMinute = minute < 10 ? '0' + minute : minute;
+    var timeLabel = displayHour + ':' + displayMinute + (hour >= 12 ? 'pm' : 'am') + ' ET';
+    status.textContent = (isOpen ? 'Market open' : 'Market closed') + ' — ' + timeLabel;
+  }
+  updateMarketStatus();
+  setInterval(updateMarketStatus, 30000);
+})();
+
+// ---------------------------------------------------------------------
+// Account: Supabase Auth (email + password) and per-user mode selection.
+// The anon key below is meant to be public - Row Level Security policies
+// on the profiles table (see supabase/schema.sql) are what actually keep
+// one trader's data private from another, not secrecy of this key.
+// ---------------------------------------------------------------------
+(function () {
+  var SUPABASE_URL = 'REPLACE_WITH_SUPABASE_URL';
+  var SUPABASE_ANON_KEY = 'REPLACE_WITH_SUPABASE_ANON_KEY';
+
+  if (SUPABASE_URL.indexOf('REPLACE_WITH') === 0) {
+    var msg = document.getElementById('auth-msg');
+    if (msg) { msg.textContent = 'Account system not yet configured.'; msg.className = 'il-auth-msg il-error'; }
+    document.getElementById('auth-form').querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
+    return;
+  }
+
+  var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  var authCard = document.getElementById('auth-card');
+  var dashboard = document.getElementById('dashboard');
+  var form = document.getElementById('auth-form');
+  var emailInput = document.getElementById('auth-email');
+  var passwordInput = document.getElementById('auth-password');
+  var submitBtn = document.getElementById('auth-submit');
+  var authMsg = document.getElementById('auth-msg');
+  var mode = 'login';
+
+  document.querySelectorAll('.il-auth-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      mode = tab.dataset.tab;
+      document.querySelectorAll('.il-auth-tab').forEach(function (t) { t.classList.toggle('il-active', t === tab); });
+      submitBtn.textContent = mode === 'signup' ? 'Sign up' : 'Log in';
+      authMsg.textContent = '';
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    authMsg.textContent = '';
+    authMsg.className = 'il-auth-msg';
+    var email = emailInput.value.trim();
+    var password = passwordInput.value;
+    var action = mode === 'signup'
+      ? client.auth.signUp({ email: email, password: password })
+      : client.auth.signInWithPassword({ email: email, password: password });
+
+    action.then(function (result) {
+      if (result.error) {
+        authMsg.textContent = result.error.message;
+        authMsg.className = 'il-auth-msg il-error';
+        return;
+      }
+      if (mode === 'signup' && result.data.user && !result.data.session) {
+        authMsg.textContent = 'Check your email to confirm your account, then log in.';
+        authMsg.className = 'il-auth-msg il-ok';
+        return;
+      }
+      showDashboard();
+    });
+  });
+
+  document.getElementById('sign-out-btn').addEventListener('click', function () {
+    client.auth.signOut().then(function () {
+      dashboard.style.display = 'none';
+      authCard.style.display = 'block';
+      form.reset();
+    });
+  });
+
+  function showDashboard() {
+    client.auth.getUser().then(function (result) {
+      var user = result.data && result.data.user;
+      if (!user) return;
+      authCard.style.display = 'none';
+      dashboard.style.display = 'block';
+      document.getElementById('dashboard-email').textContent = 'Signed in as ' + user.email;
+      loadProfile(user.id);
+    });
+  }
+
+  function loadProfile(userId) {
+    client.from('profiles').select('mode').eq('id', userId).single().then(function (result) {
+      var m = result.data ? result.data.mode : 'manual';
+      setModeUI(m);
+    });
+  }
+
+  function setModeUI(m) {
+    document.getElementById('mode-manual').classList.toggle('il-selected', m === 'manual');
+    document.getElementById('mode-ai').classList.toggle('il-selected', m === 'ai_managed');
+  }
+
+  document.querySelectorAll('.il-mode-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var m = card.dataset.mode;
+      setModeUI(m);
+      var modeMsg = document.getElementById('mode-msg');
+      client.auth.getUser().then(function (result) {
+        var user = result.data && result.data.user;
+        if (!user) return;
+        client.from('profiles').update({ mode: m }).eq('id', user.id).then(function (result2) {
+          if (result2.error) {
+            modeMsg.textContent = 'Could not save: ' + result2.error.message;
+            modeMsg.className = 'il-auth-msg il-error';
+          } else {
+            modeMsg.textContent = 'Saved.';
+            modeMsg.className = 'il-auth-msg il-ok';
+          }
+        });
+      });
+    });
+  });
+
+  // If already logged in (returning visit), skip straight to the dashboard.
+  client.auth.getSession().then(function (result) {
+    if (result.data && result.data.session) showDashboard();
+  });
+})();
+</script>
+</body>
+</html>

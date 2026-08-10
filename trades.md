@@ -30,3 +30,8 @@
 | 2026-08-07 | ONMD | Kosasa Thomas |  |  |  | SKIPPED - market cap $33,748,712 < $1B | https://www.sec.gov/Archives/edgar/data/1989846/000149315226036660/0001493152-26-036660-index.htm |
 | 2026-08-07 | GBFH | Griege Charles William Jr. |  |  |  | SKIPPED - market cap $303,081,523 < $1B; avg volume 59,771 < 500K | https://www.sec.gov/Archives/edgar/data/2058876/000119312526340296/0001193125-26-340296-index.htm |
 | 2026-08-07 | CCB | Sprink Eric M |  |  |  | SKIPPED - market cap $692,699,908 < $1B; avg volume 110,525 < 500K | https://www.sec.gov/Archives/edgar/data/1437958/000129964726000020/0001299647-26-000020-index.htm |
+| 2026-08-07 | BRVE | Murdoch Travis |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2131524/000147083126000798/0001470831-26-000798-index.htm |
+| 2026-08-07 | ABTC | Mateen Justin |  |  |  | SKIPPED - market cap $536,559,591 < $1B | https://www.sec.gov/Archives/edgar/data/1755953/000119312526340270/0001193125-26-340270-index.htm |
+| 2026-08-07 | ONMD | Kosasa Thomas |  |  |  | SKIPPED - market cap $33,748,712 < $1B | https://www.sec.gov/Archives/edgar/data/1989846/000149315226036660/0001493152-26-036660-index.htm |
+| 2026-08-07 | GBFH | Griege Charles William Jr. |  |  |  | SKIPPED - market cap $303,081,523 < $1B; avg volume 59,771 < 500K | https://www.sec.gov/Archives/edgar/data/2058876/000119312526340296/0001193125-26-340296-index.htm |
+| 2026-08-07 | CCB | Sprink Eric M |  |  |  | SKIPPED - market cap $692,699,908 < $1B; avg volume 110,525 < 500K | https://www.sec.gov/Archives/edgar/data/1437958/000129964726000020/0001299647-26-000020-index.htm |

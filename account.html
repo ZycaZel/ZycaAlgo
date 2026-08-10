@@ -71,6 +71,45 @@
   .il-mode-card h3 { margin: 0 0 8px; font-size: 1.02rem; }
   .il-mode-card p { margin: 0; color: var(--ink-soft); font-size: 0.86rem; line-height: 1.5; }
   .il-mode-card .il-mode-tag { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stamp); margin-bottom: 8px; display: block; }
+
+  .il-dashboard-section { margin-top: 36px; }
+  .il-dashboard-section h2 { font-size: 1.3rem; margin-bottom: 6px; }
+  .il-dashboard-section > p { color: var(--ink-soft); font-size: 0.9rem; margin: 0 0 16px; }
+
+  .il-add-ticker-row { display: flex; gap: 10px; max-width: 380px; margin-bottom: 18px; }
+  .il-add-ticker-row input {
+    flex: 1;
+    font-family: var(--font-mono);
+    font-size: 0.94rem;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+    color: var(--ink);
+  }
+  .il-add-ticker-row input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+  .il-sector-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    background: var(--stamp-soft);
+    color: var(--stamp);
+    white-space: nowrap;
+  }
+  .il-signal-today { color: var(--signal); font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600; }
+  .il-no-signal { color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.78rem; }
+  .il-remove-btn {
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 4px 9px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .il-remove-btn:hover { border-color: var(--loss); color: var(--loss); }
 </style>
 </head>
 <body>
@@ -169,7 +208,21 @@
         </div>
 
         <div id="mode-msg" class="il-auth-msg"></div>
-        <button class="il-btn" id="sign-out-btn" type="button">Sign out</button>
+
+        <div class="il-dashboard-section">
+          <h2>Your watchlist</h2>
+          <p>Tickers you're personally following. Cross-referenced against the scanner's actual output below - not a separate, curated list.</p>
+          <form id="add-ticker-form" class="il-add-ticker-row">
+            <input type="text" id="add-ticker-input" placeholder="e.g. AAPL" maxlength="10" autocomplete="off" spellcheck="false" aria-label="Ticker to follow">
+            <button class="il-btn il-btn-primary" type="submit">Add</button>
+          </form>
+          <div id="watchlist-msg" class="il-auth-msg"></div>
+          <div id="personal-watchlist">
+            <div class="il-explorer-state">Loading&hellip;</div>
+          </div>
+        </div>
+
+        <button class="il-btn" id="sign-out-btn" type="button" style="margin-top:28px;">Sign out</button>
       </div>
 
     </div>
@@ -314,6 +367,7 @@
       dashboard.style.display = 'block';
       document.getElementById('dashboard-email').textContent = 'Signed in as ' + user.email;
       loadProfile(user.id);
+      loadPersonalWatchlist(user.id);
     });
   }
 
@@ -349,6 +403,102 @@
       });
     });
   });
+
+  // -------------------------------------------------------------------
+  // Personal watchlist: stored per-user in Supabase (RLS-protected), then
+  // cross-referenced client-side against the same public data everyone
+  // sees (data/latest.json, data/watchlist.json) - not a separate feed.
+  // -------------------------------------------------------------------
+  var addTickerForm = document.getElementById('add-ticker-form');
+  var addTickerInput = document.getElementById('add-ticker-input');
+  var watchlistMsg = document.getElementById('watchlist-msg');
+  var personalWatchlistEl = document.getElementById('personal-watchlist');
+
+  function fmtMoney(n) {
+    if (n == null) return '&mdash;';
+    return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function loadPersonalWatchlist(userId) {
+    client.from('watchlist_items').select('ticker').eq('user_id', userId).order('added_at').then(function (result) {
+      var tickers = (result.data || []).map(function (r) { return r.ticker; });
+      renderDashboard(tickers);
+    });
+  }
+
+  addTickerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ticker = addTickerInput.value.trim().toUpperCase();
+    watchlistMsg.textContent = '';
+    if (!ticker) return;
+    client.auth.getUser().then(function (result) {
+      var user = result.data && result.data.user;
+      if (!user) return;
+      client.from('watchlist_items').insert({ user_id: user.id, ticker: ticker }).then(function (result2) {
+        if (result2.error) {
+          // Unique-constraint violation just means it's already on the list - not a real error to surface.
+          if (result2.error.code !== '23505') {
+            watchlistMsg.textContent = 'Could not add: ' + result2.error.message;
+            watchlistMsg.className = 'il-auth-msg il-error';
+          }
+        }
+        addTickerInput.value = '';
+        loadPersonalWatchlist(user.id);
+      });
+    });
+  });
+
+  function removeTicker(userId, ticker) {
+    client.from('watchlist_items').delete().eq('user_id', userId).eq('ticker', ticker).then(function () {
+      loadPersonalWatchlist(userId);
+    });
+  }
+
+  function renderDashboard(tickers) {
+    if (!tickers.length) {
+      personalWatchlistEl.innerHTML = '<div class="il-explorer-state">Not following any tickers yet - add one above.</div>';
+      return;
+    }
+    Promise.all([
+      fetch('/data/latest.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      fetch('/data/watchlist.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    ]).then(function (results) {
+      var latest = results[0] || {};
+      var publicWatchlist = (results[1] && results[1].tickers) || [];
+      var todaysBuys = latest.qualifying_buys || [];
+      var clusterTickers = latest.cluster_tickers || {};
+      var byTicker = {};
+      publicWatchlist.forEach(function (t) { byTicker[t.ticker] = t; });
+
+      client.auth.getUser().then(function (result) {
+        var user = result.data && result.data.user;
+        var rows = tickers.map(function (ticker) {
+          var info = byTicker[ticker];
+          var hasSignalToday = todaysBuys.some(function (b) { return b.ticker === ticker; });
+          var isCluster = !!clusterTickers[ticker];
+          return '<tr>' +
+            '<td class="il-ticker-cell">' + ticker + (isCluster ? '<span class="il-flag">&#9679; cluster</span>' : '') + '</td>' +
+            '<td>' + (info ? info.company : '&mdash;') + '</td>' +
+            '<td>' + (info && info.sector ? '<span class="il-sector-tag">' + info.sector + '</span>' : '&mdash;') + '</td>' +
+            '<td class="il-num">' + (info ? fmtMoney(info.price) : '&mdash;') + '</td>' +
+            '<td>' + (hasSignalToday ? '<span class="il-signal-today">&#9679; signal today</span>' : '<span class="il-no-signal">no signal today</span>') + '</td>' +
+            '<td><button type="button" class="il-remove-btn" data-remove="' + ticker + '">Remove</button></td>' +
+            '</tr>';
+        }).join('');
+
+        personalWatchlistEl.innerHTML =
+          '<div class="il-tablewrap"><table class="il-signals"><thead><tr>' +
+          '<th>Ticker</th><th>Company</th><th>Sector</th><th class="il-num">Price</th><th>Today</th><th></th>' +
+          '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+
+        personalWatchlistEl.querySelectorAll('[data-remove]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (user) removeTicker(user.id, btn.dataset.remove);
+          });
+        });
+      });
+    });
+  }
 
   // If already logged in (returning visit), skip straight to the dashboard.
   client.auth.getSession().then(function (result) {

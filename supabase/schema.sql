@@ -61,3 +61,31 @@ drop trigger if exists on_profile_updated on public.profiles;
 create trigger on_profile_updated
   before update on public.profiles
   for each row execute function public.set_updated_at();
+
+-- ---------------------------------------------------------------------
+-- Phase 2: personal watchlist. A user's own list of tickers they want
+-- highlighted on their dashboard, separate from the site-wide public
+-- watchlist (data/watchlist.json) which shows every ticker the scanner
+-- has ever flagged, for everyone.
+-- ---------------------------------------------------------------------
+create table if not exists public.watchlist_items (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  ticker text not null,
+  added_at timestamptz not null default now(),
+  unique (user_id, ticker)
+);
+
+alter table public.watchlist_items enable row level security;
+
+create policy "select own watchlist items"
+  on public.watchlist_items for select
+  using (auth.uid() = user_id);
+
+create policy "insert own watchlist items"
+  on public.watchlist_items for insert
+  with check (auth.uid() = user_id);
+
+create policy "delete own watchlist items"
+  on public.watchlist_items for delete
+  using (auth.uid() = user_id);

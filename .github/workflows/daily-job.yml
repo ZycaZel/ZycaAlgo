@@ -100,3 +100,18 @@ jobs:
           git add data/ trades.md
           git diff --cached --quiet || git commit -m "Daily scan + paper trade update ($(date -u +%Y-%m-%d))"
           git push
+
+      - name: Alert on failure
+        # Runs only if any earlier step in this job failed - the whole point
+        # is to notice a broken run without having to check manually.
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "DISCORD_WEBHOOK_URL not set - skipping failure alert."
+            exit 0
+          fi
+          curl -s -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"content\": \"**ZycaAlgo daily job FAILED** - <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}>\"}"

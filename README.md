@@ -34,6 +34,9 @@ This account is always paper-only. `scripts/trade_manager.py` hard-codes
   set, each day's qualifying signals are posted to a Discord channel via
   webhook, with cluster buys (2+ different insiders on the same ticker
   within 30 days) called out first. No-op if the env var isn't set.
+- Both scheduled workflows (`daily-job.yml`, `backtest-refresh.yml`) post
+  a failure alert to the same Discord webhook if any step fails, so a
+  broken run doesn't just sit there unnoticed.
 
 ## One-time setup
 

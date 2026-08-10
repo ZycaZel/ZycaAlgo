@@ -45,3 +45,16 @@ jobs:
                    data/backtest/backtest_chart.png
           git diff --cached --quiet || git commit -m "Backtest refresh ($(date -u +%Y-%m-%d))"
           git push
+
+      - name: Alert on failure
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "DISCORD_WEBHOOK_URL not set - skipping failure alert."
+            exit 0
+          fi
+          curl -s -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"content\": \"**ZycaAlgo backtest refresh FAILED** - <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}>\"}"

@@ -110,6 +110,21 @@
     border-radius: 3px;
   }
   .il-remove-btn:hover { border-color: var(--loss); color: var(--loss); }
+
+  .il-chart-toggle {
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-size: 0.7rem;
+    padding: 0 6px 0 0;
+    vertical-align: middle;
+  }
+  .il-chart-toggle:hover { color: var(--stamp); }
+  .il-chart-row td { padding: 0; border-top: none; }
+  .il-chart-wrap { padding: 4px 4px 22px; }
+  .il-chart-canvas { width: 100%; height: 140px; display: block; }
+  .il-chart-status { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -544,6 +559,99 @@
     });
   }
 
+  // Per-ticker price chart: folded away by default, fetched and drawn only
+  // once the trader actually expands a row (not fetched upfront for every
+  // ticker on the list).
+  function toggleChart(ticker, toggleBtn, chartRow) {
+    var expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      chartRow.hidden = true;
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.innerHTML = '&#9656;';
+      return;
+    }
+    chartRow.hidden = false;
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.innerHTML = '&#9662;';
+
+    var canvas = chartRow.querySelector('canvas');
+    if (canvas.dataset.loaded === 'true') return;
+    var statusEl = chartRow.querySelector('.il-chart-status');
+    statusEl.textContent = 'Loading price history…';
+    fetch('/api/stock-history?ticker=' + encodeURIComponent(ticker))
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('request failed')); })
+      .then(function (data) {
+        var closes = (data.points || []).map(function (p) { return p.close; }).filter(function (v) { return v != null; });
+        if (closes.length < 2) {
+          statusEl.textContent = 'No price history available for ' + ticker + '.';
+          return;
+        }
+        statusEl.textContent = '';
+        canvas.dataset.loaded = 'true';
+        drawSparkline(canvas, closes);
+      })
+      .catch(function () {
+        statusEl.textContent = 'Could not load price history for ' + ticker + '.';
+      });
+  }
+
+  function drawSparkline(canvas, points) {
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width, h = canvas.height;
+    var pad = { top: 10, right: 10, bottom: 10, left: 10 };
+    ctx.clearRect(0, 0, w, h);
+
+    var styles = getComputedStyle(document.documentElement);
+    var gridColor = styles.getPropertyValue('--line').trim() || '#222';
+    var gain = points[points.length - 1] >= points[0];
+    var accentColor = styles.getPropertyValue(gain ? '--signal' : '--loss').trim() || '#e8a33d';
+
+    var min = Math.min.apply(null, points);
+    var max = Math.max.apply(null, points);
+    var range = max - min || 1;
+    var innerW = w - pad.left - pad.right;
+    var innerH = h - pad.top - pad.bottom;
+
+    ctx.strokeStyle = gridColor;
+    ctx.lineWidth = 1;
+    for (var g = 0; g <= 2; g++) {
+      var gy = pad.top + (innerH / 2) * g;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, gy);
+      ctx.lineTo(w - pad.right, gy);
+      ctx.stroke();
+    }
+
+    function xAt(i) { return pad.left + (innerW * i) / (points.length - 1 || 1); }
+    function yAt(v) { return pad.top + innerH - ((v - min) / range) * innerH; }
+
+    ctx.beginPath();
+    ctx.moveTo(xAt(0), yAt(points[0]));
+    points.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
+    ctx.lineTo(xAt(points.length - 1), pad.top + innerH);
+    ctx.lineTo(xAt(0), pad.top + innerH);
+    ctx.closePath();
+    var gradient = ctx.createLinearGradient(0, pad.top, 0, pad.top + innerH);
+    gradient.addColorStop(0, accentColor + '33');
+    gradient.addColorStop(1, accentColor + '00');
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(xAt(0), yAt(points[0]));
+    points.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
+    ctx.strokeStyle = accentColor;
+    ctx.lineWidth = 2;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    var lastX = xAt(points.length - 1), lastY = yAt(points[points.length - 1]);
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 3, 0, Math.PI * 2);
+    ctx.fillStyle = accentColor;
+    ctx.fill();
+  }
+
   function renderDashboard(tickers) {
     if (!tickers.length) {
       personalWatchlistEl.innerHTML = '<div class="il-explorer-state">Not following any tickers yet - add one above.</div>';
@@ -566,13 +674,21 @@
           var info = byTicker[ticker];
           var hasSignalToday = todaysBuys.some(function (b) { return b.ticker === ticker; });
           var isCluster = !!clusterTickers[ticker];
+          var rowId = 'chart-row-' + ticker.replace(/[^A-Z0-9]/g, '');
           return '<tr>' +
-            '<td class="il-ticker-cell">' + ticker + (isCluster ? '<span class="il-flag">&#9679; cluster</span>' : '') + '</td>' +
+            '<td class="il-ticker-cell">' +
+            '<button type="button" class="il-chart-toggle" data-chart-toggle="' + ticker + '" aria-expanded="false" aria-controls="' + rowId + '" title="Show price chart">&#9656;</button>' +
+            ticker + (isCluster ? '<span class="il-flag">&#9679; cluster</span>' : '') + '</td>' +
             '<td>' + (info ? info.company : '&mdash;') + '</td>' +
             '<td>' + (info && info.sector ? '<span class="il-sector-tag">' + info.sector + '</span>' : '&mdash;') + '</td>' +
             '<td class="il-num">' + (info ? fmtMoney(info.price) : '&mdash;') + '</td>' +
             '<td>' + (hasSignalToday ? '<span class="il-signal-today">&#9679; signal today</span>' : '<span class="il-no-signal">no signal today</span>') + '</td>' +
             '<td><button type="button" class="il-remove-btn" data-remove="' + ticker + '">Remove</button></td>' +
+            '</tr>' +
+            '<tr class="il-chart-row" id="' + rowId + '" hidden>' +
+            '<td colspan="6"><div class="il-chart-wrap">' +
+            '<canvas class="il-chart-canvas" width="760" height="140" role="img" aria-label="' + ticker + ' price chart, last 3 months"></canvas>' +
+            '<div class="il-chart-status"></div></div></td>' +
             '</tr>';
         }).join('');
 
@@ -584,6 +700,12 @@
         personalWatchlistEl.querySelectorAll('[data-remove]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             if (user) removeTicker(user.id, btn.dataset.remove);
+          });
+        });
+
+        personalWatchlistEl.querySelectorAll('[data-chart-toggle]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            toggleChart(btn.dataset.chartToggle, btn, document.getElementById(btn.getAttribute('aria-controls')));
           });
         });
       });

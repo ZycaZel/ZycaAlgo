@@ -35,3 +35,15 @@
 | 2026-08-07 | ONMD | Kosasa Thomas |  |  |  | SKIPPED - market cap $33,748,712 < $1B | https://www.sec.gov/Archives/edgar/data/1989846/000149315226036660/0001493152-26-036660-index.htm |
 | 2026-08-07 | GBFH | Griege Charles William Jr. |  |  |  | SKIPPED - market cap $303,081,523 < $1B; avg volume 59,771 < 500K | https://www.sec.gov/Archives/edgar/data/2058876/000119312526340296/0001193125-26-340296-index.htm |
 | 2026-08-07 | CCB | Sprink Eric M |  |  |  | SKIPPED - market cap $692,699,908 < $1B; avg volume 110,525 < 500K | https://www.sec.gov/Archives/edgar/data/1437958/000129964726000020/0001299647-26-000020-index.htm |
+| 2026-08-10 | BLSM | Chen Bihua |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1839970/000123191926000852/0001231919-26-000852-index.htm |
+| 2026-08-10 | LTGO | Tananbaum James B. |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2056611/000158175426000006/0001581754-26-000006-index.htm |
+| 2026-08-10 | LINE | LeMasters Robb A. | $41.35 | 48 sh ($1,985) | $35.15 | ENTRY | https://www.sec.gov/Archives/edgar/data/1645808/000164580826000002/0001645808-26-000002-index.htm |
+| 2026-08-10 | VEON | Fabela Augie K II |  |  |  | SKIPPED - avg volume 84,355 < 500K | https://www.sec.gov/Archives/edgar/data/1990024/000090514826003544/0000905148-26-003544-index.htm |
+| 2026-08-10 | PRCT | Wood Larry L | $21.71 | 92 sh ($1,998) | $18.46 | ENTRY | https://www.sec.gov/Archives/edgar/data/1588978/000162828026054970/0001628280-26-054970-index.htm |
+| 2026-08-10 | BWFG | SEIDMAN LAWRENCE B |  |  |  | SKIPPED - market cap $531,571,093 < $1B; avg volume 87,267 < 500K | https://www.sec.gov/Archives/edgar/data/1505732/000150573226000106/0001505732-26-000106-index.htm |
+| 2026-08-10 | NSLR | Klein Mark D |  |  |  | SKIPPED - market cap $274,792,044 < $1B; avg volume 290,522 < 500K | https://www.sec.gov/Archives/edgar/data/1322402/000149315226036923/0001493152-26-036923-index.htm |
+| 2026-08-10 | AHCO | SAMET KENNETH A |  |  |  | SKIPPED - market cap $711,034,982 < $1B | https://www.sec.gov/Archives/edgar/data/1725255/000110465926093576/0001104659-26-093576-index.htm |
+| 2026-08-10 | CWBC | GILL JAGROOP |  |  |  | SKIPPED - market cap $676,106,464 < $1B; avg volume 307,605 < 500K | https://www.sec.gov/Archives/edgar/data/1127371/000162828026055281/0001628280-26-055281-index.htm |
+| 2026-08-10 | MATW | SCHAWK DAVID A |  |  |  | SKIPPED - market cap $716,030,189 < $1B; avg volume 260,165 < 500K | https://www.sec.gov/Archives/edgar/data/63296/000006329626000078/0000063296-26-000078-index.htm |
+| 2026-08-10 | MBLY | Yeboah-Amankwah Safroadu | $8.76 | 228 sh ($1,997) | $7.45 | ENTRY | https://www.sec.gov/Archives/edgar/data/1910139/000095010326012124/0000950103-26-012124-index.htm |
+| 2026-08-10 | GLXY | BANDROWCZAK STEVEN JOHN |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1407036/000140703626000004/0001407036-26-000004-index.htm |

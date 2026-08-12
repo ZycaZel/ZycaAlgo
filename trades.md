@@ -47,3 +47,11 @@
 | 2026-08-10 | MATW | SCHAWK DAVID A |  |  |  | SKIPPED - market cap $716,030,189 < $1B; avg volume 260,165 < 500K | https://www.sec.gov/Archives/edgar/data/63296/000006329626000078/0000063296-26-000078-index.htm |
 | 2026-08-10 | MBLY | Yeboah-Amankwah Safroadu | $8.76 | 228 sh ($1,997) | $7.45 | ENTRY | https://www.sec.gov/Archives/edgar/data/1910139/000095010326012124/0000950103-26-012124-index.htm |
 | 2026-08-10 | GLXY | BANDROWCZAK STEVEN JOHN |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1407036/000140703626000004/0001407036-26-000004-index.htm |
+| 2026-08-11 | BRVE | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2131524/000094787126000782/0000947871-26-000782-index.htm |
+| 2026-08-11 | FISV | FRITZ LANCE M | $52.70 | 38 sh ($2,003) | $44.80 | ENTRY | https://www.sec.gov/Archives/edgar/data/798354/000079835426000033/0000798354-26-000033-index.htm |
+| 2026-08-11 | NVR | Oliver George |  |  |  | SKIPPED - avg volume 30,494 < 500K | https://www.sec.gov/Archives/edgar/data/906163/000090616326000095/0000906163-26-000095-index.htm |
+| 2026-08-11 | BCML | Baron Christopher F |  |  |  | SKIPPED - market cap $339,615,639 < $1B; avg volume 49,387 < 500K | https://www.sec.gov/Archives/edgar/data/2131631/000143774926026919/0001437749-26-026919-index.htm |
+| 2026-08-11 | STRZ | Hirsch Jeffrey |  |  |  | SKIPPED - market cap $409,096,445 < $1B; avg volume 155,032 < 500K | https://www.sec.gov/Archives/edgar/data/1647660/000164766026000017/0001647660-26-000017-index.htm |
+| 2026-08-11 | SUNS | TANNENBAUM LEONARD M |  |  |  | SKIPPED - market cap $101,368,882 < $1B; avg volume 57,531 < 500K | https://www.sec.gov/Archives/edgar/data/2012706/000162828026055710/0001628280-26-055710-index.htm |
+| 2026-08-11 | CAPS | Strout Gordon Lewis Jr |  |  |  | SKIPPED - market cap $4,040,290 < $1B; avg volume 293,904 < 500K | https://www.sec.gov/Archives/edgar/data/887151/000143774926027117/0001437749-26-027117-index.htm |
+| 2026-08-11 | SNEX | Thamodaran Dhamu R. | $66.01 | 30 sh ($1,980) | $56.11 | ENTRY | https://www.sec.gov/Archives/edgar/data/913760/000153135226000011/0001531352-26-000011-index.htm |

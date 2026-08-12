@@ -105,7 +105,7 @@
     "insider": "LeMasters Robb A.",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1645808/000164580826000002/0001645808-26-000002-index.htm",
     "buy_order_id": "fa58a506-2f2b-4892-8c70-06700e0ddc4a",
-    "stop_order_id": null
+    "stop_order_id": "57d94107-c910-43cf-bc0b-dac55d0ffcfd"
   },
   "PRCT": {
     "entry_date": "2026-08-10",
@@ -117,7 +117,7 @@
     "insider": "Wood Larry L",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1588978/000162828026054970/0001628280-26-054970-index.htm",
     "buy_order_id": "85b1f428-baf8-4738-88d7-075b8b30bf1f",
-    "stop_order_id": null
+    "stop_order_id": "792599ab-9d71-4e3f-958a-43804bebcd81"
   },
   "MBLY": {
     "entry_date": "2026-08-10",
@@ -129,6 +129,30 @@
     "insider": "Yeboah-Amankwah Safroadu",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1910139/000095010326012124/0000950103-26-012124-index.htm",
     "buy_order_id": "c3c5eb1c-615a-4083-92b4-e77017fe4586",
+    "stop_order_id": "e26db2ec-8f21-4631-b5c9-69935eb64a12"
+  },
+  "FISV": {
+    "entry_date": "2026-08-11",
+    "entry_price": 52.7,
+    "qty": 38,
+    "mode": "initial_stop",
+    "stop_price": 44.8,
+    "high_water_mark": 52.7,
+    "insider": "FRITZ LANCE M",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000033/0000798354-26-000033-index.htm",
+    "buy_order_id": "82fa0cac-9a3b-4287-8a2d-41c11a9c9746",
+    "stop_order_id": null
+  },
+  "SNEX": {
+    "entry_date": "2026-08-11",
+    "entry_price": 66.01,
+    "qty": 30,
+    "mode": "initial_stop",
+    "stop_price": 56.11,
+    "high_water_mark": 66.01,
+    "insider": "Thamodaran Dhamu R.",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/913760/000153135226000011/0001531352-26-000011-index.htm",
+    "buy_order_id": "b426cb61-0ce3-4312-8aae-855a6e037adf",
     "stop_order_id": null
   }
 }

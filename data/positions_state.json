@@ -141,7 +141,7 @@
     "insider": "FRITZ LANCE M",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000033/0000798354-26-000033-index.htm",
     "buy_order_id": "82fa0cac-9a3b-4287-8a2d-41c11a9c9746",
-    "stop_order_id": null
+    "stop_order_id": "ecdd9431-9391-47bb-aed9-4cc17796d311"
   },
   "SNEX": {
     "entry_date": "2026-08-11",
@@ -153,6 +153,30 @@
     "insider": "Thamodaran Dhamu R.",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/913760/000153135226000011/0001531352-26-000011-index.htm",
     "buy_order_id": "b426cb61-0ce3-4312-8aae-855a6e037adf",
+    "stop_order_id": "8f89bbd4-51bc-4fd1-b17d-bc877f11aed3"
+  },
+  "AME": {
+    "entry_date": "2026-08-12",
+    "entry_price": 258.57,
+    "qty": 7,
+    "mode": "initial_stop",
+    "stop_price": 219.78,
+    "high_water_mark": 258.57,
+    "insider": "Stanage Nick L",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000188/0001037868-26-000188-index.htm",
+    "buy_order_id": "21b45afb-fa1b-413c-881e-28e94ece02a4",
+    "stop_order_id": null
+  },
+  "Q": {
+    "entry_date": "2026-08-12",
+    "entry_price": 142.04,
+    "qty": 14,
+    "mode": "initial_stop",
+    "stop_price": 120.73,
+    "high_water_mark": 142.04,
+    "insider": "De Bondt Karin",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2092939/000162828026056317/0001628280-26-056317-index.htm",
+    "buy_order_id": "af68449f-20c6-4552-8974-d6f49cb60e94",
     "stop_order_id": null
   }
 }

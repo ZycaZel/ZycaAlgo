@@ -55,3 +55,12 @@
 | 2026-08-11 | SUNS | TANNENBAUM LEONARD M |  |  |  | SKIPPED - market cap $101,368,882 < $1B; avg volume 57,531 < 500K | https://www.sec.gov/Archives/edgar/data/2012706/000162828026055710/0001628280-26-055710-index.htm |
 | 2026-08-11 | CAPS | Strout Gordon Lewis Jr |  |  |  | SKIPPED - market cap $4,040,290 < $1B; avg volume 293,904 < 500K | https://www.sec.gov/Archives/edgar/data/887151/000143774926027117/0001437749-26-027117-index.htm |
 | 2026-08-11 | SNEX | Thamodaran Dhamu R. | $66.01 | 30 sh ($1,980) | $56.11 | ENTRY | https://www.sec.gov/Archives/edgar/data/913760/000153135226000011/0001531352-26-000011-index.htm |
+| 2026-08-12 | BLSM | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1839970/000094787126000784/0000947871-26-000784-index.htm |
+| 2026-08-12 | GLIBK | MALONE JOHN C |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2057463/000122520826007097/0001225208-26-007097-index.htm |
+| 2026-08-12 | AME | Stanage Nick L | $258.57 | 7 sh ($1,810) | $219.78 | ENTRY | https://www.sec.gov/Archives/edgar/data/1037868/000103786826000188/0001037868-26-000188-index.htm |
+| 2026-08-12 | PTLO | LEE EUGENE I JR |  |  |  | SKIPPED - market cap $294,142,401 < $1B | https://www.sec.gov/Archives/edgar/data/1242843/000124284326000010/0001242843-26-000010-index.htm |
+| 2026-08-12 | ACDC | Wilks Matthew |  |  |  | SKIPPED - market cap $934,289,769 < $1B | https://www.sec.gov/Archives/edgar/data/1881487/000169610226000008/0001696102-26-000008-index.htm |
+| 2026-08-12 | ALTO | NATHAN GILBERT E |  |  |  | SKIPPED - market cap $314,924,310 < $1B | https://www.sec.gov/Archives/edgar/data/778164/000121390026088530/0001213900-26-088530-index.htm |
+| 2026-08-12 | BTMD | Beer Marc D |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 205,330 < 500K | https://www.sec.gov/Archives/edgar/data/1314575/000131457526000007/0001314575-26-000007-index.htm |
+| 2026-08-12 | Q | De Bondt Karin | $142.04 | 14 sh ($1,989) | $120.73 | ENTRY | https://www.sec.gov/Archives/edgar/data/2092939/000162828026056317/0001628280-26-056317-index.htm |
+| 2026-08-12 | VISN | Gilstrap Charles A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2064715/000119312526347404/0001193125-26-347404-index.htm |

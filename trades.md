@@ -64,3 +64,12 @@
 | 2026-08-12 | BTMD | Beer Marc D |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 205,330 < 500K | https://www.sec.gov/Archives/edgar/data/1314575/000131457526000007/0001314575-26-000007-index.htm |
 | 2026-08-12 | Q | De Bondt Karin | $142.04 | 14 sh ($1,989) | $120.73 | ENTRY | https://www.sec.gov/Archives/edgar/data/2092939/000162828026056317/0001628280-26-056317-index.htm |
 | 2026-08-12 | VISN | Gilstrap Charles A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2064715/000119312526347404/0001193125-26-347404-index.htm |
+| 2026-08-13 | ATTO | WALSH COLIN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2058707/000186617426000009/0001866174-26-000009-index.htm |
+| 2026-08-13 | CEG | CRANDALL ROGER W |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1194961/000090514826003642/0000905148-26-003642-index.htm |
+| 2026-08-13 | LILA | BRACKEN CHARLES H R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1091974/000109197426000018/0001091974-26-000018-index.htm |
+| 2026-08-13 | EVGN | RECANATI LEON |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1574565/000117891326004095/0001178913-26-004095-index.htm |
+| 2026-08-13 | BTDR | Potter Michael G |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1899123/000121390026088668/0001213900-26-088668-index.htm |
+| 2026-08-13 | EMBC | HOMBACH ROBERT J. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1872789/000094787126000786/0000947871-26-000786-index.htm |
+| 2026-08-13 | BRK.B | O'Sullivan Michael J. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1067983/000119312526349574/0001193125-26-349574-index.htm |
+| 2026-08-13 | SUNS | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2012706/000162828026056738/0001628280-26-056738-index.htm |
+| 2026-08-13 | MTCH | Schiffman Glenn |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/891103/000089110326000131/0000891103-26-000131-index.htm |

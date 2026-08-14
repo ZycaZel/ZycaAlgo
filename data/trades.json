@@ -680,5 +680,104 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2064715/000119312526347404/0001193125-26-347404-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.507045+00:00",
+    "date": "2026-08-13",
+    "ticker": "ATTO",
+    "insider": "WALSH COLIN",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2058707/000186617426000009/0001866174-26-000009-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.507971+00:00",
+    "date": "2026-08-13",
+    "ticker": "CEG",
+    "insider": "CRANDALL ROGER W",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1194961/000090514826003642/0000905148-26-003642-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.508835+00:00",
+    "date": "2026-08-13",
+    "ticker": "LILA",
+    "insider": "BRACKEN CHARLES H R",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1091974/000109197426000018/0001091974-26-000018-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.509703+00:00",
+    "date": "2026-08-13",
+    "ticker": "EVGN",
+    "insider": "RECANATI LEON",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1574565/000117891326004095/0001178913-26-004095-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.510501+00:00",
+    "date": "2026-08-13",
+    "ticker": "BTDR",
+    "insider": "Potter Michael G",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1899123/000121390026088668/0001213900-26-088668-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.512546+00:00",
+    "date": "2026-08-13",
+    "ticker": "EMBC",
+    "insider": "HOMBACH ROBERT J.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1872789/000094787126000786/0000947871-26-000786-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.513394+00:00",
+    "date": "2026-08-13",
+    "ticker": "BRK.B",
+    "insider": "O'Sullivan Michael J.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526349574/0001193125-26-349574-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.514258+00:00",
+    "date": "2026-08-13",
+    "ticker": "SUNS",
+    "insider": "TANNENBAUM LEONARD M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2012706/000162828026056738/0001628280-26-056738-index.htm"
+  },
+  {
+    "timestamp": "2026-08-14T11:13:15.515186+00:00",
+    "date": "2026-08-13",
+    "ticker": "MTCH",
+    "insider": "Schiffman Glenn",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/891103/000089110326000131/0000891103-26-000131-index.htm"
   }
 ]

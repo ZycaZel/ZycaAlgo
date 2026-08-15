@@ -73,3 +73,12 @@
 | 2026-08-13 | BRK.B | O'Sullivan Michael J. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1067983/000119312526349574/0001193125-26-349574-index.htm |
 | 2026-08-13 | SUNS | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2012706/000162828026056738/0001628280-26-056738-index.htm |
 | 2026-08-13 | MTCH | Schiffman Glenn |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/891103/000089110326000131/0000891103-26-000131-index.htm |
+| 2026-08-14 | INTC | TAN LIP BU |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/50863/000005086326000177/0000050863-26-000177-index.htm |
+| 2026-08-14 | OTLK | Sukhtian Ghiath M. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1804598/000089914026000894/0000899140-26-000894-index.htm |
+| 2026-08-14 | ABCL | Hayden Michael R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1703057/000162828026057007/0001628280-26-057007-index.htm |
+| 2026-08-14 | BPRN | TUCHMAN MARTIN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1913971/000119312526351775/0001193125-26-351775-index.htm |
+| 2026-08-14 | GLXY | DEASON DOUGLAS R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1079500/000107950026000008/0001079500-26-000008-index.htm |
+| 2026-08-14 | PAL | Lal Rohit |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1901836/000121390026090367/0001213900-26-090367-index.htm |
+| 2026-08-14 | QTRX | DONNELLY WILLIAM P |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1207928/000120792826000008/0001207928-26-000008-index.htm |
+| 2026-08-14 | KEEL | Gagnon Benjamin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2121167/000181247726000025/0001812477-26-000025-index.htm |
+| 2026-08-14 | OPEN | Nejatian Kasra |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1962729/000196272926000004/0001962729-26-000004-index.htm |

@@ -82,3 +82,14 @@
 | 2026-08-14 | QTRX | DONNELLY WILLIAM P |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1207928/000120792826000008/0001207928-26-000008-index.htm |
 | 2026-08-14 | KEEL | Gagnon Benjamin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2121167/000181247726000025/0001812477-26-000025-index.htm |
 | 2026-08-14 | OPEN | Nejatian Kasra |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1962729/000196272926000004/0001962729-26-000004-index.htm |
+| 2026-08-17 | APLM | Chen Hung-Wen |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1944885/000119312526354457/0001193125-26-354457-index.htm |
+| 2026-08-17 | CDNL | Spivey Jeremy Simmons |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2079999/000121390026090854/0001213900-26-090854-index.htm |
+| 2026-08-17 | KURA | WILSON TROY EDWARD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1422143/000119312526354201/0001193125-26-354201-index.htm |
+| 2026-08-17 | MDXH | MVM Partners, LLC |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1897581/000119312526354021/0001193125-26-354021-index.htm |
+| 2026-08-17 | MLAB | Kadia Siddhartha |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1573666/000072400426000084/0000724004-26-000084-index.htm |
+| 2026-08-17 | MOBI | Tansey Casey M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1489993/000119312526354538/0001193125-26-354538-index.htm |
+| 2026-08-17 | SUNS | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2012706/000162828026057409/0001628280-26-057409-index.htm |
+| 2026-08-17 | FOCL | WILLSEY LANCE |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1041934/000182912626008923/0001829126-26-008923-index.htm |
+| 2026-08-17 | BTDR | Basit Haris Fozan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1653022/000121390026090516/0001213900-26-090516-index.htm |
+| 2026-08-17 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026057419/0001628280-26-057419-index.htm |
+| 2026-08-17 | KEEL | WILSON LIAM DANIEL |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1812477/000181247726000027/0001812477-26-000027-index.htm |

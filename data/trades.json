@@ -878,5 +878,126 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1962729/000196272926000004/0001962729-26-000004-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.329234+00:00",
+    "date": "2026-08-17",
+    "ticker": "APLM",
+    "insider": "Chen Hung-Wen",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1944885/000119312526354457/0001193125-26-354457-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.330328+00:00",
+    "date": "2026-08-17",
+    "ticker": "CDNL",
+    "insider": "Spivey Jeremy Simmons",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2079999/000121390026090854/0001213900-26-090854-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.331329+00:00",
+    "date": "2026-08-17",
+    "ticker": "KURA",
+    "insider": "WILSON TROY EDWARD",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1422143/000119312526354201/0001193125-26-354201-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.332345+00:00",
+    "date": "2026-08-17",
+    "ticker": "MDXH",
+    "insider": "MVM Partners, LLC",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1897581/000119312526354021/0001193125-26-354021-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.333375+00:00",
+    "date": "2026-08-17",
+    "ticker": "MLAB",
+    "insider": "Kadia Siddhartha",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1573666/000072400426000084/0000724004-26-000084-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.334343+00:00",
+    "date": "2026-08-17",
+    "ticker": "MOBI",
+    "insider": "Tansey Casey M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1489993/000119312526354538/0001193125-26-354538-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.335315+00:00",
+    "date": "2026-08-17",
+    "ticker": "SUNS",
+    "insider": "TANNENBAUM LEONARD M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2012706/000162828026057409/0001628280-26-057409-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.336412+00:00",
+    "date": "2026-08-17",
+    "ticker": "FOCL",
+    "insider": "WILLSEY LANCE",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1041934/000182912626008923/0001829126-26-008923-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.337428+00:00",
+    "date": "2026-08-17",
+    "ticker": "BTDR",
+    "insider": "Basit Haris Fozan",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1653022/000121390026090516/0001213900-26-090516-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.338430+00:00",
+    "date": "2026-08-17",
+    "ticker": "AFCG",
+    "insider": "TANNENBAUM LEONARD M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1822523/000162828026057419/0001628280-26-057419-index.htm"
+  },
+  {
+    "timestamp": "2026-08-18T09:24:27.339512+00:00",
+    "date": "2026-08-17",
+    "ticker": "KEEL",
+    "insider": "WILSON LIAM DANIEL",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1812477/000181247726000027/0001812477-26-000027-index.htm"
   }
 ]

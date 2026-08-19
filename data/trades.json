@@ -999,5 +999,93 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1812477/000181247726000027/0001812477-26-000027-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.063189+00:00",
+    "date": "2026-08-18",
+    "ticker": "AUGO",
+    "insider": "Sousa Mauad Bruno",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1468642/000211790526000018/0002117905-26-000018-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.064674+00:00",
+    "date": "2026-08-18",
+    "ticker": "CDNL",
+    "insider": "Wimmer Richard Bennett",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2079999/000121390026091325/0001213900-26-091325-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.065732+00:00",
+    "date": "2026-08-18",
+    "ticker": "ASND",
+    "insider": "BIENAIME JEAN JACQUES",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1612042/000161071726000360/0001610717-26-000360-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.066820+00:00",
+    "date": "2026-08-18",
+    "ticker": "ENSC",
+    "insider": "GOWER BOB G",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1716947/000149315226038866/0001493152-26-038866-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.067897+00:00",
+    "date": "2026-08-18",
+    "ticker": "ASST",
+    "insider": "Rochard Pierre",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2086233/000162828026057539/0001628280-26-057539-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.068952+00:00",
+    "date": "2026-08-18",
+    "ticker": "NTHI",
+    "insider": "CHEN THOMAS C",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1998682/000121390026091231/0001213900-26-091231-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.070013+00:00",
+    "date": "2026-08-18",
+    "ticker": "ABCL",
+    "insider": "Montalbano John S.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1703057/000183442326000008/0001834423-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-08-19T09:34:41.071217+00:00",
+    "date": "2026-08-18",
+    "ticker": "VRCA",
+    "insider": "Rieger Jayson",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2043558/000204355826000005/0002043558-26-000005-index.htm"
   }
 ]

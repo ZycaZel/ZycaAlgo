@@ -93,3 +93,11 @@
 | 2026-08-17 | BTDR | Basit Haris Fozan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1653022/000121390026090516/0001213900-26-090516-index.htm |
 | 2026-08-17 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026057419/0001628280-26-057419-index.htm |
 | 2026-08-17 | KEEL | WILSON LIAM DANIEL |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1812477/000181247726000027/0001812477-26-000027-index.htm |
+| 2026-08-18 | AUGO | Sousa Mauad Bruno |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1468642/000211790526000018/0002117905-26-000018-index.htm |
+| 2026-08-18 | CDNL | Wimmer Richard Bennett |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2079999/000121390026091325/0001213900-26-091325-index.htm |
+| 2026-08-18 | ASND | BIENAIME JEAN JACQUES |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1612042/000161071726000360/0001610717-26-000360-index.htm |
+| 2026-08-18 | ENSC | GOWER BOB G |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1716947/000149315226038866/0001493152-26-038866-index.htm |
+| 2026-08-18 | ASST | Rochard Pierre |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2086233/000162828026057539/0001628280-26-057539-index.htm |
+| 2026-08-18 | NTHI | CHEN THOMAS C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1998682/000121390026091231/0001213900-26-091231-index.htm |
+| 2026-08-18 | ABCL | Montalbano John S. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1703057/000183442326000008/0001834423-26-000008-index.htm |
+| 2026-08-18 | VRCA | Rieger Jayson |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2043558/000204355826000005/0002043558-26-000005-index.htm |

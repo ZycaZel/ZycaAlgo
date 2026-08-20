@@ -101,3 +101,13 @@
 | 2026-08-18 | NTHI | CHEN THOMAS C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1998682/000121390026091231/0001213900-26-091231-index.htm |
 | 2026-08-18 | ABCL | Montalbano John S. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1703057/000183442326000008/0001834423-26-000008-index.htm |
 | 2026-08-18 | VRCA | Rieger Jayson |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2043558/000204355826000005/0002043558-26-000005-index.htm |
+| 2026-08-19 | CCHH | Goh Kok E |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2074123/000121390026091415/0001213900-26-091415-index.htm |
+| 2026-08-19 | ATXG | HONG ZHIWANG |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1650101/000149315226039156/0001493152-26-039156-index.htm |
+| 2026-08-19 | MFP | Nerbonne Robert A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2088281/000119312526357255/0001193125-26-357255-index.htm |
+| 2026-08-19 | REFI | Cappell Anthony |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1897431/000121390026091787/0001213900-26-091787-index.htm |
+| 2026-08-19 | GLPI | SHANKS EARL C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1575965/000157596526000065/0001575965-26-000065-index.htm |
+| 2026-08-19 | LBGJ | Huang Feng |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2119577/000149315226039303/0001493152-26-039303-index.htm |
+| 2026-08-19 | ARE | MARCUS JOEL S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1035443/000121695526000019/0001216955-26-000019-index.htm |
+| 2026-08-19 | LIEN | Gordon Scott |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1843162/000119312526357041/0001193125-26-357041-index.htm |
+| 2026-08-19 | DMLP | MORIYAMA LESLIE A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1172358/000143774926028537/0001437749-26-028537-index.htm |
+| 2026-08-19 | SGRY | DeLuca Teresa |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1685627/000163883326000079/0001638833-26-000079-index.htm |

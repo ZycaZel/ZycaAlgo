@@ -111,3 +111,9 @@
 | 2026-08-19 | LIEN | Gordon Scott |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1843162/000119312526357041/0001193125-26-357041-index.htm |
 | 2026-08-19 | DMLP | MORIYAMA LESLIE A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1172358/000143774926028537/0001437749-26-028537-index.htm |
 | 2026-08-19 | SGRY | DeLuca Teresa |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1685627/000163883326000079/0001638833-26-000079-index.htm |
+| 2026-08-20 | MOBI | Tansey Casey M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1489993/000119312526359683/0001193125-26-359683-index.htm |
+| 2026-08-20 | CORZ | Weiss Eric Stanton |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1839341/000090514826003841/0000905148-26-003841-index.htm |
+| 2026-08-20 | SENS | ROEDER DOUGLAS A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1270735/000127073526000014/0001270735-26-000014-index.htm |
+| 2026-08-20 | RAIN | Seidl Randy |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2028293/000121390026092254/0001213900-26-092254-index.htm |
+| 2026-08-20 | FFIN | Denny Michael B. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1774246/000119312526358683/0001193125-26-358683-index.htm |
+| 2026-08-20 | WW | Sjoqvist Nikolaj H |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1720066/000119312526359167/0001193125-26-359167-index.htm |

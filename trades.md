@@ -117,3 +117,8 @@
 | 2026-08-20 | RAIN | Seidl Randy |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2028293/000121390026092254/0001213900-26-092254-index.htm |
 | 2026-08-20 | FFIN | Denny Michael B. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1774246/000119312526358683/0001193125-26-358683-index.htm |
 | 2026-08-20 | WW | Sjoqvist Nikolaj H |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1720066/000119312526359167/0001193125-26-359167-index.htm |
+| 2026-08-21 | GWRS | Levine Jonathan L |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1434728/000162828026058502/0001628280-26-058502-index.htm |
+| 2026-08-21 | DXST | Sun Dingxin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1958133/000118518526003676/0001185185-26-003676-index.htm |
+| 2026-08-21 | INV | Otworth Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2001557/000162828026058332/0001628280-26-058332-index.htm |
+| 2026-08-21 | NAKA | Bailey David F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1843661/000149315226039744/0001493152-26-039744-index.htm |
+| 2026-08-21 | KEEL | Gagnon Benjamin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2121167/000181247726000031/0001812477-26-000031-index.htm |

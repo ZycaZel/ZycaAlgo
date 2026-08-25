@@ -122,3 +122,14 @@
 | 2026-08-21 | INV | Otworth Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2001557/000162828026058332/0001628280-26-058332-index.htm |
 | 2026-08-21 | NAKA | Bailey David F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1843661/000149315226039744/0001493152-26-039744-index.htm |
 | 2026-08-21 | KEEL | Gagnon Benjamin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2121167/000181247726000031/0001812477-26-000031-index.htm |
+| 2026-08-24 | ODYS | Arkin Moshe |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1321178/000149315226039861/0001493152-26-039861-index.htm |
+| 2026-08-24 | KURA | WILSON TROY EDWARD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1422143/000119312526363812/0001193125-26-363812-index.htm |
+| 2026-08-24 | ABCL | Hayden Michael R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1703057/000162828026058684/0001628280-26-058684-index.htm |
+| 2026-08-24 | TTMI | Geveden Rex D |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1408482/000119312526363525/0001193125-26-363525-index.htm |
+| 2026-08-24 | VST | BURKE JAMES A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1268406/000126840626000007/0001268406-26-000007-index.htm |
+| 2026-08-24 | PRE | Yeung Danny Sheng Wu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1876431/000162828026058760/0001628280-26-058760-index.htm |
+| 2026-08-24 | TMCI | Treace John T. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1630627/000119312526363737/0001193125-26-363737-index.htm |
+| 2026-08-24 | PODD | McEvoy Ashley |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1145197/000114519726000172/0001145197-26-000172-index.htm |
+| 2026-08-24 | BFC | Pearson Tracy C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1746109/000110465926100257/0001104659-26-100257-index.htm |
+| 2026-08-24 | VERI | Steelberg Ryan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1705446/000170544626000012/0001705446-26-000012-index.htm |
+| 2026-08-24 | CORZ | CRAIN ELIZABETH |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1604659/000090514826003881/0000905148-26-003881-index.htm |

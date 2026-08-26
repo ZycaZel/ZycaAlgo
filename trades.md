@@ -133,3 +133,8 @@
 | 2026-08-24 | BFC | Pearson Tracy C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1746109/000110465926100257/0001104659-26-100257-index.htm |
 | 2026-08-24 | VERI | Steelberg Ryan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1705446/000170544626000012/0001705446-26-000012-index.htm |
 | 2026-08-24 | CORZ | CRAIN ELIZABETH |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1604659/000090514826003881/0000905148-26-003881-index.htm |
+| 2026-08-25 | TTMI | Roks Edwin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1705520/000119312526365628/0001193125-26-365628-index.htm |
+| 2026-08-25 | AMT | Kalathur Rajesh |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1053507/000105350726000139/0001053507-26-000139-index.htm |
+| 2026-08-25 | GRML | LeBlanc Jeff |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1907223/000121390026093307/0001213900-26-093307-index.htm |
+| 2026-08-25 | EPSN | Stabell Jason |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1726126/000110465926100600/0001104659-26-100600-index.htm |
+| 2026-08-25 | SRTS | Sachetta Eric |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2097345/000209734526000012/0002097345-26-000012-index.htm |

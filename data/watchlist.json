@@ -1,14 +1,104 @@
 {
   "tickers": [
     {
+      "ticker": "IMTX",
+      "company": "Immatics N.V.",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 1,
+      "sector": "Healthcare",
+      "price": 9.45,
+      "change_pct": 0.9615401000000001
+    },
+    {
+      "ticker": "WELL",
+      "company": "WELLTOWER INC.",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 4,
+      "sector": "Real Estate",
+      "price": 238.07,
+      "change_pct": -0.638564
+    },
+    {
+      "ticker": "RGNX",
+      "company": "REGENXBIO Inc.",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 2,
+      "sector": "Healthcare",
+      "price": 9.66,
+      "change_pct": 3.0949837000000002
+    },
+    {
+      "ticker": "KDP",
+      "company": "Keurig Dr Pepper Inc.",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 1,
+      "sector": "Consumer Staples",
+      "price": 32.18,
+      "change_pct": 0.9410324499999999
+    },
+    {
+      "ticker": "CINF",
+      "company": "CINCINNATI FINANCIAL CORP",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 1,
+      "sector": "Financials",
+      "price": 171.97,
+      "change_pct": -0.3188054
+    },
+    {
+      "ticker": "RDVT",
+      "company": "Red Violet, Inc.",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 1,
+      "sector": "Technology",
+      "price": 73.3,
+      "change_pct": 1.8055596999999999
+    },
+    {
+      "ticker": "IPGP",
+      "company": "IPG PHOTONICS CORP",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 1,
+      "sector": "Technology",
+      "price": 76.53,
+      "change_pct": -0.9320403999999999
+    },
+    {
+      "ticker": "HWKN",
+      "company": "HAWKINS INC",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 1,
+      "sector": "Materials",
+      "price": 120.35,
+      "change_pct": 2.2775562
+    },
+    {
+      "ticker": "SCOR",
+      "company": "COMSCORE, INC.",
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-27",
+      "signal_count": 1,
+      "sector": "Technology",
+      "price": 5.16,
+      "change_pct": -2.4574691
+    },
+    {
       "ticker": "TTMI",
       "company": "TTM TECHNOLOGIES INC",
       "first_seen": "2026-08-24",
       "last_seen": "2026-08-25",
       "signal_count": 2,
       "sector": "Technology",
-      "price": 112.3,
-      "change_pct": 4.8357
+      "price": 118.65,
+      "change_pct": -4.8745304
     },
     {
       "ticker": "AMT",
@@ -17,8 +107,8 @@
       "last_seen": "2026-08-25",
       "signal_count": 1,
       "sector": "Real Estate",
-      "price": 178.57,
-      "change_pct": 0.100907
+      "price": 176.23,
+      "change_pct": 1.18856
     },
     {
       "ticker": "GRML",
@@ -27,8 +117,8 @@
       "last_seen": "2026-08-25",
       "signal_count": 1,
       "sector": "Materials",
-      "price": 9.71,
-      "change_pct": 13.567199999999998
+      "price": 4.88,
+      "change_pct": -7.224336000000001
     },
     {
       "ticker": "EPSN",
@@ -37,8 +127,8 @@
       "last_seen": "2026-08-25",
       "signal_count": 1,
       "sector": "Energy",
-      "price": 5.79,
-      "change_pct": 3.2085500000000002
+      "price": 6.02,
+      "change_pct": 1.8612545
     },
     {
       "ticker": "SRTS",
@@ -47,8 +137,8 @@
       "last_seen": "2026-08-25",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 3.36,
-      "change_pct": -3.72493
+      "price": 3.52,
+      "change_pct": 4.451041699999999
     },
     {
       "ticker": "ABCL",
@@ -57,8 +147,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 4,
       "sector": "Healthcare",
-      "price": 12.5,
-      "change_pct": 17.813401000000002
+      "price": 11.35,
+      "change_pct": -8.467735999999999
     },
     {
       "ticker": "KURA",
@@ -67,8 +157,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 2,
       "sector": "Healthcare",
-      "price": 13.59,
-      "change_pct": 9.59678
+      "price": 12.66,
+      "change_pct": -3.9453752
     },
     {
       "ticker": "CORZ",
@@ -77,8 +167,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 2,
       "sector": "Technology",
-      "price": 18.03,
-      "change_pct": 4.4007
+      "price": 16.51,
+      "change_pct": -6.2996626
     },
     {
       "ticker": "ODYS",
@@ -87,8 +177,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 3,
       "sector": "Technology",
-      "price": 3.65,
-      "change_pct": -0.8152170000000001
+      "price": 3.78,
+      "change_pct": -0.52631525
     },
     {
       "ticker": "VST",
@@ -97,8 +187,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 1,
       "sector": "Utilities",
-      "price": 139.03,
-      "change_pct": 2.4841499
+      "price": 137.09,
+      "change_pct": -1.9455
     },
     {
       "ticker": "PRE",
@@ -107,8 +197,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 3,
       "sector": "Consumer Staples",
-      "price": 23.25,
-      "change_pct": 6.5536200000000004
+      "price": 25.76,
+      "change_pct": -1.8666658999999999
     },
     {
       "ticker": "TMCI",
@@ -117,8 +207,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 4.81,
-      "change_pct": 10.0687
+      "price": 4.65,
+      "change_pct": 1.0869608
     },
     {
       "ticker": "PODD",
@@ -127,8 +217,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 143.05,
-      "change_pct": -1.6297601
+      "price": 145.13,
+      "change_pct": 1.1993593
     },
     {
       "ticker": "BFC",
@@ -137,8 +227,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 152.99,
-      "change_pct": -0.707422
+      "price": 152.81,
+      "change_pct": 0.63219722
     },
     {
       "ticker": "VERI",
@@ -147,8 +237,8 @@
       "last_seen": "2026-08-24",
       "signal_count": 1,
       "sector": "Technology",
-      "price": 0.87,
-      "change_pct": 1.6117800000000002
+      "price": 0.7983,
+      "change_pct": -2.6463373
     },
     {
       "ticker": "KEEL",
@@ -157,8 +247,8 @@
       "last_seen": "2026-08-21",
       "signal_count": 3,
       "sector": "Technology",
-      "price": 3.51,
-      "change_pct": 8.0
+      "price": 3.22,
+      "change_pct": -8.2621075
     },
     {
       "ticker": "GWRS",
@@ -167,8 +257,8 @@
       "last_seen": "2026-08-21",
       "signal_count": 2,
       "sector": "Utilities",
-      "price": 9.37,
-      "change_pct": 0.10683999999999999
+      "price": 9.13,
+      "change_pct": -0.43620459999999994
     },
     {
       "ticker": "DXST",
@@ -177,8 +267,8 @@
       "last_seen": "2026-08-21",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 2.65,
-      "change_pct": -10.1695
+      "price": 2.63,
+      "change_pct": 0.0
     },
     {
       "ticker": "INV",
@@ -187,8 +277,8 @@
       "last_seen": "2026-08-21",
       "signal_count": 2,
       "sector": "Financials",
-      "price": 1.53,
-      "change_pct": 11.6788
+      "price": 1.26,
+      "change_pct": -13.698633
     },
     {
       "ticker": "NAKA",
@@ -197,8 +287,8 @@
       "last_seen": "2026-08-21",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 7.16,
-      "change_pct": -0.55555496
+      "price": 7.44,
+      "change_pct": -3.7516165999999997
     },
     {
       "ticker": "MOBI",
@@ -207,8 +297,8 @@
       "last_seen": "2026-08-20",
       "signal_count": 4,
       "sector": "Healthcare",
-      "price": 10.63,
-      "change_pct": -3.18761
+      "price": 11.34,
+      "change_pct": 6.98113
     },
     {
       "ticker": "SENS",
@@ -217,8 +307,8 @@
       "last_seen": "2026-08-20",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 9.52,
-      "change_pct": 1.49254
+      "price": 9.33,
+      "change_pct": -0.7446775999999999
     },
     {
       "ticker": "RAIN",
@@ -227,8 +317,8 @@
       "last_seen": "2026-08-20",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 1.17,
-      "change_pct": 26.1319
+      "price": 0.985,
+      "change_pct": -2.4752449999999997
     },
     {
       "ticker": "FFIN",
@@ -237,8 +327,8 @@
       "last_seen": "2026-08-20",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 33.71,
-      "change_pct": -0.73615997
+      "price": 33.39,
+      "change_pct": 0.9676435000000001
     },
     {
       "ticker": "WW",
@@ -247,8 +337,8 @@
       "last_seen": "2026-08-20",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 17.65,
-      "change_pct": 10.3815004
+      "price": 16.2,
+      "change_pct": -1.09889135
     },
     {
       "ticker": "CCHH",
@@ -257,8 +347,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 2,
       "sector": "Consumer Discretionary",
-      "price": 1.27,
-      "change_pct": 1.6
+      "price": 1.21,
+      "change_pct": -0.8196713
     },
     {
       "ticker": "ATXG",
@@ -267,8 +357,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 3.69,
-      "change_pct": -0.27027
+      "price": 3.665,
+      "change_pct": 0.0
     },
     {
       "ticker": "MFP",
@@ -277,8 +367,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 51.47,
-      "change_pct": 5.5794902
+      "price": 46.77,
+      "change_pct": -3.8445704
     },
     {
       "ticker": "REFI",
@@ -287,8 +377,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 2,
       "sector": "Real Estate",
-      "price": 10.8,
-      "change_pct": 0.092680496
+      "price": 10.68,
+      "change_pct": 0.093722856
     },
     {
       "ticker": "GLPI",
@@ -297,8 +387,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 1,
       "sector": "Real Estate",
-      "price": 43.03,
-      "change_pct": -2.0487199
+      "price": 42.56,
+      "change_pct": 0.5908768600000001
     },
     {
       "ticker": "LBGJ",
@@ -308,7 +398,7 @@
       "signal_count": 1,
       "sector": "Industrials",
       "price": 2.95,
-      "change_pct": 0.340136
+      "change_pct": -5.7508007
     },
     {
       "ticker": "ARE",
@@ -317,8 +407,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 1,
       "sector": "Real Estate",
-      "price": 52.9,
-      "change_pct": -2.10955
+      "price": 51.57,
+      "change_pct": -1.3580699999999999
     },
     {
       "ticker": "LIEN",
@@ -327,8 +417,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 2,
       "sector": "Financials",
-      "price": 10.19,
-      "change_pct": 0.394088
+      "price": 10.2,
+      "change_pct": 0.59171068
     },
     {
       "ticker": "DMLP",
@@ -337,8 +427,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 1,
       "sector": "Energy",
-      "price": 28.93,
-      "change_pct": -0.9246591000000001
+      "price": 28.65,
+      "change_pct": -0.20898457
     },
     {
       "ticker": "SGRY",
@@ -347,8 +437,8 @@
       "last_seen": "2026-08-19",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 14.05,
-      "change_pct": 0.7168490399999999
+      "price": 13.69,
+      "change_pct": -1.7229054000000001
     },
     {
       "ticker": "CDNL",
@@ -357,8 +447,8 @@
       "last_seen": "2026-08-18",
       "signal_count": 13,
       "sector": "Industrials",
-      "price": 43.29,
-      "change_pct": 4.9963698
+      "price": 38.04,
+      "change_pct": -7.982582000000001
     },
     {
       "ticker": "AUGO",
@@ -367,8 +457,8 @@
       "last_seen": "2026-08-18",
       "signal_count": 1,
       "sector": "Materials",
-      "price": 90.47,
-      "change_pct": 3.54813
+      "price": 84.53,
+      "change_pct": -5.1503635999999995
     },
     {
       "ticker": "ASND",
@@ -377,8 +467,8 @@
       "last_seen": "2026-08-18",
       "signal_count": 2,
       "sector": "Healthcare",
-      "price": 252.99,
-      "change_pct": 0.412784
+      "price": 247.91,
+      "change_pct": -0.5814874
     },
     {
       "ticker": "ENSC",
@@ -387,8 +477,8 @@
       "last_seen": "2026-08-18",
       "signal_count": 2,
       "sector": "Healthcare",
-      "price": 0.403,
-      "change_pct": 11.6343
+      "price": 0.3999,
+      "change_pct": 0.22556400000000001
     },
     {
       "ticker": "ASST",
@@ -397,8 +487,8 @@
       "last_seen": "2026-08-18",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 21.39,
-      "change_pct": 8.41358
+      "price": 21.74,
+      "change_pct": -5.9688624
     },
     {
       "ticker": "NTHI",
@@ -407,8 +497,8 @@
       "last_seen": "2026-08-18",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 4.71,
-      "change_pct": 0.426439
+      "price": 4.69,
+      "change_pct": 1.8458206000000001
     },
     {
       "ticker": "VRCA",
@@ -417,8 +507,8 @@
       "last_seen": "2026-08-18",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 4.94,
-      "change_pct": 1.43738
+      "price": 5.69,
+      "change_pct": 12.2287944
     },
     {
       "ticker": "APTV",
@@ -427,8 +517,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 5,
       "sector": "Consumer Discretionary",
-      "price": 46.63,
-      "change_pct": -1.49978995
+      "price": 45.75,
+      "change_pct": 0.6822210000000001
     },
     {
       "ticker": "SUNS",
@@ -437,8 +527,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 4,
       "sector": "Real Estate",
-      "price": 7.6,
-      "change_pct": -0.13140901
+      "price": 7.5,
+      "change_pct": -0.53050346
     },
     {
       "ticker": "BTDR",
@@ -447,8 +537,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 2,
       "sector": "Technology",
-      "price": 11.29,
-      "change_pct": 3.4830403000000003
+      "price": 10.32,
+      "change_pct": -8.914389
     },
     {
       "ticker": "APLM",
@@ -457,8 +547,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 5,
       "sector": "Healthcare",
-      "price": 26.5,
-      "change_pct": 14.684854
+      "price": 26.6,
+      "change_pct": 7.0853470000000005
     },
     {
       "ticker": "MDXH",
@@ -467,8 +557,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 0.7888,
-      "change_pct": 6.40766
+      "price": 0.7207,
+      "change_pct": -0.11087372999999999
     },
     {
       "ticker": "MLAB",
@@ -477,8 +567,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 2,
       "sector": "Technology",
-      "price": 127.35,
-      "change_pct": 2.43726
+      "price": 129.09,
+      "change_pct": 0.3420151
     },
     {
       "ticker": "FOCL",
@@ -487,8 +577,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 4.39,
-      "change_pct": 5.0239199999999995
+      "price": 4.31,
+      "change_pct": -0.69124904
     },
     {
       "ticker": "AFCG",
@@ -497,8 +587,8 @@
       "last_seen": "2026-08-17",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 3.39,
-      "change_pct": -1.7391299999999998
+      "price": 3.6,
+      "change_pct": 4.6511583000000005
     },
     {
       "ticker": "GLXY",
@@ -507,8 +597,8 @@
       "last_seen": "2026-08-14",
       "signal_count": 2,
       "sector": "Financials",
-      "price": 24.79,
-      "change_pct": 8.537659999999999
+      "price": 23.21,
+      "change_pct": -8.224602
     },
     {
       "ticker": "INTC",
@@ -517,8 +607,8 @@
       "last_seen": "2026-08-14",
       "signal_count": 1,
       "sector": "Technology",
-      "price": 87.48,
-      "change_pct": 0.25212201
+      "price": 89.47,
+      "change_pct": -2.8450377
     },
     {
       "ticker": "OTLK",
@@ -527,8 +617,8 @@
       "last_seen": "2026-08-14",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 0.64,
-      "change_pct": 5.0903
+      "price": 0.6449,
+      "change_pct": 0.5927366
     },
     {
       "ticker": "BPRN",
@@ -537,8 +627,8 @@
       "last_seen": "2026-08-14",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 42.33,
-      "change_pct": -0.16509400000000002
+      "price": 42.25,
+      "change_pct": 0.07105348
     },
     {
       "ticker": "PAL",
@@ -547,8 +637,8 @@
       "last_seen": "2026-08-14",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 5.41,
-      "change_pct": 2.07547
+      "price": 5.13,
+      "change_pct": -4.46927
     },
     {
       "ticker": "QTRX",
@@ -557,8 +647,8 @@
       "last_seen": "2026-08-14",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 2.79,
-      "change_pct": -0.35714302000000003
+      "price": 2.64,
+      "change_pct": 0.0
     },
     {
       "ticker": "OPEN",
@@ -567,8 +657,8 @@
       "last_seen": "2026-08-14",
       "signal_count": 1,
       "sector": "Real Estate",
-      "price": 3.6,
-      "change_pct": 4.956260299999999
+      "price": 3.29,
+      "change_pct": -2.6627265
     },
     {
       "ticker": "EVGN",
@@ -577,8 +667,8 @@
       "last_seen": "2026-08-13",
       "signal_count": 2,
       "sector": "Healthcare",
-      "price": 0.5495,
-      "change_pct": -1.6994700000000003
+      "price": 0.5496,
+      "change_pct": 2.1561373
     },
     {
       "ticker": "ATTO",
@@ -587,8 +677,8 @@
       "last_seen": "2026-08-13",
       "signal_count": 2,
       "sector": "Healthcare",
-      "price": 19.31,
-      "change_pct": -6.353059399999999
+      "price": 20.7,
+      "change_pct": -3.5414647
     },
     {
       "ticker": "CEG",
@@ -597,8 +687,8 @@
       "last_seen": "2026-08-13",
       "signal_count": 1,
       "sector": "Utilities",
-      "price": 278.42,
-      "change_pct": 1.82497
+      "price": 276.75,
+      "change_pct": -2.0041795000000002
     },
     {
       "ticker": "LILA",
@@ -607,8 +697,8 @@
       "last_seen": "2026-08-13",
       "signal_count": 1,
       "sector": "Communication Services",
-      "price": 8.65,
-      "change_pct": 2.73159
+      "price": 8.56,
+      "change_pct": 2.7611105
     },
     {
       "ticker": "EMBC",
@@ -617,8 +707,8 @@
       "last_seen": "2026-08-13",
       "signal_count": 2,
       "sector": "Healthcare",
-      "price": 5.03,
-      "change_pct": 0.8016120999999999
+      "price": 5.05,
+      "change_pct": 1.6096659999999998
     },
     {
       "ticker": "BRK.B",
@@ -637,8 +727,8 @@
       "last_seen": "2026-08-13",
       "signal_count": 1,
       "sector": "Communication Services",
-      "price": 42.18,
-      "change_pct": 1.07836
+      "price": 41.58,
+      "change_pct": 0.8733639
     },
     {
       "ticker": "PFE",
@@ -647,8 +737,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 3,
       "sector": "Healthcare",
-      "price": 28.57,
-      "change_pct": 2.14516
+      "price": 27.96,
+      "change_pct": -0.214138
     },
     {
       "ticker": "BLSM",
@@ -657,8 +747,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 3,
       "sector": "Healthcare",
-      "price": 18.42,
-      "change_pct": 14.909500000000001
+      "price": 19.56,
+      "change_pct": -1.21212015
     },
     {
       "ticker": "GLIBK",
@@ -667,8 +757,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 4,
       "sector": "Communication Services",
-      "price": 26.37,
-      "change_pct": 2.2886
+      "price": 26.01,
+      "change_pct": -0.4973189
     },
     {
       "ticker": "AME",
@@ -677,8 +767,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 241.77,
-      "change_pct": -0.231089
+      "price": 236.25,
+      "change_pct": -3.0450999999999997
     },
     {
       "ticker": "PTLO",
@@ -687,8 +777,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 1,
       "sector": "Consumer Discretionary",
-      "price": 4.85,
-      "change_pct": -2.61044
+      "price": 4.7,
+      "change_pct": 4.9107097
     },
     {
       "ticker": "ACDC",
@@ -697,8 +787,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 2,
       "sector": "Energy",
-      "price": 4.67,
-      "change_pct": -3.11204
+      "price": 4.99,
+      "change_pct": -5.133088
     },
     {
       "ticker": "ALTO",
@@ -707,8 +797,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 1,
       "sector": "Materials",
-      "price": 3.99,
-      "change_pct": -4.77327
+      "price": 4.07,
+      "change_pct": -0.48899706
     },
     {
       "ticker": "BTMD",
@@ -717,8 +807,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 1.58,
-      "change_pct": 0.63694203
+      "price": 1.57,
+      "change_pct": -3.680978
     },
     {
       "ticker": "Q",
@@ -727,8 +817,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 1,
       "sector": "Technology",
-      "price": 126.62,
-      "change_pct": 0.301018
+      "price": 120.26,
+      "change_pct": -4.819940000000001
     },
     {
       "ticker": "VISN",
@@ -737,8 +827,8 @@
       "last_seen": "2026-08-12",
       "signal_count": 1,
       "sector": "Technology",
-      "price": 11.04,
-      "change_pct": 1.8450199999999999
+      "price": 6.06,
+      "change_pct": -47.893378
     },
     {
       "ticker": "BRVE",
@@ -747,8 +837,8 @@
       "last_seen": "2026-08-11",
       "signal_count": 8,
       "sector": "Healthcare",
-      "price": 27.64,
-      "change_pct": 0.509089
+      "price": 27.44,
+      "change_pct": -1.5075379999999998
     },
     {
       "ticker": "FISV",
@@ -757,8 +847,8 @@
       "last_seen": "2026-08-11",
       "signal_count": 1,
       "sector": null,
-      "price": 52.44,
-      "change_pct": -0.9818739999999999
+      "price": 53.18,
+      "change_pct": 1.1411155
     },
     {
       "ticker": "NVR",
@@ -767,8 +857,8 @@
       "last_seen": "2026-08-11",
       "signal_count": 1,
       "sector": "Consumer Discretionary",
-      "price": 6433.74,
-      "change_pct": 0.565063
+      "price": 6396.27,
+      "change_pct": 0.48417402
     },
     {
       "ticker": "BCML",
@@ -777,8 +867,8 @@
       "last_seen": "2026-08-11",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 29.97,
-      "change_pct": -0.49801300000000004
+      "price": 30.29,
+      "change_pct": 1.0340272
     },
     {
       "ticker": "STRZ",
@@ -787,8 +877,8 @@
       "last_seen": "2026-08-11",
       "signal_count": 1,
       "sector": "Communication Services",
-      "price": 29.19,
-      "change_pct": 0.863856
+      "price": 27.75,
+      "change_pct": 2.1347072000000002
     },
     {
       "ticker": "CAPS",
@@ -797,8 +887,8 @@
       "last_seen": "2026-08-11",
       "signal_count": 1,
       "sector": "Materials",
-      "price": 0.19,
-      "change_pct": 2.7027002
+      "price": 0.1831,
+      "change_pct": -1.0270283999999998
     },
     {
       "ticker": "SNEX",
@@ -807,8 +897,8 @@
       "last_seen": "2026-08-11",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 69.66,
-      "change_pct": 2.81919
+      "price": 68.64,
+      "change_pct": 0.42428810000000006
     },
     {
       "ticker": "LTGO",
@@ -817,8 +907,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 22.57,
-      "change_pct": 2.59091
+      "price": 24.23,
+      "change_pct": -3.0800018
     },
     {
       "ticker": "LINE",
@@ -827,8 +917,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 1,
       "sector": "Real Estate",
-      "price": 41.24,
-      "change_pct": 1.07844
+      "price": 39.32,
+      "change_pct": -0.5815412
     },
     {
       "ticker": "VEON",
@@ -837,8 +927,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 2,
       "sector": "Communication Services",
-      "price": 62.34,
-      "change_pct": 1.94603
+      "price": 60.84,
+      "change_pct": 0.7284744999999999
     },
     {
       "ticker": "PRCT",
@@ -847,8 +937,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 21.6,
-      "change_pct": 1.6470599999999997
+      "price": 20.83,
+      "change_pct": 1.1165026999999998
     },
     {
       "ticker": "BWFG",
@@ -857,8 +947,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 2,
       "sector": "Financials",
-      "price": 65.75,
-      "change_pct": -1.14269
+      "price": 66.56,
+      "change_pct": 0.36187856
     },
     {
       "ticker": "NSLR",
@@ -867,8 +957,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 10.29,
-      "change_pct": 4.25532
+      "price": 10.2,
+      "change_pct": -0.8746371
     },
     {
       "ticker": "AHCO",
@@ -877,8 +967,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 3,
       "sector": "Healthcare",
-      "price": 5.48,
-      "change_pct": -2.6643
+      "price": 5.79,
+      "change_pct": -0.17241775
     },
     {
       "ticker": "CWBC",
@@ -887,8 +977,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 26.0,
-      "change_pct": -0.038447600000000005
+      "price": 25.82,
+      "change_pct": -0.6923089
     },
     {
       "ticker": "MATW",
@@ -897,8 +987,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 21.5,
-      "change_pct": 1.31951
+      "price": 20.93,
+      "change_pct": -0.47551296
     },
     {
       "ticker": "MBLY",
@@ -907,8 +997,8 @@
       "last_seen": "2026-08-10",
       "signal_count": 1,
       "sector": "Consumer Discretionary",
-      "price": 8.68,
-      "change_pct": 0.462963
+      "price": 8.58,
+      "change_pct": -0.34842896
     },
     {
       "ticker": "GBFH",
@@ -917,8 +1007,8 @@
       "last_seen": "2026-08-07",
       "signal_count": 7,
       "sector": "Financials",
-      "price": 20.53,
-      "change_pct": -4.3782000000000005
+      "price": 20.1,
+      "change_pct": -1.1313308
     },
     {
       "ticker": "ABTC",
@@ -927,8 +1017,8 @@
       "last_seen": "2026-08-07",
       "signal_count": 2,
       "sector": "Financials",
-      "price": 9.24,
-      "change_pct": 6.944439600000001
+      "price": 7.69,
+      "change_pct": -12.214614
     },
     {
       "ticker": "ONMD",
@@ -937,8 +1027,8 @@
       "last_seen": "2026-08-07",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 0.5872,
-      "change_pct": -0.491443
+      "price": 0.58,
+      "change_pct": -0.8716478999999999
     },
     {
       "ticker": "CCB",
@@ -947,8 +1037,8 @@
       "last_seen": "2026-08-07",
       "signal_count": 3,
       "sector": "Financials",
-      "price": 47.17,
-      "change_pct": 0.447187
+      "price": 48.48,
+      "change_pct": 3.722717
     },
     {
       "ticker": "TLSA",
@@ -957,8 +1047,8 @@
       "last_seen": "2026-08-06",
       "signal_count": 2,
       "sector": "Healthcare",
-      "price": 1.11,
-      "change_pct": -3.4782599999999997
+      "price": 1.01,
+      "change_pct": -6.481486
     },
     {
       "ticker": "REBN",
@@ -967,8 +1057,8 @@
       "last_seen": "2026-08-06",
       "signal_count": 1,
       "sector": "Consumer Discretionary",
-      "price": 1.35,
-      "change_pct": -1.45985
+      "price": 1.26,
+      "change_pct": -5.2631616999999995
     },
     {
       "ticker": "SAGT",
@@ -977,8 +1067,8 @@
       "last_seen": "2026-08-06",
       "signal_count": 1,
       "sector": "Technology",
-      "price": 0.629,
-      "change_pct": 0.963079
+      "price": 0.6611,
+      "change_pct": -0.78043356
     },
     {
       "ticker": "ETR",
@@ -987,8 +1077,8 @@
       "last_seen": "2026-08-06",
       "signal_count": 1,
       "sector": "Utilities",
-      "price": 106.24,
-      "change_pct": 0.425368
+      "price": 105.75,
+      "change_pct": -0.69489903
     },
     {
       "ticker": "BSX",
@@ -997,8 +1087,8 @@
       "last_seen": "2026-08-05",
       "signal_count": 1,
       "sector": "Healthcare",
-      "price": 49.86,
-      "change_pct": 1.7343399999999998
+      "price": 46.84,
+      "change_pct": 0.364264
     },
     {
       "ticker": "XIIIU",
@@ -1007,8 +1097,8 @@
       "last_seen": "2026-08-05",
       "signal_count": 1,
       "sector": "Financials",
-      "price": 10.55,
-      "change_pct": 0.4761923
+      "price": 10.59,
+      "change_pct": 0.47438513
     },
     {
       "ticker": "CSGP",
@@ -1017,8 +1107,8 @@
       "last_seen": "2026-08-05",
       "signal_count": 1,
       "sector": "Real Estate",
-      "price": 32.81,
-      "change_pct": -0.0913483
+      "price": 32.22,
+      "change_pct": 2.8079163
     },
     {
       "ticker": "IR",
@@ -1027,8 +1117,8 @@
       "last_seen": "2026-08-05",
       "signal_count": 1,
       "sector": "Industrials",
-      "price": 78.57,
-      "change_pct": -1.77522
+      "price": 78.58,
+      "change_pct": -0.49385799999999996
     },
     {
       "ticker": "TSCO",
@@ -1037,8 +1127,8 @@
       "last_seen": "2026-08-05",
       "signal_count": 1,
       "sector": "Consumer Discretionary",
-      "price": 35.38,
-      "change_pct": -1.50333
+      "price": 34.72,
+      "change_pct": 0.057638204
     },
     {
       "ticker": "JBL",
@@ -1047,8 +1137,8 @@
       "last_seen": "2026-08-05",
       "signal_count": 1,
       "sector": "Technology",
-      "price": 308.68,
-      "change_pct": 1.24306
+      "price": 301.45,
+      "change_pct": -3.4494900000000004
     }
   ]
 }

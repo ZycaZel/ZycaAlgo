@@ -138,3 +138,12 @@
 | 2026-08-25 | GRML | LeBlanc Jeff |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1907223/000121390026093307/0001213900-26-093307-index.htm |
 | 2026-08-25 | EPSN | Stabell Jason |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1726126/000110465926100600/0001104659-26-100600-index.htm |
 | 2026-08-25 | SRTS | Sachetta Eric |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2097345/000209734526000012/0002097345-26-000012-index.htm |
+| 2026-08-27 | IMTX | PERCEPTIVE ADVISORS LLC |  |  |  | SKIPPED - avg volume 391,148 < 500K | https://www.sec.gov/Archives/edgar/data/1164426/000119312526371237/0001193125-26-371237-index.htm |
+| 2026-08-27 | WELL | Gundlach Andrew | $237.85 | 8 sh ($1,903) | $202.17 | ENTRY | https://www.sec.gov/Archives/edgar/data/2031329/000119312526371418/0001193125-26-371418-index.htm |
+| 2026-08-27 | RGNX | Ciongoli Gregory Austin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2023732/000202373226000008/0002023732-26-000008-index.htm |
+| 2026-08-27 | KDP | Alt Aaron E |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1741576/000174157626000008/0001741576-26-000008-index.htm |
+| 2026-08-27 | CINF | Debbink Dirk J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/20286/000128945426000006/0001289454-26-000006-index.htm |
+| 2026-08-27 | RDVT | LIVEK WILLIAM PAUL |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1466605/000119312526371390/0001193125-26-371390-index.htm |
+| 2026-08-27 | IPGP | PEELER JOHN R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1111928/000111192826000163/0001111928-26-000163-index.htm |
+| 2026-08-27 | HWKN | Lange Douglas A. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/46250/000181609226000006/0001816092-26-000006-index.htm |
+| 2026-08-27 | SCOR | McLaughlin Matthew F. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000185387426000012/0001853874-26-000012-index.htm |

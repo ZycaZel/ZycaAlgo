@@ -1494,5 +1494,104 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2097345/000209734526000012/0002097345-26-000012-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.182287+00:00",
+    "date": "2026-08-27",
+    "ticker": "IMTX",
+    "insider": "PERCEPTIVE ADVISORS LLC",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 391,148 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1164426/000119312526371237/0001193125-26-371237-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.745769+00:00",
+    "date": "2026-08-27",
+    "ticker": "WELL",
+    "insider": "Gundlach Andrew",
+    "entry": "$237.85",
+    "size": "8 sh ($1,903)",
+    "stop": "$202.17",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2031329/000119312526371418/0001193125-26-371418-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.747383+00:00",
+    "date": "2026-08-27",
+    "ticker": "RGNX",
+    "insider": "Ciongoli Gregory Austin",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2023732/000202373226000008/0002023732-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.748872+00:00",
+    "date": "2026-08-27",
+    "ticker": "KDP",
+    "insider": "Alt Aaron E",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1741576/000174157626000008/0001741576-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.750361+00:00",
+    "date": "2026-08-27",
+    "ticker": "CINF",
+    "insider": "Debbink Dirk J",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/20286/000128945426000006/0001289454-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.751835+00:00",
+    "date": "2026-08-27",
+    "ticker": "RDVT",
+    "insider": "LIVEK WILLIAM PAUL",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1466605/000119312526371390/0001193125-26-371390-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.753333+00:00",
+    "date": "2026-08-27",
+    "ticker": "IPGP",
+    "insider": "PEELER JOHN R",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1111928/000111192826000163/0001111928-26-000163-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.754820+00:00",
+    "date": "2026-08-27",
+    "ticker": "HWKN",
+    "insider": "Lange Douglas A.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/46250/000181609226000006/0001816092-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-08-28T21:53:01.756309+00:00",
+    "date": "2026-08-27",
+    "ticker": "SCOR",
+    "insider": "McLaughlin Matthew F.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1158172/000185387426000012/0001853874-26-000012-index.htm"
   }
 ]

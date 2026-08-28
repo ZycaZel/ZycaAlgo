@@ -167,16 +167,16 @@
     "buy_order_id": "21b45afb-fa1b-413c-881e-28e94ece02a4",
     "stop_order_id": "2408edd4-8ce6-437b-a892-21202c4c964a"
   },
-  "Q": {
-    "entry_date": "2026-08-12",
-    "entry_price": 142.04,
-    "qty": 14,
+  "WELL": {
+    "entry_date": "2026-08-27",
+    "entry_price": 237.85,
+    "qty": 8,
     "mode": "initial_stop",
-    "stop_price": 120.73,
-    "high_water_mark": 142.04,
-    "insider": "De Bondt Karin",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/2092939/000162828026056317/0001628280-26-056317-index.htm",
-    "buy_order_id": "af68449f-20c6-4552-8974-d6f49cb60e94",
-    "stop_order_id": "f8b94bc8-9c5d-445d-aab8-1a5ce79ae5a0"
+    "stop_price": 202.17,
+    "high_water_mark": 237.85,
+    "insider": "Gundlach Andrew",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2031329/000119312526371418/0001193125-26-371418-index.htm",
+    "buy_order_id": "b65233c2-60ee-4acd-9410-1cb2e9fe3935",
+    "stop_order_id": null
   }
 }

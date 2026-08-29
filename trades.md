@@ -147,3 +147,4 @@
 | 2026-08-27 | IPGP | PEELER JOHN R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1111928/000111192826000163/0001111928-26-000163-index.htm |
 | 2026-08-27 | HWKN | Lange Douglas A. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/46250/000181609226000006/0001816092-26-000006-index.htm |
 | 2026-08-27 | SCOR | McLaughlin Matthew F. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000185387426000012/0001853874-26-000012-index.htm |
+| 2026-08-28 | REFI | Mazarakis John |  |  |  | SKIPPED - market cap $274,786,791 < $1B; avg volume 168,592 < 500K | https://www.sec.gov/Archives/edgar/data/1867949/000119312526374170/0001193125-26-374170-index.htm |

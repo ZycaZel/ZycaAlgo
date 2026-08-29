@@ -1593,5 +1593,16 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1158172/000185387426000012/0001853874-26-000012-index.htm"
+  },
+  {
+    "timestamp": "2026-08-29T08:04:52.838672+00:00",
+    "date": "2026-08-28",
+    "ticker": "REFI",
+    "insider": "Mazarakis John",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $274,786,791 < $1B; avg volume 168,592 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1867949/000119312526374170/0001193125-26-374170-index.htm"
   }
 ]

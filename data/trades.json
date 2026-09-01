@@ -1604,5 +1604,93 @@
     "stop": "",
     "event": "SKIPPED - market cap $274,786,791 < $1B; avg volume 168,592 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1867949/000119312526374170/0001193125-26-374170-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.435717+00:00",
+    "date": "2026-08-31",
+    "ticker": "PETZ",
+    "insider": "Liu Dandan",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1766147/000121390026095705/0001213900-26-095705-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.437490+00:00",
+    "date": "2026-08-31",
+    "ticker": "BLNE",
+    "insider": "Liuzza Nicholas Reyland JR",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1534708/000149315226040843/0001493152-26-040843-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.439072+00:00",
+    "date": "2026-08-31",
+    "ticker": "CVBF",
+    "insider": "Maddox Mike",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/354647/000035464726000116/0000354647-26-000116-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.440633+00:00",
+    "date": "2026-08-31",
+    "ticker": "SHMD",
+    "insider": "Schmid Anette",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1987240/000202315726000005/0002023157-26-000005-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.442214+00:00",
+    "date": "2026-08-31",
+    "ticker": "GO",
+    "insider": "Jaros Carey F.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1771515/000182356126000003/0001823561-26-000003-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.443801+00:00",
+    "date": "2026-08-31",
+    "ticker": "HWKN",
+    "insider": "Oldenkamp Jeffrey P.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/46250/000162666926000006/0001626669-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.445474+00:00",
+    "date": "2026-08-31",
+    "ticker": "SRTS",
+    "insider": "Sachetta Eric",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2097345/000209734526000016/0002097345-26-000016-index.htm"
+  },
+  {
+    "timestamp": "2026-09-01T08:06:00.447017+00:00",
+    "date": "2026-08-31",
+    "ticker": "SCOR",
+    "insider": "LIVEK WILLIAM PAUL",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1158172/000146660526000007/0001466605-26-000007-index.htm"
   }
 ]

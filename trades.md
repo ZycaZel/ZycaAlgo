@@ -148,3 +148,11 @@
 | 2026-08-27 | HWKN | Lange Douglas A. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/46250/000181609226000006/0001816092-26-000006-index.htm |
 | 2026-08-27 | SCOR | McLaughlin Matthew F. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000185387426000012/0001853874-26-000012-index.htm |
 | 2026-08-28 | REFI | Mazarakis John |  |  |  | SKIPPED - market cap $274,786,791 < $1B; avg volume 168,592 < 500K | https://www.sec.gov/Archives/edgar/data/1867949/000119312526374170/0001193125-26-374170-index.htm |
+| 2026-08-31 | PETZ | Liu Dandan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1766147/000121390026095705/0001213900-26-095705-index.htm |
+| 2026-08-31 | BLNE | Liuzza Nicholas Reyland JR |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1534708/000149315226040843/0001493152-26-040843-index.htm |
+| 2026-08-31 | CVBF | Maddox Mike |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/354647/000035464726000116/0000354647-26-000116-index.htm |
+| 2026-08-31 | SHMD | Schmid Anette |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1987240/000202315726000005/0002023157-26-000005-index.htm |
+| 2026-08-31 | GO | Jaros Carey F. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1771515/000182356126000003/0001823561-26-000003-index.htm |
+| 2026-08-31 | HWKN | Oldenkamp Jeffrey P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/46250/000162666926000006/0001626669-26-000006-index.htm |
+| 2026-08-31 | SRTS | Sachetta Eric |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2097345/000209734526000016/0002097345-26-000016-index.htm |
+| 2026-08-31 | SCOR | LIVEK WILLIAM PAUL |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000146660526000007/0001466605-26-000007-index.htm |

@@ -1,2 +1,11 @@
 requests
 cryptography
+
+# Used by the backtest + ablation scripts only (backtest_insider_signals.py,
+# ablation_study.py, plot_backtest_results.py). The daily job doesn't import
+# these, but backtest-refresh.yml installs this same file - and failed its
+# first scheduled run because they were missing.
+numpy
+pandas
+scipy
+matplotlib

@@ -125,6 +125,19 @@
   .il-chart-wrap { padding: 4px 4px 22px; }
   .il-chart-canvas { width: 100%; height: 140px; display: block; }
   .il-chart-status { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); margin-top: 4px; }
+
+  .il-alert-toggle {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 18px;
+    max-width: 60ch;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .il-alert-toggle input { margin-top: 3px; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -241,6 +254,13 @@
           <div id="personal-watchlist">
             <div class="il-explorer-state">Loading&hellip;</div>
           </div>
+          <label class="il-alert-toggle">
+            <input type="checkbox" id="email-alerts-toggle">
+            <span>Email me when a ticker on this list has an insider buy. Off by
+            default &mdash; nothing is sent unless you turn this on, and you can
+            turn it back off here at any time.</span>
+          </label>
+          <div id="email-alerts-msg" class="il-auth-msg"></div>
         </div>
 
         <button class="il-btn" id="sign-out-btn" type="button" style="margin-top:28px;">Sign out</button>
@@ -392,6 +412,7 @@
       document.getElementById('dashboard-email').textContent = 'Signed in as ' + user.email;
       loadProfile(user.id);
       loadPersonalWatchlist(user.id);
+      loadEmailAlerts(user.id);
     });
   }
 
@@ -558,6 +579,38 @@
       loadPersonalWatchlist(userId);
     });
   }
+
+  // Email alerts: opt-in, stored on the user's own profile row (and so
+  // covered by the same RLS policies as the rest of it).
+  var emailAlertsToggle = document.getElementById('email-alerts-toggle');
+  var emailAlertsMsg = document.getElementById('email-alerts-msg');
+
+  function loadEmailAlerts(userId) {
+    client.from('profiles').select('email_alerts').eq('id', userId).single().then(function (result) {
+      if (result.data) emailAlertsToggle.checked = !!result.data.email_alerts;
+    });
+  }
+
+  emailAlertsToggle.addEventListener('change', function () {
+    var wanted = emailAlertsToggle.checked;
+    emailAlertsMsg.textContent = '';
+    client.auth.getUser().then(function (result) {
+      var user = result.data && result.data.user;
+      if (!user) return;
+      client.from('profiles').update({ email_alerts: wanted }).eq('id', user.id).then(function (r) {
+        if (r.error) {
+          // Put the box back where it was - never leave it showing a state
+          // that wasn't actually saved.
+          emailAlertsToggle.checked = !wanted;
+          emailAlertsMsg.textContent = 'Could not save that: ' + r.error.message;
+          emailAlertsMsg.className = 'il-auth-msg il-error';
+          return;
+        }
+        emailAlertsMsg.textContent = wanted ? 'Email alerts on.' : 'Email alerts off.';
+        emailAlertsMsg.className = 'il-auth-msg il-ok';
+      });
+    });
+  });
 
   // Per-ticker price chart: folded away by default, fetched and drawn only
   // once the trader actually expands a row (not fetched upfront for every

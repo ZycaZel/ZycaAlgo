@@ -119,6 +119,19 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python discord_notify.py ../data/latest.json
 
+      - name: Email watchlist alerts to opted-in users
+        # Only mails users who explicitly switched alerts on at /account
+        # (email_alerts defaults to false), and only when a ticker they
+        # follow actually appears in today's signals. No-op without the
+        # Resend secrets below.
+        working-directory: scripts
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_FROM_EMAIL: ${{ secrets.ALERT_FROM_EMAIL }}
+        run: python email_alerts.py ../data/latest.json
+
       - name: Warn if the scanner has gone quiet
         # A job that succeeds while finding nothing looks identical to a job
         # that succeeds on a genuinely slow day - the failure alert can't tell

@@ -109,3 +109,13 @@ create table if not exists public.alpaca_connections (
 );
 
 alter table public.alpaca_connections enable row level security;
+
+-- ---------------------------------------------------------------------
+-- Email alerts: opt-in, per user. Defaults to false deliberately - adding
+-- a ticker to a watchlist is not the same as asking to be emailed about
+-- it, so nobody gets mail until they actively turn this on from /account.
+-- Covered by the existing "select/update own profile" policies above,
+-- since it lives on the profiles table.
+-- ---------------------------------------------------------------------
+alter table public.profiles
+  add column if not exists email_alerts boolean not null default false;

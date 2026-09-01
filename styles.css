@@ -371,7 +371,7 @@
   /* ---------- PORTFOLIO CHART ---------- */
   .il-docstamp .il-chart-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     border-bottom: 1px solid var(--line);
     padding: 18px 22px;
@@ -379,8 +379,24 @@
   }
   .il-chart-stats dd.il-negative { color: var(--loss); }
   .il-chart-stats dd.il-positive { color: var(--signal); }
-  .il-chart-canvas-wrap { padding: 20px 22px 22px; }
+  .il-chart-canvas-wrap { padding: 20px 22px 10px; }
   .il-chart-canvas { width: 100%; height: auto; display: block; }
+  .il-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 0 22px 20px;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+  .il-legend-item { display: inline-flex; align-items: center; gap: 7px; }
+  .il-legend-swatch { width: 14px; height: 2px; display: inline-block; }
+  .il-legend-strategy { background: var(--signal); }
+  .il-legend-bench { background: var(--ink-soft); }
+  @media (max-width: 860px) {
+    .il-docstamp .il-chart-stats { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 640px) {
     .il-docstamp .il-chart-stats { grid-template-columns: 1fr; gap: 10px; }
   }

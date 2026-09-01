@@ -254,12 +254,20 @@
             <dd id="chart-change">+0.00%</dd>
           </div>
           <div>
+            <dt>vs S&amp;P 500</dt>
+            <dd id="chart-vs-spy">&mdash;</dd>
+          </div>
+          <div>
             <dt>Open positions</dt>
             <dd id="chart-positions">0</dd>
           </div>
         </dl>
         <div class="il-chart-canvas-wrap">
-          <canvas id="equity-canvas" class="il-chart-canvas" width="1000" height="260" role="img" aria-label="Account equity over the last month"></canvas>
+          <canvas id="equity-canvas" class="il-chart-canvas" width="1000" height="260" role="img" aria-label="Account equity over the last month, compared against the S&amp;P 500"></canvas>
+        </div>
+        <div class="il-chart-legend" id="chart-legend" hidden>
+          <span class="il-legend-item"><span class="il-legend-swatch il-legend-strategy"></span>ZycaAlgo</span>
+          <span class="il-legend-item"><span class="il-legend-swatch il-legend-bench"></span>S&amp;P 500 (SPY), same period</span>
         </div>
       </div>
     </div>
@@ -628,7 +636,16 @@ function ilAnimateCount(el, end, fmt, duration) {
     return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
-  function drawEquityChart(canvas, points, progress) {
+  // Both series are plotted as percent change from the first day, not raw
+  // dollars - that's the only way an account's equity and an index level
+  // are comparable on one axis.
+  function toPctSeries(values) {
+    var base = values[0];
+    if (!base) return values.map(function () { return 0; });
+    return values.map(function (v) { return ((v - base) / base) * 100; });
+  }
+
+  function drawEquityChart(canvas, strategyPct, benchPct, progress) {
     progress = progress == null ? 1 : progress;
     var ctx = canvas.getContext('2d');
     var w = canvas.width, h = canvas.height;
@@ -642,11 +659,15 @@ function ilAnimateCount(el, end, fmt, duration) {
     var styles = getComputedStyle(document.documentElement);
     var lineColor = styles.getPropertyValue('--stamp').trim() || '#e8a33d';
     var gridColor = styles.getPropertyValue('--line').trim() || '#222';
-    var gain = points[points.length - 1] >= points[0];
+    var benchColor = styles.getPropertyValue('--ink-soft').trim() || '#888';
+    var gain = strategyPct[strategyPct.length - 1] >= strategyPct[0];
     var accentColor = (styles.getPropertyValue(gain ? '--signal' : '--loss').trim()) || lineColor;
 
-    var min = Math.min.apply(null, points);
-    var max = Math.max.apply(null, points);
+    // Scale to both series together so the comparison is honest - if the
+    // benchmark ran away from us, the chart has to show that.
+    var all = benchPct && benchPct.length ? strategyPct.concat(benchPct) : strategyPct.slice();
+    var min = Math.min.apply(null, all);
+    var max = Math.max.apply(null, all);
     var range = max - min || 1;
     var innerW = w - pad.left - pad.right;
     var innerH = h - pad.top - pad.bottom;
@@ -663,17 +684,17 @@ function ilAnimateCount(el, end, fmt, duration) {
     }
 
     var isFlat = max - min === 0;
-    function xAt(i) { return pad.left + (innerW * i) / (points.length - 1 || 1); }
+    function xAt(i) { return pad.left + (innerW * i) / (strategyPct.length - 1 || 1); }
     function yAt(v) {
       if (isFlat) return pad.top + innerH / 2; // no variation yet - center it, don't pin to the floor
       return pad.top + innerH - ((v - min) / range) * innerH;
     }
 
-    // Area fill under the line
+    // Area fill under the strategy line
     ctx.beginPath();
-    ctx.moveTo(xAt(0), yAt(points[0]));
-    points.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
-    ctx.lineTo(xAt(points.length - 1), pad.top + innerH);
+    ctx.moveTo(xAt(0), yAt(strategyPct[0]));
+    strategyPct.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
+    ctx.lineTo(xAt(strategyPct.length - 1), pad.top + innerH);
     ctx.lineTo(xAt(0), pad.top + innerH);
     ctx.closePath();
     var gradient = ctx.createLinearGradient(0, pad.top, 0, pad.top + innerH);
@@ -682,10 +703,26 @@ function ilAnimateCount(el, end, fmt, duration) {
     ctx.fillStyle = gradient;
     ctx.fill();
 
-    // The line itself
+    // Benchmark first, underneath - dashed and dimmer so it reads as the
+    // reference line rather than competing with the account's own curve.
+    if (benchPct && benchPct.length === strategyPct.length) {
+      ctx.save();
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(xAt(0), yAt(benchPct[0]));
+      benchPct.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
+      ctx.strokeStyle = benchColor;
+      ctx.globalAlpha = 0.75;
+      ctx.lineWidth = 1.5;
+      ctx.lineJoin = 'round';
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // The strategy line itself
     ctx.beginPath();
-    ctx.moveTo(xAt(0), yAt(points[0]));
-    points.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
+    ctx.moveTo(xAt(0), yAt(strategyPct[0]));
+    strategyPct.forEach(function (v, i) { ctx.lineTo(xAt(i), yAt(v)); });
     ctx.strokeStyle = accentColor;
     ctx.lineWidth = 2;
     ctx.lineJoin = 'round';
@@ -696,7 +733,7 @@ function ilAnimateCount(el, end, fmt, duration) {
     // Emphasized endpoint - only once the reveal has essentially finished,
     // so it doesn't flash into view mid-animation ahead of the line.
     if (progress > 0.98) {
-      var lastX = xAt(points.length - 1), lastY = yAt(points[points.length - 1]);
+      var lastX = xAt(strategyPct.length - 1), lastY = yAt(strategyPct[strategyPct.length - 1]);
       ctx.beginPath();
       ctx.arc(lastX, lastY, 4, 0, Math.PI * 2);
       ctx.fillStyle = accentColor;
@@ -711,9 +748,9 @@ function ilAnimateCount(el, end, fmt, duration) {
     }
   }
 
-  function animateEquityChart(canvas, points) {
+  function animateEquityChart(canvas, strategyPct, benchPct) {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      drawEquityChart(canvas, points, 1);
+      drawEquityChart(canvas, strategyPct, benchPct, 1);
       return;
     }
     var duration = 900;
@@ -721,7 +758,7 @@ function ilAnimateCount(el, end, fmt, duration) {
     function tick(now) {
       if (startTime === null) startTime = now;
       var progress = Math.min(1, (now - startTime) / duration);
-      drawEquityChart(canvas, points, 1 - Math.pow(1 - progress, 3)); // ease-out cubic
+      drawEquityChart(canvas, strategyPct, benchPct, 1 - Math.pow(1 - progress, 3)); // ease-out cubic
       if (progress < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -731,21 +768,62 @@ function ilAnimateCount(el, end, fmt, duration) {
     fetch('/api/portfolio-history').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
     fetch('/api/positions').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
     fetch('/api/account').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch('/api/stock-history?ticker=SPY').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
   ]).then(function (results) {
     var history = results[0];
     var positions = results[1];
     var account = results[2];
+    var spy = results[3];
     var canvas = document.getElementById('equity-canvas');
     if (!canvas) return;
 
-    var equityPoints = history && Array.isArray(history.equity) ? history.equity.filter(function (v) { return v != null; }) : null;
-    if (!equityPoints || equityPoints.length < 2) {
+    // Pair each equity reading with its own date, and drop the days before
+    // the account existed. Those come back as a literal 0, which `!= null`
+    // happily keeps - and a leading $0 point squashes the entire real curve
+    // flat against the top of the chart.
+    var series = [];
+    if (history && Array.isArray(history.equity) && Array.isArray(history.timestamp)) {
+      history.equity.forEach(function (v, i) {
+        if (v != null && v > 0) {
+          series.push({ date: new Date(history.timestamp[i] * 1000).toISOString().slice(0, 10), equity: v });
+        }
+      });
+    }
+    if (series.length < 2) {
       // No history yet (brand-new account) - draw a flat reference line at
       // current equity rather than pretending there's a curve.
       var flat = account && account.equity ? parseFloat(account.equity) : 100000;
-      equityPoints = [flat, flat];
+      series = [{ date: '', equity: flat }, { date: '', equity: flat }];
     }
-    animateEquityChart(canvas, equityPoints);
+
+    var equityPoints = series.map(function (p) { return p.equity; });
+    var strategyPct = toPctSeries(equityPoints);
+
+    // Align SPY to the account's own trading days. Forward-fill carries the
+    // last close across any date the account has but SPY doesn't; if the
+    // very first day is missing we can't rebase honestly, so we drop the
+    // benchmark entirely rather than silently anchor it to the wrong day.
+    var benchPct = null, spyTotalPct = null;
+    if (spy && Array.isArray(spy.points) && spy.points.length) {
+      var byDate = {};
+      spy.points.forEach(function (p) { byDate[p.date] = p.close; });
+      var aligned = [], lastClose = null, ok = true;
+      for (var i = 0; i < series.length; i++) {
+        var c = byDate[series[i].date];
+        if (c == null) c = lastClose;
+        if (c == null) { ok = false; break; }
+        lastClose = c;
+        aligned.push(c);
+      }
+      if (ok && aligned.length === series.length) {
+        benchPct = toPctSeries(aligned);
+        spyTotalPct = benchPct[benchPct.length - 1];
+        var legend = document.getElementById('chart-legend');
+        if (legend) legend.hidden = false;
+      }
+    }
+
+    animateEquityChart(canvas, strategyPct, benchPct);
 
     var statusEl = document.getElementById('chart-term-status');
     if (statusEl && history) statusEl.textContent = 'LIVE';
@@ -753,13 +831,21 @@ function ilAnimateCount(el, end, fmt, duration) {
     var equityEl = document.getElementById('chart-equity');
     var changeEl = document.getElementById('chart-change');
     var positionsEl = document.getElementById('chart-positions');
+    var vsSpyEl = document.getElementById('chart-vs-spy');
     if (equityEl && account && account.equity) ilAnimateCount(equityEl, parseFloat(account.equity), fmtMoney, 900);
     if (positionsEl) ilAnimateCount(positionsEl, Array.isArray(positions) ? positions.length : 0, function (v) { return Math.round(v); });
+
+    var strategyTotalPct = strategyPct[strategyPct.length - 1];
     if (changeEl) {
-      var first = equityPoints[0], last = equityPoints[equityPoints.length - 1];
-      var pct = first ? ((last - first) / first) * 100 : 0;
-      changeEl.className = pct >= 0 ? 'il-positive' : 'il-negative';
-      ilAnimateCount(changeEl, pct, function (v) { return (v >= 0 ? '+' : '') + v.toFixed(2) + '%'; }, 900);
+      changeEl.className = strategyTotalPct >= 0 ? 'il-positive' : 'il-negative';
+      ilAnimateCount(changeEl, strategyTotalPct, function (v) { return (v >= 0 ? '+' : '') + v.toFixed(2) + '%'; }, 900);
+    }
+    if (vsSpyEl && spyTotalPct != null) {
+      // Percentage points of relative performance - the number that says
+      // whether this beat simply holding the index over the same window.
+      var diff = strategyTotalPct - spyTotalPct;
+      vsSpyEl.className = diff >= 0 ? 'il-positive' : 'il-negative';
+      ilAnimateCount(vsSpyEl, diff, function (v) { return (v >= 0 ? '+' : '') + v.toFixed(2) + ' pts'; }, 900);
     }
   });
 })();

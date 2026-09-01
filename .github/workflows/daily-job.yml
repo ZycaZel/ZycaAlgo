@@ -9,13 +9,77 @@ on:
     # picks up Tuesday's, etc., through Saturday picking up Friday's.
     # (No Sunday/Monday runs - there's no new trading-day data to catch.)
     - cron: "0 8 * * 2-6"
+    # Backup trigger, 5 hours after the primary (13:00 UTC = 20:00 Bangkok).
+    # GitHub drops scheduled runs during high load, and a run that never
+    # starts can't fail - so the "Alert on failure" step at the bottom is
+    # blind to it (that only fires on a run that started, then broke).
+    # This second attempt catches that case. The `guard` job below makes it
+    # a no-op on days the primary run already succeeded.
+    - cron: "0 13 * * 2-6"
   workflow_dispatch: {}   # lets you click "Run workflow" manually in the Actions tab
 
 permissions:
   contents: write   # needed so the job can commit updated data/ and trades.md back
+  actions: read     # needed so the guard job can see whether today's run already succeeded
 
 jobs:
+  guard:
+    # Decides whether the work below actually needs doing. Only ever says
+    # "no" for the backup cron on a day the primary run already succeeded.
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+    steps:
+      - name: Decide whether this run is needed
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          CRON: ${{ github.event.schedule }}
+          REPO: ${{ github.repository }}
+        run: |
+          # The primary schedule and any manual "Run workflow" click always run.
+          if [ "$EVENT_NAME" != "schedule" ] || [ "$CRON" != "0 13 * * 2-6" ]; then
+            echo "Primary schedule or manual dispatch - proceeding."
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Backup cron: only do the work if no run has succeeded yet today.
+          # Deliberately fails open - if the API query itself breaks we'd
+          # rather scan twice than skip a day, since a skipped day is the
+          # exact bug this whole mechanism exists to fix.
+          today=$(date -u +%Y-%m-%d)
+          runs=$(gh api "repos/$REPO/actions/workflows/daily-job.yml/runs?per_page=30&status=success" \
+                   --jq "[.workflow_runs[] | select(.created_at | startswith(\"$today\"))] | length") || runs=""
+          if [ -z "$runs" ]; then
+            echo "Couldn't query today's runs - failing open and proceeding."
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$runs" -gt 0 ]; then
+            echo "$runs successful run(s) already completed today - nothing to catch up on."
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "No successful run today - the primary schedule was dropped. Catching up."
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Announce that the backup trigger had to step in
+        # Worth knowing about: it means GitHub dropped the primary run.
+        if: steps.check.outputs.should_run == 'true' && github.event.schedule == '0 13 * * 2-6'
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "DISCORD_WEBHOOK_URL not set - skipping notice."
+            exit 0
+          fi
+          curl -s -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"content\": \"**ZycaAlgo**: today's primary scheduled run never started (GitHub dropped it). The backup trigger is running the scan now - <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}>\"}"
+
   run:
+    needs: guard
+    if: needs.guard.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

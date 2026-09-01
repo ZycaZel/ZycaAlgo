@@ -119,6 +119,16 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python discord_notify.py ../data/latest.json
 
+      - name: Warn if the scanner has gone quiet
+        # A job that succeeds while finding nothing looks identical to a job
+        # that succeeds on a genuinely slow day - the failure alert can't tell
+        # them apart because nothing actually failed. This catches a parser
+        # that has silently stopped matching (e.g. SEC changed a format).
+        working-directory: scripts
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python check_scanner_health.py
+
       - name: Manage existing positions (stops / trailing / time-stop)
         working-directory: scripts
         env:

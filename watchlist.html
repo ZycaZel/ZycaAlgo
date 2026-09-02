@@ -79,7 +79,7 @@
         <a href="/account">Account</a>
         <a href="/legal">Legal</a>
         <a href="/#pricing">Pricing</a>
-        <button class="il-btn" data-il-cta>Get started</button>
+        <a class="il-btn" href="/account">Get started</a>
       </div>
     </div>
   </nav>
@@ -136,22 +136,9 @@
     </div>
   </footer>
 
-  <div class="il-toast" data-il-toast role="status" aria-live="polite">Sign-ups aren't open yet — this is a preview of ZycaAlgo's pricing.</div>
 </div>
 
 <script>
-(function () {
-  var toast = document.querySelector('[data-il-toast]');
-  var timer = null;
-  document.querySelectorAll('[data-il-cta]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (!toast) return;
-      clearTimeout(timer);
-      toast.classList.add('il-show');
-      timer = setTimeout(function () { toast.classList.remove('il-show'); }, 3200);
-    });
-  });
-})();
 
 (function () {
   function updateMarketStatus() {

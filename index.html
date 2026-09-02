@@ -55,9 +55,9 @@
         <a href="#signals">Signals</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#activity">Activity</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#pricing">Access</a>
         <a href="#faq">FAQ</a>
-        <button class="il-btn" data-il-cta>Get started</button>
+        <a class="il-btn" href="/account">Get started</a>
       </div>
     </div>
   </nav>
@@ -69,7 +69,7 @@
         <h1>Insiders buy their own stock for <em>one</em> reason.<br>We read every filing to find out which ones mean it.</h1>
         <p class="il-hero-sub">ZycaAlgo watches every Form 4 filed with the SEC, keeps only the open-market buys that carry real conviction, and mirrors them into your own Alpaca paper account — sized, stopped, and logged automatically.</p>
         <div class="il-hero-cta">
-          <button class="il-btn il-btn-primary" data-il-cta>Start free trial</button>
+          <a class="il-btn il-btn-primary" href="/account">Create a free account</a>
           <a class="il-link" href="#how">See how filtering works &darr;</a>
         </div>
       </div>
@@ -295,43 +295,35 @@
           <div class="il-eyebrow">04 &mdash; Access</div>
           <h2>Watch it, or connect it.</h2>
         </div>
-        <p>Every tier runs the same pipeline. The difference is whether it stops at a report, or reaches into your own paper account.</p>
+        <p>Both modes run the same pipeline. The difference is whether it stops at a report, or reaches into your own paper account. ZycaAlgo is a research project &mdash; everything here is free, and nothing charges you anything.</p>
       </div>
-      <div class="il-tiers">
+      <div class="il-tiers il-tiers-two">
         <div class="il-tier">
-          <span class="il-tier-name">Watchlist</span>
-          <div class="il-tier-price">$0<span>/mo</span></div>
+          <span class="il-tier-name">Manual</span>
+          <div class="il-tier-price">Free</div>
           <ul>
             <li>Daily filtered signal report</li>
-            <li>Cluster-buying alerts</li>
+            <li>Cluster-buying detection</li>
             <li>Full filing links &amp; insider detail</li>
-            <li>No account connection</li>
+            <li>Personal watchlist with price charts</li>
+            <li>Optional email alerts on your tickers</li>
           </ul>
-          <button class="il-btn" data-il-cta>Get started</button>
+          <a class="il-btn" href="/account">Create an account</a>
         </div>
         <div class="il-tier il-tier-featured">
-          <span class="il-tier-name">Mirror</span>
-          <div class="il-tier-price">$29<span>/mo</span></div>
+          <span class="il-tier-name">AI-managed</span>
+          <div class="il-tier-price">Free</div>
           <ul>
-            <li>Everything in Watchlist</li>
-            <li>Signals mirrored into your Alpaca paper account</li>
+            <li>Everything in Manual</li>
+            <li>Signals mirrored into your own Alpaca paper account</li>
             <li>Automatic sizing, stops &amp; trailing exits</li>
-            <li>Weekly performance summary</li>
+            <li>Your keys encrypted before storage, never shown again</li>
+            <li>Paper (simulated) money only &mdash; never real funds</li>
           </ul>
-          <button class="il-btn il-btn-primary" data-il-cta>Start free trial</button>
-        </div>
-        <div class="il-tier">
-          <span class="il-tier-name">Desk</span>
-          <div class="il-tier-price">$79<span>/mo</span></div>
-          <ul>
-            <li>Everything in Mirror</li>
-            <li>Custom position sizing &amp; liquidity floors</li>
-            <li>Priority signal delivery</li>
-            <li>Trade log export</li>
-          </ul>
-          <button class="il-btn" data-il-cta>Get started</button>
+          <a class="il-btn il-btn-primary" href="/account">Connect a paper account</a>
         </div>
       </div>
+      <p class="il-tier-note">No payment is collected anywhere on this site, and there is no paid tier. ZycaAlgo is not a registered investment adviser or broker-dealer &mdash; see <a href="/legal">/legal</a>.</p>
     </div>
   </section>
 
@@ -406,7 +398,6 @@
     </div>
   </footer>
 
-  <div class="il-toast" data-il-toast role="status" aria-live="polite">Sign-ups aren't open yet — this is a preview of ZycaAlgo's pricing.</div>
 </div>
 
 <script>
@@ -434,18 +425,6 @@ function ilAnimateCount(el, end, fmt, duration) {
   requestAnimationFrame(tick);
 }
 
-(function () {
-  var toast = document.querySelector('[data-il-toast]');
-  var timer = null;
-  document.querySelectorAll('[data-il-cta]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (!toast) return;
-      clearTimeout(timer);
-      toast.classList.add('il-show');
-      timer = setTimeout(function () { toast.classList.remove('il-show'); }, 3200);
-    });
-  });
-})();
 
 // Live NYSE market-hours indicator (9:30am-4:00pm ET, Mon-Fri). Doesn't
 // account for market holidays - a small honest simplification for a

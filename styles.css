@@ -250,6 +250,11 @@
     cursor: pointer;
     white-space: nowrap;
     transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
+    /* Also used on <a> now that the CTAs are real links - an inline anchor
+       would drop the vertical padding and pick up an underline. */
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
   }
   .il-btn:hover { background: var(--ink); color: var(--paper); }
   .il-btn:focus-visible, .il-root a:focus-visible, .il-root button:focus-visible, .il-root input:focus-visible {
@@ -645,6 +650,15 @@
     gap: 20px;
   }
   @media (max-width: 860px) { .il-tiers { grid-template-columns: 1fr; } }
+  /* Two real modes rather than three invented price points. */
+  .il-tiers-two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
+  @media (max-width: 860px) { .il-tiers-two { grid-template-columns: 1fr; } }
+  .il-tier-note {
+    margin: 22px 0 0;
+    max-width: 70ch;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
   .il-tier {
     border: 1px solid var(--line);
     background: var(--paper-raised);

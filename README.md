@@ -130,8 +130,12 @@ APCA_API_KEY_ID=... APCA_API_SECRET_KEY=... python scripts/trade_manager.py mana
 
 ## What's honest about this site
 
-- Every "Get started" button is a UI-only placeholder — no payment is
-  collected anywhere.
+- Every "Get started" button now goes to `/account`, which is a real,
+  working sign-up. No payment is collected anywhere and there is no paid
+  tier — the invented $29/$79 pricing cards that used to sit on the home
+  page were removed once accounts went live, because they advertised as
+  paid a feature (mirroring signals into your own paper account) that is
+  actually free and running.
 - The dashboard shows a real, currently-running paper account. It is not a
   guarantee of future performance and not investment advice — see the
   footer disclaimer on the page itself.

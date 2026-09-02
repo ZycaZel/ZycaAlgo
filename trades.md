@@ -162,3 +162,8 @@
 | 2026-09-01 | FTCI | SADASIVAM SHAKER |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1828161/000119312526377575/0001193125-26-377575-index.htm |
 | 2026-09-01 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000095010326013377/0000950103-26-013377-index.htm |
 | 2026-09-01 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026059909/0001628280-26-059909-index.htm |
+| 2026-09-01 | WALD | Souza Cristiano |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 322,236 < 500K | https://www.sec.gov/Archives/edgar/data/1841079/000184019926000096/0001840199-26-000096-index.htm |
+| 2026-09-01 | ASTS | Cisneros Adriana |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1780312/000110465926104326/0001104659-26-104326-index.htm |
+| 2026-09-01 | FTCI | SADASIVAM SHAKER |  |  |  | SKIPPED - market cap $38,107,796 < $1B; avg volume 241,155 < 500K | https://www.sec.gov/Archives/edgar/data/1828161/000119312526377575/0001193125-26-377575-index.htm |
+| 2026-09-01 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1693736/000095010326013377/0000950103-26-013377-index.htm |
+| 2026-09-01 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - market cap $79,124,997 < $1B; avg volume 99,676 < 500K | https://www.sec.gov/Archives/edgar/data/1822523/000162828026059909/0001628280-26-059909-index.htm |

@@ -255,6 +255,7 @@ def enter_new_signals(signals_path):
         per_ticker.setdefault(b["ticker"], b)  # first occurrence wins per ticker
 
     results = []
+    order_errors = []
     for ticker, b in per_ticker.items():
         if ticker in held_symbols:
             results.append({"ticker": ticker, "action": "skip", "reason": "already held"})
@@ -284,14 +285,37 @@ def enter_new_signals(signals_path):
             results.append({"ticker": ticker, "action": "skip", "reason": "too expensive for 2% allocation"})
             continue
 
-        order = _post(TRADING_BASE, "/v2/orders", {
-            "symbol": ticker,
-            "qty": str(qty),
-            "side": "buy",
-            "type": "market",
-            "time_in_force": "day",
-            "client_order_id": f"za-{ticker}-{date}",
-        })
+        try:
+            order = _post(TRADING_BASE, "/v2/orders", {
+                "symbol": ticker,
+                "qty": str(qty),
+                "side": "buy",
+                "type": "market",
+                "time_in_force": "day",
+                "client_order_id": f"za-{ticker}-{date}",
+            })
+        except RuntimeError as e:
+            msg = str(e)
+            if "client_order_id must be unique" in msg:
+                # The id is deliberately deterministic per ticker per signal
+                # date, so a duplicate means this exact signal was already
+                # submitted - by an earlier run of the same day, a manual
+                # re-run, or the backup trigger. Alpaca refusing it is the
+                # safeguard doing its job, not a failure: skip and move on.
+                # (A filled order would already have been caught by the
+                # held_symbols check above; this covers the case where it
+                # was placed but never filled.)
+                results.append({"ticker": ticker, "action": "skip",
+                                "reason": "order already submitted for this signal date"})
+                continue
+            # Anything else is a genuine problem, but one bad ticker must not
+            # cost the other fourteen their entries - or abort the run before
+            # stops are placed and data is committed. Record it, keep going,
+            # and fail loudly at the end.
+            print(f"[error] {ticker}: {msg}")
+            order_errors.append(f"{ticker}: {msg}")
+            results.append({"ticker": ticker, "action": "error", "reason": msg})
+            continue
 
         stop_price = round(price * (1 - STOP_LOSS_PCT), 2)
         state[ticker] = {
@@ -317,6 +341,14 @@ def enter_new_signals(signals_path):
         })
 
     save_state(state)
+
+    # Every ticker has now had its turn, and anything that did succeed is
+    # saved above - so failing here still lets the good entries stand, while
+    # making sure a real broker error can't pass silently as a green run.
+    if order_errors:
+        raise RuntimeError(
+            f"{len(order_errors)} order(s) failed: " + "; ".join(order_errors)
+        )
     return results
 
 

@@ -384,6 +384,17 @@ def order_status(order_id):
         return None
 
 
+def order_detail(order_id):
+    """Full order record, or None. Used to recover what a filled stop
+    actually sold at, so an exit can be logged with a real price."""
+    if not order_id:
+        return None
+    try:
+        return _get(TRADING_BASE, f"/v2/orders/{order_id}")
+    except RuntimeError:
+        return None
+
+
 STILL_PENDING_STATUSES = {"new", "accepted", "pending_new", "partially_filled", "held"}
 
 
@@ -403,6 +414,40 @@ def manage_exits():
             buy_id = info.get("buy_order_id")
             if buy_id and order_status(buy_id) in STILL_PENDING_STATUSES:
                 continue  # entry order hasn't filled yet - leave state alone
+
+            # The position is genuinely gone, which for this strategy almost
+            # always means the stop order filled. That is a real exit and has
+            # to reach the trade log: dropping it silently is why the public
+            # activity feed only ever showed entries, and why realised P&L
+            # couldn't be reconstructed from trades.md at all.
+            stop_order = order_detail(info.get("stop_order_id"))
+            exit_price = None
+            if stop_order and stop_order.get("filled_avg_price"):
+                try:
+                    exit_price = float(stop_order["filled_avg_price"])
+                except (TypeError, ValueError):
+                    exit_price = None
+
+            entry_price = info.get("entry_price")
+            qty = info.get("qty")
+            if exit_price is not None and entry_price:
+                gain_pct = (exit_price - entry_price) / entry_price
+                event = f"EXIT - stop filled at ${exit_price:,.2f} ({gain_pct:+.1%})"
+            else:
+                # Closed by something we can't price from here (a manual
+                # close, or an order Alpaca no longer returns). Still worth a
+                # row - an exit with an unknown price beats no record of it.
+                event = "EXIT - position closed"
+
+            append_trade_log({
+                "date": today.isoformat(), "ticker": ticker,
+                "insider": info.get("insider", ""),
+                "entry": f"${entry_price:,.2f}" if entry_price else "",
+                "size": f"{qty} sh" if qty else "",
+                "stop": f"${exit_price:,.2f}" if exit_price is not None else "",
+                "event": event,
+                "filing_url": info.get("filing_url", ""),
+            })
             del state[ticker]
             changed = True
             continue

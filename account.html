@@ -124,6 +124,7 @@
   .il-chart-row td { padding: 0; border-top: none; }
   .il-chart-wrap { padding: 4px 4px 22px; }
   .il-chart-canvas { width: 100%; height: 140px; display: block; }
+  .il-tv-chart:not(:empty) { margin-bottom: 6px; border: 1px solid var(--line); }
   .il-chart-status { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); margin-top: 4px; }
 
   .il-alert-toggle {
@@ -764,9 +765,77 @@
     toggleBtn.setAttribute('aria-expanded', 'true');
     toggleBtn.innerHTML = '&#9662;';
 
-    var canvas = chartRow.querySelector('canvas');
-    if (canvas.dataset.loaded === 'true') return;
+    var container = chartRow.querySelector('.il-tv-chart');
+    if (container.dataset.loaded === 'true') return;
     var statusEl = chartRow.querySelector('.il-chart-status');
+    statusEl.textContent = 'Loading chart…';
+
+    loadTradingView(function (ok) {
+      if (!ok) {
+        // TradingView blocked, offline, or slow - fall back to the plain
+        // canvas chart off our own price endpoint rather than showing an
+        // empty box.
+        drawFallbackChart(ticker, chartRow, statusEl);
+        return;
+      }
+      container.dataset.loaded = 'true';
+      statusEl.textContent = '';
+      try {
+        new window.TradingView.widget({
+          container_id: container.id,
+          symbol: ticker,
+          width: '100%',
+          height: 380,
+          interval: 'D',
+          timezone: 'Etc/UTC',
+          theme: 'dark',
+          style: '1',            // candlesticks
+          locale: 'en',
+          hide_side_toolbar: true,
+          allow_symbol_change: false,
+          save_image: false,
+          withdateranges: true,
+        });
+      } catch (e) {
+        container.dataset.loaded = '';
+        drawFallbackChart(ticker, chartRow, statusEl);
+      }
+    });
+  }
+
+  // TradingView's library is fetched once, on the first chart anyone opens -
+  // not on page load, so visitors who never expand a row never pay for it.
+  var tvState = 'idle'; // idle | loading | ready | failed
+  var tvWaiting = [];
+
+  function loadTradingView(cb) {
+    if (tvState === 'ready') return cb(true);
+    if (tvState === 'failed') return cb(false);
+    tvWaiting.push(cb);
+    if (tvState === 'loading') return;
+    tvState = 'loading';
+
+    var s = document.createElement('script');
+    s.src = 'https://s3.tradingview.com/tv.js';
+    s.async = true;
+    var settled = false;
+    function settle(ok) {
+      if (settled) return;
+      settled = true;
+      tvState = ok ? 'ready' : 'failed';
+      tvWaiting.splice(0).forEach(function (fn) { fn(ok); });
+    }
+    s.onload = function () { settle(!!window.TradingView); };
+    s.onerror = function () { settle(false); };
+    // Don't leave a row saying "Loading chart…" forever on a dead network.
+    setTimeout(function () { settle(!!window.TradingView); }, 8000);
+    document.head.appendChild(s);
+  }
+
+  function drawFallbackChart(ticker, chartRow, statusEl) {
+    var canvas = chartRow.querySelector('canvas');
+    canvas.hidden = false;
+    if (canvas.dataset.loaded === 'true') { statusEl.textContent = ''; return; }
     statusEl.textContent = 'Loading price history…';
     fetch('/api/stock-history?ticker=' + encodeURIComponent(ticker))
       .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('request failed')); })
@@ -877,7 +946,8 @@
             '</tr>' +
             '<tr class="il-chart-row" id="' + rowId + '" hidden>' +
             '<td colspan="6"><div class="il-chart-wrap">' +
-            '<canvas class="il-chart-canvas" width="760" height="140" role="img" aria-label="' + ticker + ' price chart, last 3 months"></canvas>' +
+            '<div class="il-tv-chart" id="tv-' + rowId + '"></div>' +
+            '<canvas class="il-chart-canvas" width="760" height="140" role="img" aria-label="' + ticker + ' price chart, last 3 months" hidden></canvas>' +
             '<div class="il-chart-status"></div></div></td>' +
             '</tr>';
         }).join('');

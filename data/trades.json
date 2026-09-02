@@ -1692,5 +1692,71 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1158172/000146660526000007/0001466605-26-000007-index.htm"
+  },
+  {
+    "timestamp": "2026-09-02T08:07:49.934463+00:00",
+    "date": "2026-09-01",
+    "ticker": "AUGO",
+    "insider": "Sousa Mauad Bruno",
+    "entry": "$79.06",
+    "size": "24 sh ($1,897)",
+    "stop": "$67.20",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1468642/000211790526000026/0002117905-26-000026-index.htm"
+  },
+  {
+    "timestamp": "2026-09-02T08:07:49.936201+00:00",
+    "date": "2026-09-01",
+    "ticker": "WALD",
+    "insider": "Souza Cristiano",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1841079/000184019926000096/0001840199-26-000096-index.htm"
+  },
+  {
+    "timestamp": "2026-09-02T08:07:49.937853+00:00",
+    "date": "2026-09-01",
+    "ticker": "ASTS",
+    "insider": "Cisneros Adriana",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1780312/000110465926104326/0001104659-26-104326-index.htm"
+  },
+  {
+    "timestamp": "2026-09-02T08:07:49.939457+00:00",
+    "date": "2026-09-01",
+    "ticker": "FTCI",
+    "insider": "SADASIVAM SHAKER",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1828161/000119312526377575/0001193125-26-377575-index.htm"
+  },
+  {
+    "timestamp": "2026-09-02T08:07:49.941056+00:00",
+    "date": "2026-09-01",
+    "ticker": "EQPT",
+    "insider": "Schlacks Jabbok",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1693736/000095010326013377/0000950103-26-013377-index.htm"
+  },
+  {
+    "timestamp": "2026-09-02T08:07:49.942813+00:00",
+    "date": "2026-09-01",
+    "ticker": "AFCG",
+    "insider": "TANNENBAUM LEONARD M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1822523/000162828026059909/0001628280-26-059909-index.htm"
   }
 ]

@@ -156,3 +156,9 @@
 | 2026-08-31 | HWKN | Oldenkamp Jeffrey P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/46250/000162666926000006/0001626669-26-000006-index.htm |
 | 2026-08-31 | SRTS | Sachetta Eric |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2097345/000209734526000016/0002097345-26-000016-index.htm |
 | 2026-08-31 | SCOR | LIVEK WILLIAM PAUL |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000146660526000007/0001466605-26-000007-index.htm |
+| 2026-09-01 | AUGO | Sousa Mauad Bruno | $79.06 | 24 sh ($1,897) | $67.20 | ENTRY | https://www.sec.gov/Archives/edgar/data/1468642/000211790526000026/0002117905-26-000026-index.htm |
+| 2026-09-01 | WALD | Souza Cristiano |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1841079/000184019926000096/0001840199-26-000096-index.htm |
+| 2026-09-01 | ASTS | Cisneros Adriana |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1780312/000110465926104326/0001104659-26-104326-index.htm |
+| 2026-09-01 | FTCI | SADASIVAM SHAKER |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1828161/000119312526377575/0001193125-26-377575-index.htm |
+| 2026-09-01 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000095010326013377/0000950103-26-013377-index.htm |
+| 2026-09-01 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026059909/0001628280-26-059909-index.htm |

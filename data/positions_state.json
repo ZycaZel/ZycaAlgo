@@ -23,18 +23,6 @@
     "buy_order_id": "a10e7e45-415c-4a70-b6a6-c61ea484973a",
     "stop_order_id": "beea3863-140c-47b0-9221-b134cfd62d1b"
   },
-  "IR": {
-    "entry_date": "2026-08-05",
-    "entry_price": 89.995,
-    "qty": 22,
-    "mode": "initial_stop",
-    "stop_price": 76.5,
-    "high_water_mark": 89.995,
-    "insider": "Satpathy Aurobind",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1699150/000114036126031457/0001140361-26-031457-index.htm",
-    "buy_order_id": "46050132-8970-4c31-a05c-32993c5aa862",
-    "stop_order_id": "1f182b8f-a0fe-4519-a3a0-d63730fef265"
-  },
   "PFE": {
     "entry_date": "2026-08-05",
     "entry_price": 25.79,
@@ -178,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2031329/000119312526371418/0001193125-26-371418-index.htm",
     "buy_order_id": "b65233c2-60ee-4acd-9410-1cb2e9fe3935",
     "stop_order_id": "d9bc8bdd-e4e3-41ba-b87e-6d50a7298f38"
+  },
+  "AUGO": {
+    "entry_date": "2026-09-01",
+    "entry_price": 79.06,
+    "qty": 24,
+    "mode": "initial_stop",
+    "stop_price": 67.2,
+    "high_water_mark": 79.06,
+    "insider": "Sousa Mauad Bruno",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1468642/000211790526000026/0002117905-26-000026-index.htm",
+    "buy_order_id": "65722d23-b07b-4554-89ce-e3c8fffd24d6",
+    "stop_order_id": null
   }
 }

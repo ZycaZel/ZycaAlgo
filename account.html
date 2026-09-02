@@ -113,14 +113,20 @@
 
   .il-chart-toggle {
     background: none;
-    border: none;
+    border: 1px solid var(--line);
+    border-radius: 3px;
     color: var(--ink-soft);
     cursor: pointer;
-    font-size: 0.7rem;
-    padding: 0 6px 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    padding: 3px 8px;
+    margin-right: 8px;
     vertical-align: middle;
+    white-space: nowrap;
   }
-  .il-chart-toggle:hover { color: var(--stamp); }
+  .il-chart-toggle:hover { color: var(--stamp); border-color: var(--stamp); }
+  .il-chart-caret { display: inline-block; font-size: 0.6rem; }
   .il-chart-row td { padding: 0; border-top: none; }
   .il-chart-wrap { padding: 4px 4px 22px; }
   .il-chart-canvas { width: 100%; height: 140px; display: block; }
@@ -755,15 +761,16 @@
   // ticker on the list).
   function toggleChart(ticker, toggleBtn, chartRow) {
     var expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    var caret = toggleBtn.querySelector('.il-chart-caret');
     if (expanded) {
       chartRow.hidden = true;
       toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.innerHTML = '&#9656;';
+      if (caret) caret.innerHTML = '&#9656;';
       return;
     }
     chartRow.hidden = false;
     toggleBtn.setAttribute('aria-expanded', 'true');
-    toggleBtn.innerHTML = '&#9662;';
+    if (caret) caret.innerHTML = '&#9662;';
 
     var container = chartRow.querySelector('.il-tv-chart');
     if (container.dataset.loaded === 'true') return;
@@ -936,7 +943,8 @@
           var rowId = 'chart-row-' + ticker.replace(/[^A-Z0-9]/g, '');
           return '<tr>' +
             '<td class="il-ticker-cell">' +
-            '<button type="button" class="il-chart-toggle" data-chart-toggle="' + ticker + '" aria-expanded="false" aria-controls="' + rowId + '" title="Show price chart">&#9656;</button>' +
+            '<button type="button" class="il-chart-toggle" data-chart-toggle="' + ticker + '" aria-expanded="false" aria-controls="' + rowId + '" title="Show price chart">' +
+            '<span class="il-chart-caret">&#9656;</span> Chart</button>' +
             ticker + (isCluster ? '<span class="il-flag">&#9679; cluster</span>' : '') + '</td>' +
             '<td>' + (info ? info.company : '&mdash;') + '</td>' +
             '<td>' + (info && info.sector ? '<span class="il-sector-tag">' + info.sector + '</span>' : '&mdash;') + '</td>' +
@@ -963,11 +971,21 @@
           });
         });
 
-        personalWatchlistEl.querySelectorAll('[data-chart-toggle]').forEach(function (btn) {
+        var toggles = personalWatchlistEl.querySelectorAll('[data-chart-toggle]');
+        toggles.forEach(function (btn) {
           btn.addEventListener('click', function () {
             toggleChart(btn.dataset.chartToggle, btn, document.getElementById(btn.getAttribute('aria-controls')));
           });
         });
+
+        // Open the first row's chart on load, so the feature is visible
+        // rather than hidden behind a control you'd have to guess at. Only
+        // the first - opening every row would spawn a TradingView iframe per
+        // ticker and make the page crawl.
+        if (toggles.length) {
+          var first = toggles[0];
+          toggleChart(first.dataset.chartToggle, first, document.getElementById(first.getAttribute('aria-controls')));
+        }
       });
     });
   }

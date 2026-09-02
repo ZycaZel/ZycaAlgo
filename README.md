@@ -45,6 +45,16 @@ This account is always paper-only. `scripts/trade_manager.py` hard-codes
   trader's Alpaca credentials: verifies their Supabase session, validates
   the keys against Alpaca before saving, encrypts them (AES-256-GCM), and
   stores them in a table with no client-readable RLS policies at all.
+- **`scripts/ablation_study.py`** — splits the backtested signals one
+  dimension at a time and Welch-tests whether the halves actually differ,
+  so each filter has to earn its place in this data rather than resting on
+  the paper that motivated it. Writes `data/backtest/ablation_report.md`.
+  Runs monthly as part of the backtest refresh.
+- **`scripts/technical_filter_study.py`** — asks whether a technical
+  confirmation filter would improve the insider signal. It would not: see
+  "What we tested and rejected" below. Not wired into any workflow, since
+  it's a research result rather than part of the pipeline; run it by hand
+  (`python technical_filter_study.py`) to reproduce.
 - **`scripts/run_for_ai_managed_users.py`** — runs the same enter/manage
   logic as `trade_manager.py`, once per AI-managed trader with a connected
   account, each in their own state files under `data/users/<id>/` -
@@ -127,6 +137,39 @@ pip install -r scripts/requirements.txt
 python scripts/insider_buys.py
 APCA_API_KEY_ID=... APCA_API_SECRET_KEY=... python scripts/trade_manager.py manage
 ```
+
+## What we tested and rejected
+
+Adding a rule because it sounds sensible is how a strategy becomes a black
+box. Two studies in `data/backtest/` record what actually survived testing.
+
+**A technical confirmation filter — rejected.** The intuition is that an
+insider buy is safer if the chart also looks healthy. Measured across 2,977
+backtested signals (every indicator computed from bars strictly *before*
+the filing date, so nothing leaks), it isn't:
+
+| Condition | Result |
+|---|---|
+| Price above 200-day MA | Selects the *worse* half at short horizons |
+| Price above 50-day MA | One significant horizon that flips sign out-of-sample |
+| RSI(14) below 70 | No measurable effect |
+| Volume above 20-day average | No measurable effect |
+| Within 25% of 52-week high | Substantially worse, at every horizon |
+
+The one robust effect runs opposite to the intuition: insider buys in
+stocks near their 52-week high underperformed beaten-down names by 2-9
+percentage points, significant both before and after the backtest's
+in-sample cutoff. That is consistent with Lakonishok & Lee (2001) finding
+insiders are contrarian buyers - trend confirmation fights the mechanism
+the signal depends on.
+
+It is deliberately **not** in the live pipeline. The account has run one
+methodology since it opened, and changing the rules midway would turn its
+public equity curve into a blend of two strategies that no longer
+demonstrates either. Both sides of the out-of-sample split also sit inside
+the same broadly rising market, so "beaten-down names recover" is a
+plausible regime effect rather than a law. Testing it properly means a
+second paper account running the variant in parallel, not editing this one.
 
 ## What's honest about this site
 

@@ -6,3 +6,7 @@ scripts/insider-buys-*.json
 scripts/insider-buys-*.md
 scripts/run_log*.txt
 data/backtest/_quarters_cache/
+
+# Cached Yahoo price history for the technical filter study - rebuildable,
+# ~1500 files, no reason to version it.
+data/backtest/_price_cache/

@@ -138,6 +138,21 @@
     cursor: pointer;
   }
   .il-alert-toggle input { margin-top: 3px; flex-shrink: 0; }
+
+  .il-textlink {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .il-textlink:hover { color: var(--stamp); }
+  .il-auth-heading { margin: 0 0 6px; font-size: 1.15rem; }
+  .il-auth-lead { margin: 0 0 18px; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -217,6 +232,38 @@
           <button class="il-btn il-btn-primary" type="submit" id="auth-submit" style="width:100%;">Log in</button>
         </form>
         <div id="auth-msg" class="il-auth-msg"></div>
+        <button type="button" class="il-textlink" id="forgot-link">Forgot your password?</button>
+      </div>
+
+      <!-- Shown instead of the login card when the user asks for a reset link. -->
+      <div id="reset-request-card" class="il-auth-card" style="display:none;">
+        <h2 class="il-auth-heading">Reset your password</h2>
+        <p class="il-auth-lead">We'll email you a link that lets you set a new one. It's valid for a single use.</p>
+        <form id="reset-request-form">
+          <div class="il-field">
+            <label for="reset-email">Email</label>
+            <input type="email" id="reset-email" autocomplete="email" required>
+          </div>
+          <button class="il-btn il-btn-primary" type="submit" id="reset-request-submit" style="width:100%;">Send reset link</button>
+        </form>
+        <div id="reset-request-msg" class="il-auth-msg"></div>
+        <button type="button" class="il-textlink" id="back-to-login">&larr; Back to log in</button>
+      </div>
+
+      <!-- Shown when the page is opened from a reset email, which puts a
+           recovery token in the URL and signs the user in just long enough
+           to change their own password. -->
+      <div id="new-password-card" class="il-auth-card" style="display:none;">
+        <h2 class="il-auth-heading">Choose a new password</h2>
+        <p class="il-auth-lead">You followed a reset link. Set a new password to finish.</p>
+        <form id="new-password-form">
+          <div class="il-field">
+            <label for="new-password">New password</label>
+            <input type="password" id="new-password" autocomplete="new-password" required minlength="6">
+          </div>
+          <button class="il-btn il-btn-primary" type="submit" id="new-password-submit" style="width:100%;">Save new password</button>
+        </form>
+        <div id="new-password-msg" class="il-auth-msg"></div>
       </div>
 
       <div id="dashboard" style="display:none;">
@@ -350,6 +397,11 @@
     return;
   }
 
+  // Read this before creating the client: supabase-js consumes the URL
+  // fragment on startup, and a recovery link is otherwise indistinguishable
+  // from a normal session by the time we'd get to look.
+  var isRecovery = /[#&]type=recovery/.test(window.location.hash);
+
   var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   var authCard = document.getElementById('auth-card');
@@ -403,11 +455,96 @@
     });
   });
 
+  // -------------------------------------------------------------------
+  // Password reset. Without this a forgotten password locks someone out
+  // of their account - and their connected broker keys - permanently.
+  // -------------------------------------------------------------------
+  var resetRequestCard = document.getElementById('reset-request-card');
+  var newPasswordCard = document.getElementById('new-password-card');
+  var resetRequestMsg = document.getElementById('reset-request-msg');
+  var newPasswordMsg = document.getElementById('new-password-msg');
+
+  function showOnly(card) {
+    [authCard, resetRequestCard, newPasswordCard].forEach(function (c) {
+      c.style.display = c === card ? 'block' : 'none';
+    });
+    dashboard.style.display = 'none';
+  }
+
+  document.getElementById('forgot-link').addEventListener('click', function () {
+    document.getElementById('reset-email').value = emailInput.value.trim();
+    resetRequestMsg.textContent = '';
+    showOnly(resetRequestCard);
+  });
+
+  document.getElementById('back-to-login').addEventListener('click', function () {
+    showOnly(authCard);
+  });
+
+  document.getElementById('reset-request-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('reset-request-submit');
+    var email = document.getElementById('reset-email').value.trim();
+    btn.disabled = true;
+    resetRequestMsg.textContent = 'Sending…';
+    resetRequestMsg.className = 'il-auth-msg';
+
+    client.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + '/account',
+    }).then(function (result) {
+      btn.disabled = false;
+      // Deliberately the same message either way. Telling a stranger
+      // whether an address has an account here is an information leak.
+      if (result.error && result.error.status && result.error.status >= 500) {
+        resetRequestMsg.textContent = 'Something went wrong sending that. Try again in a moment.';
+        resetRequestMsg.className = 'il-auth-msg il-error';
+        return;
+      }
+      resetRequestMsg.textContent = 'If an account exists for that address, a reset link is on its way.';
+      resetRequestMsg.className = 'il-auth-msg il-ok';
+    });
+  });
+
+  document.getElementById('new-password-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('new-password-submit');
+    var password = document.getElementById('new-password').value;
+    btn.disabled = true;
+    newPasswordMsg.textContent = 'Saving…';
+    newPasswordMsg.className = 'il-auth-msg';
+
+    client.auth.updateUser({ password: password }).then(function (result) {
+      btn.disabled = false;
+      if (result.error) {
+        newPasswordMsg.textContent = result.error.message;
+        newPasswordMsg.className = 'il-auth-msg il-error';
+        return;
+      }
+      newPasswordMsg.textContent = 'Password updated.';
+      newPasswordMsg.className = 'il-auth-msg il-ok';
+      // Drop the recovery token out of the address bar so a reload (or a
+      // shared URL) can't replay it.
+      if (window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+      showDashboard();
+    });
+  });
+
+  // A recovery link signs the user in, so without this they'd land on the
+  // dashboard and never be asked for the new password they came to set.
+  client.auth.onAuthStateChange(function (event) {
+    if (event === 'PASSWORD_RECOVERY') showOnly(newPasswordCard);
+  });
+  if (isRecovery) showOnly(newPasswordCard);
+
   function showDashboard() {
     client.auth.getUser().then(function (result) {
       var user = result.data && result.data.user;
       if (!user) return;
       authCard.style.display = 'none';
+      resetRequestCard.style.display = 'none';
+      newPasswordCard.style.display = 'none';
       dashboard.style.display = 'block';
       document.getElementById('dashboard-email').textContent = 'Signed in as ' + user.email;
       loadProfile(user.id);
@@ -765,8 +902,11 @@
     });
   }
 
-  // If already logged in (returning visit), skip straight to the dashboard.
+  // If already logged in (returning visit), skip straight to the dashboard -
+  // except when this load came from a reset link, where the session exists
+  // only so the user can set a new password.
   client.auth.getSession().then(function (result) {
+    if (isRecovery) return;
     if (result.data && result.data.session) showDashboard();
   });
 })();

@@ -1813,5 +1813,49 @@
     "stop": "",
     "event": "SKIPPED - market cap $79,124,997 < $1B; avg volume 99,676 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1822523/000162828026059909/0001628280-26-059909-index.htm"
+  },
+  {
+    "timestamp": "2026-09-03T08:08:41.222168+00:00",
+    "date": "2026-09-02",
+    "ticker": "NIVF",
+    "insider": "Cheung Kong Yiu",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2148231/000121390026096450/0001213900-26-096450-index.htm"
+  },
+  {
+    "timestamp": "2026-09-03T08:08:41.223997+00:00",
+    "date": "2026-09-02",
+    "ticker": "RCT",
+    "insider": "Senn Nikolaus Beat",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2027360/000149315226041236/0001493152-26-041236-index.htm"
+  },
+  {
+    "timestamp": "2026-09-03T08:08:41.225744+00:00",
+    "date": "2026-09-02",
+    "ticker": "VST",
+    "insider": "BURKE JAMES A",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1268406/000126840626000009/0001268406-26-000009-index.htm"
+  },
+  {
+    "timestamp": "2026-09-03T08:08:41.227467+00:00",
+    "date": "2026-09-02",
+    "ticker": "BAER",
+    "insider": "KELTER JEFFREY E",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1941536/000168316826006884/0001683168-26-006884-index.htm"
   }
 ]

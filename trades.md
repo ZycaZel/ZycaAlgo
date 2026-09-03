@@ -167,3 +167,7 @@
 | 2026-09-01 | FTCI | SADASIVAM SHAKER |  |  |  | SKIPPED - market cap $38,107,796 < $1B; avg volume 241,155 < 500K | https://www.sec.gov/Archives/edgar/data/1828161/000119312526377575/0001193125-26-377575-index.htm |
 | 2026-09-01 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1693736/000095010326013377/0000950103-26-013377-index.htm |
 | 2026-09-01 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - market cap $79,124,997 < $1B; avg volume 99,676 < 500K | https://www.sec.gov/Archives/edgar/data/1822523/000162828026059909/0001628280-26-059909-index.htm |
+| 2026-09-02 | NIVF | Cheung Kong Yiu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2148231/000121390026096450/0001213900-26-096450-index.htm |
+| 2026-09-02 | RCT | Senn Nikolaus Beat |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2027360/000149315226041236/0001493152-26-041236-index.htm |
+| 2026-09-02 | VST | BURKE JAMES A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1268406/000126840626000009/0001268406-26-000009-index.htm |
+| 2026-09-02 | BAER | KELTER JEFFREY E |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1941536/000168316826006884/0001683168-26-006884-index.htm |

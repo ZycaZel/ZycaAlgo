@@ -399,6 +399,53 @@
   .il-legend-swatch { width: 14px; height: 2px; display: inline-block; }
   .il-legend-strategy { background: var(--signal); }
   .il-legend-bench { background: var(--ink-soft); }
+
+  /* Realised results from closed positions. Kept visually quieter than the
+     equity curve above it: with a handful of trades these figures carry far
+     less weight than the curve does, and shouldn't look like they carry more. */
+  .il-closed { border-top: 1px solid var(--line); padding: 16px 22px 20px; }
+  .il-closed-head { display: flex; align-items: baseline; gap: 10px; }
+  .il-closed-title {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .il-closed-n {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .il-closed-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 14px 0 0;
+  }
+  .il-closed-stats dt {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .il-closed-stats dd {
+    margin: 3px 0 0;
+    font-size: 1.02rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .il-closed-note {
+    margin: 12px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  @media (max-width: 560px) {
+    .il-closed-stats { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 860px) {
     .il-docstamp .il-chart-stats { grid-template-columns: repeat(2, 1fr); }
   }

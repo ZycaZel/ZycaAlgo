@@ -269,6 +269,18 @@
           <span class="il-legend-item"><span class="il-legend-swatch il-legend-strategy"></span>ZycaAlgo</span>
           <span class="il-legend-item"><span class="il-legend-swatch il-legend-bench"></span>S&amp;P 500 (SPY), same period</span>
         </div>
+        <div class="il-closed" id="closed-panel">
+          <div class="il-closed-head">
+            <span class="il-closed-title">Closed trades</span>
+            <span class="il-closed-n" id="closed-count">&mdash;</span>
+          </div>
+          <dl class="il-closed-stats" id="closed-stats" hidden>
+            <div><dt>Win rate</dt><dd id="closed-winrate">&mdash;</dd></div>
+            <div><dt>Average win</dt><dd id="closed-avgwin">&mdash;</dd></div>
+            <div><dt>Average loss</dt><dd id="closed-avgloss">&mdash;</dd></div>
+          </dl>
+          <p class="il-closed-note" id="closed-note">Reading the log&hellip;</p>
+        </div>
       </div>
     </div>
   </section>
@@ -840,6 +852,93 @@ function ilAnimateCount(el, end, fmt, duration) {
       ilAnimateCount(vsSpyEl, diff, function (v) { return (v >= 0 ? '+' : '') + v.toFixed(2) + ' pts'; }, 900);
     }
   });
+})();
+
+// ---------------------------------------------------------------------
+// Realised results from closed positions.
+//
+// Reads the same trade log the activity feed uses. Both exit events carry
+// their outcome in the text - "EXIT - stop filled at $86.40 (-13.6%)" and
+// "TIME STOP - flat after 90d (+1.2%)" - so the percentage is parsed from
+// there rather than recomputed from prices the log doesn't always carry.
+//
+// The panel states its own sample size and says outright when there are too
+// few trades to read anything into. A win rate over three trades is not a
+// win rate, and presenting one without that caveat would be the same kind
+// of overclaiming the rest of this site avoids.
+// ---------------------------------------------------------------------
+(function () {
+  var MEANINGFUL_N = 20;   // below this, report the figures but disclaim them
+
+  fetch('/api/trades')
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .catch(function () { return []; })
+    .then(function (trades) {
+      if (!Array.isArray(trades)) trades = [];
+
+      var closed = [];
+      trades.forEach(function (t) {
+        var ev = t.event || '';
+        if (!/^(EXIT|TIME STOP)/i.test(ev)) return;
+        var m = /\(([-+]?\d+(?:\.\d+)?)%\)/.exec(ev);
+        // A close with no recorded percentage (a manual close, or an order
+        // Alpaca could no longer price) still counts as a closed trade - it
+        // just can't contribute to the win/loss averages.
+        closed.push({ ticker: t.ticker, pct: m ? parseFloat(m[1]) : null });
+      });
+
+      var countEl = document.getElementById('closed-count');
+      var statsEl = document.getElementById('closed-stats');
+      var noteEl = document.getElementById('closed-note');
+      if (!countEl || !statsEl || !noteEl) return;
+
+      if (!closed.length) {
+        countEl.textContent = 'none yet';
+        noteEl.textContent = 'No position has closed yet. Every entry so far is still open, ' +
+          'so there are no realised results to report — the first exits are expected once ' +
+          'positions hit a stop or reach the 90-day time limit.';
+        return;
+      }
+
+      var priced = closed.filter(function (c) { return c.pct !== null; });
+      countEl.textContent = closed.length + (closed.length === 1 ? ' trade' : ' trades');
+
+      if (!priced.length) {
+        noteEl.textContent = closed.length + ' position' + (closed.length === 1 ? ' has' : 's have') +
+          ' closed, but none carry a recorded exit price, so no win rate can be calculated from them.';
+        return;
+      }
+
+      var wins = priced.filter(function (c) { return c.pct > 0; });
+      var losses = priced.filter(function (c) { return c.pct <= 0; });
+      var avg = function (a) {
+        return a.length ? a.reduce(function (s, c) { return s + c.pct; }, 0) / a.length : null;
+      };
+      var fmt = function (v) { return v === null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(1) + '%'; };
+
+      var winrate = document.getElementById('closed-winrate');
+      var avgwin = document.getElementById('closed-avgwin');
+      var avgloss = document.getElementById('closed-avgloss');
+      winrate.textContent = Math.round((wins.length / priced.length) * 100) + '%';
+      avgwin.textContent = fmt(avg(wins));
+      avgwin.className = wins.length ? 'il-positive' : '';
+      avgloss.textContent = fmt(avg(losses));
+      avgloss.className = losses.length ? 'il-negative' : '';
+      statsEl.hidden = false;
+
+      if (priced.length < MEANINGFUL_N) {
+        noteEl.textContent = 'Based on ' + priced.length + ' closed trade' +
+          (priced.length === 1 ? '' : 's') + ' — far too few to be meaningful. ' +
+          'These figures are published because they are real, not because they support ' +
+          'a conclusion; a win rate needs considerably more than this before it says ' +
+          'anything about the strategy. The backtest on /methodology carries the ' +
+          'statistical weight.';
+      } else {
+        noteEl.textContent = 'Based on ' + priced.length + ' closed trades. Realised results ' +
+          'reflect the live exit rules (15% stop, trailing after +15%, 90-day time stop), ' +
+          'so they will not match the fixed-horizon figures in the backtest.';
+      }
+    });
 })();
 
 // ---------------------------------------------------------------------

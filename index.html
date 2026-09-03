@@ -97,8 +97,8 @@
             <dd><span class="il-arrow">&darr;</span> <span id="stat-tradeable">6</span></dd>
           </div>
           <div>
-            <dt>Mirrored to paper account</dt>
-            <dd id="stat-mirrored">6 positions &middot; 11.6% deployed</dd>
+            <dt>Entered from this scan</dt>
+            <dd id="stat-mirrored">6 positions &middot; 11.6% of equity</dd>
           </div>
         </dl>
       </div>
@@ -561,8 +561,15 @@ function ilAnimateCount(el, end, fmt, duration) {
     var qualifying = document.getElementById('stat-qualifying');
     var tradeable = document.getElementById('stat-tradeable');
     var mirrored = document.getElementById('stat-mirrored');
+    // "Passed the liquidity floor" is not the same as "was entered". Once the
+    // account is at its 15-position cap a signal can clear every filter and
+    // still be turned away, and counting entries alone would report those as
+    // having failed the floor - which they didn't.
+    var cappedToday = todaysTrades.filter(function (t) { return /position cap/i.test(t.event); });
+    var passedFloorToday = entriesToday.length + cappedToday.length;
+
     if (qualifying) ilAnimateCount(qualifying, buys.length, function (v) { return Math.round(v); });
-    if (tradeable) ilAnimateCount(tradeable, entriesToday.length, function (v) { return Math.round(v); });
+    if (tradeable) ilAnimateCount(tradeable, passedFloorToday, function (v) { return Math.round(v); });
     if (screened) {
       var d = new Date(signals.date + 'T00:00:00Z');
       screened.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
@@ -574,8 +581,15 @@ function ilAnimateCount(el, end, fmt, duration) {
         return sum + (m ? parseInt(m[1].replace(/,/g, ''), 10) : 0);
       }, 0);
       var equity = account && account.equity ? parseFloat(account.equity) : null;
-      var pctText = equity ? ((intendedDollars / equity) * 100).toFixed(1) + '% deployed' : 'orders placed';
-      mirrored.textContent = entriesToday.length + ' position' + (entriesToday.length === 1 ? '' : 's') + ' · ' + pctText;
+      // Deliberately "of equity", not "deployed": this is what this one scan
+      // put to work, not how much of the account is invested overall. The
+      // equity chart below reports the account's own position count.
+      var pctText = equity ? ((intendedDollars / equity) * 100).toFixed(1) + '% of equity' : 'orders placed';
+      var suffix = cappedToday.length
+        ? ' · ' + cappedToday.length + ' held back at the 15-position cap'
+        : '';
+      mirrored.textContent = entriesToday.length + ' position' +
+        (entriesToday.length === 1 ? '' : 's') + ' · ' + pctText + suffix;
     }
 
     if (Array.isArray(positions) && positions.length) {

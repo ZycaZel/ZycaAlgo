@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio replay &mdash; ZycaAlgo</title>
+<meta name="description" content="Replay your own trades under ZycaAlgo's exit rules and see what the discipline would have done - in either direction.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='5' fill='%23ff5240' stroke='%23ff5240' stroke-width='1.4'/%3E%3Cpolyline points='12,13 26,13 12,27 26,27' stroke-width='3.2' stroke='%230a0b10' stroke-linecap='square' stroke-linejoin='miter' fill='none'/%3E%3Crect x='28' y='24' width='5' height='7' fill='%2335d488'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .il-navlinks a[aria-current="page"] { color: var(--stamp); }
+  .il-explorer-hero { padding: clamp(48px, 7vw, 80px) 0 clamp(32px, 5vw, 48px); border-bottom: 1px solid var(--line); }
+  .il-explorer-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin: 14px 0 18px; }
+  .il-explorer-hero p { color: var(--ink-soft); max-width: 64ch; margin: 0 0 8px; font-size: 1.05rem; }
+  .il-explorer-body { padding: clamp(32px, 5vw, 56px) 0 clamp(56px, 8vw, 88px); }
+
+  .il-drop {
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    background: var(--glass-bg);
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .il-drop.il-over { border-color: var(--stamp); background: var(--stamp-soft); }
+  .il-drop p { margin: 10px 0 0; color: var(--ink-soft); font-size: .9rem; }
+  .il-drop input[type=file] { display: none; }
+
+  .il-privacy {
+    font-family: var(--font-mono);
+    font-size: .74rem;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  .il-verdict { margin-top: 34px; }
+  .il-verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .il-verdict-grid > div { padding: 18px 20px 18px 0; }
+  .il-verdict-grid dt {
+    font-family: var(--font-mono); font-size: .68rem; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .il-verdict-grid dd {
+    margin: 5px 0 0; font-size: 1.5rem; font-variant-numeric: tabular-nums; letter-spacing: -.02em;
+  }
+  .il-verdict-grid dd span { display: block; font-size: .82rem; color: var(--ink-soft); letter-spacing: 0; margin-top: 2px; }
+
+  .il-readout { margin: 22px 0 0; font-size: .96rem; line-height: 1.65; max-width: 72ch; }
+  .il-readout strong { color: var(--ink); }
+
+  .il-outcome {
+    font-family: var(--font-mono); font-size: .7rem; padding: 2px 7px;
+    border-radius: 3px; white-space: nowrap;
+  }
+  .il-o-stop { background: rgba(242,84,91,.14); color: var(--loss); }
+  .il-o-trail { background: var(--stamp-soft); color: var(--stamp); }
+  .il-o-time { background: rgba(255,255,255,.08); color: var(--ink-soft); }
+  .il-o-open { background: rgba(53,212,136,.13); color: var(--signal); }
+
+  .il-progress { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-soft); margin-top: 18px; }
+  .il-caveat {
+    border-left: 2px solid var(--line); padding: 2px 0 2px 16px; margin: 30px 0 0;
+    color: var(--ink-soft); font-size: .86rem; line-height: 1.6; max-width: 72ch;
+  }
+</style>
+</head>
+<body>
+
+<div class="il-root" id="top">
+
+  <div class="il-topbar">
+    <div class="il-container il-topbar-inner">
+      <span>zyca-algo.vercel.app</span>
+      <span class="il-market">
+        <span class="il-market-dot" id="market-dot"></span>
+        <span id="market-status">Checking market&hellip;</span>
+        <span>&middot; Paper Trading Environment</span>
+      </span>
+    </div>
+  </div>
+
+  <nav class="il-nav">
+    <div class="il-nav-inner">
+      <a class="il-wordmark" href="/" aria-label="ZycaAlgo home">
+        <svg class="il-logomark" width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="il-lm-bezel" x="2" y="2" width="36" height="36" rx="5" stroke-width="1.4"/>
+          <polyline class="il-lm-z" points="12,13 26,13 12,27 26,27" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <rect class="il-lm-cursor" x="28" y="24" width="5" height="7"/>
+        </svg>
+        <span class="il-brand-text">
+          <span class="il-brand-name">ZycaAlgo</span>
+          <span class="il-brand-url">zyca-algo.vercel.app</span>
+        </span>
+        <span class="il-mark">FORM 4</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="il-nav-toggle-input">
+      <label for="nav-toggle" class="il-nav-toggle-label" aria-label="Toggle menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 1H18" stroke="currentColor" stroke-width="2"/>
+          <path d="M0 7H18" stroke="currentColor" stroke-width="2"/>
+          <path d="M0 13H18" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </label>
+      <div class="il-navlinks">
+        <a href="/about">About</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/explorer">Explorer</a>
+        <a href="/watchlist">Watchlist</a>
+        <a href="/replay" aria-current="page">Replay</a>
+        <a href="/account">Account</a>
+        <a class="il-btn" href="/account">Get started</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="il-explorer-hero">
+    <div class="il-container">
+      <div class="il-eyebrow">Portfolio replay</div>
+      <h1>What would the rules have done with your trades?</h1>
+      <p>Upload your own holdings and this replays every position under ZycaAlgo's exit rules &mdash; a 15% stop, a trailing stop 10% below the high once a position is up 15%, and a 90-day exit if it goes nowhere &mdash; then shows the result beside what actually happened.</p>
+      <p>It reports what the discipline did, in whichever direction. Sometimes rules rescue a position that ran away from you. Sometimes they cut a winner short. Both are worth seeing on your own money rather than on a backtest.</p>
+    </div>
+  </header>
+
+  <main class="il-explorer-body">
+    <div class="il-container">
+
+      <div class="il-drop" id="drop">
+        <label class="il-btn il-btn-primary" for="csv-input" style="cursor:pointer;">Choose a CSV file</label>
+        <input type="file" id="csv-input" accept=".csv,text/csv">
+        <p>or drag one here</p>
+        <p class="il-privacy">
+          Your file is read in your browser and never uploaded &mdash; only the ticker
+          symbols are sent, to fetch public price history. Nothing about your
+          positions, sizes or prices leaves this page.
+        </p>
+      </div>
+
+      <p class="il-privacy" style="margin-top:16px;">
+        Works with a Yahoo Finance portfolio export as-is. Any CSV with a symbol,
+        purchase price, quantity and trade date will do. Rows without a purchase
+        recorded are treated as watchlist entries and skipped.
+      </p>
+
+      <div id="progress" class="il-progress" hidden></div>
+      <div id="results" hidden>
+        <div class="il-verdict">
+          <dl class="il-verdict-grid">
+            <div><dt>Your result</dt><dd id="v-actual">&mdash;</dd></div>
+            <div><dt>Under the rules</dt><dd id="v-ruled">&mdash;</dd></div>
+            <div><dt>Difference</dt><dd id="v-diff">&mdash;</dd></div>
+            <div><dt>Positions replayed</dt><dd id="v-count">&mdash;</dd></div>
+          </dl>
+          <p class="il-readout" id="readout"></p>
+        </div>
+
+        <h2 style="margin:36px 0 12px; font-size:1.2rem;">Position by position</h2>
+        <div class="il-tablewrap">
+          <table class="il-signals">
+            <thead>
+              <tr>
+                <th>Ticker</th><th>Bought</th><th class="il-num">Entry</th>
+                <th>Under the rules</th><th class="il-num">Your P&amp;L</th>
+                <th class="il-num">Ruled P&amp;L</th><th class="il-num">Difference</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+
+        <p class="il-caveat">
+          This is a counterfactual on daily bars, not a record of trades that happened.
+          A stop is assumed to fill at the stop price the moment the day's low crosses it;
+          a real fill would slip, and a gap down would fill worse. It also can't know what
+          you would have done with the cash a rule freed up, which for an early exit is
+          often the whole question. Read it as a measure of what the discipline does to a
+          position, not as a forecast of what you would have ended up with.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="il-footer">
+    <div class="il-container il-footer-inner">
+      <div>
+        <span class="il-brand-name">ZycaAlgo</span>
+        <span class="il-brand-url">zyca-algo.vercel.app</span>
+      </div>
+      <div class="il-footer-links">
+        <a href="/about">About</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/explorer">Explorer</a>
+        <a href="/watchlist">Watchlist</a>
+        <a href="/legal">Legal</a>
+      </div>
+    </div>
+    <div class="il-container">
+      <p class="il-finetext">
+        ACCOUNTS ARE REAL; NO PAYMENT IS COLLECTED ANYWHERE ON THIS SITE AND THERE IS NO PAID TIER. ZycaAlgo is not
+        a registered investment adviser or broker-dealer and this page does not constitute investment, legal, or tax
+        advice. Replays are hypothetical, use daily price bars, and do not reflect slippage, fees, or the cash
+        released by an early exit. Past results, real or simulated, do not predict future performance.
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var STOP_PCT = 0.15, TRAIL_TRIGGER = 0.15, TRAIL_PCT = 0.10;
+  var TIME_STOP_DAYS = 90, TIME_STOP_BAND = 0.03;
+
+  // Yahoo exports dates in the account's own locale, so a Thai account emits
+  // some rows in the Buddhist era (2569 = 2026) and others in Gregorian. Read
+  // naively, a BE year lands 543 years in the future and every date is wrong.
+  function normaliseDate(raw) {
+    if (!raw) return null;
+    var s = String(raw).trim().replace(/[^0-9]/g, '');
+    if (s.length !== 8) return null;
+    var y = +s.slice(0, 4), m = +s.slice(4, 6), d = +s.slice(6);
+    if (y > 2400) y -= 543;
+    if (m < 1 || m > 12 || d < 1 || d > 31) return null;
+    return y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+  }
+
+  function splitLine(line) {
+    var out = [], cur = '', quoted = false;
+    for (var i = 0; i < line.length; i++) {
+      var ch = line[i];
+      if (ch === '"') quoted = !quoted;
+      else if (ch === ',' && !quoted) { out.push(cur); cur = ''; }
+      else cur += ch;
+    }
+    out.push(cur);
+    return out.map(function (s) { return s.trim(); });
+  }
+
+  function parseCsv(text) {
+    var lines = text.split(/\r?\n/).filter(function (l) { return l.trim(); });
+    if (!lines.length) return [];
+    var header = splitLine(lines[0]).map(function (h) { return h.toLowerCase(); });
+    function idx() {
+      for (var i = 0; i < arguments.length; i++) {
+        var p = header.indexOf(arguments[i]);
+        if (p !== -1) return p;
+      }
+      return -1;
+    }
+    var cols = {
+      symbol: idx('symbol', 'ticker'),
+      price: idx('purchase price', 'cost', 'buy price', 'price'),
+      qty: idx('quantity', 'shares', 'qty'),
+      date: idx('trade date', 'purchase date', 'date acquired', 'date'),
+      current: idx('current price', 'last price'),
+      type: idx('transaction type', 'type', 'side')
+    };
+    if (cols.symbol === -1) return [];
+
+    var lots = [];
+    lines.slice(1).forEach(function (line) {
+      var f = splitLine(line);
+      var symbol = (f[cols.symbol] || '').toUpperCase();
+      var price = parseFloat(f[cols.price]), qty = parseFloat(f[cols.qty]);
+      if (!symbol || !isFinite(price) || !isFinite(qty) || price <= 0 || qty <= 0) return;
+      var type = (f[cols.type] || 'BUY').toUpperCase();
+      if (type && type.indexOf('BUY') === -1) return;
+      lots.push({
+        symbol: symbol, buyPrice: price, qty: qty,
+        buyDate: normaliseDate(f[cols.date]),
+        currentPrice: parseFloat(f[cols.current]) || null
+      });
+    });
+    return lots;
+  }
+
+  function replayLot(lot, bars) {
+    var usable = bars.filter(function (b) {
+      return b.close != null && (!lot.buyDate || b.date >= lot.buyDate);
+    });
+    if (usable.length < 2) return null;
+
+    var entry = lot.buyPrice;
+    var stop = entry * (1 - STOP_PCT), high = entry, trailing = false;
+
+    for (var i = 0; i < usable.length; i++) {
+      var bar = usable[i];
+      var low = bar.low != null ? bar.low : bar.close;
+      var hi = bar.high != null ? bar.high : bar.close;
+
+      // The stop is tested before the trail is raised: on a day that both
+      // spikes and collapses, the stop resting on the book was the one set
+      // by yesterday's high, not today's.
+      if (low <= stop) {
+        return { outcome: trailing ? 'trailing stop' : 'stop loss', exitDate: bar.date, exitPrice: stop };
+      }
+      if (hi > high) high = hi;
+      if (!trailing && high >= entry * (1 + TRAIL_TRIGGER)) trailing = true;
+      if (trailing) stop = Math.max(stop, high * (1 - TRAIL_PCT));
+
+      if (i >= TIME_STOP_DAYS) {
+        var gain = (bar.close - entry) / entry;
+        if (Math.abs(gain) <= TIME_STOP_BAND) {
+          return { outcome: 'time stop', exitDate: bar.date, exitPrice: bar.close };
+        }
+      }
+    }
+    return { outcome: 'still open', exitDate: null, exitPrice: usable[usable.length - 1].close };
+  }
+
+  var money = function (n) {
+    return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+  };
+  var signed = function (n) {
+    return (n >= 0 ? '+' : '-') + '$' + Math.abs(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+  };
+
+  var progress = document.getElementById('progress');
+  var results = document.getElementById('results');
+
+  function run(text) {
+    var lots = parseCsv(text);
+    results.hidden = true;
+    progress.hidden = false;
+
+    if (!lots.length) {
+      progress.textContent = 'No holdings found in that file. It needs a symbol, purchase price and quantity — rows without a purchase recorded are watchlist entries, which this skips.';
+      return;
+    }
+
+    var symbols = lots.map(function (l) { return l.symbol; })
+      .filter(function (s, i, a) { return a.indexOf(s) === i; });
+    var cache = {}, done = 0;
+    progress.textContent = 'Fetching price history for ' + symbols.length + ' symbols…';
+
+    var queue = symbols.slice();
+    function next() {
+      if (!queue.length) return Promise.resolve();
+      var s = queue.shift();
+      return fetch('/api/stock-history?ticker=' + encodeURIComponent(s) + '&range=2y')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; })
+        .then(function (d) {
+          cache[s] = d && d.points && d.points.length ? d.points : null;
+          done++;
+          progress.textContent = 'Fetching price history… ' + done + ' of ' + symbols.length;
+          return next();
+        });
+    }
+
+    next().then(function () {
+      var rows = [], missing = [];
+      lots.forEach(function (l) {
+        var bars = cache[l.symbol];
+        if (!bars) { if (missing.indexOf(l.symbol) === -1) missing.push(l.symbol); return; }
+        var sim = replayLot(l, bars);
+        if (!sim) { if (missing.indexOf(l.symbol) === -1) missing.push(l.symbol); return; }
+        var cur = l.currentPrice || bars[bars.length - 1].close;
+        var cost = l.buyPrice * l.qty;
+        rows.push({
+          symbol: l.symbol, buyDate: l.buyDate, buyPrice: l.buyPrice, qty: l.qty,
+          outcome: sim.outcome, exitDate: sim.exitDate,
+          cost: cost, actual: cur * l.qty - cost, ruled: sim.exitPrice * l.qty - cost
+        });
+      });
+
+      if (!rows.length) {
+        progress.textContent = 'Could not fetch price history for any of those symbols.';
+        return;
+      }
+
+      var tCost = 0, tActual = 0, tRuled = 0, counts = { 'stop loss': 0, 'trailing stop': 0, 'time stop': 0, 'still open': 0 };
+      rows.forEach(function (r) {
+        tCost += r.cost; tActual += r.actual; tRuled += r.ruled; counts[r.outcome]++;
+      });
+      var diff = tRuled - tActual;
+
+      document.getElementById('v-actual').innerHTML = signed(tActual) +
+        '<span>' + (tActual / tCost * 100).toFixed(1) + '% on ' + money(tCost) + '</span>';
+      document.getElementById('v-ruled').innerHTML = signed(tRuled) +
+        '<span>' + (tRuled / tCost * 100).toFixed(1) + '% on the same cost</span>';
+      var dEl = document.getElementById('v-diff');
+      dEl.innerHTML = signed(diff) + '<span>' + (diff >= 0 ? 'the rules did better' : 'the rules did worse') + '</span>';
+      dEl.className = diff >= 0 ? 'il-positive' : 'il-negative';
+      document.getElementById('v-count').innerHTML = rows.length +
+        '<span>' + counts['stop loss'] + ' stopped · ' + counts['trailing stop'] + ' trailed · ' +
+        counts['time stop'] + ' timed out · ' + counts['still open'] + ' still open</span>';
+
+      var rescued = rows.filter(function (r) { return r.ruled > r.actual; })
+        .sort(function (a, b) { return (b.ruled - b.actual) - (a.ruled - a.actual); });
+      var cut = rows.filter(function (r) { return r.ruled < r.actual; })
+        .sort(function (a, b) { return (a.ruled - a.actual) - (b.ruled - b.actual); });
+
+      var readout = document.getElementById('readout');
+      var parts = [];
+      if (diff >= 0) {
+        parts.push('<strong>The discipline would have helped.</strong> Cutting losses early saved more than the trailing stop gave up on the winners.');
+      } else {
+        parts.push('<strong>The discipline would have cost you.</strong> The trailing stop exits a position once it falls 10% from its high, which closes a volatile winner long before a patient holder would sell.');
+      }
+      if (rescued.length) {
+        parts.push('Its best rescue was <strong>' + rescued[0].symbol + '</strong>, worth ' +
+          signed(rescued[0].ruled - rescued[0].actual) + '.');
+      }
+      if (cut.length) {
+        parts.push('Its most expensive early exit was <strong>' + cut[0].symbol + '</strong>, at ' +
+          signed(cut[0].ruled - cut[0].actual) + '.');
+      }
+      if (missing.length) {
+        parts.push('<span style="color:var(--ink-soft)">No price history for ' + missing.join(', ') + ', so ' +
+          (missing.length === 1 ? 'it was' : 'they were') + ' left out.</span>');
+      }
+      readout.innerHTML = parts.join(' ');
+
+      var cls = { 'stop loss': 'il-o-stop', 'trailing stop': 'il-o-trail', 'time stop': 'il-o-time', 'still open': 'il-o-open' };
+      document.getElementById('rows').innerHTML = rows
+        .sort(function (a, b) { return (a.ruled - a.actual) - (b.ruled - b.actual); })
+        .map(function (r) {
+          var d = r.ruled - r.actual;
+          return '<tr>' +
+            '<td class="il-ticker-cell">' + r.symbol + '</td>' +
+            '<td>' + (r.buyDate || '—') + '</td>' +
+            '<td class="il-num">$' + r.buyPrice.toLocaleString('en-US', { maximumFractionDigits: 2 }) + '</td>' +
+            '<td><span class="il-outcome ' + cls[r.outcome] + '">' + r.outcome + '</span>' +
+              (r.exitDate ? ' <span style="color:var(--ink-soft);font-size:.8rem">' + r.exitDate + '</span>' : '') + '</td>' +
+            '<td class="il-num ' + (r.actual >= 0 ? 'il-positive' : 'il-negative') + '">' + signed(r.actual) + '</td>' +
+            '<td class="il-num ' + (r.ruled >= 0 ? 'il-positive' : 'il-negative') + '">' + signed(r.ruled) + '</td>' +
+            '<td class="il-num ' + (d >= 0 ? 'il-positive' : 'il-negative') + '">' + signed(d) + '</td>' +
+            '</tr>';
+        }).join('');
+
+      progress.hidden = true;
+      results.hidden = false;
+    });
+  }
+
+  var input = document.getElementById('csv-input');
+  var drop = document.getElementById('drop');
+  input.addEventListener('change', function () {
+    if (input.files && input.files[0]) input.files[0].text().then(run);
+  });
+  ['dragenter', 'dragover'].forEach(function (e) {
+    drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.add('il-over'); });
+  });
+  ['dragleave', 'drop'].forEach(function (e) {
+    drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.remove('il-over'); });
+  });
+  drop.addEventListener('drop', function (ev) {
+    var f = ev.dataTransfer && ev.dataTransfer.files && ev.dataTransfer.files[0];
+    if (f) f.text().then(run);
+  });
+})();
+
+// Market-hours indicator, shared with the other pages.
+(function () {
+  function update() {
+    var dot = document.getElementById('market-dot');
+    var label = document.getElementById('market-status');
+    if (!dot || !label) return;
+    var now = new Date();
+    var et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    var day = et.getDay(), mins = et.getHours() * 60 + et.getMinutes();
+    var open = day >= 1 && day <= 5 && mins >= 570 && mins < 960;
+    dot.classList.toggle('il-open', open);
+    label.textContent = (open ? 'Market open' : 'Market closed') + ' — ' +
+      et.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }).toLowerCase() + ' ET';
+  }
+  update();
+  setInterval(update, 60000);
+})();
+</script>
+</body>
+</html>

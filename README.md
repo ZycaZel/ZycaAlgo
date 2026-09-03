@@ -107,7 +107,7 @@ You can test the workflow immediately without waiting for the schedule:
 5. From then on, every push to `main` (including the daily bot commits)
    automatically redeploys.
 
-### 5. Connect www.zycaalgo.com (or whatever you buy)
+### 5. Optional: connect a custom domain
 1. Buy the domain from any registrar (Namecheap, Squarespace Domains, etc.).
 2. In Vercel: **Project -> Settings -> Domains -> Add** -> enter your domain.
 3. Vercel shows you the DNS records to add (usually an A record or CNAME) —

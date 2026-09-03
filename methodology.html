@@ -167,6 +167,28 @@
     <img src="/data/backtest/backtest_chart.png" alt="Mean vs. median excess return by horizon, and in-sample vs. out-of-sample decay" style="width:100%; height:auto; border:1px solid var(--line); margin: 8px 0 40px;">
     <p class="il-muted">The table and chart above rerun automatically on the 1st of each month against whatever quarter SEC has most recently published, so the numbers stay current rather than describing a one-time snapshot. The specific figures cited in the paragraphs above (the +2.38% five-day result, the 30/90-day reversal) reflect the run as of this page's last edit &mdash; they'll drift slightly from the live table as new data comes in, though the qualitative finding (short-horizon drift, longer-horizon reversal caught only by the rank-based test) is not expected to flip from one month of additional data. Check the table itself, not this paragraph, for the exact current numbers.</p>
 
+    <h2>What we tested and threw away</h2>
+    <p>A strategy becomes a black box one plausible-sounding rule at a time. So every filter above was also tested against this project's own data, and the ones that failed were dropped rather than quietly kept.</p>
+
+    <p>The obvious candidate was a <strong>technical confirmation filter</strong> &mdash; only take the insider buy if the chart also looks healthy. It was measured across 2,977 backtested signals, with every indicator computed from bars dated strictly <em>before</em> the filing date, so nothing could use information the system wouldn't have had at the time.</p>
+
+    <table class="il-endpoint-table">
+        <thead><tr><th>Condition</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Price above its 200-day average</td><td>Selects the <em>worse</em> half at short horizons</td></tr>
+          <tr><td>Price above its 50-day average</td><td>One significant horizon &mdash; which flips sign out-of-sample</td></tr>
+          <tr><td>RSI(14) below 70</td><td>No measurable effect</td></tr>
+          <tr><td>Volume above its 20-day average</td><td>No measurable effect</td></tr>
+          <tr><td>Within 25% of the 52-week high</td><td>Substantially worse at every horizon</td></tr>
+        </tbody>
+    </table>
+
+    <p>Every confirmation filter would have made results worse or made no difference at all. The one robust effect runs <em>opposite</em> to the intuition: insider buys in stocks near their 52-week high underperformed beaten-down names by 2 to 9 percentage points, and unlike the others it held on both sides of the in-sample cutoff &mdash; &minus;2.35, &minus;2.43 and &minus;3.77 points in-sample, and &minus;2.99, &minus;2.97 and &minus;8.97 points out-of-sample.</p>
+
+    <p>That is explicable rather than accidental. Insiders are, in aggregate, contrarian buyers (Lakonishok &amp; Lee, 2001). Confirming a contrarian signal with trend-following filters fights the mechanism the signal depends on &mdash; it throws away precisely the beaten-down names where an insider's conviction carries the most information.</p>
+
+    <p class="il-muted"><strong>It was not adopted.</strong> This account has run one methodology since it opened, and changing the rules midway would turn its public track record into a blend of two strategies that demonstrates neither. Both sides of the out-of-sample split also sit inside the same broadly rising market, so "beaten-down names recover" remains a plausible regime effect rather than a law. Testing it honestly means running a second paper account in parallel, not editing this one. Full study, including the conditions that failed: <a href="https://github.com/ZycaZel/ZycaAlgo/blob/main/data/backtest/technical_filter_report.md" target="_blank" rel="noopener">the technical filter report on GitHub</a>.</p>
+
     <h2>What runs, and when</h2>
     <div class="il-log-block">
 <span class="il-prompt">$</span> python scripts/insider_buys.py<br>

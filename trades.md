@@ -174,3 +174,7 @@
 | 2026-09-03 | AON | KNIGHT LESTER B |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/315293/000119312526382419/0001193125-26-382419-index.htm |
 | 2026-09-03 | HONA | ARNOLD CRAIG |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1188578/000162828026060444/0001628280-26-060444-index.htm |
 | 2026-09-03 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000162828026060490/0001628280-26-060490-index.htm |
+| 2026-09-04 | LILA | DE ANGOITIA ALFONSO |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1724519/000172451926000010/0001724519-26-000010-index.htm |
+| 2026-09-04 | MSCI | Taneja Rajat |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1408198/000153260126000007/0001532601-26-000007-index.htm |
+| 2026-09-04 | ATRA | Cherry Brian N |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1604464/000090514826004085/0000905148-26-004085-index.htm |
+| 2026-09-04 | EQPT | Schlacks William J. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000162828026060731/0001628280-26-060731-index.htm |

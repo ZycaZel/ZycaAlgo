@@ -1978,5 +1978,60 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1693736/000162828026060731/0001628280-26-060731-index.htm"
+  },
+  {
+    "timestamp": "2026-09-09T12:37:24.458182+00:00",
+    "date": "2026-09-08",
+    "ticker": "PAMT",
+    "insider": "MOROUN MATTHEW T",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1030743/000168316826007021/0001683168-26-007021-index.htm"
+  },
+  {
+    "timestamp": "2026-09-09T12:37:24.460186+00:00",
+    "date": "2026-09-08",
+    "ticker": "UBER",
+    "insider": "Macdonald Andrew",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2071761/000207176126000011/0002071761-26-000011-index.htm"
+  },
+  {
+    "timestamp": "2026-09-09T12:37:24.462143+00:00",
+    "date": "2026-09-08",
+    "ticker": "INBX",
+    "insider": "Lappe Mark",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000002/0001366074-26-000002-index.htm"
+  },
+  {
+    "timestamp": "2026-09-09T12:37:24.463992+00:00",
+    "date": "2026-09-08",
+    "ticker": "TSN",
+    "insider": "Schomburger Jeffrey K",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1630117/000162828026060888/0001628280-26-060888-index.htm"
+  },
+  {
+    "timestamp": "2026-09-09T12:37:24.465865+00:00",
+    "date": "2026-09-08",
+    "ticker": "SHMD",
+    "insider": "Speth Ralf",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1987240/000188197526000004/0001881975-26-000004-index.htm"
   }
 ]

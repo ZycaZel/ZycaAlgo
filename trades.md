@@ -182,3 +182,8 @@
 | 2026-09-04 | MSCI | Taneja Rajat |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1408198/000153260126000007/0001532601-26-000007-index.htm |
 | 2026-09-04 | ATRA | Cherry Brian N |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1604464/000090514826004085/0000905148-26-004085-index.htm |
 | 2026-09-04 | EQPT | Schlacks William J. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000162828026060731/0001628280-26-060731-index.htm |
+| 2026-09-08 | PAMT | MOROUN MATTHEW T |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1030743/000168316826007021/0001683168-26-007021-index.htm |
+| 2026-09-08 | UBER | Macdonald Andrew |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2071761/000207176126000011/0002071761-26-000011-index.htm |
+| 2026-09-08 | INBX | Lappe Mark |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2007919/000136607426000002/0001366074-26-000002-index.htm |
+| 2026-09-08 | TSN | Schomburger Jeffrey K |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1630117/000162828026060888/0001628280-26-060888-index.htm |
+| 2026-09-08 | SHMD | Speth Ralf |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1987240/000188197526000004/0001881975-26-000004-index.htm |

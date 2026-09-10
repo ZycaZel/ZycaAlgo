@@ -148,6 +148,7 @@
 | 2026-08-27 | HWKN | Lange Douglas A. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/46250/000181609226000006/0001816092-26-000006-index.htm |
 | 2026-08-27 | SCOR | McLaughlin Matthew F. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000185387426000012/0001853874-26-000012-index.htm |
 | 2026-08-28 | REFI | Mazarakis John |  |  |  | SKIPPED - market cap $274,786,791 < $1B; avg volume 168,592 < 500K | https://www.sec.gov/Archives/edgar/data/1867949/000119312526374170/0001193125-26-374170-index.htm |
+| 2026-08-28 | Q | De Bondt Karin | $142.04 | 14 sh ($1,989) | $120.61 | EXIT - stop filled at $120.61 (-15.1%) | https://www.sec.gov/Archives/edgar/data/2092939/000162828026056317/0001628280-26-056317-index.htm |
 | 2026-08-31 | PETZ | Liu Dandan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1766147/000121390026095705/0001213900-26-095705-index.htm |
 | 2026-08-31 | BLNE | Liuzza Nicholas Reyland JR |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1534708/000149315226040843/0001493152-26-040843-index.htm |
 | 2026-08-31 | CVBF | Maddox Mike |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/354647/000035464726000116/0000354647-26-000116-index.htm |
@@ -167,6 +168,7 @@
 | 2026-09-01 | FTCI | SADASIVAM SHAKER |  |  |  | SKIPPED - market cap $38,107,796 < $1B; avg volume 241,155 < 500K | https://www.sec.gov/Archives/edgar/data/1828161/000119312526377575/0001193125-26-377575-index.htm |
 | 2026-09-01 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1693736/000095010326013377/0000950103-26-013377-index.htm |
 | 2026-09-01 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - market cap $79,124,997 < $1B; avg volume 99,676 < 500K | https://www.sec.gov/Archives/edgar/data/1822523/000162828026059909/0001628280-26-059909-index.htm |
+| 2026-09-01 | IR | Satpathy Aurobind | $90.00 | 22 sh ($1,980) | $76.31 | EXIT - stop filled at $76.31 (-15.2%) | https://www.sec.gov/Archives/edgar/data/1699150/000114036126031457/0001140361-26-031457-index.htm |
 | 2026-09-02 | NIVF | Cheung Kong Yiu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2148231/000121390026096450/0001213900-26-096450-index.htm |
 | 2026-09-02 | RCT | Senn Nikolaus Beat |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2027360/000149315226041236/0001493152-26-041236-index.htm |
 | 2026-09-02 | VST | BURKE JAMES A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1268406/000126840626000009/0001268406-26-000009-index.htm |

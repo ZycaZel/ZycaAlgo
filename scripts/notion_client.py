@@ -91,23 +91,56 @@ def _prop(name, value, schema):
     return None
 
 
-def conviction_from_signal(signal):
-    """A conviction grade derived from the signal itself, not an opinion.
+def resolve_prop(schema, *candidates):
+    """First candidate name that exists in the database, else None.
 
-    The two inputs are the two dimensions this project has actually measured.
+    Column names differ between workspaces - a conviction field might be
+    "Conviction" or "Conviction (1-10)" - so the sync asks the schema what
+    this database actually calls things instead of assuming one spelling."""
+    for name in candidates:
+        if name in schema:
+            return name
+    lowered = {k.lower(): k for k in schema}
+    for name in candidates:
+        hit = lowered.get(name.lower())
+        if hit:
+            return hit
+    return None
+
+
+def conviction_score(signal):
+    """Signal strength on a 1-10 scale.
+
+    Built only from the two dimensions this project has actually measured.
     The ablation study over 3,561 backtested signals found cluster buys beat
     solitary ones by 1.39 points at five days (p = 0.016), and purchases at or
     above the median dollar size beat smaller ones by 1.30 points (p < 0.001).
     Nothing else tested separated anything, so nothing else feeds this.
 
-    It grades signal strength. It is not a view on the company, and it is not
-    a recommendation."""
-    cluster = bool(signal.get("is_cluster"))
+    It grades the signal, not the company. It is not a recommendation, and
+    it is not a view on what the shares are worth."""
     total = signal.get("total") or 0
-    large = total >= 500_000
-    if cluster and large:
+    score = 2
+    if signal.get("is_cluster"):
+        score += 3
+    if (signal.get("insider_count") or 1) >= 3:
+        score += 1
+    if total >= 1_000_000:
+        score += 3
+    elif total >= 500_000:
+        score += 2
+    elif total >= 250_000:
+        score += 1
+    return max(1, min(10, score))
+
+
+def conviction_from_signal(signal):
+    """The same grading as a word, for databases whose conviction column is a
+    select rather than a number."""
+    score = conviction_score(signal)
+    if score >= 7:
         return "High"
-    if cluster or large:
+    if score >= 4:
         return "Medium"
     return "Low"
 
@@ -186,6 +219,24 @@ def upsert_signal(ticker, company, note_text=None, filing_url=None, fundamentals
         live(props, "Target Low", fundamentals.get("target_low"))
         live(props, "Analyst Count", fundamentals.get("analyst_count"))
         once(props, "Recommendation", fundamentals.get("recommendation"), existing_row)
+
+        # Conviction lands in whatever this database calls it, in whatever
+        # type it is: a 1-10 number column gets the score, a select gets the
+        # word. Writing the wrong type would fail the whole row silently.
+        # Only where there is a signal to grade. A ticker ZycaAlgo has never
+        # flagged has no signal strength, and a number put in the column
+        # anyway would be fiction dressed as a score.
+        conv = resolve_prop(schema, "Conviction (1-10)", "Conviction", "Conviction Score")
+        if conv and signal:
+            value = conviction_score(signal) if schema.get(conv) == "number" \
+                else conviction_from_signal(signal)
+            once(props, conv, value, existing_row)
+
+        # When ZycaAlgo last looked at this ticker - a fact, unlike the
+        # user's own "Next Review" planning date, which is left alone.
+        reviewed = resolve_prop(schema, "Last Reviewed", "Last Reviewed Date")
+        if reviewed and signal.get("date_filed"):
+            live(props, reviewed, signal["date_filed"])
 
         # The signal that flagged this ticker. Facts from the filing, plus a
         # conviction grade derived from them - written once so the user's own

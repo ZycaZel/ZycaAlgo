@@ -1,0 +1,40 @@
+name: Backfill Notion watchlist (manual)
+
+# Fills in rows the daily sync never touches. That sync only updates tickers
+# in the day's scan, so a row added earlier keeps whatever it had when it was
+# created. This walks the whole database once and fills the rest from the
+# archived scans plus live market data.
+#
+# Defaults to a dry run - it writes nothing unless apply is set to true.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Actually write the rows (leave false to preview first)"
+        type: boolean
+        default: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Backfill
+        working-directory: scripts
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: |
+          if [ "${{ inputs.apply }}" = "true" ]; then
+            python backfill_notion.py --apply
+          else
+            python backfill_notion.py
+          fi

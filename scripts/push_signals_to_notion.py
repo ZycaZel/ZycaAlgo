@@ -35,20 +35,46 @@ def main():
         print(f"  [warn] Yahoo Finance fundamentals unavailable: {e}")
         fundamentals = {}
 
+    # Which tickers had two or more different insiders buying inside the
+    # scanner's 30-day window. This is the stronger of the two dimensions the
+    # ablation study found actually separates returns, so it feeds both the
+    # Cluster Buy column and the conviction grade.
+    clusters = report.get("cluster_tickers", {}) or {}
+
     for buy in buys:
+        ticker = buy["ticker"]
+        insiders = clusters.get(ticker) or []
+        signal = dict(buy)
+        signal["is_cluster"] = bool(insiders)
+        signal["insider_count"] = len(insiders) if insiders else 1
+
+        f = fundamentals.get(ticker) or {}
         note = (
             f"Insider buy detected (filed {buy['date_filed']}): "
             f"{buy['insider']} ({buy['title']}) bought "
             f"${buy['total']:,.0f} ({buy['shares']:,.0f} sh @ ${buy['price']:.2f}) "
             f"on {buy['txn_date']}."
         )
+        if signal["is_cluster"]:
+            note += (f" Cluster buy: {signal['insider_count']} different insiders "
+                     f"bought within 30 days ({', '.join(insiders[:4])}).")
+        note += f" Signal strength: {nc.conviction_from_signal(signal)}."
+        if f.get("target_mean"):
+            # Attribute the target explicitly. ZycaAlgo does not value
+            # companies, and a number in a research database should never be
+            # mistaken for its opinion.
+            note += (f" Analyst consensus target ${f['target_mean']:,.2f}"
+                     + (f" across {f['analyst_count']} analysts" if f.get("analyst_count") else "")
+                     + " (Yahoo Finance, not a ZycaAlgo estimate).")
+
         try:
             nc.upsert_signal(
-                buy["ticker"], buy["company"], note,
+                ticker, buy["company"], note,
                 filing_url=buy["filing_url"],
-                fundamentals=fundamentals.get(buy["ticker"]),
+                fundamentals=f,
+                signal=signal,
             )
-            print(f"  {buy['ticker']}: ok")
+            print(f"  {ticker}: ok")
         except Exception as e:
             # Notion sync is a nice-to-have, not a critical trading step -
             # one bad row (e.g. an unexpected ticker/property edge case)

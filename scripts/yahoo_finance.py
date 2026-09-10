@@ -35,14 +35,26 @@ def _session_with_crumb():
 
 
 def get_fundamentals(tickers):
-    """tickers: list of symbols. Returns {ticker: {'sector', 'price', 'change_pct'}},
-    each value None if unavailable. Best-effort: a ticker Yahoo doesn't
-    recognize (or a transient failure) just gets an empty entry rather than
-    raising, so one bad symbol doesn't stop the whole daily sync."""
+    """tickers: list of symbols. Returns a dict per ticker with sector, price,
+    change_pct, and the analyst figures Yahoo publishes alongside them:
+    target_mean/high/low, analyst_count and recommendation.
+
+    Those analyst fields matter for a specific reason. ZycaAlgo has no
+    valuation model - it screens filings and exits on price rules, and never
+    forms a view on what a share is worth. So a "price target" it invented
+    would be fabricated. The analyst consensus is a real, sourced, third-party
+    number, which is why it can be written into a research database honestly
+    as long as it is labelled as theirs and not ours.
+
+    Best-effort: a ticker Yahoo doesn't recognize (or a transient failure)
+    just gets an empty entry rather than raising, so one bad symbol doesn't
+    stop the whole daily sync."""
     session, crumb = _session_with_crumb()
     out = {}
     for ticker in tickers:
-        entry = {"sector": None, "price": None, "change_pct": None}
+        entry = {"sector": None, "price": None, "change_pct": None,
+                 "target_mean": None, "target_high": None, "target_low": None,
+                 "analyst_count": None, "recommendation": None}
         try:
             r = session.get(
                 f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{ticker}",
@@ -56,11 +68,27 @@ def get_fundamentals(tickers):
                     raw_sector = data.get("summaryProfile", {}).get("sector")
                     if raw_sector:
                         entry["sector"] = SECTOR_MAP.get(raw_sector, raw_sector)
-                    price = data.get("financialData", {}).get("currentPrice", {})
+                    fin = data.get("financialData", {})
+                    price = fin.get("currentPrice", {})
                     entry["price"] = price.get("raw")
                     change_pct = data.get("price", {}).get("regularMarketChangePercent", {})
                     if "raw" in change_pct:
                         entry["change_pct"] = change_pct["raw"] * 100
+
+                    # Analyst consensus, straight from Yahoo. Every one of
+                    # these is somebody else's opinion, not ZycaAlgo's.
+                    for key, field in (("target_mean", "targetMeanPrice"),
+                                       ("target_high", "targetHighPrice"),
+                                       ("target_low", "targetLowPrice"),
+                                       ("analyst_count", "numberOfAnalystOpinions")):
+                        val = fin.get(field)
+                        if isinstance(val, dict):
+                            entry[key] = val.get("raw")
+                        elif isinstance(val, (int, float)):
+                            entry[key] = val
+                    rec = fin.get("recommendationKey")
+                    if isinstance(rec, str) and rec and rec != "none":
+                        entry["recommendation"] = rec.replace("_", " ").title()
         except (requests.RequestException, ValueError, KeyError, IndexError) as e:
             print(f"  [warn] Yahoo Finance lookup failed for {ticker}: {e}")
         out[ticker] = entry

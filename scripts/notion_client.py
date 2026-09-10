@@ -42,6 +42,76 @@ def _rich_text(text):
     return [{"type": "text", "text": {"content": text[:2000]}}]
 
 
+_schema_cache = {}
+
+
+def watchlist_schema():
+    """{property name: notion type} for the Stock Watchlist database.
+
+    Read once and reused. Everything written below is filtered through this,
+    because a payload naming a property the database doesn't have - or giving
+    it the wrong type - is rejected outright, taking the whole row with it.
+    Reading the schema means the sync fits whatever columns exist rather than
+    assuming a particular database layout."""
+    if not _schema_cache:
+        r = requests.get(f"{API}/databases/{WATCHLIST_DB_ID}", headers=_headers(), timeout=30)
+        r.raise_for_status()
+        for name, meta in (r.json().get("properties") or {}).items():
+            _schema_cache[name] = meta.get("type")
+    return _schema_cache
+
+
+def _prop(name, value, schema):
+    """Build one property payload, or None if the column is absent, the type
+    isn't one handled here, or the value is empty."""
+    if value is None or value == "":
+        return None
+    kind = schema.get(name)
+    if kind is None:
+        return None
+    if kind == "number":
+        try:
+            return {"number": float(value)}
+        except (TypeError, ValueError):
+            return None
+    if kind == "select":
+        return {"select": {"name": str(value)[:100]}}
+    if kind == "status":
+        return {"status": {"name": str(value)[:100]}}
+    if kind == "rich_text":
+        return {"rich_text": _rich_text(str(value))}
+    if kind == "title":
+        return {"title": _rich_text(str(value))}
+    if kind == "url":
+        return {"url": str(value)[:2000]}
+    if kind == "date":
+        return {"date": {"start": str(value)}}
+    if kind == "checkbox":
+        return {"checkbox": bool(value)}
+    return None
+
+
+def conviction_from_signal(signal):
+    """A conviction grade derived from the signal itself, not an opinion.
+
+    The two inputs are the two dimensions this project has actually measured.
+    The ablation study over 3,561 backtested signals found cluster buys beat
+    solitary ones by 1.39 points at five days (p = 0.016), and purchases at or
+    above the median dollar size beat smaller ones by 1.30 points (p < 0.001).
+    Nothing else tested separated anything, so nothing else feeds this.
+
+    It grades signal strength. It is not a view on the company, and it is not
+    a recommendation."""
+    cluster = bool(signal.get("is_cluster"))
+    total = signal.get("total") or 0
+    large = total >= 500_000
+    if cluster and large:
+        return "High"
+    if cluster or large:
+        return "Medium"
+    return "Low"
+
+
 def find_row_by_ticker(ticker):
     """Returns the page dict for an existing Stock Watchlist row, or None."""
     r = requests.post(
@@ -55,7 +125,7 @@ def find_row_by_ticker(ticker):
     return results[0] if results else None
 
 
-def upsert_signal(ticker, company, note_text=None, filing_url=None, fundamentals=None):
+def upsert_signal(ticker, company, note_text=None, filing_url=None, fundamentals=None, signal=None):
     """Add a new Stock Watchlist row for `ticker` if one doesn't exist
     (status defaults to 'Researching' - flagged, not a recommendation),
     then append `note_text` as a callout block on that row's page (skipped
@@ -63,22 +133,81 @@ def upsert_signal(ticker, company, note_text=None, filing_url=None, fundamentals
     running log builds up without ever overwriting the user's own
     Recommendation/Conviction/Status fields on an existing row.
 
-    `fundamentals`, if given, is {'sector': str|None, 'price': float|None}
-    from Yahoo Finance. Current Price is refreshed every time (it's meant
-    to be live data). Sector is only ever written once - on a brand new
-    row, or on an existing row that doesn't have one set yet - so it never
-    overwrites a value the user has manually corrected. Price Target,
-    Recommendation, and Conviction are never touched here; those read as
-    the user's own research judgment, not something to auto-fill."""
+    `fundamentals` carries the Yahoo figures (sector, price, and the analyst
+    consensus target/recommendation). `signal` carries the filing that
+    triggered this - insider, title, size, dates, cluster flag.
+
+    Two write rules. Live market figures - current price and the analyst
+    consensus - refresh on every run, because they are meant to track. Every
+    other field is written only where the row has nothing yet, so anything
+    the user typed or corrected by hand survives the next sync untouched.
+
+    On Price Target specifically: ZycaAlgo has no valuation model, so a target
+    it invented would be fabricated. The number written here is the analyst
+    mean from Yahoo - a real, sourced, third-party figure - and the note on
+    the page says so. Conviction is graded from the signal's own measured
+    dimensions (see conviction_from_signal), not from a view on the company.
+
+    Every property is filtered through the database's actual schema first, so
+    a column you don't have is skipped rather than failing the whole row."""
     fundamentals = fundamentals or {}
+    signal = signal or {}
+    try:
+        schema = watchlist_schema()
+    except requests.RequestException:
+        schema = {}
+
+    def live(props, name, value):
+        """Refreshed every run - these are live market figures."""
+        p = _prop(name, value, schema)
+        if p:
+            props[name] = p
+
+    def once(props, name, value, existing_row):
+        """Written only where the row has nothing yet, so a value the user
+        typed or corrected by hand is never overwritten by the next sync."""
+        if existing_row is not None:
+            current = (existing_row.get("properties") or {}).get(name) or {}
+            kind = current.get("type")
+            if kind and current.get(kind) not in (None, "", [], {}):
+                return
+        p = _prop(name, value, schema)
+        if p:
+            props[name] = p
+
+    def market_and_signal(props, existing_row):
+        # Live market data - always current.
+        live(props, "Current Price", fundamentals.get("price"))
+
+        # Analyst consensus. Somebody else's opinion, refreshed as it moves.
+        # ZycaAlgo has no valuation model and never invents a target.
+        live(props, "Price Target", fundamentals.get("target_mean"))
+        live(props, "Target High", fundamentals.get("target_high"))
+        live(props, "Target Low", fundamentals.get("target_low"))
+        live(props, "Analyst Count", fundamentals.get("analyst_count"))
+        once(props, "Recommendation", fundamentals.get("recommendation"), existing_row)
+
+        # The signal that flagged this ticker. Facts from the filing, plus a
+        # conviction grade derived from them - written once so the user's own
+        # judgment on an existing row always wins.
+        once(props, "Sector", fundamentals.get("sector"), existing_row)
+        once(props, "Conviction", conviction_from_signal(signal), existing_row)
+        once(props, "Insider", signal.get("insider"), existing_row)
+        once(props, "Insider Title", signal.get("title"), existing_row)
+        once(props, "Purchase Size", signal.get("total"), existing_row)
+        once(props, "Shares Bought", signal.get("shares"), existing_row)
+        once(props, "Insider Price", signal.get("price"), existing_row)
+        once(props, "Transaction Date", signal.get("txn_date"), existing_row)
+        once(props, "Filing Date", signal.get("date_filed"), existing_row)
+        once(props, "Cluster Buy", signal.get("is_cluster"), existing_row)
+        once(props, "Insiders Buying", signal.get("insider_count"), existing_row)
+        once(props, "Filing URL", filing_url, existing_row)
+
     existing = find_row_by_ticker(ticker)
     if existing:
         page_id = existing["id"]
         update_props = {}
-        if fundamentals.get("price") is not None:
-            update_props["Current Price"] = {"number": fundamentals["price"]}
-        if fundamentals.get("sector") and not existing["properties"].get("Sector", {}).get("select"):
-            update_props["Sector"] = {"select": {"name": fundamentals["sector"]}}
+        market_and_signal(update_props, existing)
         if update_props:
             r = requests.patch(
                 f"{API}/pages/{page_id}",
@@ -90,13 +219,14 @@ def upsert_signal(ticker, company, note_text=None, filing_url=None, fundamentals
     else:
         props = {
             "Ticker": {"title": _rich_text(ticker)},
-            "Company Name": {"rich_text": _rich_text(company)},
-            "Status": {"status": {"name": "Researching"}},
         }
-        if fundamentals.get("price") is not None:
-            props["Current Price"] = {"number": fundamentals["price"]}
-        if fundamentals.get("sector"):
-            props["Sector"] = {"select": {"name": fundamentals["sector"]}}
+        p = _prop("Company Name", company, schema)
+        if p:
+            props["Company Name"] = p
+        p = _prop("Status", "Researching", schema)
+        if p:
+            props["Status"] = p
+        market_and_signal(props, None)
         r = requests.post(
             f"{API}/pages",
             headers=_headers(),

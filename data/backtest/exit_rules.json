@@ -1,0 +1,89 @@
+{
+  "evaluated": 3157,
+  "rules": {
+    "live": {
+      "n": 3157,
+      "mean": 0.0025099336943090406,
+      "median": -0.0327987634619548,
+      "hit_rate": 0.4279379157427938,
+      "t_stat": 0.6086269453123698,
+      "p_value": 0.5428155415549565,
+      "median_days_held": 45,
+      "exit_reasons": {
+        "trailing stop": 1528,
+        "stop loss": 1094,
+        "time stop": 376,
+        "still open": 159
+      }
+    },
+    "hold_5": {
+      "n": 3157,
+      "mean": 0.024079902859114276,
+      "median": 0.009376570268347782,
+      "hit_rate": 0.5745961355717454,
+      "t_stat": 12.783416833170548,
+      "p_value": 1.608787021825942e-36,
+      "median_days_held": 5,
+      "exit_reasons": {
+        "5-day exit": 3157
+      },
+      "vs_live": {
+        "difference": 0.021569969164805233,
+        "p_value": 2.1238804804440715e-09,
+        "significant_5pct": true
+      }
+    },
+    "hold_10": {
+      "n": 3157,
+      "mean": 0.022555192677098084,
+      "median": 0.007146590327839847,
+      "hit_rate": 0.5486221095977194,
+      "t_stat": 9.530253941311962,
+      "p_value": 3.021445567980263e-21,
+      "median_days_held": 10,
+      "exit_reasons": {
+        "10-day exit": 3157
+      },
+      "vs_live": {
+        "difference": 0.02004525898278904,
+        "p_value": 5.509985505196292e-10,
+        "significant_5pct": true
+      }
+    },
+    "hold_20": {
+      "n": 3157,
+      "mean": 0.017401696670403595,
+      "median": -0.005984272468331275,
+      "hit_rate": 0.4748178650617675,
+      "t_stat": 5.057640765566576,
+      "p_value": 4.4871263520654896e-07,
+      "median_days_held": 20,
+      "exit_reasons": {
+        "20-day exit": 3157
+      },
+      "vs_live": {
+        "difference": 0.014891762976094554,
+        "p_value": 3.2550440556696892e-06,
+        "significant_5pct": true
+      }
+    },
+    "hold_5_stop": {
+      "n": 3157,
+      "mean": 0.02379655256878815,
+      "median": 0.009356301195888442,
+      "hit_rate": 0.5739626227431105,
+      "t_stat": 12.68356518103335,
+      "p_value": 5.4312768178320645e-36,
+      "median_days_held": 5,
+      "exit_reasons": {
+        "5-day exit": 3101,
+        "stop loss": 56
+      },
+      "vs_live": {
+        "difference": 0.021286618874479107,
+        "p_value": 3.1761570654439234e-09,
+        "significant_5pct": true
+      }
+    }
+  }
+}

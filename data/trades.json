@@ -2057,5 +2057,71 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1987240/000188197526000004/0001881975-26-000004-index.htm"
+  },
+  {
+    "timestamp": "2026-09-10T12:31:03.321620+00:00",
+    "date": "2026-09-09",
+    "ticker": "GWAV",
+    "insider": "Meeks Danny",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1589149/000149315226042006/0001493152-26-042006-index.htm"
+  },
+  {
+    "timestamp": "2026-09-10T12:31:03.323947+00:00",
+    "date": "2026-09-09",
+    "ticker": "ALMS",
+    "insider": "AKKARAJU SRINIVAS",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1253170/000123191926001158/0001231919-26-001158-index.htm"
+  },
+  {
+    "timestamp": "2026-09-10T12:31:03.325874+00:00",
+    "date": "2026-09-09",
+    "ticker": "PSEC",
+    "insider": "Barry John F",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1294357/000129435726000015/0001294357-26-000015-index.htm"
+  },
+  {
+    "timestamp": "2026-09-10T12:31:03.327787+00:00",
+    "date": "2026-09-09",
+    "ticker": "PRTS",
+    "insider": "Meniane David",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1378950/000114036126036089/0001140361-26-036089-index.htm"
+  },
+  {
+    "timestamp": "2026-09-10T12:31:03.329711+00:00",
+    "date": "2026-09-09",
+    "ticker": "BWFG",
+    "insider": "SEIDMAN LAWRENCE B",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1505732/000102608126000026/0001026081-26-000026-index.htm"
+  },
+  {
+    "timestamp": "2026-09-10T12:31:03.331909+00:00",
+    "date": "2026-09-09",
+    "ticker": "KRMD",
+    "insider": "KALBERMATTEN ADAM R",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2080271/000116169726000210/0001161697-26-000210-index.htm"
   }
 ]

@@ -189,3 +189,9 @@
 | 2026-09-08 | INBX | Lappe Mark |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2007919/000136607426000002/0001366074-26-000002-index.htm |
 | 2026-09-08 | TSN | Schomburger Jeffrey K |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1630117/000162828026060888/0001628280-26-060888-index.htm |
 | 2026-09-08 | SHMD | Speth Ralf |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1987240/000188197526000004/0001881975-26-000004-index.htm |
+| 2026-09-09 | GWAV | Meeks Danny |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1589149/000149315226042006/0001493152-26-042006-index.htm |
+| 2026-09-09 | ALMS | AKKARAJU SRINIVAS |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1253170/000123191926001158/0001231919-26-001158-index.htm |
+| 2026-09-09 | PSEC | Barry John F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1294357/000129435726000015/0001294357-26-000015-index.htm |
+| 2026-09-09 | PRTS | Meniane David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1378950/000114036126036089/0001140361-26-036089-index.htm |
+| 2026-09-09 | BWFG | SEIDMAN LAWRENCE B |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1505732/000102608126000026/0001026081-26-000026-index.htm |
+| 2026-09-09 | KRMD | KALBERMATTEN ADAM R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2080271/000116169726000210/0001161697-26-000210-index.htm |

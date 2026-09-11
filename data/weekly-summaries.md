@@ -119,3 +119,26 @@ Equity: $99,081.36 | Open positions: 15
 | WELL | Gundlach Andrew | $237.85 | $241.12 | +1.4% | initial_stop |
 
 For closed-trade win rate and per-insider performance, see trades.md.
+# ZycaAlgo Weekly Summary - 2026-09-11
+
+Equity: $98,329.35 | Open positions: 15
+
+| Ticker | Insider | Entry | Current | Return | Mode |
+|---|---|---:|---:|---:|---|
+| AME | Stanage Nick L | $258.57 | $234.24 | -9.4% | initial_stop |
+| APTV | MEISTER PAUL M | $48.81 | $46.10 | -5.6% | initial_stop |
+| AUGO | Sousa Mauad Bruno | $79.06 | $86.01 | +8.8% | initial_stop |
+| BSX | Mahoney Michael F | $47.74 | $43.25 | -9.4% | initial_stop |
+| CSGP | FLORANCE ANDREW C | $30.21 | $29.65 | -1.9% | initial_stop |
+| ETR | Ropp Ralph Lewis | $107.85 | $105.73 | -2.0% | initial_stop |
+| FISV | FRITZ LANCE M | $52.70 | $49.20 | -6.6% | initial_stop |
+| JBL | Tyagarajan N. V. | $338.48 | $306.00 | -9.6% | initial_stop |
+| LINE | LeMasters Robb A. | $41.35 | $37.30 | -9.8% | initial_stop |
+| MBLY | Yeboah-Amankwah Safroadu | $8.76 | $8.29 | -5.3% | initial_stop |
+| PFE | BLAYLOCK RONALD E | $25.79 | $27.79 | +7.8% | initial_stop |
+| PRCT | Wood Larry L | $21.71 | $20.98 | -3.4% | initial_stop |
+| SNEX | Thamodaran Dhamu R. | $66.01 | $69.77 | +5.7% | initial_stop |
+| TSCO | Lawton III Harry A | $33.41 | $33.85 | +1.3% | initial_stop |
+| WELL | Gundlach Andrew | $237.85 | $236.13 | -0.7% | initial_stop |
+
+For closed-trade win rate and per-insider performance, see trades.md.

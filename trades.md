@@ -195,3 +195,9 @@
 | 2026-09-09 | PRTS | Meniane David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1378950/000114036126036089/0001140361-26-036089-index.htm |
 | 2026-09-09 | BWFG | SEIDMAN LAWRENCE B |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1505732/000102608126000026/0001026081-26-000026-index.htm |
 | 2026-09-09 | KRMD | KALBERMATTEN ADAM R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2080271/000116169726000210/0001161697-26-000210-index.htm |
+| 2026-09-10 | UBER | KHOSROWSHAHI DARA |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1184237/000118423726000008/0001184237-26-000008-index.htm |
+| 2026-09-10 | UPST | Gu Paul |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1832812/000183281226000010/0001832812-26-000010-index.htm |
+| 2026-09-10 | ATEC | Miles Patrick |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1350653/000128940926000008/0001289409-26-000008-index.htm |
+| 2026-09-10 | CELH | Fieldly John |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341766/000162828026061406/0001628280-26-061406-index.htm |
+| 2026-09-10 | GRCE | Kohli Prashant |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1444192/000114036126036125/0001140361-26-036125-index.htm |
+| 2026-09-10 | PRTS | Meniane David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1378950/000114036126036237/0001140361-26-036237-index.htm |

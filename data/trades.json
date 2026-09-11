@@ -2123,5 +2123,71 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2080271/000116169726000210/0001161697-26-000210-index.htm"
+  },
+  {
+    "timestamp": "2026-09-11T12:29:31.417001+00:00",
+    "date": "2026-09-10",
+    "ticker": "UBER",
+    "insider": "KHOSROWSHAHI DARA",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1184237/000118423726000008/0001184237-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-09-11T12:29:31.418632+00:00",
+    "date": "2026-09-10",
+    "ticker": "UPST",
+    "insider": "Gu Paul",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1832812/000183281226000010/0001832812-26-000010-index.htm"
+  },
+  {
+    "timestamp": "2026-09-11T12:29:31.420170+00:00",
+    "date": "2026-09-10",
+    "ticker": "ATEC",
+    "insider": "Miles Patrick",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1350653/000128940926000008/0001289409-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-09-11T12:29:31.421675+00:00",
+    "date": "2026-09-10",
+    "ticker": "CELH",
+    "insider": "Fieldly John",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1341766/000162828026061406/0001628280-26-061406-index.htm"
+  },
+  {
+    "timestamp": "2026-09-11T12:29:31.423160+00:00",
+    "date": "2026-09-10",
+    "ticker": "GRCE",
+    "insider": "Kohli Prashant",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1444192/000114036126036125/0001140361-26-036125-index.htm"
+  },
+  {
+    "timestamp": "2026-09-11T12:29:31.424746+00:00",
+    "date": "2026-09-10",
+    "ticker": "PRTS",
+    "insider": "Meniane David",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1378950/000114036126036237/0001140361-26-036237-index.htm"
   }
 ]

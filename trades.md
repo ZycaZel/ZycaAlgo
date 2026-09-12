@@ -201,3 +201,8 @@
 | 2026-09-10 | CELH | Fieldly John |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341766/000162828026061406/0001628280-26-061406-index.htm |
 | 2026-09-10 | GRCE | Kohli Prashant |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1444192/000114036126036125/0001140361-26-036125-index.htm |
 | 2026-09-10 | PRTS | Meniane David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1378950/000114036126036237/0001140361-26-036237-index.htm |
+| 2026-09-11 | RLMD | Shenouda Maged |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1553643/000121390026098970/0001213900-26-098970-index.htm |
+| 2026-09-11 | SLRC | GROSS MICHAEL S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1186884/000119312526389322/0001193125-26-389322-index.htm |
+| 2026-09-11 | GLOO | GELSINGER PATRICK P |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1316331/000131633126000012/0001316331-26-000012-index.htm |
+| 2026-09-11 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026061551/0001628280-26-061551-index.htm |
+| 2026-09-11 | MO | McQUADE KATHRYN B. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/764180/000076418026000102/0000764180-26-000102-index.htm |

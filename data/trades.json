@@ -2189,5 +2189,60 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1378950/000114036126036237/0001140361-26-036237-index.htm"
+  },
+  {
+    "timestamp": "2026-09-12T11:49:44.911788+00:00",
+    "date": "2026-09-11",
+    "ticker": "RLMD",
+    "insider": "Shenouda Maged",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1553643/000121390026098970/0001213900-26-098970-index.htm"
+  },
+  {
+    "timestamp": "2026-09-12T11:49:44.913031+00:00",
+    "date": "2026-09-11",
+    "ticker": "SLRC",
+    "insider": "GROSS MICHAEL S",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1186884/000119312526389322/0001193125-26-389322-index.htm"
+  },
+  {
+    "timestamp": "2026-09-12T11:49:44.914101+00:00",
+    "date": "2026-09-11",
+    "ticker": "GLOO",
+    "insider": "GELSINGER PATRICK P",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1316331/000131633126000012/0001316331-26-000012-index.htm"
+  },
+  {
+    "timestamp": "2026-09-12T11:49:44.915145+00:00",
+    "date": "2026-09-11",
+    "ticker": "AFCG",
+    "insider": "TANNENBAUM LEONARD M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1822523/000162828026061551/0001628280-26-061551-index.htm"
+  },
+  {
+    "timestamp": "2026-09-12T11:49:44.916281+00:00",
+    "date": "2026-09-11",
+    "ticker": "MO",
+    "insider": "McQUADE KATHRYN B.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/764180/000076418026000102/0000764180-26-000102-index.htm"
   }
 ]

@@ -206,3 +206,11 @@
 | 2026-09-11 | GLOO | GELSINGER PATRICK P |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1316331/000131633126000012/0001316331-26-000012-index.htm |
 | 2026-09-11 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026061551/0001628280-26-061551-index.htm |
 | 2026-09-11 | MO | McQUADE KATHRYN B. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/764180/000076418026000102/0000764180-26-000102-index.htm |
+| 2026-09-14 | ECL | Green Eric Mark |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/31462/000162828026061859/0001628280-26-061859-index.htm |
+| 2026-09-14 | CROX | SMACH THOMAS J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1334036/000119410626000012/0001194106-26-000012-index.htm |
+| 2026-09-14 | PMTS | Riley H Sanford |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1641614/000131740626000006/0001317406-26-000006-index.htm |
+| 2026-09-14 | HLMN | Kraft Robert O. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822492/000155859226000012/0001558592-26-000012-index.htm |
+| 2026-09-14 | DVN | Gaspar Clay M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1090012/000109001226000124/0001090012-26-000124-index.htm |
+| 2026-09-14 | NTHI | Heshmatpour Amir F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1443035/000121390026099422/0001213900-26-099422-index.htm |
+| 2026-09-14 | TMDX | Weill David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1756262/000119312526390650/0001193125-26-390650-index.htm |
+| 2026-09-14 | DOMH | Wool Kyle Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/12239/000121390026099456/0001213900-26-099456-index.htm |

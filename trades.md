@@ -214,3 +214,11 @@
 | 2026-09-14 | NTHI | Heshmatpour Amir F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1443035/000121390026099422/0001213900-26-099422-index.htm |
 | 2026-09-14 | TMDX | Weill David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1756262/000119312526390650/0001193125-26-390650-index.htm |
 | 2026-09-14 | DOMH | Wool Kyle Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/12239/000121390026099456/0001213900-26-099456-index.htm |
+| 2026-09-15 | GIII | GOLDFARB MORRIS |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/821002/000082100226000041/0000821002-26-000041-index.htm |
+| 2026-09-15 | CELH | DeSantis Damon |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341766/000162828026062057/0001628280-26-062057-index.htm |
+| 2026-09-15 | COO | Kurzius Lawrence Erik |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/711404/000135209026000007/0001352090-26-000007-index.htm |
+| 2026-09-15 | ARE | MARCUS JOEL S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1035443/000121695526000021/0001216955-26-000021-index.htm |
+| 2026-09-15 | FCEL | Livingston III Homer John |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/886128/000089706926001780/0000897069-26-001780-index.htm |
+| 2026-09-15 | NAMS | Davidson Michael H. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1573785/000119312526391985/0001193125-26-391985-index.htm |
+| 2026-09-15 | LMB | Horowitz Joshua |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1612424/000110465926108006/0001104659-26-108006-index.htm |
+| 2026-09-15 | NTHI | Heshmatpour Amir F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1443035/000121390026100269/0001213900-26-100269-index.htm |

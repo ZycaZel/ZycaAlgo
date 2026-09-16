@@ -2332,5 +2332,93 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/12239/000121390026099456/0001213900-26-099456-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.629478+00:00",
+    "date": "2026-09-15",
+    "ticker": "GIII",
+    "insider": "GOLDFARB MORRIS",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/821002/000082100226000041/0000821002-26-000041-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.631073+00:00",
+    "date": "2026-09-15",
+    "ticker": "CELH",
+    "insider": "DeSantis Damon",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1341766/000162828026062057/0001628280-26-062057-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.632556+00:00",
+    "date": "2026-09-15",
+    "ticker": "COO",
+    "insider": "Kurzius Lawrence Erik",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/711404/000135209026000007/0001352090-26-000007-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.634019+00:00",
+    "date": "2026-09-15",
+    "ticker": "ARE",
+    "insider": "MARCUS JOEL S",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1035443/000121695526000021/0001216955-26-000021-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.635578+00:00",
+    "date": "2026-09-15",
+    "ticker": "FCEL",
+    "insider": "Livingston III Homer John",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/886128/000089706926001780/0000897069-26-001780-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.637064+00:00",
+    "date": "2026-09-15",
+    "ticker": "NAMS",
+    "insider": "Davidson Michael H.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1573785/000119312526391985/0001193125-26-391985-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.638916+00:00",
+    "date": "2026-09-15",
+    "ticker": "LMB",
+    "insider": "Horowitz Joshua",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1612424/000110465926108006/0001104659-26-108006-index.htm"
+  },
+  {
+    "timestamp": "2026-09-16T13:00:53.640562+00:00",
+    "date": "2026-09-15",
+    "ticker": "NTHI",
+    "insider": "Heshmatpour Amir F",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1443035/000121390026100269/0001213900-26-100269-index.htm"
   }
 ]

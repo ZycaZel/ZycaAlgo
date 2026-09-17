@@ -2420,5 +2420,82 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1443035/000121390026100269/0001213900-26-100269-index.htm"
+  },
+  {
+    "timestamp": "2026-09-17T12:57:51.755212+00:00",
+    "date": "2026-09-16",
+    "ticker": "FOX",
+    "insider": "MURDOCH LACHLAN K",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828026062330/0001628280-26-062330-index.htm"
+  },
+  {
+    "timestamp": "2026-09-17T12:57:51.757497+00:00",
+    "date": "2026-09-16",
+    "ticker": "TLAC",
+    "insider": "Three Lions Sponsor, LLC",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2128462/000119312526392735/0001193125-26-392735-index.htm"
+  },
+  {
+    "timestamp": "2026-09-17T12:57:51.759678+00:00",
+    "date": "2026-09-16",
+    "ticker": "SBLK",
+    "insider": "Spyrou Symeon",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1969701/000196970126000006/0001969701-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-09-17T12:57:51.761827+00:00",
+    "date": "2026-09-16",
+    "ticker": "EQPT",
+    "insider": "Schlacks Jabbok",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1693736/000162828026062285/0001628280-26-062285-index.htm"
+  },
+  {
+    "timestamp": "2026-09-17T12:57:51.764143+00:00",
+    "date": "2026-09-16",
+    "ticker": "CELH",
+    "insider": "Kravitz Hal",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1341766/000162828026062134/0001628280-26-062134-index.htm"
+  },
+  {
+    "timestamp": "2026-09-17T12:57:51.767433+00:00",
+    "date": "2026-09-16",
+    "ticker": "TH",
+    "insider": "Archer James Bradley",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1763054/000171218926000059/0001712189-26-000059-index.htm"
+  },
+  {
+    "timestamp": "2026-09-17T12:57:51.770758+00:00",
+    "date": "2026-09-16",
+    "ticker": "HCAT",
+    "insider": "Kohl Simeon",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1636422/000170380726000006/0001703807-26-000006-index.htm"
   }
 ]

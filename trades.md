@@ -222,3 +222,10 @@
 | 2026-09-15 | NAMS | Davidson Michael H. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1573785/000119312526391985/0001193125-26-391985-index.htm |
 | 2026-09-15 | LMB | Horowitz Joshua |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1612424/000110465926108006/0001104659-26-108006-index.htm |
 | 2026-09-15 | NTHI | Heshmatpour Amir F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1443035/000121390026100269/0001213900-26-100269-index.htm |
+| 2026-09-16 | FOX | MURDOCH LACHLAN K |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1754301/000162828026062330/0001628280-26-062330-index.htm |
+| 2026-09-16 | TLAC | Three Lions Sponsor, LLC |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2128462/000119312526392735/0001193125-26-392735-index.htm |
+| 2026-09-16 | SBLK | Spyrou Symeon |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1969701/000196970126000006/0001969701-26-000006-index.htm |
+| 2026-09-16 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000162828026062285/0001628280-26-062285-index.htm |
+| 2026-09-16 | CELH | Kravitz Hal |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341766/000162828026062134/0001628280-26-062134-index.htm |
+| 2026-09-16 | TH | Archer James Bradley |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1763054/000171218926000059/0001712189-26-000059-index.htm |
+| 2026-09-16 | HCAT | Kohl Simeon |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1636422/000170380726000006/0001703807-26-000006-index.htm |

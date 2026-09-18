@@ -2497,5 +2497,71 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1636422/000170380726000006/0001703807-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-09-18T12:37:04.346729+00:00",
+    "date": "2026-09-17",
+    "ticker": "SBLK",
+    "insider": "Pappa Milena Maria",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2113812/000211381226000003/0002113812-26-000003-index.htm"
+  },
+  {
+    "timestamp": "2026-09-18T12:37:04.349097+00:00",
+    "date": "2026-09-17",
+    "ticker": "XBP",
+    "insider": "CHADHA PAR",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/938202/000110465926108653/0001104659-26-108653-index.htm"
+  },
+  {
+    "timestamp": "2026-09-18T12:37:04.351368+00:00",
+    "date": "2026-09-17",
+    "ticker": "COO",
+    "insider": "Kurzius Lawrence Erik",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/711404/000135209026000008/0001352090-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-09-18T12:37:04.353597+00:00",
+    "date": "2026-09-17",
+    "ticker": "INBX",
+    "insider": "Kayyem Jon Faiz",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136626826000006/0001366268-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-09-18T12:37:04.355909+00:00",
+    "date": "2026-09-17",
+    "ticker": "LSAK",
+    "insider": "Mazanderani Ali",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1041514/000106299326005002/0001062993-26-005002-index.htm"
+  },
+  {
+    "timestamp": "2026-09-18T12:37:04.358153+00:00",
+    "date": "2026-09-17",
+    "ticker": "TENX",
+    "insider": "Doogan Declan",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1704234/000119312526394831/0001193125-26-394831-index.htm"
   }
 ]

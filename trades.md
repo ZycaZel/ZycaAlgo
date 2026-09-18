@@ -229,3 +229,9 @@
 | 2026-09-16 | CELH | Kravitz Hal |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341766/000162828026062134/0001628280-26-062134-index.htm |
 | 2026-09-16 | TH | Archer James Bradley |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1763054/000171218926000059/0001712189-26-000059-index.htm |
 | 2026-09-16 | HCAT | Kohl Simeon |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1636422/000170380726000006/0001703807-26-000006-index.htm |
+| 2026-09-17 | SBLK | Pappa Milena Maria |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2113812/000211381226000003/0002113812-26-000003-index.htm |
+| 2026-09-17 | XBP | CHADHA PAR |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/938202/000110465926108653/0001104659-26-108653-index.htm |
+| 2026-09-17 | COO | Kurzius Lawrence Erik |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/711404/000135209026000008/0001352090-26-000008-index.htm |
+| 2026-09-17 | INBX | Kayyem Jon Faiz |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2007919/000136626826000006/0001366268-26-000006-index.htm |
+| 2026-09-17 | LSAK | Mazanderani Ali |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1041514/000106299326005002/0001062993-26-005002-index.htm |
+| 2026-09-17 | TENX | Doogan Declan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1704234/000119312526394831/0001193125-26-394831-index.htm |

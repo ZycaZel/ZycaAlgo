@@ -2563,5 +2563,38 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1704234/000119312526394831/0001193125-26-394831-index.htm"
+  },
+  {
+    "timestamp": "2026-09-19T12:10:55.937387+00:00",
+    "date": "2026-09-18",
+    "ticker": "TFC",
+    "insider": "Lyons Michael P.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1534574/000153457426000016/0001534574-26-000016-index.htm"
+  },
+  {
+    "timestamp": "2026-09-19T12:10:55.939843+00:00",
+    "date": "2026-09-18",
+    "ticker": "ELOG",
+    "insider": "Wong Albert",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2013320/000149315226043376/0001493152-26-043376-index.htm"
+  },
+  {
+    "timestamp": "2026-09-19T12:10:55.942149+00:00",
+    "date": "2026-09-18",
+    "ticker": "TH",
+    "insider": "Schrenk Troy C.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1763047/000171218926000061/0001712189-26-000061-index.htm"
   }
 ]

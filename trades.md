@@ -235,3 +235,6 @@
 | 2026-09-17 | INBX | Kayyem Jon Faiz |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2007919/000136626826000006/0001366268-26-000006-index.htm |
 | 2026-09-17 | LSAK | Mazanderani Ali |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1041514/000106299326005002/0001062993-26-005002-index.htm |
 | 2026-09-17 | TENX | Doogan Declan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1704234/000119312526394831/0001193125-26-394831-index.htm |
+| 2026-09-18 | TFC | Lyons Michael P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1534574/000153457426000016/0001534574-26-000016-index.htm |
+| 2026-09-18 | ELOG | Wong Albert |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2013320/000149315226043376/0001493152-26-043376-index.htm |
+| 2026-09-18 | TH | Schrenk Troy C. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1763047/000171218926000061/0001712189-26-000061-index.htm |

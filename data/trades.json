@@ -2596,5 +2596,49 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1763047/000171218926000061/0001712189-26-000061-index.htm"
+  },
+  {
+    "timestamp": "2026-09-22T12:57:43.673800+00:00",
+    "date": "2026-09-22",
+    "ticker": "PRCT",
+    "insider": "Wood Larry L",
+    "entry": "$21.71",
+    "size": "92 sh",
+    "stop": "$18.43",
+    "event": "EXIT - stop filled at $18.43 (-15.1%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1588978/000162828026054970/0001628280-26-054970-index.htm"
+  },
+  {
+    "timestamp": "2026-09-22T12:57:45.491151+00:00",
+    "date": "2026-09-21",
+    "ticker": "GRAB",
+    "insider": "Tan Anthony Ping Yeow",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1855612/000189649726000009/0001896497-26-000009-index.htm"
+  },
+  {
+    "timestamp": "2026-09-22T12:57:47.219552+00:00",
+    "date": "2026-09-21",
+    "ticker": "GSAT",
+    "insider": "Monroe James III",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1366868/000137966426000002/0001379664-26-000002-index.htm"
+  },
+  {
+    "timestamp": "2026-09-22T12:57:48.042349+00:00",
+    "date": "2026-09-21",
+    "ticker": "CRM",
+    "insider": "Kirk David Blair",
+    "entry": "$236.51",
+    "size": "8 sh ($1,892)",
+    "stop": "$201.04",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm"
   }
 ]

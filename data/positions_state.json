@@ -95,18 +95,6 @@
     "buy_order_id": "fa58a506-2f2b-4892-8c70-06700e0ddc4a",
     "stop_order_id": "57d94107-c910-43cf-bc0b-dac55d0ffcfd"
   },
-  "PRCT": {
-    "entry_date": "2026-08-10",
-    "entry_price": 21.715,
-    "qty": 92,
-    "mode": "initial_stop",
-    "stop_price": 18.46,
-    "high_water_mark": 21.715,
-    "insider": "Wood Larry L",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1588978/000162828026054970/0001628280-26-054970-index.htm",
-    "buy_order_id": "85b1f428-baf8-4738-88d7-075b8b30bf1f",
-    "stop_order_id": "792599ab-9d71-4e3f-958a-43804bebcd81"
-  },
   "MBLY": {
     "entry_date": "2026-08-10",
     "entry_price": 8.76,
@@ -178,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1468642/000211790526000026/0002117905-26-000026-index.htm",
     "buy_order_id": "65722d23-b07b-4554-89ce-e3c8fffd24d6",
     "stop_order_id": "74d471dc-b0a1-4446-99f4-a120f3d2686e"
+  },
+  "CRM": {
+    "entry_date": "2026-09-21",
+    "entry_price": 236.515,
+    "qty": 8,
+    "mode": "initial_stop",
+    "stop_price": 201.04,
+    "high_water_mark": 236.515,
+    "insider": "Kirk David Blair",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm",
+    "buy_order_id": "9939c65e-6157-4469-a25c-e79ea7980982",
+    "stop_order_id": null
   }
 }

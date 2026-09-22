@@ -238,3 +238,7 @@
 | 2026-09-18 | TFC | Lyons Michael P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1534574/000153457426000016/0001534574-26-000016-index.htm |
 | 2026-09-18 | ELOG | Wong Albert |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2013320/000149315226043376/0001493152-26-043376-index.htm |
 | 2026-09-18 | TH | Schrenk Troy C. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1763047/000171218926000061/0001712189-26-000061-index.htm |
+| 2026-09-22 | PRCT | Wood Larry L | $21.71 | 92 sh | $18.43 | EXIT - stop filled at $18.43 (-15.1%) | https://www.sec.gov/Archives/edgar/data/1588978/000162828026054970/0001628280-26-054970-index.htm |
+| 2026-09-21 | GRAB | Tan Anthony Ping Yeow |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1855612/000189649726000009/0001896497-26-000009-index.htm |
+| 2026-09-21 | GSAT | Monroe James III |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1366868/000137966426000002/0001379664-26-000002-index.htm |
+| 2026-09-21 | CRM | Kirk David Blair | $236.51 | 8 sh ($1,892) | $201.04 | ENTRY | https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm |

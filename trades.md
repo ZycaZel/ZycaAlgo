@@ -242,3 +242,6 @@
 | 2026-09-21 | GRAB | Tan Anthony Ping Yeow |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1855612/000189649726000009/0001896497-26-000009-index.htm |
 | 2026-09-21 | GSAT | Monroe James III |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1366868/000137966426000002/0001379664-26-000002-index.htm |
 | 2026-09-21 | CRM | Kirk David Blair | $236.51 | 8 sh ($1,892) | $201.04 | ENTRY | https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm |
+| 2026-09-22 | BCBP | OBrien Thomas M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1228454/000119312526397677/0001193125-26-397677-index.htm |
+| 2026-09-22 | SAIC | Cush C. David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1620833/000157112326000145/0001571123-26-000145-index.htm |
+| 2026-09-22 | VFF | DEGIGLIO MICHAEL A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1040739/000119312526397230/0001193125-26-397230-index.htm |

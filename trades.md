@@ -245,3 +245,8 @@
 | 2026-09-22 | BCBP | OBrien Thomas M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1228454/000119312526397677/0001193125-26-397677-index.htm |
 | 2026-09-22 | SAIC | Cush C. David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1620833/000157112326000145/0001571123-26-000145-index.htm |
 | 2026-09-22 | VFF | DEGIGLIO MICHAEL A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1040739/000119312526397230/0001193125-26-397230-index.htm |
+| 2026-09-24 | MBLY | Yeboah-Amankwah Safroadu | $8.76 | 228 sh | $7.45 | EXIT - stop filled at $7.45 (-15.0%) | https://www.sec.gov/Archives/edgar/data/1910139/000095010326012124/0000950103-26-012124-index.htm |
+| 2026-09-23 | ETRA | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2088082/000094787126000880/0000947871-26-000880-index.htm |
+| 2026-09-23 | INBX | Kayyem Jon Faiz |  |  |  | SKIPPED - avg volume 369,744 < 500K | https://www.sec.gov/Archives/edgar/data/2007919/000136626826000011/0001366268-26-000011-index.htm |
+| 2026-09-23 | RCT | Floyd Justin Beck Hinton |  |  |  | SKIPPED - market cap $12,718,794 < $1B | https://www.sec.gov/Archives/edgar/data/2070905/000149315226043846/0001493152-26-043846-index.htm |
+| 2026-09-23 | AIAI | Affeldt Eric |  |  |  | SKIPPED - market cap $230,713,915 < $1B | https://www.sec.gov/Archives/edgar/data/2096362/000149315226043974/0001493152-26-043974-index.htm |

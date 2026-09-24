@@ -2673,5 +2673,60 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1040739/000119312526397230/0001193125-26-397230-index.htm"
+  },
+  {
+    "timestamp": "2026-09-24T13:03:13.464166+00:00",
+    "date": "2026-09-24",
+    "ticker": "MBLY",
+    "insider": "Yeboah-Amankwah Safroadu",
+    "entry": "$8.76",
+    "size": "228 sh",
+    "stop": "$7.45",
+    "event": "EXIT - stop filled at $7.45 (-15.0%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1910139/000095010326012124/0000950103-26-012124-index.htm"
+  },
+  {
+    "timestamp": "2026-09-24T13:03:14.880703+00:00",
+    "date": "2026-09-23",
+    "ticker": "ETRA",
+    "insider": "ORBIMED ADVISORS LLC",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2088082/000094787126000880/0000947871-26-000880-index.htm"
+  },
+  {
+    "timestamp": "2026-09-24T13:03:15.824571+00:00",
+    "date": "2026-09-23",
+    "ticker": "INBX",
+    "insider": "Kayyem Jon Faiz",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 369,744 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136626826000011/0001366268-26-000011-index.htm"
+  },
+  {
+    "timestamp": "2026-09-24T13:03:16.697030+00:00",
+    "date": "2026-09-23",
+    "ticker": "RCT",
+    "insider": "Floyd Justin Beck Hinton",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $12,718,794 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2070905/000149315226043846/0001493152-26-043846-index.htm"
+  },
+  {
+    "timestamp": "2026-09-24T13:03:17.858344+00:00",
+    "date": "2026-09-23",
+    "ticker": "AIAI",
+    "insider": "Affeldt Eric",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $230,713,915 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2096362/000149315226043974/0001493152-26-043974-index.htm"
   }
 ]

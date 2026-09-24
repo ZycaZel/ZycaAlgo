@@ -95,18 +95,6 @@
     "buy_order_id": "fa58a506-2f2b-4892-8c70-06700e0ddc4a",
     "stop_order_id": "57d94107-c910-43cf-bc0b-dac55d0ffcfd"
   },
-  "MBLY": {
-    "entry_date": "2026-08-10",
-    "entry_price": 8.76,
-    "qty": 228,
-    "mode": "initial_stop",
-    "stop_price": 7.45,
-    "high_water_mark": 8.76,
-    "insider": "Yeboah-Amankwah Safroadu",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1910139/000095010326012124/0000950103-26-012124-index.htm",
-    "buy_order_id": "c3c5eb1c-615a-4083-92b4-e77017fe4586",
-    "stop_order_id": "e26db2ec-8f21-4631-b5c9-69935eb64a12"
-  },
   "FISV": {
     "entry_date": "2026-08-11",
     "entry_price": 52.7,

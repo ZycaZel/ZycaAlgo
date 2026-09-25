@@ -2728,5 +2728,27 @@
     "stop": "",
     "event": "SKIPPED - market cap $230,713,915 < $1B",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2096362/000149315226043974/0001493152-26-043974-index.htm"
+  },
+  {
+    "timestamp": "2026-09-25T13:08:18.677171+00:00",
+    "date": "2026-09-24",
+    "ticker": "NYAX",
+    "insider": "Nechmad Yair",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 32,037 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1901279/000197640826000865/0001976408-26-000865-index.htm"
+  },
+  {
+    "timestamp": "2026-09-25T13:08:19.430301+00:00",
+    "date": "2026-09-24",
+    "ticker": "UXIN",
+    "insider": "Li Bin (William)",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data); avg volume 56,565 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2115037/000110465926110226/0001104659-26-110226-index.htm"
   }
 ]

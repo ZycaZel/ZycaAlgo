@@ -250,3 +250,5 @@
 | 2026-09-23 | INBX | Kayyem Jon Faiz |  |  |  | SKIPPED - avg volume 369,744 < 500K | https://www.sec.gov/Archives/edgar/data/2007919/000136626826000011/0001366268-26-000011-index.htm |
 | 2026-09-23 | RCT | Floyd Justin Beck Hinton |  |  |  | SKIPPED - market cap $12,718,794 < $1B | https://www.sec.gov/Archives/edgar/data/2070905/000149315226043846/0001493152-26-043846-index.htm |
 | 2026-09-23 | AIAI | Affeldt Eric |  |  |  | SKIPPED - market cap $230,713,915 < $1B | https://www.sec.gov/Archives/edgar/data/2096362/000149315226043974/0001493152-26-043974-index.htm |
+| 2026-09-24 | NYAX | Nechmad Yair |  |  |  | SKIPPED - avg volume 32,037 < 500K | https://www.sec.gov/Archives/edgar/data/1901279/000197640826000865/0001976408-26-000865-index.htm |
+| 2026-09-24 | UXIN | Li Bin (William) |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 56,565 < 500K | https://www.sec.gov/Archives/edgar/data/2115037/000110465926110226/0001104659-26-110226-index.htm |

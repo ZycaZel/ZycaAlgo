@@ -2750,5 +2750,27 @@
     "stop": "",
     "event": "SKIPPED - market cap unknown (no shares-outstanding data); avg volume 56,565 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2115037/000110465926110226/0001104659-26-110226-index.htm"
+  },
+  {
+    "timestamp": "2026-09-26T12:35:34.138749+00:00",
+    "date": "2026-09-25",
+    "ticker": "NCT",
+    "insider": "Zhu Muchun",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $116,036,254 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2018529/000149315226044229/0001493152-26-044229-index.htm"
+  },
+  {
+    "timestamp": "2026-09-26T12:35:34.993299+00:00",
+    "date": "2026-09-25",
+    "ticker": "ANIX",
+    "insider": "Titterton Lewis H jr",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $96,643,370 < $1B; avg volume 341,541 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/715446/000149315226044250/0001493152-26-044250-index.htm"
   }
 ]

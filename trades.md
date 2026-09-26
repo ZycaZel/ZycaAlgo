@@ -252,3 +252,5 @@
 | 2026-09-23 | AIAI | Affeldt Eric |  |  |  | SKIPPED - market cap $230,713,915 < $1B | https://www.sec.gov/Archives/edgar/data/2096362/000149315226043974/0001493152-26-043974-index.htm |
 | 2026-09-24 | NYAX | Nechmad Yair |  |  |  | SKIPPED - avg volume 32,037 < 500K | https://www.sec.gov/Archives/edgar/data/1901279/000197640826000865/0001976408-26-000865-index.htm |
 | 2026-09-24 | UXIN | Li Bin (William) |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 56,565 < 500K | https://www.sec.gov/Archives/edgar/data/2115037/000110465926110226/0001104659-26-110226-index.htm |
+| 2026-09-25 | NCT | Zhu Muchun |  |  |  | SKIPPED - market cap $116,036,254 < $1B | https://www.sec.gov/Archives/edgar/data/2018529/000149315226044229/0001493152-26-044229-index.htm |
+| 2026-09-25 | ANIX | Titterton Lewis H jr |  |  |  | SKIPPED - market cap $96,643,370 < $1B; avg volume 341,541 < 500K | https://www.sec.gov/Archives/edgar/data/715446/000149315226044250/0001493152-26-044250-index.htm |

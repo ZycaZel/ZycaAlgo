@@ -2772,5 +2772,49 @@
     "stop": "",
     "event": "SKIPPED - market cap $96,643,370 < $1B; avg volume 341,541 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/715446/000149315226044250/0001493152-26-044250-index.htm"
+  },
+  {
+    "timestamp": "2026-09-29T14:28:57.565301+00:00",
+    "date": "2026-09-29",
+    "ticker": "LINE",
+    "insider": "LeMasters Robb A.",
+    "entry": "$41.35",
+    "size": "48 sh",
+    "stop": "$35.01",
+    "event": "EXIT - stop filled at $35.01 (-15.3%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1645808/000164580826000002/0001645808-26-000002-index.htm"
+  },
+  {
+    "timestamp": "2026-09-29T14:28:58.671125+00:00",
+    "date": "2026-09-28",
+    "ticker": "INBX",
+    "insider": "Lappe Mark",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 374,684 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000004/0001366074-26-000004-index.htm"
+  },
+  {
+    "timestamp": "2026-09-29T14:28:59.018823+00:00",
+    "date": "2026-09-28",
+    "ticker": "DMRA",
+    "insider": "Jarrett Jennifer",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 475,553 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1800315/000119312526403355/0001193125-26-403355-index.htm"
+  },
+  {
+    "timestamp": "2026-09-29T14:28:59.194426+00:00",
+    "date": "2026-09-28",
+    "ticker": "ZUMZ",
+    "insider": "ELLIS ADAM CHRISTOPHER",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $212,022,378 < $1B; avg volume 302,464 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1700575/000170057526000005/0001700575-26-000005-index.htm"
   }
 ]

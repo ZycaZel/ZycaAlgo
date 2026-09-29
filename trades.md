@@ -254,3 +254,7 @@
 | 2026-09-24 | UXIN | Li Bin (William) |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 56,565 < 500K | https://www.sec.gov/Archives/edgar/data/2115037/000110465926110226/0001104659-26-110226-index.htm |
 | 2026-09-25 | NCT | Zhu Muchun |  |  |  | SKIPPED - market cap $116,036,254 < $1B | https://www.sec.gov/Archives/edgar/data/2018529/000149315226044229/0001493152-26-044229-index.htm |
 | 2026-09-25 | ANIX | Titterton Lewis H jr |  |  |  | SKIPPED - market cap $96,643,370 < $1B; avg volume 341,541 < 500K | https://www.sec.gov/Archives/edgar/data/715446/000149315226044250/0001493152-26-044250-index.htm |
+| 2026-09-29 | LINE | LeMasters Robb A. | $41.35 | 48 sh | $35.01 | EXIT - stop filled at $35.01 (-15.3%) | https://www.sec.gov/Archives/edgar/data/1645808/000164580826000002/0001645808-26-000002-index.htm |
+| 2026-09-28 | INBX | Lappe Mark |  |  |  | SKIPPED - avg volume 374,684 < 500K | https://www.sec.gov/Archives/edgar/data/2007919/000136607426000004/0001366074-26-000004-index.htm |
+| 2026-09-28 | DMRA | Jarrett Jennifer |  |  |  | SKIPPED - avg volume 475,553 < 500K | https://www.sec.gov/Archives/edgar/data/1800315/000119312526403355/0001193125-26-403355-index.htm |
+| 2026-09-28 | ZUMZ | ELLIS ADAM CHRISTOPHER |  |  |  | SKIPPED - market cap $212,022,378 < $1B; avg volume 302,464 < 500K | https://www.sec.gov/Archives/edgar/data/1700575/000170057526000005/0001700575-26-000005-index.htm |

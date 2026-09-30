@@ -258,3 +258,6 @@
 | 2026-09-28 | INBX | Lappe Mark |  |  |  | SKIPPED - avg volume 374,684 < 500K | https://www.sec.gov/Archives/edgar/data/2007919/000136607426000004/0001366074-26-000004-index.htm |
 | 2026-09-28 | DMRA | Jarrett Jennifer |  |  |  | SKIPPED - avg volume 475,553 < 500K | https://www.sec.gov/Archives/edgar/data/1800315/000119312526403355/0001193125-26-403355-index.htm |
 | 2026-09-28 | ZUMZ | ELLIS ADAM CHRISTOPHER |  |  |  | SKIPPED - market cap $212,022,378 < $1B; avg volume 302,464 < 500K | https://www.sec.gov/Archives/edgar/data/1700575/000170057526000005/0001700575-26-000005-index.htm |
+| 2026-09-29 | ADRX | George Simeon |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1802369/000119312526408061/0001193125-26-408061-index.htm |
+| 2026-09-29 | HGBL | Burnham William L |  |  |  | SKIPPED - market cap $45,031,278 < $1B; avg volume 259,318 < 500K | https://www.sec.gov/Archives/edgar/data/1248150/000119312526407271/0001193125-26-407271-index.htm |
+| 2026-09-29 | QTEX | Ben-Noon Dagi Shahar |  |  |  | SKIPPED - market cap $25,031,461 < $1B | https://www.sec.gov/Archives/edgar/data/1911928/000118518526004397/0001185185-26-004397-index.htm |

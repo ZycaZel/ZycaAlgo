@@ -2816,5 +2816,38 @@
     "stop": "",
     "event": "SKIPPED - market cap $212,022,378 < $1B; avg volume 302,464 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1700575/000170057526000005/0001700575-26-000005-index.htm"
+  },
+  {
+    "timestamp": "2026-09-30T14:26:40.745102+00:00",
+    "date": "2026-09-29",
+    "ticker": "ADRX",
+    "insider": "George Simeon",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1802369/000119312526408061/0001193125-26-408061-index.htm"
+  },
+  {
+    "timestamp": "2026-09-30T14:26:41.446087+00:00",
+    "date": "2026-09-29",
+    "ticker": "HGBL",
+    "insider": "Burnham William L",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $45,031,278 < $1B; avg volume 259,318 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1248150/000119312526407271/0001193125-26-407271-index.htm"
+  },
+  {
+    "timestamp": "2026-09-30T14:26:41.917969+00:00",
+    "date": "2026-09-29",
+    "ticker": "QTEX",
+    "insider": "Ben-Noon Dagi Shahar",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $25,031,461 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1911928/000118518526004397/0001185185-26-004397-index.htm"
   }
 ]

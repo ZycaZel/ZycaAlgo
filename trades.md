@@ -261,3 +261,8 @@
 | 2026-09-29 | ADRX | George Simeon |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1802369/000119312526408061/0001193125-26-408061-index.htm |
 | 2026-09-29 | HGBL | Burnham William L |  |  |  | SKIPPED - market cap $45,031,278 < $1B; avg volume 259,318 < 500K | https://www.sec.gov/Archives/edgar/data/1248150/000119312526407271/0001193125-26-407271-index.htm |
 | 2026-09-29 | QTEX | Ben-Noon Dagi Shahar |  |  |  | SKIPPED - market cap $25,031,461 < $1B | https://www.sec.gov/Archives/edgar/data/1911928/000118518526004397/0001185185-26-004397-index.htm |
+| 2026-10-01 | JBL | Tyagarajan N. V. | $338.48 | 5 sh | $287.55 | EXIT - stop filled at $287.55 (-15.0%) | https://www.sec.gov/Archives/edgar/data/898293/000122520826006945/0001225208-26-006945-index.htm |
+| 2026-09-30 | KOD | BAKER BROS. ADVISORS LP | $99.30 | 19 sh ($1,887) | $84.41 | ENTRY | https://www.sec.gov/Archives/edgar/data/1551139/000119312526409116/0001193125-26-409116-index.htm |
+| 2026-09-30 | ADRX | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1802369/000094787126000910/0000947871-26-000910-index.htm |
+| 2026-09-30 | NYAX | Nechmad Yair |  |  |  | SKIPPED - avg volume 27,330 < 500K | https://www.sec.gov/Archives/edgar/data/1901279/000197640826000874/0001976408-26-000874-index.htm |
+| 2026-09-30 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - market cap $81,845,628 < $1B; avg volume 90,807 < 500K | https://www.sec.gov/Archives/edgar/data/1822523/000162828026064003/0001628280-26-064003-index.htm |

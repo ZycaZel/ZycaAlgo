@@ -47,18 +47,6 @@
     "buy_order_id": "e4e402e5-7341-42f5-b7b1-4f8c5b3baf66",
     "stop_order_id": "734a121f-9a5e-4056-95d9-0ea381a8dcf2"
   },
-  "JBL": {
-    "entry_date": "2026-08-05",
-    "entry_price": 338.475,
-    "qty": 5,
-    "mode": "initial_stop",
-    "stop_price": 287.7,
-    "high_water_mark": 338.475,
-    "insider": "Tyagarajan N. V.",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/898293/000122520826006945/0001225208-26-006945-index.htm",
-    "buy_order_id": "a7401179-4dba-49da-bcb6-686445e17cfa",
-    "stop_order_id": "830a9910-c870-4176-927d-69959d1d532d"
-  },
   "APTV": {
     "entry_date": "2026-08-06",
     "entry_price": 48.815,
@@ -154,5 +142,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm",
     "buy_order_id": "9939c65e-6157-4469-a25c-e79ea7980982",
     "stop_order_id": "e10b6e9a-01c9-4403-982b-ebdda05682d3"
+  },
+  "KOD": {
+    "entry_date": "2026-09-30",
+    "entry_price": 99.3,
+    "qty": 19,
+    "mode": "initial_stop",
+    "stop_price": 84.41,
+    "high_water_mark": 99.3,
+    "insider": "BAKER BROS. ADVISORS LP",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526409116/0001193125-26-409116-index.htm",
+    "buy_order_id": "4f2086d1-1274-4de8-8468-879926716ad8",
+    "stop_order_id": "39826c50-680b-4bfb-9b2f-559b0e8f1036"
   }
 }

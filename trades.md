@@ -266,3 +266,10 @@
 | 2026-09-30 | ADRX | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1802369/000094787126000910/0000947871-26-000910-index.htm |
 | 2026-09-30 | NYAX | Nechmad Yair |  |  |  | SKIPPED - avg volume 27,330 < 500K | https://www.sec.gov/Archives/edgar/data/1901279/000197640826000874/0001976408-26-000874-index.htm |
 | 2026-09-30 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - market cap $81,845,628 < $1B; avg volume 90,807 < 500K | https://www.sec.gov/Archives/edgar/data/1822523/000162828026064003/0001628280-26-064003-index.htm |
+| 2026-10-02 | FISV | FRITZ LANCE M | $52.70 | 38 sh | $44.80 | EXIT - stop filled at $44.80 (-15.0%) | https://www.sec.gov/Archives/edgar/data/798354/000079835426000033/0000798354-26-000033-index.htm |
+| 2026-10-01 | SLBT | Wang Ching-Dong |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 81,261 < 500K | https://www.sec.gov/Archives/edgar/data/2070534/000110465926112844/0001104659-26-112844-index.htm |
+| 2026-10-01 | ORCL | RUSCKOWSKI STEPHEN H | $143.66 | 13 sh ($1,868) | $122.12 | ENTRY | https://www.sec.gov/Archives/edgar/data/1341439/000134143926000099/0001341439-26-000099-index.htm |
+| 2026-10-01 | XENE | MORTIMER IAN | $38.52 | 50 sh ($1,926) | $32.74 | ENTRY | https://www.sec.gov/Archives/edgar/data/1619961/000119312526409999/0001193125-26-409999-index.htm |
+| 2026-10-01 | FUND | GEORGE W WHITNEY |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 22,580 < 500K | https://www.sec.gov/Archives/edgar/data/1185838/000119312526410922/0001193125-26-410922-index.htm |
+| 2026-10-01 | TKLF | Kanayama Mei |  |  |  | SKIPPED - market cap $71,533,992 < $1B; avg volume 20,408 < 500K | https://www.sec.gov/Archives/edgar/data/1906212/000121390026105765/0001213900-26-105765-index.htm |
+| 2026-10-01 | FLNA | Barry Richard |  |  |  | SKIPPED - market cap $49,032,514 < $1B; avg volume 248,799 < 500K | https://www.sec.gov/Archives/edgar/data/1562371/000143774926031654/0001437749-26-031654-index.htm |

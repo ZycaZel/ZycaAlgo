@@ -2981,5 +2981,27 @@
     "stop": "",
     "event": "SKIPPED - market cap $49,032,514 < $1B; avg volume 248,799 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1562371/000143774926031654/0001437749-26-031654-index.htm"
+  },
+  {
+    "timestamp": "2026-10-03T12:58:59.147052+00:00",
+    "date": "2026-10-02",
+    "ticker": "NYAX",
+    "insider": "Nechmad Yair",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 29,007 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1901279/000197640826000880/0001976408-26-000880-index.htm"
+  },
+  {
+    "timestamp": "2026-10-03T12:58:59.862123+00:00",
+    "date": "2026-10-02",
+    "ticker": "FGBI",
+    "insider": "Smith Edgar R. III",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $140,747,690 < $1B; avg volume 23,628 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1408534/000143774926031876/0001437749-26-031876-index.htm"
   }
 ]

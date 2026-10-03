@@ -273,3 +273,5 @@
 | 2026-10-01 | FUND | GEORGE W WHITNEY |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 22,580 < 500K | https://www.sec.gov/Archives/edgar/data/1185838/000119312526410922/0001193125-26-410922-index.htm |
 | 2026-10-01 | TKLF | Kanayama Mei |  |  |  | SKIPPED - market cap $71,533,992 < $1B; avg volume 20,408 < 500K | https://www.sec.gov/Archives/edgar/data/1906212/000121390026105765/0001213900-26-105765-index.htm |
 | 2026-10-01 | FLNA | Barry Richard |  |  |  | SKIPPED - market cap $49,032,514 < $1B; avg volume 248,799 < 500K | https://www.sec.gov/Archives/edgar/data/1562371/000143774926031654/0001437749-26-031654-index.htm |
+| 2026-10-02 | NYAX | Nechmad Yair |  |  |  | SKIPPED - avg volume 29,007 < 500K | https://www.sec.gov/Archives/edgar/data/1901279/000197640826000880/0001976408-26-000880-index.htm |
+| 2026-10-02 | FGBI | Smith Edgar R. III |  |  |  | SKIPPED - market cap $140,747,690 < $1B; avg volume 23,628 < 500K | https://www.sec.gov/Archives/edgar/data/1408534/000143774926031876/0001437749-26-031876-index.htm |

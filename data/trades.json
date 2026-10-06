@@ -3003,5 +3003,27 @@
     "stop": "",
     "event": "SKIPPED - market cap $140,747,690 < $1B; avg volume 23,628 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1408534/000143774926031876/0001437749-26-031876-index.htm"
+  },
+  {
+    "timestamp": "2026-10-06T14:47:42.898710+00:00",
+    "date": "2026-10-05",
+    "ticker": "ACCV",
+    "insider": "Rubiera Michael",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2141406/000162828026065167/0001628280-26-065167-index.htm"
+  },
+  {
+    "timestamp": "2026-10-06T14:47:43.723980+00:00",
+    "date": "2026-10-05",
+    "ticker": "VCIG",
+    "insider": "HOO VOON HIM",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $23,674,055 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1912875/000121390026106613/0001213900-26-106613-index.htm"
   }
 ]

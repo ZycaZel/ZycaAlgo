@@ -275,3 +275,5 @@
 | 2026-10-01 | FLNA | Barry Richard |  |  |  | SKIPPED - market cap $49,032,514 < $1B; avg volume 248,799 < 500K | https://www.sec.gov/Archives/edgar/data/1562371/000143774926031654/0001437749-26-031654-index.htm |
 | 2026-10-02 | NYAX | Nechmad Yair |  |  |  | SKIPPED - avg volume 29,007 < 500K | https://www.sec.gov/Archives/edgar/data/1901279/000197640826000880/0001976408-26-000880-index.htm |
 | 2026-10-02 | FGBI | Smith Edgar R. III |  |  |  | SKIPPED - market cap $140,747,690 < $1B; avg volume 23,628 < 500K | https://www.sec.gov/Archives/edgar/data/1408534/000143774926031876/0001437749-26-031876-index.htm |
+| 2026-10-05 | ACCV | Rubiera Michael |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2141406/000162828026065167/0001628280-26-065167-index.htm |
+| 2026-10-05 | VCIG | HOO VOON HIM |  |  |  | SKIPPED - market cap $23,674,055 < $1B | https://www.sec.gov/Archives/edgar/data/1912875/000121390026106613/0001213900-26-106613-index.htm |

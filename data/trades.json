@@ -3025,5 +3025,27 @@
     "stop": "",
     "event": "SKIPPED - market cap $23,674,055 < $1B",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1912875/000121390026106613/0001213900-26-106613-index.htm"
+  },
+  {
+    "timestamp": "2026-10-07T14:55:23.864552+00:00",
+    "date": "2026-10-06",
+    "ticker": "NXH",
+    "insider": "LEMONIS MARCUS",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $168,258,119 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1136478/000113647826000010/0001136478-26-000010-index.htm"
+  },
+  {
+    "timestamp": "2026-10-07T14:55:24.414836+00:00",
+    "date": "2026-10-06",
+    "ticker": "HRL",
+    "insider": "Newlands William A",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/48465/000153137626000014/0001531376-26-000014-index.htm"
   }
 ]

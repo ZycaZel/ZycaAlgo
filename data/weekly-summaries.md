@@ -209,3 +209,25 @@ Equity: $96,813.50 | Open positions: 14
 | XENE | MORTIMER IAN | $38.52 | $38.49 | -0.1% | initial_stop |
 
 For closed-trade win rate and per-insider performance, see trades.md.
+# ZycaAlgo Weekly Summary - 2026-10-09
+
+Equity: $96,876.75 | Open positions: 14
+
+| Ticker | Insider | Entry | Current | Return | Mode |
+|---|---|---:|---:|---:|---|
+| AME | Stanage Nick L | $258.57 | $248.56 | -3.9% | initial_stop |
+| APTV | MEISTER PAUL M | $48.81 | $44.12 | -9.6% | initial_stop |
+| AUGO | Sousa Mauad Bruno | $79.06 | $88.64 | +12.1% | initial_stop |
+| BSX | Mahoney Michael F | $47.74 | $42.26 | -11.5% | initial_stop |
+| CRM | Kirk David Blair | $236.51 | $229.89 | -2.8% | initial_stop |
+| CSGP | FLORANCE ANDREW C | $30.21 | $29.83 | -1.3% | initial_stop |
+| ETR | Ropp Ralph Lewis | $107.85 | $102.48 | -5.0% | initial_stop |
+| KOD | BAKER BROS. ADVISORS LP | $99.30 | $97.89 | -1.4% | initial_stop |
+| ORCL | RUSCKOWSKI STEPHEN H | $143.66 | $142.04 | -1.1% | initial_stop |
+| PFE | BLAYLOCK RONALD E | $25.79 | $27.90 | +8.2% | initial_stop |
+| SNEX | Thamodaran Dhamu R. | $66.01 | $60.37 | -8.5% | initial_stop |
+| TSCO | Lawton III Harry A | $33.41 | $33.30 | -0.3% | initial_stop |
+| WELL | Gundlach Andrew | $237.85 | $225.01 | -5.4% | initial_stop |
+| XENE | MORTIMER IAN | $38.52 | $36.00 | -6.5% | initial_stop |
+
+For closed-trade win rate and per-insider performance, see trades.md.

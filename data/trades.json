@@ -3047,5 +3047,16 @@
     "stop": "",
     "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/48465/000153137626000014/0001531376-26-000014-index.htm"
+  },
+  {
+    "timestamp": "2026-10-09T14:48:41.929780+00:00",
+    "date": "2026-10-08",
+    "ticker": "IMMR",
+    "insider": "Singer Eric",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $245,558,673 < $1B; avg volume 373,100 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1058811/000119312526418131/0001193125-26-418131-index.htm"
   }
 ]

@@ -21,6 +21,7 @@ Usage:
 """
 
 import os
+import re
 import sys
 import json
 import math
@@ -365,15 +366,44 @@ def ensure_stop_order(ticker, qty, stop_price, existing_order_id):
             _delete(TRADING_BASE, f"/v2/orders/{existing_order_id}")
         except RuntimeError:
             pass  # already filled/canceled - fine
-    order = _post(TRADING_BASE, "/v2/orders", {
+
+    body = {
         "symbol": ticker,
         "qty": str(qty),
         "side": "sell",
         "type": "stop",
         "stop_price": str(stop_price),
         "time_in_force": "gtc",
-    })
-    return order["id"]
+    }
+    try:
+        return _post(TRADING_BASE, "/v2/orders", body)["id"]
+    except RuntimeError as e:
+        msg = str(e)
+        if "insufficient qty available" not in msg:
+            raise
+
+        # The shares are already reserved by a stop order this state file
+        # doesn't know about - a previous run placed one and didn't record
+        # the id, or recorded a stale one. The position is protected either
+        # way, so adopt the order Alpaca is pointing at instead of failing.
+        # Left unhandled this took down the whole manage pass, and with it
+        # every later step in the daily job.
+        found = re.search(r'"related_orders"\s*:\s*\[\s*"([^"]+)"', msg)
+        if found:
+            print(f"  [info] {ticker}: a stop order already holds these shares; "
+                  f"adopting {found.group(1)} rather than placing a duplicate.")
+            return found.group(1)
+
+        # No id to adopt, but the shares are still held by something. Look
+        # the open stop up directly before giving up.
+        try:
+            for o in _get(TRADING_BASE, "/v2/orders", {"status": "open", "symbols": ticker}):
+                if o.get("side") == "sell" and o.get("type") in ("stop", "stop_limit"):
+                    print(f"  [info] {ticker}: adopting existing open stop {o['id']}.")
+                    return o["id"]
+        except RuntimeError:
+            pass
+        raise
 
 
 def order_status(order_id):
@@ -404,7 +434,12 @@ def manage_exits():
     today = datetime.now(timezone.utc).date()
     changed = False
 
+    manage_errors = []
     for ticker, info in list(state.items()):
+      # One ticker's broker error must not abort the pass and leave every
+      # later position unmanaged - or, as happened on 10 October, take down
+      # the whole daily job with it. Record it, carry on, fail at the end.
+      try:
         position = positions.get(ticker)
         if position is None:
             # No open position - but that's ALSO what a same-day entry looks
@@ -495,8 +530,16 @@ def manage_exits():
 
         state[ticker] = info
 
+      except RuntimeError as e:
+        print(f"[error] {ticker}: {e}")
+        manage_errors.append(f"{ticker}: {e}")
+
     if changed:
         save_state(state)
+    if manage_errors:
+        # Saved above, so everything that did work is persisted before this.
+        raise RuntimeError(f"{len(manage_errors)} position(s) failed to manage: "
+                           + "; ".join(manage_errors))
     return state
 
 

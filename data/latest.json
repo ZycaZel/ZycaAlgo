@@ -1,18 +1,31 @@
 {
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "qualifying_buys": [
     {
-      "ticker": "IMMR",
-      "company": "IMMERSION CORP",
-      "cik": "0001058811",
-      "insider": "Singer Eric",
-      "title": "President and CEO, Director",
-      "shares": 26950.0,
-      "price": 7.15,
-      "total": 192692.5,
+      "ticker": "GGR",
+      "company": "Gogoro Inc.",
+      "cik": "0001886190",
+      "insider": "Yin Chung-Yao",
+      "title": "Director",
+      "shares": 10692681.0,
+      "price": 2.48,
+      "total": 26517848.88,
       "txn_date": "2026-10-07",
-      "date_filed": "2026-10-08",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/1058811/000119312526418131/0001193125-26-418131-index.htm"
+      "date_filed": "2026-10-09",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm"
+    },
+    {
+      "ticker": "GGR",
+      "company": "Gogoro Inc.",
+      "cik": "0001886190",
+      "insider": "Yin Chung-Yao",
+      "title": "Director",
+      "shares": 3466310.0,
+      "price": 2.48,
+      "total": 8596448.8,
+      "txn_date": "2026-10-07",
+      "date_filed": "2026-10-09",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm"
     }
   ],
   "cluster_tickers": {}

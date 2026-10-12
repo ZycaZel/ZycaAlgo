@@ -3058,5 +3058,16 @@
     "stop": "",
     "event": "SKIPPED - market cap $245,558,673 < $1B; avg volume 373,100 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1058811/000119312526418131/0001193125-26-418131-index.htm"
+  },
+  {
+    "timestamp": "2026-10-12T08:21:31.587252+00:00",
+    "date": "2026-10-09",
+    "ticker": "GGR",
+    "insider": "Yin Chung-Yao",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $43,434,055 < $1B; avg volume 15,840 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm"
   }
 ]

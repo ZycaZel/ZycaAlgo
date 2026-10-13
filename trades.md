@@ -281,3 +281,4 @@
 | 2026-10-06 | HRL | Newlands William A |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/48465/000153137626000014/0001531376-26-000014-index.htm |
 | 2026-10-08 | IMMR | Singer Eric |  |  |  | SKIPPED - market cap $245,558,673 < $1B; avg volume 373,100 < 500K | https://www.sec.gov/Archives/edgar/data/1058811/000119312526418131/0001193125-26-418131-index.htm |
 | 2026-10-09 | GGR | Yin Chung-Yao |  |  |  | SKIPPED - market cap $43,434,055 < $1B; avg volume 15,840 < 500K | https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm |
+| 2026-10-09 | GGR | Yin Chung-Yao |  |  |  | SKIPPED - market cap $46,684,222 < $1B; avg volume 14,896 < 500K | https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm |

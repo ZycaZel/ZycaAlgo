@@ -166,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1619961/000119312526409999/0001193125-26-409999-index.htm",
     "buy_order_id": "40eb80eb-7450-4789-9122-b0e38f857e29",
     "stop_order_id": "c61811d6-d9de-4d66-95bc-4c5ead1a5e91"
+  },
+  "AVO": {
+    "entry_date": "2026-10-13",
+    "entry_price": 11.82,
+    "qty": 163,
+    "mode": "initial_stop",
+    "stop_price": 10.05,
+    "high_water_mark": 11.82,
+    "insider": "Gonzalez Luis A",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1825885/000182588526000008/0001825885-26-000008-index.htm",
+    "buy_order_id": "5fb6160c-8290-426f-b4aa-e28b5250068a",
+    "stop_order_id": null
   }
 }

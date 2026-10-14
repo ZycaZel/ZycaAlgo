@@ -3080,5 +3080,60 @@
     "stop": "",
     "event": "SKIPPED - market cap $46,684,222 < $1B; avg volume 14,896 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm"
+  },
+  {
+    "timestamp": "2026-10-14T13:14:35.177856+00:00",
+    "date": "2026-10-13",
+    "ticker": "ONMD",
+    "insider": "Kosasa Thomas",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $239,813,690 < $1B; avg volume 393,218 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1989846/000149315226046909/0001493152-26-046909-index.htm"
+  },
+  {
+    "timestamp": "2026-10-14T13:14:36.035184+00:00",
+    "date": "2026-10-13",
+    "ticker": "AVO",
+    "insider": "Gonzalez Luis A",
+    "entry": "$11.82",
+    "size": "163 sh ($1,927)",
+    "stop": "$10.05",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1825885/000182588526000008/0001825885-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-10-14T13:14:36.038684+00:00",
+    "date": "2026-10-13",
+    "ticker": "CTNT",
+    "insider": "Liu Huan",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1951667/000110465926115608/0001104659-26-115608-index.htm"
+  },
+  {
+    "timestamp": "2026-10-14T13:14:36.041508+00:00",
+    "date": "2026-10-13",
+    "ticker": "RTSN",
+    "insider": "Keller Eric L.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2156365/000121390026109160/0001213900-26-109160-index.htm"
+  },
+  {
+    "timestamp": "2026-10-14T13:14:36.044251+00:00",
+    "date": "2026-10-13",
+    "ticker": "FEAM",
+    "insider": "vant Hoff Graham",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1888654/000182934026000011/0001829340-26-000011-index.htm"
   }
 ]

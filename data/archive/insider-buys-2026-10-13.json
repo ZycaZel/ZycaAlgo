@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-13",
+  "qualifying_buys": [
+    {
+      "ticker": "ONMD",
+      "company": "OneMedNet Corp",
+      "cik": "0001849380",
+      "insider": "Kosasa Thomas",
+      "title": "Director",
+      "shares": 129758.0,
+      "price": 5.78,
+      "total": 750001.24,
+      "txn_date": "2026-10-07",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1989846/000149315226046909/0001493152-26-046909-index.htm"
+    },
+    {
+      "ticker": "AVO",
+      "company": "Mission Produce, Inc.",
+      "cik": "0001802974",
+      "insider": "Gonzalez Luis A",
+      "title": "Director",
+      "shares": 29996.0,
+      "price": 11.59,
+      "total": 347653.64,
+      "txn_date": "2026-10-09",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1825885/000182588526000008/0001825885-26-000008-index.htm"
+    },
+    {
+      "ticker": "CTNT",
+      "company": "CHEETAH NET SUPPLY CHAIN SERVICE INC.",
+      "cik": "0001951667",
+      "insider": "Liu Huan",
+      "title": "See Remarks, Director",
+      "shares": 100000.0,
+      "price": 3.3,
+      "total": 330000.0,
+      "txn_date": "2026-10-09",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1951667/000110465926115608/0001104659-26-115608-index.htm"
+    },
+    {
+      "ticker": "ONMD",
+      "company": "OneMedNet Corp",
+      "cik": "0001849380",
+      "insider": "Yu Jeffrey",
+      "title": "Chief Medical Officer, Director",
+      "shares": 45126.0,
+      "price": 5.54,
+      "total": 249998.04,
+      "txn_date": "2026-10-09",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1849380/000149315226046908/0001493152-26-046908-index.htm"
+    },
+    {
+      "ticker": "RTSN",
+      "company": "Retension Pharmaceuticals, Inc.",
+      "cik": "0002002988",
+      "insider": "Keller Eric L.",
+      "title": "CHIEF EXECUTIVE OFFICER, Director",
+      "shares": 20800.0,
+      "price": 12.0,
+      "total": 249600.0,
+      "txn_date": "2026-10-13",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2156365/000121390026109160/0001213900-26-109160-index.htm"
+    },
+    {
+      "ticker": "AVO",
+      "company": "Mission Produce, Inc.",
+      "cik": "0001802974",
+      "insider": "Gonzalez Luis A",
+      "title": "Director",
+      "shares": 22026.0,
+      "price": 11.22,
+      "total": 247131.72,
+      "txn_date": "2026-10-12",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1825885/000182588526000008/0001825885-26-000008-index.htm"
+    },
+    {
+      "ticker": "FEAM",
+      "company": "5E Advanced Materials, Inc.",
+      "cik": "0001888654",
+      "insider": "vant Hoff Graham",
+      "title": "Director",
+      "shares": 60000.0,
+      "price": 3.59,
+      "total": 215400.0,
+      "txn_date": "2026-10-08",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1888654/000182934026000011/0001829340-26-000011-index.htm"
+    },
+    {
+      "ticker": "RTSN",
+      "company": "Retension Pharmaceuticals, Inc.",
+      "cik": "0002002988",
+      "insider": "BERGER FRANKLIN M",
+      "title": "Director",
+      "shares": 10000.0,
+      "price": 12.0,
+      "total": 120000.0,
+      "txn_date": "2026-10-13",
+      "date_filed": "2026-10-13",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1273885/000121390026109155/0001213900-26-109155-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "RTSN": [
+      "BERGER FRANKLIN M",
+      "Keller Eric L."
+    ],
+    "ONMD": [
+      "Kosasa Thomas",
+      "Yu Jeffrey"
+    ]
+  }
+}

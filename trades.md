@@ -282,3 +282,8 @@
 | 2026-10-08 | IMMR | Singer Eric |  |  |  | SKIPPED - market cap $245,558,673 < $1B; avg volume 373,100 < 500K | https://www.sec.gov/Archives/edgar/data/1058811/000119312526418131/0001193125-26-418131-index.htm |
 | 2026-10-09 | GGR | Yin Chung-Yao |  |  |  | SKIPPED - market cap $43,434,055 < $1B; avg volume 15,840 < 500K | https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm |
 | 2026-10-09 | GGR | Yin Chung-Yao |  |  |  | SKIPPED - market cap $46,684,222 < $1B; avg volume 14,896 < 500K | https://www.sec.gov/Archives/edgar/data/1886190/000119312526418446/0001193125-26-418446-index.htm |
+| 2026-10-13 | ONMD | Kosasa Thomas |  |  |  | SKIPPED - market cap $239,813,690 < $1B; avg volume 393,218 < 500K | https://www.sec.gov/Archives/edgar/data/1989846/000149315226046909/0001493152-26-046909-index.htm |
+| 2026-10-13 | AVO | Gonzalez Luis A | $11.82 | 163 sh ($1,927) | $10.05 | ENTRY | https://www.sec.gov/Archives/edgar/data/1825885/000182588526000008/0001825885-26-000008-index.htm |
+| 2026-10-13 | CTNT | Liu Huan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1951667/000110465926115608/0001104659-26-115608-index.htm |
+| 2026-10-13 | RTSN | Keller Eric L. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2156365/000121390026109160/0001213900-26-109160-index.htm |
+| 2026-10-13 | FEAM | vant Hoff Graham |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1888654/000182934026000011/0001829340-26-000011-index.htm |

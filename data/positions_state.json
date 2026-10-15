@@ -107,18 +107,6 @@
     "buy_order_id": "b65233c2-60ee-4acd-9410-1cb2e9fe3935",
     "stop_order_id": "d9bc8bdd-e4e3-41ba-b87e-6d50a7298f38"
   },
-  "AUGO": {
-    "entry_date": "2026-09-01",
-    "entry_price": 79.06,
-    "qty": 24,
-    "mode": "trailing",
-    "stop_price": 82.13,
-    "high_water_mark": 91.26,
-    "insider": "Sousa Mauad Bruno",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1468642/000211790526000026/0002117905-26-000026-index.htm",
-    "buy_order_id": "65722d23-b07b-4554-89ce-e3c8fffd24d6",
-    "stop_order_id": "bf192a51-5f92-4e60-a11a-92dd42dc0b3c"
-  },
   "CRM": {
     "entry_date": "2026-09-21",
     "entry_price": 236.515,
@@ -130,18 +118,6 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm",
     "buy_order_id": "9939c65e-6157-4469-a25c-e79ea7980982",
     "stop_order_id": "e10b6e9a-01c9-4403-982b-ebdda05682d3"
-  },
-  "KOD": {
-    "entry_date": "2026-09-30",
-    "entry_price": 99.3,
-    "qty": 19,
-    "mode": "initial_stop",
-    "stop_price": 84.41,
-    "high_water_mark": 99.3,
-    "insider": "BAKER BROS. ADVISORS LP",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526409116/0001193125-26-409116-index.htm",
-    "buy_order_id": "4f2086d1-1274-4de8-8468-879926716ad8",
-    "stop_order_id": "39826c50-680b-4bfb-9b2f-559b0e8f1036"
   },
   "ORCL": {
     "entry_date": "2026-10-01",
@@ -177,6 +153,6 @@
     "insider": "Gonzalez Luis A",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1825885/000182588526000008/0001825885-26-000008-index.htm",
     "buy_order_id": "5fb6160c-8290-426f-b4aa-e28b5250068a",
-    "stop_order_id": null
+    "stop_order_id": "b44f91f2-e553-4027-bfe1-cb47b9230ee0"
   }
 }

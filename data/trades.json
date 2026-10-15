@@ -3135,5 +3135,49 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1888654/000182934026000011/0001829340-26-000011-index.htm"
+  },
+  {
+    "timestamp": "2026-10-15T12:58:41.304915+00:00",
+    "date": "2026-10-15",
+    "ticker": "AUGO",
+    "insider": "Sousa Mauad Bruno",
+    "entry": "$79.06",
+    "size": "24 sh",
+    "stop": "$82.00",
+    "event": "EXIT - stop filled at $82.00 (+3.7%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1468642/000211790526000026/0002117905-26-000026-index.htm"
+  },
+  {
+    "timestamp": "2026-10-15T12:58:41.752410+00:00",
+    "date": "2026-10-15",
+    "ticker": "KOD",
+    "insider": "BAKER BROS. ADVISORS LP",
+    "entry": "$99.30",
+    "size": "19 sh",
+    "stop": "$84.12",
+    "event": "EXIT - stop filled at $84.12 (-15.3%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526409116/0001193125-26-409116-index.htm"
+  },
+  {
+    "timestamp": "2026-10-15T12:58:43.518517+00:00",
+    "date": "2026-10-14",
+    "ticker": "TDIC",
+    "insider": "Seto Wai Yue",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $65,344,800 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2041338/000149315226046945/0001493152-26-046945-index.htm"
+  },
+  {
+    "timestamp": "2026-10-15T12:58:44.065547+00:00",
+    "date": "2026-10-14",
+    "ticker": "INBX",
+    "insider": "Lappe Mark",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 351,385 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm"
   }
 ]

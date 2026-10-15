@@ -287,3 +287,7 @@
 | 2026-10-13 | CTNT | Liu Huan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1951667/000110465926115608/0001104659-26-115608-index.htm |
 | 2026-10-13 | RTSN | Keller Eric L. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2156365/000121390026109160/0001213900-26-109160-index.htm |
 | 2026-10-13 | FEAM | vant Hoff Graham |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1888654/000182934026000011/0001829340-26-000011-index.htm |
+| 2026-10-15 | AUGO | Sousa Mauad Bruno | $79.06 | 24 sh | $82.00 | EXIT - stop filled at $82.00 (+3.7%) | https://www.sec.gov/Archives/edgar/data/1468642/000211790526000026/0002117905-26-000026-index.htm |
+| 2026-10-15 | KOD | BAKER BROS. ADVISORS LP | $99.30 | 19 sh | $84.12 | EXIT - stop filled at $84.12 (-15.3%) | https://www.sec.gov/Archives/edgar/data/1551139/000119312526409116/0001193125-26-409116-index.htm |
+| 2026-10-14 | TDIC | Seto Wai Yue |  |  |  | SKIPPED - market cap $65,344,800 < $1B | https://www.sec.gov/Archives/edgar/data/2041338/000149315226046945/0001493152-26-046945-index.htm |
+| 2026-10-14 | INBX | Lappe Mark |  |  |  | SKIPPED - avg volume 351,385 < 500K | https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm |

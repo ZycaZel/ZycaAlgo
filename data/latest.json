@@ -1,76 +1,19 @@
 {
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "qualifying_buys": [
     {
-      "ticker": "TDIC",
-      "company": "Dreamland Ltd",
-      "cik": "0002041338",
-      "insider": "Seto Wai Yue",
+      "ticker": "FLSC",
+      "company": "Frazier Life Sciences Acquisition Corp. II",
+      "cik": "0002153598",
+      "insider": "Cha Albert",
       "title": "Chief Executive Officer, Director",
       "shares": 300000.0,
-      "price": 2.0,
-      "total": 600000.0,
-      "txn_date": "2026-10-09",
-      "date_filed": "2026-10-14",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/2041338/000149315226046945/0001493152-26-046945-index.htm"
-    },
-    {
-      "ticker": "INBX",
-      "company": "Inhibrx Biosciences, Inc.",
-      "cik": "0002007919",
-      "insider": "Lappe Mark",
-      "title": "Chief Executive Officer, Director",
-      "shares": 2470.0,
-      "price": 84.9992,
-      "total": 209948.024,
-      "txn_date": "2026-10-14",
-      "date_filed": "2026-10-14",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm"
-    },
-    {
-      "ticker": "INBX",
-      "company": "Inhibrx Biosciences, Inc.",
-      "cik": "0002007919",
-      "insider": "Lappe Mark",
-      "title": "Chief Executive Officer, Director",
-      "shares": 2451.0,
-      "price": 84.9992,
-      "total": 208333.0392,
-      "txn_date": "2026-10-14",
-      "date_filed": "2026-10-14",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm"
-    },
-    {
-      "ticker": "INBX",
-      "company": "Inhibrx Biosciences, Inc.",
-      "cik": "0002007919",
-      "insider": "Lappe Mark",
-      "title": "Chief Executive Officer, Director",
-      "shares": 2470.0,
-      "price": 84.0707,
-      "total": 207654.62900000002,
-      "txn_date": "2026-10-14",
-      "date_filed": "2026-10-14",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm"
-    },
-    {
-      "ticker": "INBX",
-      "company": "Inhibrx Biosciences, Inc.",
-      "cik": "0002007919",
-      "insider": "Lappe Mark",
-      "title": "Chief Executive Officer, Director",
-      "shares": 2449.0,
-      "price": 84.0707,
-      "total": 205889.1443,
-      "txn_date": "2026-10-14",
-      "date_filed": "2026-10-14",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm"
+      "price": 10.0,
+      "total": 3000000.0,
+      "txn_date": "2026-10-15",
+      "date_filed": "2026-10-15",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1397906/000119312526422957/0001193125-26-422957-index.htm"
     }
   ],
-  "cluster_tickers": {
-    "INBX": [
-      "Kayyem Jon Faiz",
-      "Lappe Mark"
-    ]
-  }
+  "cluster_tickers": {}
 }

@@ -3179,5 +3179,16 @@
     "stop": "",
     "event": "SKIPPED - avg volume 351,385 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-10-16T12:51:00.809109+00:00",
+    "date": "2026-10-15",
+    "ticker": "FLSC",
+    "insider": "Cha Albert",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1397906/000119312526422957/0001193125-26-422957-index.htm"
   }
 ]

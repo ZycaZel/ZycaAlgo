@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-15",
+  "qualifying_buys": [
+    {
+      "ticker": "FLSC",
+      "company": "Frazier Life Sciences Acquisition Corp. II",
+      "cik": "0002153598",
+      "insider": "Cha Albert",
+      "title": "Chief Executive Officer, Director",
+      "shares": 300000.0,
+      "price": 10.0,
+      "total": 3000000.0,
+      "txn_date": "2026-10-15",
+      "date_filed": "2026-10-15",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1397906/000119312526422957/0001193125-26-422957-index.htm"
+    }
+  ],
+  "cluster_tickers": {}
+}

@@ -1,18 +1,57 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "qualifying_buys": [
     {
-      "ticker": "FLSC",
-      "company": "Frazier Life Sciences Acquisition Corp. II",
-      "cik": "0002153598",
-      "insider": "Cha Albert",
-      "title": "Chief Executive Officer, Director",
-      "shares": 300000.0,
-      "price": 10.0,
-      "total": 3000000.0,
-      "txn_date": "2026-10-15",
-      "date_filed": "2026-10-15",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/1397906/000119312526422957/0001193125-26-422957-index.htm"
+      "ticker": "PEP",
+      "company": "PEPSICO INC",
+      "cik": "0000077476",
+      "insider": "POHLAD ROBERT C",
+      "title": "Director",
+      "shares": 84507.0,
+      "price": 128.28,
+      "total": 10840557.96,
+      "txn_date": "2026-10-14",
+      "date_filed": "2026-10-16",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/0001061272-26-000004-index.htm"
+    },
+    {
+      "ticker": "PEP",
+      "company": "PEPSICO INC",
+      "cik": "0000077476",
+      "insider": "POHLAD ROBERT C",
+      "title": "Director",
+      "shares": 45075.0,
+      "price": 128.28,
+      "total": 5782221.0,
+      "txn_date": "2026-10-14",
+      "date_filed": "2026-10-16",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/0001061272-26-000004-index.htm"
+    },
+    {
+      "ticker": "PEP",
+      "company": "PEPSICO INC",
+      "cik": "0000077476",
+      "insider": "POHLAD ROBERT C",
+      "title": "Director",
+      "shares": 45075.0,
+      "price": 128.28,
+      "total": 5782221.0,
+      "txn_date": "2026-10-14",
+      "date_filed": "2026-10-16",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/0001061272-26-000004-index.htm"
+    },
+    {
+      "ticker": "PEP",
+      "company": "PEPSICO INC",
+      "cik": "0000077476",
+      "insider": "POHLAD ROBERT C",
+      "title": "Director",
+      "shares": 9989.0,
+      "price": 128.28,
+      "total": 1281388.92,
+      "txn_date": "2026-10-14",
+      "date_filed": "2026-10-16",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/0001061272-26-000004-index.htm"
     }
   ],
   "cluster_tickers": {}

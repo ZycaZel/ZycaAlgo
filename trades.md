@@ -292,3 +292,4 @@
 | 2026-10-14 | TDIC | Seto Wai Yue |  |  |  | SKIPPED - market cap $65,344,800 < $1B | https://www.sec.gov/Archives/edgar/data/2041338/000149315226046945/0001493152-26-046945-index.htm |
 | 2026-10-14 | INBX | Lappe Mark |  |  |  | SKIPPED - avg volume 351,385 < 500K | https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm |
 | 2026-10-15 | FLSC | Cha Albert |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1397906/000119312526422957/0001193125-26-422957-index.htm |
+| 2026-10-16 | PEP | POHLAD ROBERT C | $131.50 | 14 sh ($1,841) | $111.78 | ENTRY | https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/0001061272-26-000004-index.htm |

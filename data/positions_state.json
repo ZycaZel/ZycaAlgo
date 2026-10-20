@@ -71,18 +71,6 @@
     "buy_order_id": "1cfc2f3e-d6e7-4558-bc4e-ce071700719a",
     "stop_order_id": "64238e5f-809e-4d6f-ac42-ed414f9a7a28"
   },
-  "SNEX": {
-    "entry_date": "2026-08-11",
-    "entry_price": 66.01,
-    "qty": 30,
-    "mode": "initial_stop",
-    "stop_price": 56.11,
-    "high_water_mark": 66.01,
-    "insider": "Thamodaran Dhamu R.",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/913760/000153135226000011/0001531352-26-000011-index.htm",
-    "buy_order_id": "b426cb61-0ce3-4312-8aae-855a6e037adf",
-    "stop_order_id": "8f89bbd4-51bc-4fd1-b17d-bc877f11aed3"
-  },
   "AME": {
     "entry_date": "2026-08-12",
     "entry_price": 258.57,
@@ -165,6 +153,18 @@
     "insider": "POHLAD ROBERT C",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/0001061272-26-000004-index.htm",
     "buy_order_id": "13ef322c-670d-464f-af1d-d02f15617ea4",
+    "stop_order_id": "ff356d1b-c000-45c9-b869-160f1a7ec0d4"
+  },
+  "APLD": {
+    "entry_date": "2026-10-19",
+    "entry_price": 19.24,
+    "qty": 100,
+    "mode": "initial_stop",
+    "stop_price": 16.35,
+    "high_water_mark": 19.24,
+    "insider": "Zhang Jason Gechen",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm",
+    "buy_order_id": "61c32090-64b1-427c-afc6-72abab8bb1d0",
     "stop_order_id": null
   }
 }

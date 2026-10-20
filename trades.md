@@ -293,3 +293,8 @@
 | 2026-10-14 | INBX | Lappe Mark |  |  |  | SKIPPED - avg volume 351,385 < 500K | https://www.sec.gov/Archives/edgar/data/2007919/000136607426000006/0001366074-26-000006-index.htm |
 | 2026-10-15 | FLSC | Cha Albert |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1397906/000119312526422957/0001193125-26-422957-index.htm |
 | 2026-10-16 | PEP | POHLAD ROBERT C | $131.50 | 14 sh ($1,841) | $111.78 | ENTRY | https://www.sec.gov/Archives/edgar/data/77476/000106127226000004/0001061272-26-000004-index.htm |
+| 2026-10-20 | SNEX | Thamodaran Dhamu R. | $66.01 | 30 sh | $56.06 | EXIT - stop filled at $56.06 (-15.1%) | https://www.sec.gov/Archives/edgar/data/913760/000153135226000011/0001531352-26-000011-index.htm |
+| 2026-10-19 | IAM | Rachlin Evan Lockwood |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/1997038/000215167826000007/0002151678-26-000007-index.htm |
+| 2026-10-19 | APLD | Zhang Jason Gechen | $19.24 | 100 sh ($1,924) | $16.35 | ENTRY | https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm |
+| 2026-10-19 | CTY | NELSEN ROBERT |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2143850/000110465926116965/0001104659-26-116965-index.htm |
+| 2026-10-19 | CNXU | Purcell Lynn Sebastian |  |  |  | SKIPPED - market cap $90,684,534 < $1B; avg volume 198,477 < 500K | https://www.sec.gov/Archives/edgar/data/2066836/000212846926000009/0002128469-26-000009-index.htm |

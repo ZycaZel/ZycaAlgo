@@ -27,13 +27,13 @@
     "entry_date": "2026-08-05",
     "entry_price": 25.79,
     "qty": 77,
-    "mode": "initial_stop",
-    "stop_price": 21.92,
-    "high_water_mark": 25.79,
+    "mode": "trailing",
+    "stop_price": 26.89,
+    "high_water_mark": 29.88,
     "insider": "BLAYLOCK RONALD E",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm",
     "buy_order_id": "6db25fcb-225e-44d5-888c-fb77b0ea8872",
-    "stop_order_id": "81dc5b4d-9c3b-4445-bcbb-22d020442312"
+    "stop_order_id": "344d9131-39e8-471a-af3c-672373ef0f16"
   },
   "TSCO": {
     "entry_date": "2026-08-05",
@@ -165,6 +165,6 @@
     "insider": "Zhang Jason Gechen",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm",
     "buy_order_id": "61c32090-64b1-427c-afc6-72abab8bb1d0",
-    "stop_order_id": null
+    "stop_order_id": "6b7425ed-3c4b-4deb-a58c-7256d46483c9"
   }
 }

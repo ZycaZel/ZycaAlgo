@@ -28,12 +28,12 @@
     "entry_price": 25.79,
     "qty": 77,
     "mode": "trailing",
-    "stop_price": 26.89,
-    "high_water_mark": 29.88,
+    "stop_price": 27.08,
+    "high_water_mark": 30.09,
     "insider": "BLAYLOCK RONALD E",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm",
     "buy_order_id": "6db25fcb-225e-44d5-888c-fb77b0ea8872",
-    "stop_order_id": "344d9131-39e8-471a-af3c-672373ef0f16"
+    "stop_order_id": "97aa82b0-36e7-48b2-b3e9-6e0fc71ff168"
   },
   "TSCO": {
     "entry_date": "2026-08-05",

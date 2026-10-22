@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-21",
+  "qualifying_buys": [
+    {
+      "ticker": "RAPP",
+      "company": "Rapport Therapeutics, Inc.",
+      "cik": "0002012593",
+      "insider": "Ignelzi Troy A.",
+      "title": "Chief Financial Officer",
+      "shares": 5500.0,
+      "price": 26.1,
+      "total": 143550.0,
+      "txn_date": "2026-10-21",
+      "date_filed": "2026-10-21",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1579829/000119312526428018/0001193125-26-428018-index.htm"
+    }
+  ],
+  "cluster_tickers": {}
+}

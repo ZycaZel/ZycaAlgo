@@ -298,3 +298,4 @@
 | 2026-10-19 | APLD | Zhang Jason Gechen | $19.24 | 100 sh ($1,924) | $16.35 | ENTRY | https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm |
 | 2026-10-19 | CTY | NELSEN ROBERT |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2143850/000110465926116965/0001104659-26-116965-index.htm |
 | 2026-10-19 | CNXU | Purcell Lynn Sebastian |  |  |  | SKIPPED - market cap $90,684,534 < $1B; avg volume 198,477 < 500K | https://www.sec.gov/Archives/edgar/data/2066836/000212846926000009/0002128469-26-000009-index.htm |
+| 2026-10-21 | RAPP | Ignelzi Troy A. |  |  |  | SKIPPED - avg volume 472,047 < 500K | https://www.sec.gov/Archives/edgar/data/1579829/000119312526428018/0001193125-26-428018-index.htm |

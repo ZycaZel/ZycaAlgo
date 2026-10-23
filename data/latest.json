@@ -1,19 +1,38 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "qualifying_buys": [
     {
       "ticker": "RAPP",
       "company": "Rapport Therapeutics, Inc.",
       "cik": "0002012593",
-      "insider": "Ignelzi Troy A.",
-      "title": "Chief Financial Officer",
-      "shares": 5500.0,
-      "price": 26.1,
-      "total": 143550.0,
-      "txn_date": "2026-10-21",
-      "date_filed": "2026-10-21",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/1579829/000119312526428018/0001193125-26-428018-index.htm"
+      "insider": "PAUL STEVEN M",
+      "title": "Director",
+      "shares": 35714.0,
+      "price": 27.28,
+      "total": 974277.92,
+      "txn_date": "2026-10-22",
+      "date_filed": "2026-10-22",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1237564/000119312526429073/0001193125-26-429073-index.htm"
+    },
+    {
+      "ticker": "RAPP",
+      "company": "Rapport Therapeutics, Inc.",
+      "cik": "0002012593",
+      "insider": "MARAGANORE JOHN",
+      "title": "Director",
+      "shares": 8239.0,
+      "price": 26.3799,
+      "total": 217343.9961,
+      "txn_date": "2026-10-22",
+      "date_filed": "2026-10-22",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1180432/000119312526429071/0001193125-26-429071-index.htm"
     }
   ],
-  "cluster_tickers": {}
+  "cluster_tickers": {
+    "RAPP": [
+      "Ignelzi Troy A.",
+      "MARAGANORE JOHN",
+      "PAUL STEVEN M"
+    ]
+  }
 }

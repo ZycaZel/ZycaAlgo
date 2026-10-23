@@ -15,25 +15,25 @@
     "entry_date": "2026-08-05",
     "entry_price": 30.215,
     "qty": 66,
-    "mode": "initial_stop",
-    "stop_price": 25.68,
-    "high_water_mark": 30.215,
+    "mode": "trailing",
+    "stop_price": 31.77,
+    "high_water_mark": 35.3,
     "insider": "FLORANCE ANDREW C",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1057352/000162828026052968/0001628280-26-052968-index.htm",
     "buy_order_id": "a10e7e45-415c-4a70-b6a6-c61ea484973a",
-    "stop_order_id": "beea3863-140c-47b0-9221-b134cfd62d1b"
+    "stop_order_id": "55900f8c-c6c1-4881-b305-9f7766093ada"
   },
   "PFE": {
     "entry_date": "2026-08-05",
     "entry_price": 25.79,
     "qty": 77,
     "mode": "trailing",
-    "stop_price": 27.08,
-    "high_water_mark": 30.09,
+    "stop_price": 27.26,
+    "high_water_mark": 30.29,
     "insider": "BLAYLOCK RONALD E",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm",
     "buy_order_id": "6db25fcb-225e-44d5-888c-fb77b0ea8872",
-    "stop_order_id": "97aa82b0-36e7-48b2-b3e9-6e0fc71ff168"
+    "stop_order_id": "90de02ec-416a-4ed0-9295-eba9f596dcf4"
   },
   "TSCO": {
     "entry_date": "2026-08-05",

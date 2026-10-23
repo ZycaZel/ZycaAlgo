@@ -299,3 +299,4 @@
 | 2026-10-19 | CTY | NELSEN ROBERT |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2143850/000110465926116965/0001104659-26-116965-index.htm |
 | 2026-10-19 | CNXU | Purcell Lynn Sebastian |  |  |  | SKIPPED - market cap $90,684,534 < $1B; avg volume 198,477 < 500K | https://www.sec.gov/Archives/edgar/data/2066836/000212846926000009/0002128469-26-000009-index.htm |
 | 2026-10-21 | RAPP | Ignelzi Troy A. |  |  |  | SKIPPED - avg volume 472,047 < 500K | https://www.sec.gov/Archives/edgar/data/1579829/000119312526428018/0001193125-26-428018-index.htm |
+| 2026-10-22 | RAPP | PAUL STEVEN M |  |  |  | SKIPPED - avg volume 468,650 < 500K | https://www.sec.gov/Archives/edgar/data/1237564/000119312526429073/0001193125-26-429073-index.htm |

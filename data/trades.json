@@ -3267,5 +3267,16 @@
     "stop": "",
     "event": "SKIPPED - avg volume 472,047 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1579829/000119312526428018/0001193125-26-428018-index.htm"
+  },
+  {
+    "timestamp": "2026-10-23T12:58:26.023412+00:00",
+    "date": "2026-10-22",
+    "ticker": "RAPP",
+    "insider": "PAUL STEVEN M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 468,650 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1237564/000119312526429073/0001193125-26-429073-index.htm"
   }
 ]

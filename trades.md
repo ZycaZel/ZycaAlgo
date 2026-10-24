@@ -301,3 +301,4 @@
 | 2026-10-21 | RAPP | Ignelzi Troy A. |  |  |  | SKIPPED - avg volume 472,047 < 500K | https://www.sec.gov/Archives/edgar/data/1579829/000119312526428018/0001193125-26-428018-index.htm |
 | 2026-10-22 | RAPP | PAUL STEVEN M |  |  |  | SKIPPED - avg volume 468,650 < 500K | https://www.sec.gov/Archives/edgar/data/1237564/000119312526429073/0001193125-26-429073-index.htm |
 | 2026-10-23 | RENT | Nexus Capital Management LP |  |  |  | SKIPPED - market cap $78,187,090 < $1B; avg volume 260,140 < 500K | https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm |
+| 2026-10-23 | RENT | Nexus Capital Management LP |  |  |  | SKIPPED - market cap $78,187,090 < $1B; avg volume 260,140 < 500K | https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm |

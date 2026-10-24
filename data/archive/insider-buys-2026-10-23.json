@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-23",
+  "qualifying_buys": [
+    {
+      "ticker": "RENT",
+      "company": "Rent the Runway, Inc.",
+      "cik": "0001468327",
+      "insider": "Nexus Capital Management LP",
+      "title": "Director",
+      "shares": 632922.0,
+      "price": 3.55,
+      "total": 2246873.1,
+      "txn_date": "2026-10-21",
+      "date_filed": "2026-10-23",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm"
+    },
+    {
+      "ticker": "RENT",
+      "company": "Rent the Runway, Inc.",
+      "cik": "0001468327",
+      "insider": "STORY3 Capital Partners, LLC",
+      "title": "Director",
+      "shares": 632922.0,
+      "price": 3.55,
+      "total": 2246873.1,
+      "txn_date": "2026-10-21",
+      "date_filed": "2026-10-23",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2093762/000101297526000982/0001012975-26-000982-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "RENT": [
+      "Nexus Capital Management LP",
+      "STORY3 Capital Partners, LLC"
+    ]
+  }
+}

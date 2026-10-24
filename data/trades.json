@@ -3278,5 +3278,16 @@
     "stop": "",
     "event": "SKIPPED - avg volume 468,650 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1237564/000119312526429073/0001193125-26-429073-index.htm"
+  },
+  {
+    "timestamp": "2026-10-24T08:14:53.793815+00:00",
+    "date": "2026-10-23",
+    "ticker": "RENT",
+    "insider": "Nexus Capital Management LP",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $78,187,090 < $1B; avg volume 260,140 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm"
   }
 ]

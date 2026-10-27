@@ -166,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm",
     "buy_order_id": "61c32090-64b1-427c-afc6-72abab8bb1d0",
     "stop_order_id": "6b7425ed-3c4b-4deb-a58c-7256d46483c9"
+  },
+  "THRM": {
+    "entry_date": "2026-10-26",
+    "entry_price": 30.93,
+    "qty": 62,
+    "mode": "initial_stop",
+    "stop_price": 26.29,
+    "high_water_mark": 30.93,
+    "insider": "MASCARENAS PAUL ANTHONY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432218/0001193125-26-432218-index.htm",
+    "buy_order_id": "63b486a6-ec6f-4379-b0c2-125e3cb92daf",
+    "stop_order_id": "1417e3b7-7cf6-46a1-bd8b-e1c0376361fc"
   }
 }

@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-26",
   "qualifying_buys": [
     {
-      "ticker": "RENT",
-      "company": "Rent the Runway, Inc.",
-      "cik": "0001468327",
-      "insider": "Nexus Capital Management LP",
+      "ticker": "THRM",
+      "company": "Gentherm Inc",
+      "cik": "0000903129",
+      "insider": "MASCARENAS PAUL ANTHONY",
       "title": "Director",
-      "shares": 632922.0,
-      "price": 3.55,
-      "total": 2246873.1,
-      "txn_date": "2026-10-21",
-      "date_filed": "2026-10-23",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm"
+      "shares": 20000.0,
+      "price": 26.63,
+      "total": 532600.0,
+      "txn_date": "2026-10-23",
+      "date_filed": "2026-10-26",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432218/0001193125-26-432218-index.htm"
     },
     {
-      "ticker": "RENT",
-      "company": "Rent the Runway, Inc.",
-      "cik": "0001468327",
-      "insider": "STORY3 Capital Partners, LLC",
-      "title": "Director",
-      "shares": 632922.0,
-      "price": 3.55,
-      "total": 2246873.1,
-      "txn_date": "2026-10-21",
-      "date_filed": "2026-10-23",
-      "filing_url": "https://www.sec.gov/Archives/edgar/data/2093762/000101297526000982/0001012975-26-000982-index.htm"
+      "ticker": "THRM",
+      "company": "Gentherm Inc",
+      "cik": "0000903129",
+      "insider": "Presley William T.",
+      "title": "President & CEO, Director",
+      "shares": 5000.0,
+      "price": 26.0,
+      "total": 130000.0,
+      "txn_date": "2026-10-23",
+      "date_filed": "2026-10-26",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432207/0001193125-26-432207-index.htm"
     }
   ],
   "cluster_tickers": {
-    "RENT": [
-      "Nexus Capital Management LP",
-      "STORY3 Capital Partners, LLC"
+    "THRM": [
+      "MASCARENAS PAUL ANTHONY",
+      "Presley William T."
     ]
   }
 }

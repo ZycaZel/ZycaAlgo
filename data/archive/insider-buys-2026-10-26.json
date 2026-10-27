@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-26",
+  "qualifying_buys": [
+    {
+      "ticker": "THRM",
+      "company": "Gentherm Inc",
+      "cik": "0000903129",
+      "insider": "MASCARENAS PAUL ANTHONY",
+      "title": "Director",
+      "shares": 20000.0,
+      "price": 26.63,
+      "total": 532600.0,
+      "txn_date": "2026-10-23",
+      "date_filed": "2026-10-26",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432218/0001193125-26-432218-index.htm"
+    },
+    {
+      "ticker": "THRM",
+      "company": "Gentherm Inc",
+      "cik": "0000903129",
+      "insider": "Presley William T.",
+      "title": "President & CEO, Director",
+      "shares": 5000.0,
+      "price": 26.0,
+      "total": 130000.0,
+      "txn_date": "2026-10-23",
+      "date_filed": "2026-10-26",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432207/0001193125-26-432207-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "THRM": [
+      "MASCARENAS PAUL ANTHONY",
+      "Presley William T."
+    ]
+  }
+}

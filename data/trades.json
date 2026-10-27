@@ -3300,5 +3300,16 @@
     "stop": "",
     "event": "SKIPPED - market cap $78,187,090 < $1B; avg volume 260,140 < 500K",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm"
+  },
+  {
+    "timestamp": "2026-10-27T13:45:38.561032+00:00",
+    "date": "2026-10-26",
+    "ticker": "THRM",
+    "insider": "MASCARENAS PAUL ANTHONY",
+    "entry": "$30.93",
+    "size": "62 sh ($1,918)",
+    "stop": "$26.29",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432218/0001193125-26-432218-index.htm"
   }
 ]

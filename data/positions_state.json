@@ -1,28 +1,4 @@
 {
-  "BSX": {
-    "entry_date": "2026-08-05",
-    "entry_price": 47.74,
-    "qty": 41,
-    "mode": "initial_stop",
-    "stop_price": 40.58,
-    "high_water_mark": 47.74,
-    "insider": "Mahoney Michael F",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/885725/000122520826006950/0001225208-26-006950-index.htm",
-    "buy_order_id": "8757458f-eb25-49d2-898a-4312824804c1",
-    "stop_order_id": "d57d7dad-bb4f-4602-8e2a-f6d62c0097e3"
-  },
-  "CSGP": {
-    "entry_date": "2026-08-05",
-    "entry_price": 30.215,
-    "qty": 66,
-    "mode": "trailing",
-    "stop_price": 31.77,
-    "high_water_mark": 35.3,
-    "insider": "FLORANCE ANDREW C",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1057352/000162828026052968/0001628280-26-052968-index.htm",
-    "buy_order_id": "a10e7e45-415c-4a70-b6a6-c61ea484973a",
-    "stop_order_id": "55900f8c-c6c1-4881-b305-9f7766093ada"
-  },
   "PFE": {
     "entry_date": "2026-08-05",
     "entry_price": 25.79,
@@ -178,5 +154,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432218/0001193125-26-432218-index.htm",
     "buy_order_id": "63b486a6-ec6f-4379-b0c2-125e3cb92daf",
     "stop_order_id": "1417e3b7-7cf6-46a1-bd8b-e1c0376361fc"
+  },
+  "SRRK": {
+    "entry_date": "2026-10-27",
+    "entry_price": 43.17,
+    "qty": 44,
+    "mode": "initial_stop",
+    "stop_price": 36.69,
+    "high_water_mark": 43.17,
+    "insider": "AKKARAJU SRINIVAS",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm",
+    "buy_order_id": "3458cb6d-1bb4-4a8f-8682-4d8720344828",
+    "stop_order_id": "5ad45613-ac1b-4b8d-b419-c52d62541740"
   }
 }

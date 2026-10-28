@@ -306,3 +306,8 @@
 | 2026-10-27 | SRRK | AKKARAJU SRINIVAS |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm |
 | 2026-10-27 | PLUR | Manieu Alexandre Weinstein |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1833124/000121390026112641/0001213900-26-112641-index.htm |
 | 2026-10-27 | AIOK | Panagiotidis Petros Panagiotis |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2095591/000114036126040923/0001140361-26-040923-index.htm |
+| 2026-10-28 | BSX | Mahoney Michael F | $47.74 | 41 sh | $40.52 | EXIT - stop filled at $40.52 (-15.1%) | https://www.sec.gov/Archives/edgar/data/885725/000122520826006950/0001225208-26-006950-index.htm |
+| 2026-10-28 | CSGP | FLORANCE ANDREW C | $30.21 | 66 sh | $30.01 | EXIT - stop filled at $30.01 (-0.7%) | https://www.sec.gov/Archives/edgar/data/1057352/000162828026052968/0001628280-26-052968-index.htm |
+| 2026-10-27 | SRRK | AKKARAJU SRINIVAS | $43.17 | 44 sh ($1,899) | $36.69 | ENTRY | https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm |
+| 2026-10-27 | PLUR | Manieu Alexandre Weinstein |  |  |  | SKIPPED - market cap $15,801,262 < $1B; avg volume 17,568 < 500K | https://www.sec.gov/Archives/edgar/data/1833124/000121390026112641/0001213900-26-112641-index.htm |
+| 2026-10-27 | AIOK | Panagiotidis Petros Panagiotis |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2095591/000114036126040923/0001140361-26-040923-index.htm |

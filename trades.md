@@ -303,3 +303,6 @@
 | 2026-10-23 | RENT | Nexus Capital Management LP |  |  |  | SKIPPED - market cap $78,187,090 < $1B; avg volume 260,140 < 500K | https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm |
 | 2026-10-23 | RENT | Nexus Capital Management LP |  |  |  | SKIPPED - market cap $78,187,090 < $1B; avg volume 260,140 < 500K | https://www.sec.gov/Archives/edgar/data/1372171/000101297526000981/0001012975-26-000981-index.htm |
 | 2026-10-26 | THRM | MASCARENAS PAUL ANTHONY | $30.93 | 62 sh ($1,918) | $26.29 | ENTRY | https://www.sec.gov/Archives/edgar/data/903129/000119312526432218/0001193125-26-432218-index.htm |
+| 2026-10-27 | SRRK | AKKARAJU SRINIVAS |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm |
+| 2026-10-27 | PLUR | Manieu Alexandre Weinstein |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1833124/000121390026112641/0001213900-26-112641-index.htm |
+| 2026-10-27 | AIOK | Panagiotidis Petros Panagiotis |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2095591/000114036126040923/0001140361-26-040923-index.htm |

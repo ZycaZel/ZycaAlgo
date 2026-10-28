@@ -3311,5 +3311,38 @@
     "stop": "$26.29",
     "event": "ENTRY",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/903129/000119312526432218/0001193125-26-432218-index.htm"
+  },
+  {
+    "timestamp": "2026-10-28T08:19:52.992494+00:00",
+    "date": "2026-10-27",
+    "ticker": "SRRK",
+    "insider": "AKKARAJU SRINIVAS",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm"
+  },
+  {
+    "timestamp": "2026-10-28T08:19:52.995495+00:00",
+    "date": "2026-10-27",
+    "ticker": "PLUR",
+    "insider": "Manieu Alexandre Weinstein",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1833124/000121390026112641/0001213900-26-112641-index.htm"
+  },
+  {
+    "timestamp": "2026-10-28T08:19:52.998456+00:00",
+    "date": "2026-10-27",
+    "ticker": "AIOK",
+    "insider": "Panagiotidis Petros Panagiotis",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2095591/000114036126040923/0001140361-26-040923-index.htm"
   }
 ]

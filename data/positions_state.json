@@ -166,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm",
     "buy_order_id": "3458cb6d-1bb4-4a8f-8682-4d8720344828",
     "stop_order_id": "5ad45613-ac1b-4b8d-b419-c52d62541740"
+  },
+  "ACN": {
+    "entry_date": "2026-10-28",
+    "entry_price": 243.06,
+    "qty": 7,
+    "mode": "initial_stop",
+    "stop_price": 206.6,
+    "high_water_mark": 243.06,
+    "insider": "Sweet Julie Spellman",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1467373/000148763026000022/0001487630-26-000022-index.htm",
+    "buy_order_id": "bd0469da-1c88-4c97-9980-551c3d21884c",
+    "stop_order_id": "aa393114-021b-4be9-bda5-52576e690e67"
   }
 }

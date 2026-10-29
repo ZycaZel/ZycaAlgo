@@ -3399,5 +3399,60 @@
     "stop": "",
     "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2095591/000114036126040923/0001140361-26-040923-index.htm"
+  },
+  {
+    "timestamp": "2026-10-29T14:46:51.553834+00:00",
+    "date": "2026-10-28",
+    "ticker": "ACN",
+    "insider": "Sweet Julie Spellman",
+    "entry": "$243.06",
+    "size": "7 sh ($1,701)",
+    "stop": "$206.60",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1467373/000148763026000022/0001487630-26-000022-index.htm"
+  },
+  {
+    "timestamp": "2026-10-29T14:46:51.556672+00:00",
+    "date": "2026-10-28",
+    "ticker": "XBIT",
+    "insider": "SIMARD JOHN",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1639078/000119312526435894/0001193125-26-435894-index.htm"
+  },
+  {
+    "timestamp": "2026-10-29T14:46:51.559442+00:00",
+    "date": "2026-10-28",
+    "ticker": "TTMI",
+    "insider": "Ali Wajid",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1561100/000119312526436557/0001193125-26-436557-index.htm"
+  },
+  {
+    "timestamp": "2026-10-29T14:46:51.562404+00:00",
+    "date": "2026-10-28",
+    "ticker": "RCT",
+    "insider": "Senn Nikolaus Beat",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2027360/000149315226048958/0001493152-26-048958-index.htm"
+  },
+  {
+    "timestamp": "2026-10-29T14:46:51.565387+00:00",
+    "date": "2026-10-28",
+    "ticker": "HBAN",
+    "insider": "ROLLINS JAMES D III",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/49196/000122520826008542/0001225208-26-008542-index.htm"
   }
 ]

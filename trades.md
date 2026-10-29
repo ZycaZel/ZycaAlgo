@@ -311,3 +311,8 @@
 | 2026-10-27 | SRRK | AKKARAJU SRINIVAS | $43.17 | 44 sh ($1,899) | $36.69 | ENTRY | https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm |
 | 2026-10-27 | PLUR | Manieu Alexandre Weinstein |  |  |  | SKIPPED - market cap $15,801,262 < $1B; avg volume 17,568 < 500K | https://www.sec.gov/Archives/edgar/data/1833124/000121390026112641/0001213900-26-112641-index.htm |
 | 2026-10-27 | AIOK | Panagiotidis Petros Panagiotis |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2095591/000114036126040923/0001140361-26-040923-index.htm |
+| 2026-10-28 | ACN | Sweet Julie Spellman | $243.06 | 7 sh ($1,701) | $206.60 | ENTRY | https://www.sec.gov/Archives/edgar/data/1467373/000148763026000022/0001487630-26-000022-index.htm |
+| 2026-10-28 | XBIT | SIMARD JOHN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1639078/000119312526435894/0001193125-26-435894-index.htm |
+| 2026-10-28 | TTMI | Ali Wajid |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1561100/000119312526436557/0001193125-26-436557-index.htm |
+| 2026-10-28 | RCT | Senn Nikolaus Beat |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2027360/000149315226048958/0001493152-26-048958-index.htm |
+| 2026-10-28 | HBAN | ROLLINS JAMES D III |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/49196/000122520826008542/0001225208-26-008542-index.htm |

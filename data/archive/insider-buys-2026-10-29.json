@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-29",
+  "qualifying_buys": [
+    {
+      "ticker": "SCQCU",
+      "company": "SPACCircle Acquisition Corp.",
+      "cik": "0002131303",
+      "insider": "Das Soumen",
+      "title": "Director",
+      "shares": 266590.0,
+      "price": 10.0,
+      "total": 2665900.0,
+      "txn_date": "2026-10-28",
+      "date_filed": "2026-10-29",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2091020/000118518526005072/0001185185-26-005072-index.htm"
+    },
+    {
+      "ticker": "TFC",
+      "company": "TRUIST FINANCIAL CORP",
+      "cik": "0000092230",
+      "insider": "Lyons Michael P.",
+      "title": "President & CEO, Director",
+      "shares": 25000.0,
+      "price": 48.362,
+      "total": 1209050.0,
+      "txn_date": "2026-10-28",
+      "date_filed": "2026-10-29",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1534574/000153457426000018/0001534574-26-000018-index.htm"
+    },
+    {
+      "ticker": "XYL",
+      "company": "Xylem Inc.",
+      "cik": "0001524472",
+      "insider": "KOCH D CHRISTIAN",
+      "title": "Director",
+      "shares": 11000.0,
+      "price": 89.6,
+      "total": 985599.9999999999,
+      "txn_date": "2026-10-29",
+      "date_filed": "2026-10-29",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1190801/000152447226000150/0001524472-26-000150-index.htm"
+    },
+    {
+      "ticker": "HBAN",
+      "company": "HUNTINGTON BANCSHARES INC /MD/",
+      "cik": "0000049196",
+      "insider": "TORGOW GARY",
+      "title": "Director",
+      "shares": 12700.0,
+      "price": 15.735,
+      "total": 199834.5,
+      "txn_date": "2026-10-27",
+      "date_filed": "2026-10-29",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/49196/000122520826008552/0001225208-26-008552-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "HBAN": [
+      "ROLLINS JAMES D III",
+      "TORGOW GARY"
+    ]
+  }
+}

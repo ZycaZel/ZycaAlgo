@@ -274,3 +274,26 @@ Equity: $97,195.11 | Open positions: 14
 | XENE | MORTIMER IAN | $38.52 | $36.25 | -5.9% | initial_stop |
 
 For closed-trade win rate and per-insider performance, see trades.md.
+# ZycaAlgo Weekly Summary - 2026-10-30
+
+Equity: $96,670.59 | Open positions: 15
+
+| Ticker | Insider | Entry | Current | Return | Mode |
+|---|---|---:|---:|---:|---|
+| ACN | Sweet Julie Spellman | $243.06 | $253.07 | +4.1% | initial_stop |
+| AME | Stanage Nick L | $258.57 | $247.00 | -4.5% | initial_stop |
+| APLD | Zhang Jason Gechen | $19.24 | $17.91 | -6.9% | initial_stop |
+| APTV | MEISTER PAUL M | $48.81 | $44.24 | -9.4% | initial_stop |
+| AVO | Gonzalez Luis A | $11.82 | $11.54 | -2.4% | initial_stop |
+| CRM | Kirk David Blair | $236.51 | $231.50 | -2.1% | initial_stop |
+| ETR | Ropp Ralph Lewis | $107.85 | $110.03 | +2.0% | initial_stop |
+| ORCL | RUSCKOWSKI STEPHEN H | $143.66 | $132.91 | -7.5% | initial_stop |
+| PEP | POHLAD ROBERT C | $131.50 | $136.69 | +3.9% | initial_stop |
+| PFE | BLAYLOCK RONALD E | $25.79 | $30.25 | +17.3% | trailing |
+| SRRK | AKKARAJU SRINIVAS | $43.17 | $43.98 | +1.9% | initial_stop |
+| THRM | MASCARENAS PAUL ANTHONY | $30.93 | $31.57 | +2.1% | initial_stop |
+| TSCO | Lawton III Harry A | $33.41 | $33.58 | +0.5% | initial_stop |
+| WELL | Gundlach Andrew | $237.85 | $238.59 | +0.3% | initial_stop |
+| XENE | MORTIMER IAN | $38.52 | $37.13 | -3.6% | initial_stop |
+
+For closed-trade win rate and per-insider performance, see trades.md.

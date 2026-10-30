@@ -316,3 +316,7 @@
 | 2026-10-28 | TTMI | Ali Wajid |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1561100/000119312526436557/0001193125-26-436557-index.htm |
 | 2026-10-28 | RCT | Senn Nikolaus Beat |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2027360/000149315226048958/0001493152-26-048958-index.htm |
 | 2026-10-28 | HBAN | ROLLINS JAMES D III |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/49196/000122520826008542/0001225208-26-008542-index.htm |
+| 2026-10-29 | SCQCU | Das Soumen |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2091020/000118518526005072/0001185185-26-005072-index.htm |
+| 2026-10-29 | TFC | Lyons Michael P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1534574/000153457426000018/0001534574-26-000018-index.htm |
+| 2026-10-29 | XYL | KOCH D CHRISTIAN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1190801/000152447226000150/0001524472-26-000150-index.htm |
+| 2026-10-29 | HBAN | TORGOW GARY |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/49196/000122520826008552/0001225208-26-008552-index.htm |

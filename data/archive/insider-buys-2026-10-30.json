@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-30",
+  "qualifying_buys": [
+    {
+      "ticker": "RAPP",
+      "company": "Rapport Therapeutics, Inc.",
+      "cik": "0002012593",
+      "insider": "HEALY JAMES",
+      "title": "Director",
+      "shares": 952380.0,
+      "price": 21.0,
+      "total": 19999980.0,
+      "txn_date": "2026-10-28",
+      "date_filed": "2026-10-30",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1245624/000110465926120789/0001104659-26-120789-index.htm"
+    },
+    {
+      "ticker": "RAPP",
+      "company": "Rapport Therapeutics, Inc.",
+      "cik": "0002012593",
+      "insider": "HEALY JAMES",
+      "title": "Director",
+      "shares": 6933.0,
+      "price": 21.0,
+      "total": 145593.0,
+      "txn_date": "2026-10-28",
+      "date_filed": "2026-10-30",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1245624/000110465926120789/0001104659-26-120789-index.htm"
+    },
+    {
+      "ticker": "RAPP",
+      "company": "Rapport Therapeutics, Inc.",
+      "cik": "0002012593",
+      "insider": "HEALY JAMES",
+      "title": "Director",
+      "shares": 6395.0,
+      "price": 21.0,
+      "total": 134295.0,
+      "txn_date": "2026-10-28",
+      "date_filed": "2026-10-30",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1245624/000110465926120789/0001104659-26-120789-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "RAPP": [
+      "HEALY JAMES",
+      "Ignelzi Troy A.",
+      "MARAGANORE JOHN",
+      "PAUL STEVEN M"
+    ]
+  }
+}

@@ -3498,5 +3498,16 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/49196/000122520826008552/0001225208-26-008552-index.htm"
+  },
+  {
+    "timestamp": "2026-10-31T14:02:58.182972+00:00",
+    "date": "2026-10-30",
+    "ticker": "RAPP",
+    "insider": "HEALY JAMES",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1245624/000110465926120789/0001104659-26-120789-index.htm"
   }
 ]

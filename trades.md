@@ -320,3 +320,4 @@
 | 2026-10-29 | TFC | Lyons Michael P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1534574/000153457426000018/0001534574-26-000018-index.htm |
 | 2026-10-29 | XYL | KOCH D CHRISTIAN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1190801/000152447226000150/0001524472-26-000150-index.htm |
 | 2026-10-29 | HBAN | TORGOW GARY |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/49196/000122520826008552/0001225208-26-008552-index.htm |
+| 2026-10-30 | RAPP | HEALY JAMES |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1245624/000110465926120789/0001104659-26-120789-index.htm |

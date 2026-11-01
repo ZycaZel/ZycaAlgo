@@ -1,6 +1,6 @@
 # Ablation study: which filters carry the edge?
 
-Based on 3,561 backtested insider-buy signals. All returns are **excess over SPY** across the same window, so a positive number means beating the index rather than merely rising with it.
+Based on 5,277 backtested insider-buy signals. All returns are **excess over SPY** across the same window, so a positive number means beating the index rather than merely rising with it.
 
 `p` on each arm tests whether that arm's excess return differs from zero. The **difference** row is a Welch's t-test between the two arms - the question of whether the split actually separates anything, which a gap in the means alone cannot answer.
 
@@ -10,9 +10,9 @@ Based on 3,561 backtested insider-buy signals. All returns are **excess over SPY
 
 | Horizon | cluster (2+ insiders) (n, mean, p) | solitary (1 insider) (n, mean, p) | Difference | Significant? |
 |---|---|---|---|---|
-| 5d | n=398, +3.62%, p=0.000 | n=3,152, +2.23%, p=0.000 | +1.39% (p=0.016) | **yes** |
-| 30d | n=398, +1.83%, p=0.127 | n=3,144, +0.78%, p=0.042 | +1.05% (p=0.403) | no |
-| 90d | n=395, +1.65%, p=0.519 | n=3,123, +0.69%, p=0.377 | +0.96% (p=0.721) | no |
+| 5d | n=602, +3.67%, p=0.000 | n=4,654, +2.40%, p=0.000 | +1.27% (p=0.006) | **yes** |
+| 30d | n=602, +2.16%, p=0.018 | n=4,646, +1.29%, p=0.000 | +0.86% (p=0.370) | no |
+| 90d | n=600, +2.61%, p=0.339 | n=4,607, +1.08%, p=0.091 | +1.53% (p=0.586) | no |
 
 ## Insider Role
 
@@ -20,19 +20,19 @@ Officers vs Directors (rows counted as an officer where both apply)
 
 | Horizon | Officer (n, mean, p) | Director (n, mean, p) | Difference | Significant? |
 |---|---|---|---|---|
-| 5d | n=1,516, +2.41%, p=0.000 | n=2,034, +2.36%, p=0.000 | +0.05% (p=0.876) | no |
-| 30d | n=1,515, +1.10%, p=0.072 | n=2,027, +0.75%, p=0.094 | +0.35% (p=0.643) | no |
-| 90d | n=1,502, -0.24%, p=0.825 | n=2,016, +1.58%, p=0.133 | -1.81% (p=0.226) | no |
+| 5d | n=2,233, +2.48%, p=0.000 | n=3,023, +2.60%, p=0.000 | -0.12% (p=0.670) | no |
+| 30d | n=2,232, +1.51%, p=0.003 | n=3,016, +1.30%, p=0.001 | +0.21% (p=0.743) | no |
+| 90d | n=2,214, +0.23%, p=0.798 | n=2,993, +2.02%, p=0.027 | -1.79% (p=0.162) | no |
 
 ## Purchase Size
 
-Purchases at or above the median ($313,845) vs below it
+Purchases at or above the median ($338,095) vs below it
 
-| Horizon | large (>= $313,845) (n, mean, p) | small (< $313,845) (n, mean, p) | Difference | Significant? |
+| Horizon | large (>= $338,095) (n, mean, p) | small (< $338,095) (n, mean, p) | Difference | Significant? |
 |---|---|---|---|---|
-| 5d | n=1,775, +3.03%, p=0.000 | n=1,775, +1.73%, p=0.000 | +1.30% (p=0.000) | **yes** |
-| 30d | n=1,767, +1.12%, p=0.038 | n=1,775, +0.68%, p=0.171 | +0.44% (p=0.547) | no |
-| 90d | n=1,753, +0.70%, p=0.483 | n=1,765, +0.90%, p=0.425 | -0.20% (p=0.894) | no |
+| 5d | n=2,628, +3.13%, p=0.000 | n=2,628, +1.96%, p=0.000 | +1.17% (p=0.000) | **yes** |
+| 30d | n=2,620, +1.61%, p=0.000 | n=2,628, +1.17%, p=0.003 | +0.45% (p=0.463) | no |
+| 90d | n=2,600, +1.36%, p=0.139 | n=2,607, +1.16%, p=0.206 | +0.21% (p=0.873) | no |
 
 ## Reading this honestly
 

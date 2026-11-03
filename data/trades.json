@@ -3509,5 +3509,82 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1245624/000110465926120789/0001104659-26-120789-index.htm"
+  },
+  {
+    "timestamp": "2026-11-03T15:40:00.191504+00:00",
+    "date": "2026-11-03",
+    "ticker": "ORCL",
+    "insider": "RUSCKOWSKI STEPHEN H",
+    "entry": "$143.66",
+    "size": "13 sh",
+    "stop": "$122.10",
+    "event": "EXIT - stop filled at $122.10 (-15.0%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1341439/000134143926000099/0001341439-26-000099-index.htm"
+  },
+  {
+    "timestamp": "2026-11-03T15:40:00.434396+00:00",
+    "date": "2026-11-03",
+    "ticker": "APLD",
+    "insider": "Zhang Jason Gechen",
+    "entry": "$19.24",
+    "size": "100 sh",
+    "stop": "$16.34",
+    "event": "EXIT - stop filled at $16.34 (-15.1%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-11-03T15:40:01.387362+00:00",
+    "date": "2026-11-02",
+    "ticker": "BBTX",
+    "insider": "Jeggle Helmut Wolfgang",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2044950/000198261426000004/0001982614-26-000004-index.htm"
+  },
+  {
+    "timestamp": "2026-11-03T15:40:02.417180+00:00",
+    "date": "2026-11-02",
+    "ticker": "LSTR",
+    "insider": "Lonegro Frank A",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 326,253 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/853816/000085381626000069/0000853816-26-000069-index.htm"
+  },
+  {
+    "timestamp": "2026-11-03T15:40:03.516298+00:00",
+    "date": "2026-11-02",
+    "ticker": "JBLU",
+    "insider": "BONEPARTH PETER",
+    "entry": "$3.21",
+    "size": "601 sh ($1,926)",
+    "stop": "$2.72",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm"
+  },
+  {
+    "timestamp": "2026-11-03T15:40:04.881684+00:00",
+    "date": "2026-11-02",
+    "ticker": "ENPH",
+    "insider": "Kothandaraman Badrinarayanan",
+    "entry": "$30.06",
+    "size": "64 sh ($1,924)",
+    "stop": "$25.55",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-11-03T15:40:04.884815+00:00",
+    "date": "2026-11-02",
+    "ticker": "OCFC",
+    "insider": "Katsoulis Nicos",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1408329/000140832926000004/0001408329-26-000004-index.htm"
   }
 ]

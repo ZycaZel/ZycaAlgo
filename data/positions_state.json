@@ -4,12 +4,12 @@
     "entry_price": 25.79,
     "qty": 77,
     "mode": "trailing",
-    "stop_price": 27.47,
-    "high_water_mark": 30.52,
+    "stop_price": 27.51,
+    "high_water_mark": 30.565,
     "insider": "BLAYLOCK RONALD E",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm",
     "buy_order_id": "6db25fcb-225e-44d5-888c-fb77b0ea8872",
-    "stop_order_id": "90de02ec-416a-4ed0-9295-eba9f596dcf4"
+    "stop_order_id": "96e62216-d0ca-4e99-8926-ba71589a1a6b"
   },
   "TSCO": {
     "entry_date": "2026-08-05",
@@ -83,18 +83,6 @@
     "buy_order_id": "9939c65e-6157-4469-a25c-e79ea7980982",
     "stop_order_id": "e10b6e9a-01c9-4403-982b-ebdda05682d3"
   },
-  "ORCL": {
-    "entry_date": "2026-10-01",
-    "entry_price": 143.665,
-    "qty": 13,
-    "mode": "initial_stop",
-    "stop_price": 122.12,
-    "high_water_mark": 143.665,
-    "insider": "RUSCKOWSKI STEPHEN H",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1341439/000134143926000099/0001341439-26-000099-index.htm",
-    "buy_order_id": "e3ac8edd-11be-44d3-a8ba-d5de81310fd8",
-    "stop_order_id": "f2a9303b-bea2-45f7-abfd-5445bbc059b9"
-  },
   "XENE": {
     "entry_date": "2026-10-01",
     "entry_price": 38.52,
@@ -131,18 +119,6 @@
     "buy_order_id": "13ef322c-670d-464f-af1d-d02f15617ea4",
     "stop_order_id": "ff356d1b-c000-45c9-b869-160f1a7ec0d4"
   },
-  "APLD": {
-    "entry_date": "2026-10-19",
-    "entry_price": 19.24,
-    "qty": 100,
-    "mode": "initial_stop",
-    "stop_price": 16.35,
-    "high_water_mark": 19.24,
-    "insider": "Zhang Jason Gechen",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm",
-    "buy_order_id": "61c32090-64b1-427c-afc6-72abab8bb1d0",
-    "stop_order_id": "6b7425ed-3c4b-4deb-a58c-7256d46483c9"
-  },
   "THRM": {
     "entry_date": "2026-10-26",
     "entry_price": 30.93,
@@ -178,5 +154,29 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1467373/000148763026000022/0001487630-26-000022-index.htm",
     "buy_order_id": "bd0469da-1c88-4c97-9980-551c3d21884c",
     "stop_order_id": "aa393114-021b-4be9-bda5-52576e690e67"
+  },
+  "JBLU": {
+    "entry_date": "2026-11-02",
+    "entry_price": 3.205,
+    "qty": 601,
+    "mode": "initial_stop",
+    "stop_price": 2.72,
+    "high_water_mark": 3.205,
+    "insider": "BONEPARTH PETER",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm",
+    "buy_order_id": "22d0168a-8ea1-4bec-8c14-79fff8005177",
+    "stop_order_id": "2db75f9d-e10e-427d-a812-8905523785bc"
+  },
+  "ENPH": {
+    "entry_date": "2026-11-02",
+    "entry_price": 30.06,
+    "qty": 64,
+    "mode": "initial_stop",
+    "stop_price": 25.55,
+    "high_water_mark": 30.06,
+    "insider": "Kothandaraman Badrinarayanan",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm",
+    "buy_order_id": "b2c533c4-d84d-44df-b48d-1a30b6d2383f",
+    "stop_order_id": "b0d103f7-fe40-481e-a1c3-1fd6b3c1690e"
   }
 }

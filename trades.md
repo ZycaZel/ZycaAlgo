@@ -321,3 +321,10 @@
 | 2026-10-29 | XYL | KOCH D CHRISTIAN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1190801/000152447226000150/0001524472-26-000150-index.htm |
 | 2026-10-29 | HBAN | TORGOW GARY |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/49196/000122520826008552/0001225208-26-008552-index.htm |
 | 2026-10-30 | RAPP | HEALY JAMES |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1245624/000110465926120789/0001104659-26-120789-index.htm |
+| 2026-11-03 | ORCL | RUSCKOWSKI STEPHEN H | $143.66 | 13 sh | $122.10 | EXIT - stop filled at $122.10 (-15.0%) | https://www.sec.gov/Archives/edgar/data/1341439/000134143926000099/0001341439-26-000099-index.htm |
+| 2026-11-03 | APLD | Zhang Jason Gechen | $19.24 | 100 sh | $16.34 | EXIT - stop filled at $16.34 (-15.1%) | https://www.sec.gov/Archives/edgar/data/1144879/000190044526000006/0001900445-26-000006-index.htm |
+| 2026-11-02 | BBTX | Jeggle Helmut Wolfgang |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2044950/000198261426000004/0001982614-26-000004-index.htm |
+| 2026-11-02 | LSTR | Lonegro Frank A |  |  |  | SKIPPED - avg volume 326,253 < 500K | https://www.sec.gov/Archives/edgar/data/853816/000085381626000069/0000853816-26-000069-index.htm |
+| 2026-11-02 | JBLU | BONEPARTH PETER | $3.21 | 601 sh ($1,926) | $2.72 | ENTRY | https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm |
+| 2026-11-02 | ENPH | Kothandaraman Badrinarayanan | $30.06 | 64 sh ($1,924) | $25.55 | ENTRY | https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm |
+| 2026-11-02 | OCFC | Katsoulis Nicos |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1408329/000140832926000004/0001408329-26-000004-index.htm |

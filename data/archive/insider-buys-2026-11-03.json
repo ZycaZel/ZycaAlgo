@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-03",
+  "qualifying_buys": [
+    {
+      "ticker": "MGM",
+      "company": "MGM Resorts International",
+      "cik": "0000789570",
+      "insider": "Meister Keith A.",
+      "title": "Director",
+      "shares": 1504076.0,
+      "price": 29.75,
+      "total": 44746261.0,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/789570/000101143826000643/0001011438-26-000643-index.htm"
+    },
+    {
+      "ticker": "BBTX",
+      "company": "Bambusa Therapeutics, Inc.",
+      "cik": "0002044950",
+      "insider": "RA CAPITAL MANAGEMENT, L.P.",
+      "title": "Director",
+      "shares": 2335109.0,
+      "price": 16.0,
+      "total": 37361744.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2044950/000123191926001533/0001231919-26-001533-index.htm"
+    },
+    {
+      "ticker": "MGM",
+      "company": "MGM Resorts International",
+      "cik": "0000789570",
+      "insider": "Meister Keith A.",
+      "title": "Director",
+      "shares": 233998.0,
+      "price": 28.92,
+      "total": 6767222.16,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/789570/000101143826000643/0001011438-26-000643-index.htm"
+    },
+    {
+      "ticker": "PLBY",
+      "company": "Playboy, Inc.",
+      "cik": "0001803914",
+      "insider": "Docler Holding S.a r.l.",
+      "title": "Director",
+      "shares": 4761905.0,
+      "price": 1.05,
+      "total": 5000000.25,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2044291/000101297526001005/0001012975-26-001005-index.htm"
+    },
+    {
+      "ticker": "BBTX",
+      "company": "Bambusa Therapeutics, Inc.",
+      "cik": "0002044950",
+      "insider": "RA CAPITAL MANAGEMENT, L.P.",
+      "title": "Director",
+      "shares": 263911.0,
+      "price": 14.92,
+      "total": 3937552.12,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2044950/000123191926001533/0001231919-26-001533-index.htm"
+    },
+    {
+      "ticker": "BBTX",
+      "company": "Bambusa Therapeutics, Inc.",
+      "cik": "0002044950",
+      "insider": "RA CAPITAL MANAGEMENT, L.P.",
+      "title": "Director",
+      "shares": 189909.0,
+      "price": 14.23,
+      "total": 2702405.0700000003,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2044950/000123191926001533/0001231919-26-001533-index.htm"
+    },
+    {
+      "ticker": "BBTX",
+      "company": "Bambusa Therapeutics, Inc.",
+      "cik": "0002044950",
+      "insider": "RA CAPITAL MANAGEMENT, L.P.",
+      "title": "Director",
+      "shares": 164891.0,
+      "price": 16.0,
+      "total": 2638256.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2044950/000123191926001533/0001231919-26-001533-index.htm"
+    },
+    {
+      "ticker": "BA",
+      "company": "BOEING CO",
+      "cik": "0000012927",
+      "insider": "Buckley Mortimer J",
+      "title": "Director",
+      "shares": 5820.0,
+      "price": 171.55,
+      "total": 998421.0000000001,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/12927/000122520826008642/0001225208-26-008642-index.htm"
+    },
+    {
+      "ticker": "CAT",
+      "company": "CATERPILLAR INC",
+      "cik": "0000018230",
+      "insider": "Fish James C Jr",
+      "title": "Director",
+      "shares": 1000.0,
+      "price": 620.39,
+      "total": 620390.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/18230/000110465926121809/0001104659-26-121809-index.htm"
+    },
+    {
+      "ticker": "BA",
+      "company": "BOEING CO",
+      "cik": "0000012927",
+      "insider": "MOLLENKOPF STEVEN M",
+      "title": "Director",
+      "shares": 2950.0,
+      "price": 173.026,
+      "total": 510426.7,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/12927/000122520826008641/0001225208-26-008641-index.htm"
+    },
+    {
+      "ticker": "LKQ",
+      "company": "LKQ CORP",
+      "cik": "0001065696",
+      "insider": "CLARKE ANDREW C",
+      "title": "Director",
+      "shares": 21800.0,
+      "price": 18.35,
+      "total": 400030.00000000006,
+      "txn_date": "2026-10-30",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1182292/000121465926013690/0001214659-26-013690-index.htm"
+    },
+    {
+      "ticker": "MGM",
+      "company": "MGM Resorts International",
+      "cik": "0000789570",
+      "insider": "Meister Keith A.",
+      "title": "Director",
+      "shares": 7518.0,
+      "price": 30.24,
+      "total": 227344.31999999998,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/789570/000101143826000643/0001011438-26-000643-index.htm"
+    },
+    {
+      "ticker": "LKQ",
+      "company": "LKQ CORP",
+      "cik": "0001065696",
+      "insider": "Powell Michael Scott",
+      "title": "Director",
+      "shares": 10000.0,
+      "price": 19.15,
+      "total": 191500.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1065696/000121465926013691/0001214659-26-013691-index.htm"
+    },
+    {
+      "ticker": "STRZ",
+      "company": "STARZ ENTERTAINMENT CORP /CN/",
+      "cik": "0000929351",
+      "insider": "Hirsch Jeffrey",
+      "title": "President and CEO, Director",
+      "shares": 5000.0,
+      "price": 22.13,
+      "total": 110650.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-03",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1647660/000164766026000019/0001647660-26-000019-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "BA": [
+      "Buckley Mortimer J",
+      "MOLLENKOPF STEVEN M"
+    ],
+    "BBTX": [
+      "Jeggle Helmut Wolfgang",
+      "RA CAPITAL MANAGEMENT, L.P."
+    ],
+    "LKQ": [
+      "CLARKE ANDREW C",
+      "Powell Michael Scott"
+    ]
+  }
+}

@@ -328,3 +328,12 @@
 | 2026-11-02 | JBLU | BONEPARTH PETER | $3.21 | 601 sh ($1,926) | $2.72 | ENTRY | https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm |
 | 2026-11-02 | ENPH | Kothandaraman Badrinarayanan | $30.06 | 64 sh ($1,924) | $25.55 | ENTRY | https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm |
 | 2026-11-02 | OCFC | Katsoulis Nicos |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1408329/000140832926000004/0001408329-26-000004-index.htm |
+| 2026-11-04 | APTV | MEISTER PAUL M | $48.81 | 41 sh | $41.51 | EXIT - stop filled at $41.51 (-15.0%) | https://www.sec.gov/Archives/edgar/data/1521332/000119312526337965/0001193125-26-337965-index.htm |
+| 2026-11-04 | ETR | Ropp Ralph Lewis |  |  |  | TIME STOP - flat after 90d (+1.3%) | https://www.sec.gov/Archives/edgar/data/65984/000006598426000287/0000065984-26-000287-index.htm |
+| 2026-11-03 | MGM | Meister Keith A. | $32.55 | 59 sh ($1,920) | $27.67 | ENTRY | https://www.sec.gov/Archives/edgar/data/789570/000101143826000643/0001011438-26-000643-index.htm |
+| 2026-11-03 | BBTX | RA CAPITAL MANAGEMENT, L.P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2044950/000123191926001533/0001231919-26-001533-index.htm |
+| 2026-11-03 | PLBY | Docler Holding S.a r.l. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2044291/000101297526001005/0001012975-26-001005-index.htm |
+| 2026-11-03 | BA | Buckley Mortimer J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/12927/000122520826008642/0001225208-26-008642-index.htm |
+| 2026-11-03 | CAT | Fish James C Jr |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/18230/000110465926121809/0001104659-26-121809-index.htm |
+| 2026-11-03 | LKQ | CLARKE ANDREW C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1182292/000121465926013690/0001214659-26-013690-index.htm |
+| 2026-11-03 | STRZ | Hirsch Jeffrey |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1647660/000164766026000019/0001647660-26-000019-index.htm |

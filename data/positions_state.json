@@ -23,30 +23,6 @@
     "buy_order_id": "e4e402e5-7341-42f5-b7b1-4f8c5b3baf66",
     "stop_order_id": "734a121f-9a5e-4056-95d9-0ea381a8dcf2"
   },
-  "APTV": {
-    "entry_date": "2026-08-06",
-    "entry_price": 48.815,
-    "qty": 41,
-    "mode": "initial_stop",
-    "stop_price": 41.49,
-    "high_water_mark": 48.815,
-    "insider": "MEISTER PAUL M",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1521332/000119312526337965/0001193125-26-337965-index.htm",
-    "buy_order_id": "7b13d018-459e-4423-8b8c-da1f651898be",
-    "stop_order_id": "a8d9ae0c-b0e5-4565-a5aa-a4b6879fdcfb"
-  },
-  "ETR": {
-    "entry_date": "2026-08-06",
-    "entry_price": 107.85,
-    "qty": 18,
-    "mode": "initial_stop",
-    "stop_price": 91.67,
-    "high_water_mark": 107.85,
-    "insider": "Ropp Ralph Lewis",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/65984/000006598426000287/0000065984-26-000287-index.htm",
-    "buy_order_id": "1cfc2f3e-d6e7-4558-bc4e-ce071700719a",
-    "stop_order_id": "64238e5f-809e-4d6f-ac42-ed414f9a7a28"
-  },
   "AME": {
     "entry_date": "2026-08-12",
     "entry_price": 258.57,
@@ -178,5 +154,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm",
     "buy_order_id": "b2c533c4-d84d-44df-b48d-1a30b6d2383f",
     "stop_order_id": "b0d103f7-fe40-481e-a1c3-1fd6b3c1690e"
+  },
+  "MGM": {
+    "entry_date": "2026-11-03",
+    "entry_price": 32.55,
+    "qty": 59,
+    "mode": "initial_stop",
+    "stop_price": 27.67,
+    "high_water_mark": 32.55,
+    "insider": "Meister Keith A.",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/789570/000101143826000643/0001011438-26-000643-index.htm",
+    "buy_order_id": "f7ec4bc2-5f11-4b6f-a592-e618d71d049c",
+    "stop_order_id": "7cd8a9f5-08f9-4fc1-b274-187ceb69af35"
   }
 }

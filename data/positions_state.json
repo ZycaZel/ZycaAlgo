@@ -4,12 +4,12 @@
     "entry_price": 25.79,
     "qty": 77,
     "mode": "trailing",
-    "stop_price": 27.51,
-    "high_water_mark": 30.565,
+    "stop_price": 27.95,
+    "high_water_mark": 31.055,
     "insider": "BLAYLOCK RONALD E",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm",
     "buy_order_id": "6db25fcb-225e-44d5-888c-fb77b0ea8872",
-    "stop_order_id": "96e62216-d0ca-4e99-8926-ba71589a1a6b"
+    "stop_order_id": "ea967a0b-d8af-4fa6-b3d8-16548fa0533f"
   },
   "TSCO": {
     "entry_date": "2026-08-05",
@@ -166,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/789570/000101143826000643/0001011438-26-000643-index.htm",
     "buy_order_id": "f7ec4bc2-5f11-4b6f-a592-e618d71d049c",
     "stop_order_id": "7cd8a9f5-08f9-4fc1-b274-187ceb69af35"
+  },
+  "INTC": {
+    "entry_date": "2026-11-04",
+    "entry_price": 53.23,
+    "qty": 36,
+    "mode": "initial_stop",
+    "stop_price": 45.25,
+    "high_water_mark": 53.23,
+    "insider": "TAN LIP BU",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm",
+    "buy_order_id": "d98358ac-ddcd-4698-9c2a-b8e4bba853d6",
+    "stop_order_id": "76fe929b-14d1-4a9d-9c33-bf5d66a6635a"
   }
 }

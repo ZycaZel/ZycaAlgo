@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-04",
+  "qualifying_buys": [
+    {
+      "ticker": "ASPE",
+      "company": "Aspen Neuroscience, Inc.",
+      "cik": "0002124080",
+      "insider": "ORBIMED ADVISORS LLC",
+      "title": "Director",
+      "shares": 1000000.0,
+      "price": 15.0,
+      "total": 15000000.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2124080/000094787126000980/0000947871-26-000980-index.htm"
+    },
+    {
+      "ticker": "ASPE",
+      "company": "Aspen Neuroscience, Inc.",
+      "cik": "0002124080",
+      "insider": "Thompson Peter A.",
+      "title": "Director",
+      "shares": 1000000.0,
+      "price": 15.0,
+      "total": 15000000.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2124080/000094787126000981/0000947871-26-000981-index.htm"
+    },
+    {
+      "ticker": "INTC",
+      "company": "INTEL CORP",
+      "cik": "0000050863",
+      "insider": "TAN LIP BU",
+      "title": "CEO, Director",
+      "shares": 150000.0,
+      "price": 64.7312,
+      "total": 9709680.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm"
+    },
+    {
+      "ticker": "CACC",
+      "company": "CREDIT ACCEPTANCE CORP",
+      "cik": "0000885550",
+      "insider": "TRYFOROS THOMAS N",
+      "title": "Director",
+      "shares": 3000.0,
+      "price": 485.2,
+      "total": 1455600.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/885550/000088555026000203/0000885550-26-000203-index.htm"
+    },
+    {
+      "ticker": "LSCC",
+      "company": "LATTICE SEMICONDUCTOR CORP",
+      "cik": "0000855658",
+      "insider": "Tamer Ford",
+      "title": "President & CEO, Director",
+      "shares": 5696.0,
+      "price": 102.7116,
+      "total": 585045.2736000001,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/855658/000143774926034881/0001437749-26-034881-index.htm"
+    },
+    {
+      "ticker": "UPBD",
+      "company": "UPBOUND GROUP, INC.",
+      "cik": "0000933036",
+      "insider": "BROWN JEFFREY J",
+      "title": "Director",
+      "shares": 17645.0,
+      "price": 22.67,
+      "total": 400012.15,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1245377/000119312526447393/0001193125-26-447393-index.htm"
+    },
+    {
+      "ticker": "UPBD",
+      "company": "UPBOUND GROUP, INC.",
+      "cik": "0000933036",
+      "insider": "MARINO GLENN P",
+      "title": "Director",
+      "shares": 17400.0,
+      "price": 22.61,
+      "total": 393414.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1614728/000119312526447404/0001193125-26-447404-index.htm"
+    },
+    {
+      "ticker": "LSCC",
+      "company": "LATTICE SEMICONDUCTOR CORP",
+      "cik": "0000855658",
+      "insider": "Tamer Ford",
+      "title": "President & CEO, Director",
+      "shares": 2894.0,
+      "price": 101.7849,
+      "total": 294565.50059999997,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/855658/000143774926034881/0001437749-26-034881-index.htm"
+    },
+    {
+      "ticker": "UPBD",
+      "company": "UPBOUND GROUP, INC.",
+      "cik": "0000933036",
+      "insider": "Khouri Halim",
+      "title": "EVP, Chief Financial Officer",
+      "shares": 11000.0,
+      "price": 22.78,
+      "total": 250580.0,
+      "txn_date": "2026-11-02",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2093120/000119312526447407/0001193125-26-447407-index.htm"
+    },
+    {
+      "ticker": "JBLU",
+      "company": "JETBLUE AIRWAYS CORP",
+      "cik": "0001158463",
+      "insider": "Mittal Nik",
+      "title": "Director",
+      "shares": 68700.0,
+      "price": 3.24,
+      "total": 222588.00000000003,
+      "txn_date": "2026-11-03",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846326000098/0001158463-26-000098-index.htm"
+    },
+    {
+      "ticker": "LSCC",
+      "company": "LATTICE SEMICONDUCTOR CORP",
+      "cik": "0000855658",
+      "insider": "Tamer Ford",
+      "title": "President & CEO, Director",
+      "shares": 1200.0,
+      "price": 103.3988,
+      "total": 124078.56,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/855658/000143774926034881/0001437749-26-034881-index.htm"
+    },
+    {
+      "ticker": "JBLU",
+      "company": "JETBLUE AIRWAYS CORP",
+      "cik": "0001158463",
+      "insider": "Mittal Nik",
+      "title": "Director",
+      "shares": 31300.0,
+      "price": 3.235,
+      "total": 101255.5,
+      "txn_date": "2026-11-03",
+      "date_filed": "2026-11-04",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846326000098/0001158463-26-000098-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "ASPE": [
+      "ORBIMED ADVISORS LLC",
+      "Thompson Peter A."
+    ],
+    "UPBD": [
+      "BROWN JEFFREY J",
+      "Khouri Halim",
+      "MARINO GLENN P"
+    ]
+  }
+}

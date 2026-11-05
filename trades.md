@@ -337,3 +337,8 @@
 | 2026-11-03 | CAT | Fish James C Jr |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/18230/000110465926121809/0001104659-26-121809-index.htm |
 | 2026-11-03 | LKQ | CLARKE ANDREW C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1182292/000121465926013690/0001214659-26-013690-index.htm |
 | 2026-11-03 | STRZ | Hirsch Jeffrey |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1647660/000164766026000019/0001647660-26-000019-index.htm |
+| 2026-11-04 | ASPE | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data) | https://www.sec.gov/Archives/edgar/data/2124080/000094787126000980/0000947871-26-000980-index.htm |
+| 2026-11-04 | INTC | TAN LIP BU | $53.23 | 36 sh ($1,916) | $45.25 | ENTRY | https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm |
+| 2026-11-04 | CACC | TRYFOROS THOMAS N |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/885550/000088555026000203/0000885550-26-000203-index.htm |
+| 2026-11-04 | LSCC | Tamer Ford |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/855658/000143774926034881/0001437749-26-034881-index.htm |
+| 2026-11-04 | UPBD | BROWN JEFFREY J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1245377/000119312526447393/0001193125-26-447393-index.htm |

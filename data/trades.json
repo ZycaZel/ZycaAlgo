@@ -3685,5 +3685,60 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1647660/000164766026000019/0001647660-26-000019-index.htm"
+  },
+  {
+    "timestamp": "2026-11-05T16:01:40.690891+00:00",
+    "date": "2026-11-04",
+    "ticker": "ASPE",
+    "insider": "ORBIMED ADVISORS LLC",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2124080/000094787126000980/0000947871-26-000980-index.htm"
+  },
+  {
+    "timestamp": "2026-11-05T16:01:41.517538+00:00",
+    "date": "2026-11-04",
+    "ticker": "INTC",
+    "insider": "TAN LIP BU",
+    "entry": "$53.23",
+    "size": "36 sh ($1,916)",
+    "stop": "$45.25",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm"
+  },
+  {
+    "timestamp": "2026-11-05T16:01:41.519565+00:00",
+    "date": "2026-11-04",
+    "ticker": "CACC",
+    "insider": "TRYFOROS THOMAS N",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/885550/000088555026000203/0000885550-26-000203-index.htm"
+  },
+  {
+    "timestamp": "2026-11-05T16:01:41.521470+00:00",
+    "date": "2026-11-04",
+    "ticker": "LSCC",
+    "insider": "Tamer Ford",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/855658/000143774926034881/0001437749-26-034881-index.htm"
+  },
+  {
+    "timestamp": "2026-11-05T16:01:41.525339+00:00",
+    "date": "2026-11-04",
+    "ticker": "UPBD",
+    "insider": "BROWN JEFFREY J",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1245377/000119312526447393/0001193125-26-447393-index.htm"
   }
 ]

@@ -342,3 +342,11 @@
 | 2026-11-04 | CACC | TRYFOROS THOMAS N |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/885550/000088555026000203/0000885550-26-000203-index.htm |
 | 2026-11-04 | LSCC | Tamer Ford |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/855658/000143774926034881/0001437749-26-034881-index.htm |
 | 2026-11-04 | UPBD | BROWN JEFFREY J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1245377/000119312526447393/0001193125-26-447393-index.htm |
+| 2026-11-05 | GLXY | Novogratz Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1859392/000138061526000013/0001380615-26-000013-index.htm |
+| 2026-11-05 | ETRA | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2088082/000094787126000985/0000947871-26-000985-index.htm |
+| 2026-11-05 | TTMI | Ali Wajid |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1561100/000119312526449379/0001193125-26-449379-index.htm |
+| 2026-11-05 | BKR | RICE JOHN G |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1701605/000123237726000016/0001232377-26-000016-index.htm |
+| 2026-11-05 | CLX | Breber Pierre R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1594960/000122520826008735/0001225208-26-008735-index.htm |
+| 2026-11-05 | SYY | Ondrof Thomas Gerard |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1685591/000168559126000006/0001685591-26-000006-index.htm |
+| 2026-11-05 | CRH | Talbot Siobhan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/849395/000084939526000015/0000849395-26-000015-index.htm |
+| 2026-11-05 | UPBD | Karam Fahmi |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1743843/000119312526449973/0001193125-26-449973-index.htm |

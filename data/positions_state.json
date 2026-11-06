@@ -135,13 +135,13 @@
     "entry_date": "2026-11-02",
     "entry_price": 3.205,
     "qty": 601,
-    "mode": "initial_stop",
-    "stop_price": 2.72,
-    "high_water_mark": 3.205,
+    "mode": "trailing",
+    "stop_price": 3.33,
+    "high_water_mark": 3.695,
     "insider": "BONEPARTH PETER",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm",
     "buy_order_id": "22d0168a-8ea1-4bec-8c14-79fff8005177",
-    "stop_order_id": "2db75f9d-e10e-427d-a812-8905523785bc"
+    "stop_order_id": "56a11224-e564-41c9-adb2-85ecc05c1fdf"
   },
   "ENPH": {
     "entry_date": "2026-11-02",

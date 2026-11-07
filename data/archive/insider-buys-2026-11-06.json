@@ -1,0 +1,181 @@
+{
+  "date": "2026-11-06",
+  "qualifying_buys": [
+    {
+      "ticker": "MDGL",
+      "company": "MADRIGAL PHARMACEUTICALS, INC.",
+      "cik": "0001157601",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 60400.0,
+      "price": 383.015,
+      "total": 23134106.0,
+      "txn_date": "2026-11-06",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526452132/0001193125-26-452132-index.htm"
+    },
+    {
+      "ticker": "KMI",
+      "company": "KINDER MORGAN, INC.",
+      "cik": "0001506307",
+      "insider": "KINDER RICHARD D",
+      "title": "Executive Chairman, Director",
+      "shares": 500000.0,
+      "price": 29.9884,
+      "total": 14994200.0,
+      "txn_date": "2026-11-06",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630726000139/0001506307-26-000139-index.htm"
+    },
+    {
+      "ticker": "KOD",
+      "company": "Kodiak Sciences Inc.",
+      "cik": "0001468748",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 151916.0,
+      "price": 98.51,
+      "total": 14965245.16,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526451994/0001193125-26-451994-index.htm"
+    },
+    {
+      "ticker": "KOD",
+      "company": "Kodiak Sciences Inc.",
+      "cik": "0001468748",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 81729.0,
+      "price": 98.51,
+      "total": 8051123.79,
+      "txn_date": "2026-11-05",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526451994/0001193125-26-451994-index.htm"
+    },
+    {
+      "ticker": "MDGL",
+      "company": "MADRIGAL PHARMACEUTICALS, INC.",
+      "cik": "0001157601",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 13740.0,
+      "price": 388.29,
+      "total": 5335104.600000001,
+      "txn_date": "2026-11-06",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526452132/0001193125-26-452132-index.htm"
+    },
+    {
+      "ticker": "MDGL",
+      "company": "MADRIGAL PHARMACEUTICALS, INC.",
+      "cik": "0001157601",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 10080.0,
+      "price": 368.1134,
+      "total": 3710583.072,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526452132/0001193125-26-452132-index.htm"
+    },
+    {
+      "ticker": "MDGL",
+      "company": "MADRIGAL PHARMACEUTICALS, INC.",
+      "cik": "0001157601",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 5586.0,
+      "price": 366.9922,
+      "total": 2050018.4292000001,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526452132/0001193125-26-452132-index.htm"
+    },
+    {
+      "ticker": "CVS",
+      "company": "CVS HEALTH Corp",
+      "cik": "0000064803",
+      "insider": "Shah Prem S",
+      "title": "EVP and Group President",
+      "shares": 23855.0,
+      "price": 83.895,
+      "total": 2001315.2249999999,
+      "txn_date": "2026-11-06",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/64803/000006480326000112/0000064803-26-000112-index.htm"
+    },
+    {
+      "ticker": "KOD",
+      "company": "Kodiak Sciences Inc.",
+      "cik": "0001468748",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 8742.0,
+      "price": 98.51,
+      "total": 861174.42,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526451994/0001193125-26-451994-index.htm"
+    },
+    {
+      "ticker": "MDGL",
+      "company": "MADRIGAL PHARMACEUTICALS, INC.",
+      "cik": "0001157601",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 2000.0,
+      "price": 396.61,
+      "total": 793220.0,
+      "txn_date": "2026-11-06",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526452132/0001193125-26-452132-index.htm"
+    },
+    {
+      "ticker": "KOD",
+      "company": "Kodiak Sciences Inc.",
+      "cik": "0001468748",
+      "insider": "BAKER BROS. ADVISORS LP",
+      "title": "Director",
+      "shares": 4703.0,
+      "price": 98.51,
+      "total": 463292.53,
+      "txn_date": "2026-11-05",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526451994/0001193125-26-451994-index.htm"
+    },
+    {
+      "ticker": "TRNS",
+      "company": "TRANSCAT INC",
+      "cik": "0000099302",
+      "insider": "IRICK JAIME A",
+      "title": "President and CEO, Director",
+      "shares": 2275.0,
+      "price": 101.26,
+      "total": 230366.5,
+      "txn_date": "2026-11-05",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1695807/000089183926000478/0000891839-26-000478-index.htm"
+    },
+    {
+      "ticker": "LKQ",
+      "company": "LKQ CORP",
+      "cik": "0001065696",
+      "insider": "GOVE SUE",
+      "title": "Director",
+      "shares": 9795.0,
+      "price": 20.5294,
+      "total": 201085.473,
+      "txn_date": "2026-11-04",
+      "date_filed": "2026-11-06",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1187773/000121465926013801/0001214659-26-013801-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "LKQ": [
+      "CLARKE ANDREW C",
+      "GOVE SUE",
+      "Powell Michael Scott"
+    ]
+  }
+}

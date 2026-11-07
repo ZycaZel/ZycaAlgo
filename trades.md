@@ -350,3 +350,9 @@
 | 2026-11-05 | SYY | Ondrof Thomas Gerard |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1685591/000168559126000006/0001685591-26-000006-index.htm |
 | 2026-11-05 | CRH | Talbot Siobhan |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/849395/000084939526000015/0000849395-26-000015-index.htm |
 | 2026-11-05 | UPBD | Karam Fahmi |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1743843/000119312526449973/0001193125-26-449973-index.htm |
+| 2026-11-06 | MDGL | BAKER BROS. ADVISORS LP |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1551139/000119312526452132/0001193125-26-452132-index.htm |
+| 2026-11-06 | KMI | KINDER RICHARD D |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1506307/000150630726000139/0001506307-26-000139-index.htm |
+| 2026-11-06 | KOD | BAKER BROS. ADVISORS LP |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1551139/000119312526451994/0001193125-26-451994-index.htm |
+| 2026-11-06 | CVS | Shah Prem S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/64803/000006480326000112/0000064803-26-000112-index.htm |
+| 2026-11-06 | TRNS | IRICK JAIME A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1695807/000089183926000478/0000891839-26-000478-index.htm |
+| 2026-11-06 | LKQ | GOVE SUE |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1187773/000121465926013801/0001214659-26-013801-index.htm |

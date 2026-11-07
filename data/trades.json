@@ -3828,5 +3828,71 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1743843/000119312526449973/0001193125-26-449973-index.htm"
+  },
+  {
+    "timestamp": "2026-11-07T14:33:45.823726+00:00",
+    "date": "2026-11-06",
+    "ticker": "MDGL",
+    "insider": "BAKER BROS. ADVISORS LP",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526452132/0001193125-26-452132-index.htm"
+  },
+  {
+    "timestamp": "2026-11-07T14:33:45.826644+00:00",
+    "date": "2026-11-06",
+    "ticker": "KMI",
+    "insider": "KINDER RICHARD D",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1506307/000150630726000139/0001506307-26-000139-index.htm"
+  },
+  {
+    "timestamp": "2026-11-07T14:33:45.829313+00:00",
+    "date": "2026-11-06",
+    "ticker": "KOD",
+    "insider": "BAKER BROS. ADVISORS LP",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1551139/000119312526451994/0001193125-26-451994-index.htm"
+  },
+  {
+    "timestamp": "2026-11-07T14:33:45.831966+00:00",
+    "date": "2026-11-06",
+    "ticker": "CVS",
+    "insider": "Shah Prem S",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/64803/000006480326000112/0000064803-26-000112-index.htm"
+  },
+  {
+    "timestamp": "2026-11-07T14:33:45.834609+00:00",
+    "date": "2026-11-06",
+    "ticker": "TRNS",
+    "insider": "IRICK JAIME A",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1695807/000089183926000478/0000891839-26-000478-index.htm"
+  },
+  {
+    "timestamp": "2026-11-07T14:33:45.837281+00:00",
+    "date": "2026-11-06",
+    "ticker": "LKQ",
+    "insider": "GOVE SUE",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1187773/000121465926013801/0001214659-26-013801-index.htm"
   }
 ]

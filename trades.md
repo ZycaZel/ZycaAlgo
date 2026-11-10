@@ -356,3 +356,18 @@
 | 2026-11-06 | CVS | Shah Prem S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/64803/000006480326000112/0000064803-26-000112-index.htm |
 | 2026-11-06 | TRNS | IRICK JAIME A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1695807/000089183926000478/0000891839-26-000478-index.htm |
 | 2026-11-06 | LKQ | GOVE SUE |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1187773/000121465926013801/0001214659-26-013801-index.htm |
+| 2026-11-09 | ROK | Moret Blake D. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1515154/000151515426000003/0001515154-26-000003-index.htm |
+| 2026-11-09 | ADTN | STANTON THOMAS R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/926282/000119312526454019/0001193125-26-454019-index.htm |
+| 2026-11-09 | LUMN | Johnson Kathleen E |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1831269/000001892626000076/0000018926-26-000076-index.htm |
+| 2026-11-09 | GFS | LAZAR JACK R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1709048/000170904826000266/0001709048-26-000266-index.htm |
+| 2026-11-09 | DKNG | Ellingson Alan Wayne |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1883685/000201929926000018/0002019299-26-000018-index.htm |
+| 2026-11-09 | TTMI | FRANKLIN PHILIP G |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1186522/000119312526452897/0001193125-26-452897-index.htm |
+| 2026-11-09 | UPBD | Karam Fahmi |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1743843/000119312526453688/0001193125-26-453688-index.htm |
+| 2026-11-09 | CMCO | Wilson David J. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1005229/000162828026072106/0001628280-26-072106-index.htm |
+| 2026-11-09 | UFCS | MILLIGAN GEORGE D |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1023710/000102371026000004/0001023710-26-000004-index.htm |
+| 2026-11-09 | ADM | McAtee David R II |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/7084/000122520826008783/0001225208-26-008783-index.htm |
+| 2026-11-09 | SOPH | CARDOZA GEORGE |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1518734/000184070626000352/0001840706-26-000352-index.htm |
+| 2026-11-09 | NTHI | Heshmatpour Amir F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1443035/000121390026117150/0001213900-26-117150-index.htm |
+| 2026-11-09 | LKFN | BARTELS ROBERT E JR |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1210212/000121021226000004/0001210212-26-000004-index.htm |
+| 2026-11-09 | NSLR | Potter Leonard |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1509470/000149315226050692/0001493152-26-050692-index.htm |
+| 2026-11-09 | OBIO | Fain Eric S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1402222/000110465926124539/0001104659-26-124539-index.htm |

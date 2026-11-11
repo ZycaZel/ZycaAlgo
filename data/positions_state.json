@@ -171,12 +171,12 @@
     "entry_date": "2026-11-04",
     "entry_price": 53.23,
     "qty": 36,
-    "mode": "initial_stop",
-    "stop_price": 45.25,
-    "high_water_mark": 53.23,
+    "mode": "trailing",
+    "stop_price": 56.42,
+    "high_water_mark": 62.6862,
     "insider": "TAN LIP BU",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm",
     "buy_order_id": "d98358ac-ddcd-4698-9c2a-b8e4bba853d6",
-    "stop_order_id": "76fe929b-14d1-4a9d-9c33-bf5d66a6635a"
+    "stop_order_id": "2e41ec20-e9f7-4b04-aa4a-d7be61f091b5"
   }
 }

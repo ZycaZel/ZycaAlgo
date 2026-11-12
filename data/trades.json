@@ -4147,5 +4147,93 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1602724/000119312526455833/0001193125-26-455833-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.404341+00:00",
+    "date": "2026-11-10",
+    "ticker": "PSEC",
+    "insider": "Barry John F",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1294357/000129435726000018/0001294357-26-000018-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.407503+00:00",
+    "date": "2026-11-10",
+    "ticker": "CRH",
+    "insider": "FEARON RICHARD H",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/849395/000084939526000017/0000849395-26-000017-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.409704+00:00",
+    "date": "2026-11-10",
+    "ticker": "ETRA",
+    "insider": "ORBIMED ADVISORS LLC",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2088082/000094787126001010/0000947871-26-001010-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.411869+00:00",
+    "date": "2026-11-10",
+    "ticker": "ATEC",
+    "insider": "Valentine Keith",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1350653/000128940826000006/0001289408-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.414089+00:00",
+    "date": "2026-11-10",
+    "ticker": "CNXN",
+    "insider": "Zafirovski Matthew David",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1050377/000216041326000005/0002160413-26-000005-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.416334+00:00",
+    "date": "2026-11-10",
+    "ticker": "DTI",
+    "insider": "Prejean Robert Wayne",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1884516/000119312526455713/0001193125-26-455713-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.418533+00:00",
+    "date": "2026-11-10",
+    "ticker": "UPBD",
+    "insider": "Young Scott A.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/933036/000119312526455581/0001193125-26-455581-index.htm"
+  },
+  {
+    "timestamp": "2026-11-12T16:31:47.420743+00:00",
+    "date": "2026-11-10",
+    "ticker": "WW",
+    "insider": "BYE STEPHEN J",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1602724/000119312526455833/0001193125-26-455833-index.htm"
   }
 ]

@@ -379,3 +379,11 @@
 | 2026-11-10 | DTI | Prejean Robert Wayne |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1884516/000119312526455713/0001193125-26-455713-index.htm |
 | 2026-11-10 | UPBD | Young Scott A. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/933036/000119312526455581/0001193125-26-455581-index.htm |
 | 2026-11-10 | WW | BYE STEPHEN J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1602724/000119312526455833/0001193125-26-455833-index.htm |
+| 2026-11-10 | PSEC | Barry John F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1294357/000129435726000018/0001294357-26-000018-index.htm |
+| 2026-11-10 | CRH | FEARON RICHARD H |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/849395/000084939526000017/0000849395-26-000017-index.htm |
+| 2026-11-10 | ETRA | ORBIMED ADVISORS LLC |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2088082/000094787126001010/0000947871-26-001010-index.htm |
+| 2026-11-10 | ATEC | Valentine Keith |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1350653/000128940826000006/0001289408-26-000006-index.htm |
+| 2026-11-10 | CNXN | Zafirovski Matthew David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1050377/000216041326000005/0002160413-26-000005-index.htm |
+| 2026-11-10 | DTI | Prejean Robert Wayne |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1884516/000119312526455713/0001193125-26-455713-index.htm |
+| 2026-11-10 | UPBD | Young Scott A. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/933036/000119312526455581/0001193125-26-455581-index.htm |
+| 2026-11-10 | WW | BYE STEPHEN J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1602724/000119312526455833/0001193125-26-455833-index.htm |

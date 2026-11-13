@@ -387,3 +387,19 @@
 | 2026-11-10 | DTI | Prejean Robert Wayne |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1884516/000119312526455713/0001193125-26-455713-index.htm |
 | 2026-11-10 | UPBD | Young Scott A. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/933036/000119312526455581/0001193125-26-455581-index.htm |
 | 2026-11-10 | WW | BYE STEPHEN J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1602724/000119312526455833/0001193125-26-455833-index.htm |
+| 2026-11-13 | ENPH | Kothandaraman Badrinarayanan | $30.06 | 64 sh | $25.53 | EXIT - stop filled at $25.53 (-15.1%) | https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm |
+| 2026-11-12 | LILA | DE ANGOITIA ALFONSO |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 317,416 < 500K | https://www.sec.gov/Archives/edgar/data/1724519/000172451926000014/0001724519-26-000014-index.htm |
+| 2026-11-12 | FIP | Nicholson Kenneth J. |  |  |  | SKIPPED - market cap $480,999,670 < $1B | https://www.sec.gov/Archives/edgar/data/1899883/000189988326000044/0001899883-26-000044-index.htm |
+| 2026-11-12 | COHR | ANDERSON JAMES ROBERT | $210.62 | 9 sh ($1,896) | $179.03 | ENTRY | https://www.sec.gov/Archives/edgar/data/1644651/000089914026001276/0000899140-26-001276-index.htm |
+| 2026-11-12 | VISN | Watts Claudius E. IV |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1517228/000119312526458972/0001193125-26-458972-index.htm |
+| 2026-11-12 | EQPT | HILL W BRYAN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000162828026073491/0001628280-26-073491-index.htm |
+| 2026-11-12 | BLMN | Spanos Mike |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1546417/000171999826000016/0001719998-26-000016-index.htm |
+| 2026-11-12 | TH | Archer James Bradley |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1763054/000171218926000063/0001712189-26-000063-index.htm |
+| 2026-11-12 | ALNY | SCHULMAN AMY W |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1178670/000117867026000085/0001178670-26-000085-index.htm |
+| 2026-11-12 | NTHI | Heshmatpour Amir F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1443035/000121390026118281/0001213900-26-118281-index.htm |
+| 2026-11-12 | LRMR | Hamilton Thomas Edward |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1769848/000119312526459008/0001193125-26-459008-index.htm |
+| 2026-11-12 | ECL | MacLennan David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/31462/000162828026073457/0001628280-26-073457-index.htm |
+| 2026-11-12 | ADTN | STANTON THOMAS R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/926282/000119312526458287/0001193125-26-458287-index.htm |
+| 2026-11-12 | DOX | Genish Amos |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1062579/000119312526457453/0001193125-26-457453-index.htm |
+| 2026-11-12 | EGBN | Curley Stephen Russell |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1441890/000144189026000007/0001441890-26-000007-index.htm |
+| 2026-11-12 | ITIC | Parker, Jr. Elton C. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/720858/000180435326000010/0001804353-26-000010-index.htm |

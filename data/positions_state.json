@@ -143,18 +143,6 @@
     "buy_order_id": "22d0168a-8ea1-4bec-8c14-79fff8005177",
     "stop_order_id": "3787d691-aeca-4106-85df-f5b55774b31c"
   },
-  "ENPH": {
-    "entry_date": "2026-11-02",
-    "entry_price": 30.06,
-    "qty": 64,
-    "mode": "initial_stop",
-    "stop_price": 25.55,
-    "high_water_mark": 30.06,
-    "insider": "Kothandaraman Badrinarayanan",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm",
-    "buy_order_id": "b2c533c4-d84d-44df-b48d-1a30b6d2383f",
-    "stop_order_id": "b0d103f7-fe40-481e-a1c3-1fd6b3c1690e"
-  },
   "MGM": {
     "entry_date": "2026-11-03",
     "entry_price": 32.55,
@@ -178,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm",
     "buy_order_id": "d98358ac-ddcd-4698-9c2a-b8e4bba853d6",
     "stop_order_id": "2e41ec20-e9f7-4b04-aa4a-d7be61f091b5"
+  },
+  "COHR": {
+    "entry_date": "2026-11-12",
+    "entry_price": 210.62,
+    "qty": 9,
+    "mode": "initial_stop",
+    "stop_price": 179.03,
+    "high_water_mark": 210.62,
+    "insider": "ANDERSON JAMES ROBERT",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1644651/000089914026001276/0000899140-26-001276-index.htm",
+    "buy_order_id": "a806a9b1-c5c2-4fd0-bf64-cf4953b3a676",
+    "stop_order_id": "e7eaa53c-466d-430c-acd9-eadb5ad9d082"
   }
 }

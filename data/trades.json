@@ -4235,5 +4235,181 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1602724/000119312526455833/0001193125-26-455833-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:52.407429+00:00",
+    "date": "2026-11-13",
+    "ticker": "ENPH",
+    "insider": "Kothandaraman Badrinarayanan",
+    "entry": "$30.06",
+    "size": "64 sh",
+    "stop": "$25.53",
+    "event": "EXIT - stop filled at $25.53 (-15.1%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1463101/000154377726000006/0001543777-26-000006-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:52.921781+00:00",
+    "date": "2026-11-12",
+    "ticker": "LILA",
+    "insider": "DE ANGOITIA ALFONSO",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data); avg volume 317,416 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1724519/000172451926000014/0001724519-26-000014-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:53.776816+00:00",
+    "date": "2026-11-12",
+    "ticker": "FIP",
+    "insider": "Nicholson Kenneth J.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $480,999,670 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1899883/000189988326000044/0001899883-26-000044-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.024002+00:00",
+    "date": "2026-11-12",
+    "ticker": "COHR",
+    "insider": "ANDERSON JAMES ROBERT",
+    "entry": "$210.62",
+    "size": "9 sh ($1,896)",
+    "stop": "$179.03",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1644651/000089914026001276/0000899140-26-001276-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.027688+00:00",
+    "date": "2026-11-12",
+    "ticker": "VISN",
+    "insider": "Watts Claudius E. IV",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1517228/000119312526458972/0001193125-26-458972-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.031271+00:00",
+    "date": "2026-11-12",
+    "ticker": "EQPT",
+    "insider": "HILL W BRYAN",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1693736/000162828026073491/0001628280-26-073491-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.034826+00:00",
+    "date": "2026-11-12",
+    "ticker": "BLMN",
+    "insider": "Spanos Mike",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1546417/000171999826000016/0001719998-26-000016-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.038422+00:00",
+    "date": "2026-11-12",
+    "ticker": "TH",
+    "insider": "Archer James Bradley",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1763054/000171218926000063/0001712189-26-000063-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.041997+00:00",
+    "date": "2026-11-12",
+    "ticker": "ALNY",
+    "insider": "SCHULMAN AMY W",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1178670/000117867026000085/0001178670-26-000085-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.045610+00:00",
+    "date": "2026-11-12",
+    "ticker": "NTHI",
+    "insider": "Heshmatpour Amir F",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1443035/000121390026118281/0001213900-26-118281-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.049195+00:00",
+    "date": "2026-11-12",
+    "ticker": "LRMR",
+    "insider": "Hamilton Thomas Edward",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1769848/000119312526459008/0001193125-26-459008-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.052826+00:00",
+    "date": "2026-11-12",
+    "ticker": "ECL",
+    "insider": "MacLennan David",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/31462/000162828026073457/0001628280-26-073457-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.056520+00:00",
+    "date": "2026-11-12",
+    "ticker": "ADTN",
+    "insider": "STANTON THOMAS R",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/926282/000119312526458287/0001193125-26-458287-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.060158+00:00",
+    "date": "2026-11-12",
+    "ticker": "DOX",
+    "insider": "Genish Amos",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1062579/000119312526457453/0001193125-26-457453-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.063871+00:00",
+    "date": "2026-11-12",
+    "ticker": "EGBN",
+    "insider": "Curley Stephen Russell",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1441890/000144189026000007/0001441890-26-000007-index.htm"
+  },
+  {
+    "timestamp": "2026-11-13T15:54:54.067554+00:00",
+    "date": "2026-11-12",
+    "ticker": "ITIC",
+    "insider": "Parker, Jr. Elton C.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/720858/000180435326000010/0001804353-26-000010-index.htm"
   }
 ]

@@ -403,3 +403,16 @@
 | 2026-11-12 | DOX | Genish Amos |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1062579/000119312526457453/0001193125-26-457453-index.htm |
 | 2026-11-12 | EGBN | Curley Stephen Russell |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1441890/000144189026000007/0001441890-26-000007-index.htm |
 | 2026-11-12 | ITIC | Parker, Jr. Elton C. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/720858/000180435326000010/0001804353-26-000010-index.htm |
+| 2026-11-13 | PSEC | Barry John F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1294357/000129435726000020/0001294357-26-000020-index.htm |
+| 2026-11-13 | AKAM | LEIGHTON F THOMSON |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1086222/000110623226000012/0001106232-26-000012-index.htm |
+| 2026-11-13 | UPST | Gu Paul |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1832812/000183281226000012/0001832812-26-000012-index.htm |
+| 2026-11-13 | IOND | Abbate Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2144899/000118518526005414/0001185185-26-005414-index.htm |
+| 2026-11-13 | NXGL | Kieser Brian Joseph |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2133654/000149315226051920/0001493152-26-051920-index.htm |
+| 2026-11-13 | WY | BECKWITT RICHARD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1197193/000119719326000008/0001197193-26-000008-index.htm |
+| 2026-11-13 | INDI | ALDRICH DAVID J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1025092/000102509226000012/0001025092-26-000012-index.htm |
+| 2026-11-13 | ECX | Shen Ziyu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1861974/000110465926126498/0001104659-26-126498-index.htm |
+| 2026-11-13 | CAT | MacLennan David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/18230/000110465926127088/0001104659-26-127088-index.htm |
+| 2026-11-13 | NTHI | Heshmatpour Amir F |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1443035/000121390026119920/0001213900-26-119920-index.htm |
+| 2026-11-13 | IONS | Hayden Michael R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1352908/000087401526000273/0000874015-26-000273-index.htm |
+| 2026-11-13 | XBIT | SIMARD JOHN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1639078/000119312526460514/0001193125-26-460514-index.htm |
+| 2026-11-13 | ALDX | DOUGLAS RICHARD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341235/000119312526460743/0001193125-26-460743-index.htm |

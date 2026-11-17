@@ -15,13 +15,13 @@
     "entry_date": "2026-08-05",
     "entry_price": 33.41,
     "qty": 59,
-    "mode": "initial_stop",
-    "stop_price": 28.4,
-    "high_water_mark": 33.41,
+    "mode": "trailing",
+    "stop_price": 34.78,
+    "high_water_mark": 38.645,
     "insider": "Lawton III Harry A",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1647222/000164722226000012/0001647222-26-000012-index.htm",
     "buy_order_id": "e4e402e5-7341-42f5-b7b1-4f8c5b3baf66",
-    "stop_order_id": "734a121f-9a5e-4056-95d9-0ea381a8dcf2"
+    "stop_order_id": "dbd42288-1449-49ad-a13a-e28108c893cc"
   },
   "AME": {
     "entry_date": "2026-08-12",
@@ -46,18 +46,6 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2031329/000119312526371418/0001193125-26-371418-index.htm",
     "buy_order_id": "b65233c2-60ee-4acd-9410-1cb2e9fe3935",
     "stop_order_id": "d9bc8bdd-e4e3-41ba-b87e-6d50a7298f38"
-  },
-  "CRM": {
-    "entry_date": "2026-09-21",
-    "entry_price": 236.515,
-    "qty": 8,
-    "mode": "initial_stop",
-    "stop_price": 201.04,
-    "high_water_mark": 236.515,
-    "insider": "Kirk David Blair",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm",
-    "buy_order_id": "9939c65e-6157-4469-a25c-e79ea7980982",
-    "stop_order_id": "e10b6e9a-01c9-4403-982b-ebdda05682d3"
   },
   "XENE": {
     "entry_date": "2026-10-01",
@@ -131,18 +119,6 @@
     "buy_order_id": "bd0469da-1c88-4c97-9980-551c3d21884c",
     "stop_order_id": "aa393114-021b-4be9-bda5-52576e690e67"
   },
-  "JBLU": {
-    "entry_date": "2026-11-02",
-    "entry_price": 3.205,
-    "qty": 601,
-    "mode": "trailing",
-    "stop_price": 3.67,
-    "high_water_mark": 4.075,
-    "insider": "BONEPARTH PETER",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm",
-    "buy_order_id": "22d0168a-8ea1-4bec-8c14-79fff8005177",
-    "stop_order_id": "3787d691-aeca-4106-85df-f5b55774b31c"
-  },
   "MGM": {
     "entry_date": "2026-11-03",
     "entry_price": 32.55,
@@ -155,18 +131,6 @@
     "buy_order_id": "f7ec4bc2-5f11-4b6f-a592-e618d71d049c",
     "stop_order_id": "7cd8a9f5-08f9-4fc1-b274-187ceb69af35"
   },
-  "INTC": {
-    "entry_date": "2026-11-04",
-    "entry_price": 53.23,
-    "qty": 36,
-    "mode": "trailing",
-    "stop_price": 56.42,
-    "high_water_mark": 62.6862,
-    "insider": "TAN LIP BU",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm",
-    "buy_order_id": "d98358ac-ddcd-4698-9c2a-b8e4bba853d6",
-    "stop_order_id": "2e41ec20-e9f7-4b04-aa4a-d7be61f091b5"
-  },
   "COHR": {
     "entry_date": "2026-11-12",
     "entry_price": 210.62,
@@ -178,5 +142,41 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1644651/000089914026001276/0000899140-26-001276-index.htm",
     "buy_order_id": "a806a9b1-c5c2-4fd0-bf64-cf4953b3a676",
     "stop_order_id": "e7eaa53c-466d-430c-acd9-eadb5ad9d082"
+  },
+  "SONO": {
+    "entry_date": "2026-11-16",
+    "entry_price": 17.365,
+    "qty": 110,
+    "mode": "initial_stop",
+    "stop_price": 14.76,
+    "high_water_mark": 17.365,
+    "insider": "Kennedy Joseph Jude",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1806159/000131472726000106/0001314727-26-000106-index.htm",
+    "buy_order_id": "6ab99551-b2b5-409e-a528-eb1ea0abec35",
+    "stop_order_id": "5ccbaa88-4949-4dba-b019-4bf9f8c6836f"
+  },
+  "SKYD": {
+    "entry_date": "2026-11-16",
+    "entry_price": 7.11,
+    "qty": 270,
+    "mode": "initial_stop",
+    "stop_price": 6.04,
+    "high_water_mark": 7.11,
+    "insider": "Cardinale Gerald J.",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1447258/000089534526000491/0000895345-26-000491-index.htm",
+    "buy_order_id": "fdd0cff8-2640-4ffa-8750-80024fe937c6",
+    "stop_order_id": "1bf594ae-95a7-415e-9d67-e9a09f2f80df"
+  },
+  "DOX": {
+    "entry_date": "2026-11-16",
+    "entry_price": 43.56,
+    "qty": 44,
+    "mode": "initial_stop",
+    "stop_price": 37.03,
+    "high_water_mark": 43.56,
+    "insider": "Gardner Adrian",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1062579/000119312526463369/0001193125-26-463369-index.htm",
+    "buy_order_id": "e1e2fabb-2829-4537-a00c-53c39163c004",
+    "stop_order_id": "55dbe100-6776-417a-85a9-4ef584c67870"
   }
 }

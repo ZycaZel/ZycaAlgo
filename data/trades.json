@@ -4554,5 +4554,203 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1341235/000119312526460743/0001193125-26-460743-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:23.019524+00:00",
+    "date": "2026-11-17",
+    "ticker": "CRM",
+    "insider": "Kirk David Blair",
+    "entry": "$236.51",
+    "size": "8 sh",
+    "stop": "$200.87",
+    "event": "EXIT - stop filled at $200.87 (-15.1%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:23.321751+00:00",
+    "date": "2026-11-17",
+    "ticker": "JBLU",
+    "insider": "BONEPARTH PETER",
+    "entry": "$3.21",
+    "size": "601 sh",
+    "stop": "$3.66",
+    "event": "EXIT - stop filled at $3.66 (+14.2%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:23.615722+00:00",
+    "date": "2026-11-17",
+    "ticker": "INTC",
+    "insider": "TAN LIP BU",
+    "entry": "$53.23",
+    "size": "36 sh",
+    "stop": "$56.30",
+    "event": "EXIT - stop filled at $56.30 (+5.8%)",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:24.687954+00:00",
+    "date": "2026-11-16",
+    "ticker": "SONO",
+    "insider": "Kennedy Joseph Jude",
+    "entry": "$17.36",
+    "size": "110 sh ($1,910)",
+    "stop": "$14.76",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1806159/000131472726000106/0001314727-26-000106-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:25.253185+00:00",
+    "date": "2026-11-16",
+    "ticker": "OIG",
+    "insider": "Gregg Kenneth",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap unknown (no shares-outstanding data); avg volume 235,729 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2135086/000149315226052496/0001493152-26-052496-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:25.824097+00:00",
+    "date": "2026-11-16",
+    "ticker": "KURA",
+    "insider": "WILSON TROY EDWARD",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $679,902,336 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1422143/000119312526464166/0001193125-26-464166-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:26.436465+00:00",
+    "date": "2026-11-16",
+    "ticker": "SKYD",
+    "insider": "Cardinale Gerald J.",
+    "entry": "$7.11",
+    "size": "270 sh ($1,920)",
+    "stop": "$6.04",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1447258/000089534526000491/0000895345-26-000491-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:26.942347+00:00",
+    "date": "2026-11-16",
+    "ticker": "NSLR",
+    "insider": "Klein Mark D",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $151,029,732 < $1B; avg volume 257,525 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1322402/000149315226052459/0001493152-26-052459-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:27.502028+00:00",
+    "date": "2026-11-16",
+    "ticker": "CRMD",
+    "insider": "Todisco Joseph",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $380,189,852 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1410098/000121390026120120/0001213900-26-120120-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:28.059947+00:00",
+    "date": "2026-11-16",
+    "ticker": "CACC",
+    "insider": "Quinn Sean Edward",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - avg volume 103,193 < 500K",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/885550/000088555026000209/0000885550-26-000209-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:28.495726+00:00",
+    "date": "2026-11-16",
+    "ticker": "BRK.B",
+    "insider": "O'Sullivan Michael J.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - market cap $556,330,538 < $1B",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526463989/0001193125-26-463989-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:29.120118+00:00",
+    "date": "2026-11-16",
+    "ticker": "DOX",
+    "insider": "Gardner Adrian",
+    "entry": "$43.56",
+    "size": "44 sh ($1,917)",
+    "stop": "$37.03",
+    "event": "ENTRY",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1062579/000119312526463369/0001193125-26-463369-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:29.122723+00:00",
+    "date": "2026-11-16",
+    "ticker": "KTOS",
+    "insider": "King David Arnold",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1069258/000180386026000005/0001803860-26-000005-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:29.125123+00:00",
+    "date": "2026-11-16",
+    "ticker": "SENS",
+    "insider": "ROEDER DOUGLAS A",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1270735/000127073526000018/0001270735-26-000018-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:29.127492+00:00",
+    "date": "2026-11-16",
+    "ticker": "TH",
+    "insider": "Schrenk Troy C.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1763047/000171218926000065/0001712189-26-000065-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:29.129863+00:00",
+    "date": "2026-11-16",
+    "ticker": "ECX",
+    "insider": "Shen Ziyu",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1861974/000110465926127555/0001104659-26-127555-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:29.132222+00:00",
+    "date": "2026-11-16",
+    "ticker": "SPCB",
+    "insider": "Trabelsi Arie",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1291855/000117891326005240/0001178913-26-005240-index.htm"
+  },
+  {
+    "timestamp": "2026-11-17T17:19:29.134603+00:00",
+    "date": "2026-11-16",
+    "ticker": "TLSI",
+    "insider": "Wahlstrom Mats",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1826667/000162828026074009/0001628280-26-074009-index.htm"
   }
 ]

@@ -416,3 +416,21 @@
 | 2026-11-13 | IONS | Hayden Michael R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1352908/000087401526000273/0000874015-26-000273-index.htm |
 | 2026-11-13 | XBIT | SIMARD JOHN |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1639078/000119312526460514/0001193125-26-460514-index.htm |
 | 2026-11-13 | ALDX | DOUGLAS RICHARD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341235/000119312526460743/0001193125-26-460743-index.htm |
+| 2026-11-17 | CRM | Kirk David Blair | $236.51 | 8 sh | $200.87 | EXIT - stop filled at $200.87 (-15.1%) | https://www.sec.gov/Archives/edgar/data/2077892/000110852426000212/0001108524-26-000212-index.htm |
+| 2026-11-17 | JBLU | BONEPARTH PETER | $3.21 | 601 sh | $3.66 | EXIT - stop filled at $3.66 (+14.2%) | https://www.sec.gov/Archives/edgar/data/1078543/000107854326000003/0001078543-26-000003-index.htm |
+| 2026-11-17 | INTC | TAN LIP BU | $53.23 | 36 sh | $56.30 | EXIT - stop filled at $56.30 (+5.8%) | https://www.sec.gov/Archives/edgar/data/50863/000005086326000195/0000050863-26-000195-index.htm |
+| 2026-11-16 | SONO | Kennedy Joseph Jude | $17.36 | 110 sh ($1,910) | $14.76 | ENTRY | https://www.sec.gov/Archives/edgar/data/1806159/000131472726000106/0001314727-26-000106-index.htm |
+| 2026-11-16 | OIG | Gregg Kenneth |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 235,729 < 500K | https://www.sec.gov/Archives/edgar/data/2135086/000149315226052496/0001493152-26-052496-index.htm |
+| 2026-11-16 | KURA | WILSON TROY EDWARD |  |  |  | SKIPPED - market cap $679,902,336 < $1B | https://www.sec.gov/Archives/edgar/data/1422143/000119312526464166/0001193125-26-464166-index.htm |
+| 2026-11-16 | SKYD | Cardinale Gerald J. | $7.11 | 270 sh ($1,920) | $6.04 | ENTRY | https://www.sec.gov/Archives/edgar/data/1447258/000089534526000491/0000895345-26-000491-index.htm |
+| 2026-11-16 | NSLR | Klein Mark D |  |  |  | SKIPPED - market cap $151,029,732 < $1B; avg volume 257,525 < 500K | https://www.sec.gov/Archives/edgar/data/1322402/000149315226052459/0001493152-26-052459-index.htm |
+| 2026-11-16 | CRMD | Todisco Joseph |  |  |  | SKIPPED - market cap $380,189,852 < $1B | https://www.sec.gov/Archives/edgar/data/1410098/000121390026120120/0001213900-26-120120-index.htm |
+| 2026-11-16 | CACC | Quinn Sean Edward |  |  |  | SKIPPED - avg volume 103,193 < 500K | https://www.sec.gov/Archives/edgar/data/885550/000088555026000209/0000885550-26-000209-index.htm |
+| 2026-11-16 | BRK.B | O'Sullivan Michael J. |  |  |  | SKIPPED - market cap $556,330,538 < $1B | https://www.sec.gov/Archives/edgar/data/1067983/000119312526463989/0001193125-26-463989-index.htm |
+| 2026-11-16 | DOX | Gardner Adrian | $43.56 | 44 sh ($1,917) | $37.03 | ENTRY | https://www.sec.gov/Archives/edgar/data/1062579/000119312526463369/0001193125-26-463369-index.htm |
+| 2026-11-16 | KTOS | King David Arnold |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1069258/000180386026000005/0001803860-26-000005-index.htm |
+| 2026-11-16 | SENS | ROEDER DOUGLAS A |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1270735/000127073526000018/0001270735-26-000018-index.htm |
+| 2026-11-16 | TH | Schrenk Troy C. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1763047/000171218926000065/0001712189-26-000065-index.htm |
+| 2026-11-16 | ECX | Shen Ziyu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1861974/000110465926127555/0001104659-26-127555-index.htm |
+| 2026-11-16 | SPCB | Trabelsi Arie |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1291855/000117891326005240/0001178913-26-005240-index.htm |
+| 2026-11-16 | TLSI | Wahlstrom Mats |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1826667/000162828026074009/0001628280-26-074009-index.htm |

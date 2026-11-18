@@ -16,12 +16,12 @@
     "entry_price": 33.41,
     "qty": 59,
     "mode": "trailing",
-    "stop_price": 34.78,
-    "high_water_mark": 38.645,
+    "stop_price": 35.39,
+    "high_water_mark": 39.32,
     "insider": "Lawton III Harry A",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1647222/000164722226000012/0001647222-26-000012-index.htm",
     "buy_order_id": "e4e402e5-7341-42f5-b7b1-4f8c5b3baf66",
-    "stop_order_id": "dbd42288-1449-49ad-a13a-e28108c893cc"
+    "stop_order_id": "3d341c76-d1b2-4c67-bb77-123cb3d387dc"
   },
   "AME": {
     "entry_date": "2026-08-12",

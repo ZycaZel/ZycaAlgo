@@ -1,0 +1,223 @@
+{
+  "date": "2026-11-17",
+  "qualifying_buys": [
+    {
+      "ticker": "PEPG",
+      "company": "PepGen Inc.",
+      "cik": "0001835597",
+      "insider": "RA CAPITAL MANAGEMENT, L.P.",
+      "title": "Director",
+      "shares": 8625000.0,
+      "price": 5.0,
+      "total": 43125000.0,
+      "txn_date": "2026-11-13",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1384859/000123191926001588/0001231919-26-001588-index.htm"
+    },
+    {
+      "ticker": "DKNG",
+      "company": "DraftKings Inc.",
+      "cik": "0001883685",
+      "insider": "Kalish Matthew",
+      "title": "Director",
+      "shares": 55000.0,
+      "price": 18.22,
+      "total": 1002099.9999999999,
+      "txn_date": "2026-11-17",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1883685/000181019026000018/0001810190-26-000018-index.htm"
+    },
+    {
+      "ticker": "UPST",
+      "company": "Upstart Holdings, Inc.",
+      "cik": "0001647639",
+      "insider": "Gu Paul",
+      "title": "Chief Executive Officer, Director",
+      "shares": 50000.0,
+      "price": 19.0,
+      "total": 950000.0,
+      "txn_date": "2026-11-16",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1832812/000183281226000014/0001832812-26-000014-index.htm"
+    },
+    {
+      "ticker": "ITG",
+      "company": "ITG, Inc./DE/",
+      "cik": "0002110117",
+      "insider": "Giacalone Peter",
+      "title": "Director",
+      "shares": 90000.0,
+      "price": 5.65,
+      "total": 508500.00000000006,
+      "txn_date": "2026-11-13",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1409797/000119312526465642/0001193125-26-465642-index.htm"
+    },
+    {
+      "ticker": "ITG",
+      "company": "ITG, Inc./DE/",
+      "cik": "0002110117",
+      "insider": "Brooks Michael George",
+      "title": "Director",
+      "shares": 90000.0,
+      "price": 5.62,
+      "total": 505800.0,
+      "txn_date": "2026-11-13",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2134353/000119312526465683/0001193125-26-465683-index.htm"
+    },
+    {
+      "ticker": "PCT",
+      "company": "PureCycle Technologies, Inc.",
+      "cik": "0001830033",
+      "insider": "Olson Dustin",
+      "title": "Chief Executive Officer, Director",
+      "shares": 220000.0,
+      "price": 1.69,
+      "total": 371800.0,
+      "txn_date": "2026-11-16",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1847079/000184707926000013/0001847079-26-000013-index.htm"
+    },
+    {
+      "ticker": "CVV",
+      "company": "CVD EQUIPMENT CORP",
+      "cik": "0000766792",
+      "insider": "AFRICK ANDREW",
+      "title": "Director",
+      "shares": 70793.0,
+      "price": 4.25,
+      "total": 300870.25,
+      "txn_date": "2026-11-13",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1256239/000076679226000013/0000766792-26-000013-index.htm"
+    },
+    {
+      "ticker": "SSII",
+      "company": "SS Innovations International, Inc.",
+      "cik": "0001676163",
+      "insider": "Sudhir Srivastava",
+      "title": "Chairman and CEO, Director",
+      "shares": 100000.0,
+      "price": 3.0,
+      "total": 300000.0,
+      "txn_date": "2026-11-17",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1676163/000121390026121405/0001213900-26-121405-index.htm"
+    },
+    {
+      "ticker": "PRAA",
+      "company": "PRA GROUP INC",
+      "cik": "0001185348",
+      "insider": "FREDRICKSON STEVEN D",
+      "title": "Director",
+      "shares": 25000.0,
+      "price": 11.8,
+      "total": 295000.0,
+      "txn_date": "2026-11-13",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1185352/000118535226000002/0001185352-26-000002-index.htm"
+    },
+    {
+      "ticker": "RMIX",
+      "company": "Suncrete, Inc.",
+      "cik": "0002094433",
+      "insider": "Fleming Ned N III",
+      "title": "Director",
+      "shares": 40000.0,
+      "price": 5.95,
+      "total": 238000.0,
+      "txn_date": "2026-11-17",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1707712/000119312526465843/0001193125-26-465843-index.htm"
+    },
+    {
+      "ticker": "NSPR",
+      "company": "InspireMD, Inc.",
+      "cik": "0001433607",
+      "insider": "Stuka Paul",
+      "title": "Director",
+      "shares": 307693.0,
+      "price": 0.65,
+      "total": 200000.45,
+      "txn_date": "2026-11-13",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1433607/000149315226052827/0001493152-26-052827-index.htm"
+    },
+    {
+      "ticker": "CVV",
+      "company": "CVD EQUIPMENT CORP",
+      "cik": "0000766792",
+      "insider": "AFRICK ANDREW",
+      "title": "Director",
+      "shares": 37780.0,
+      "price": 4.49,
+      "total": 169632.2,
+      "txn_date": "2026-11-16",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1256239/000076679226000013/0000766792-26-000013-index.htm"
+    },
+    {
+      "ticker": "PLBY",
+      "company": "Playboy, Inc.",
+      "cik": "0001803914",
+      "insider": "Docler Holding S.a r.l.",
+      "title": "Director",
+      "shares": 114000.0,
+      "price": 1.2415,
+      "total": 141531.0,
+      "txn_date": "2026-11-17",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2044291/000101297526001082/0001012975-26-001082-index.htm"
+    },
+    {
+      "ticker": "OPEN",
+      "company": "Opendoor Technologies Inc.",
+      "cik": "0001801169",
+      "insider": "HAMILTON DANA",
+      "title": "Director",
+      "shares": 100000.0,
+      "price": 1.25,
+      "total": 125000.0,
+      "txn_date": "2026-11-13",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1195975/000119597526000007/0001195975-26-000007-index.htm"
+    },
+    {
+      "ticker": "OPEN",
+      "company": "Opendoor Technologies Inc.",
+      "cik": "0001801169",
+      "insider": "HAMILTON DANA",
+      "title": "Director",
+      "shares": 100000.0,
+      "price": 1.1699,
+      "total": 116990.0,
+      "txn_date": "2026-11-16",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1195975/000119597526000007/0001195975-26-000007-index.htm"
+    },
+    {
+      "ticker": "ETN",
+      "company": "Eaton Corp plc",
+      "cik": "0001551182",
+      "insider": "Johnson Gerald",
+      "title": "Director",
+      "shares": 300.0,
+      "price": 338.819,
+      "total": 101645.70000000001,
+      "txn_date": "2026-11-16",
+      "date_filed": "2026-11-17",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1551182/000110465926129068/0001104659-26-129068-index.htm"
+    }
+  ],
+  "cluster_tickers": {
+    "ITG": [
+      "Brooks Michael George",
+      "Giacalone Peter"
+    ],
+    "DKNG": [
+      "Ellingson Alan Wayne",
+      "Kalish Matthew"
+    ]
+  }
+}

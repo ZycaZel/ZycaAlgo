@@ -434,3 +434,16 @@
 | 2026-11-16 | ECX | Shen Ziyu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1861974/000110465926127555/0001104659-26-127555-index.htm |
 | 2026-11-16 | SPCB | Trabelsi Arie |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1291855/000117891326005240/0001178913-26-005240-index.htm |
 | 2026-11-16 | TLSI | Wahlstrom Mats |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1826667/000162828026074009/0001628280-26-074009-index.htm |
+| 2026-11-17 | PEPG | RA CAPITAL MANAGEMENT, L.P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1384859/000123191926001588/0001231919-26-001588-index.htm |
+| 2026-11-17 | DKNG | Kalish Matthew |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1883685/000181019026000018/0001810190-26-000018-index.htm |
+| 2026-11-17 | UPST | Gu Paul |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1832812/000183281226000014/0001832812-26-000014-index.htm |
+| 2026-11-17 | ITG | Giacalone Peter |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1409797/000119312526465642/0001193125-26-465642-index.htm |
+| 2026-11-17 | PCT | Olson Dustin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1847079/000184707926000013/0001847079-26-000013-index.htm |
+| 2026-11-17 | CVV | AFRICK ANDREW |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1256239/000076679226000013/0000766792-26-000013-index.htm |
+| 2026-11-17 | SSII | Sudhir Srivastava |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1676163/000121390026121405/0001213900-26-121405-index.htm |
+| 2026-11-17 | PRAA | FREDRICKSON STEVEN D |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1185352/000118535226000002/0001185352-26-000002-index.htm |
+| 2026-11-17 | RMIX | Fleming Ned N III |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1707712/000119312526465843/0001193125-26-465843-index.htm |
+| 2026-11-17 | NSPR | Stuka Paul |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1433607/000149315226052827/0001493152-26-052827-index.htm |
+| 2026-11-17 | PLBY | Docler Holding S.a r.l. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2044291/000101297526001082/0001012975-26-001082-index.htm |
+| 2026-11-17 | OPEN | HAMILTON DANA |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1195975/000119597526000007/0001195975-26-000007-index.htm |
+| 2026-11-17 | ETN | Johnson Gerald |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1551182/000110465926129068/0001104659-26-129068-index.htm |

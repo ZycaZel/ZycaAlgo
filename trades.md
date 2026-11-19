@@ -447,3 +447,20 @@
 | 2026-11-17 | PLBY | Docler Holding S.a r.l. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2044291/000101297526001082/0001012975-26-001082-index.htm |
 | 2026-11-17 | OPEN | HAMILTON DANA |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1195975/000119597526000007/0001195975-26-000007-index.htm |
 | 2026-11-17 | ETN | Johnson Gerald |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1551182/000110465926129068/0001104659-26-129068-index.htm |
+| 2026-11-19 | PFE | BLAYLOCK RONALD E | $25.79 | 77 sh | $27.92 | EXIT - stop filled at $27.92 (+8.2%) | https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm |
+| 2026-11-18 | WWB | Bonita David P |  |  |  | SKIPPED - market cap unknown (no shares-outstanding data); avg volume 465,082 < 500K | https://www.sec.gov/Archives/edgar/data/1572451/000094787126001039/0000947871-26-001039-index.htm |
+| 2026-11-18 | ANAB | EcoR1 Capital, LLC |  |  |  | SKIPPED - avg volume 452,616 < 500K | https://www.sec.gov/Archives/edgar/data/1370053/000093583626000631/0000935836-26-000631-index.htm |
+| 2026-11-18 | CGON | Kuan Arthur | $81.22 | 23 sh ($1,868) | $69.04 | ENTRY | https://www.sec.gov/Archives/edgar/data/1991792/000119312526467162/0001193125-26-467162-index.htm |
+| 2026-11-18 | USAR | BLITZER MICHAEL |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1458423/000145842326000012/0001458423-26-000012-index.htm |
+| 2026-11-18 | RMIX | Rees-Jones David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2124337/000119312526467461/0001193125-26-467461-index.htm |
+| 2026-11-18 | VIVO | Chin Kevin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1641024/000149315226053023/0001493152-26-053023-index.htm |
+| 2026-11-18 | BA | JOHRI AKHIL |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/12927/000122520826009059/0001225208-26-009059-index.htm |
+| 2026-11-18 | LKQ | Urbain Xavier |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1065696/000121465926014549/0001214659-26-014549-index.htm |
+| 2026-11-18 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000095010326017803/0000950103-26-017803-index.htm |
+| 2026-11-18 | FLNA | Barry Richard |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1562371/000143774926037553/0001437749-26-037553-index.htm |
+| 2026-11-18 | PAL | Lal Rohit |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1901836/000121390026121625/0001213900-26-121625-index.htm |
+| 2026-11-18 | CRMD | Kaplan Myron |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1410098/000121390026121895/0001213900-26-121895-index.htm |
+| 2026-11-18 | MXCT | Masoud Maher |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1287098/000090514826005032/0000905148-26-005032-index.htm |
+| 2026-11-18 | SLRC | GROSS MICHAEL S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1186884/000119312526467052/0001193125-26-467052-index.htm |
+| 2026-11-18 | GWRS | Cohn Andrew M. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1696663/000162828026074877/0001628280-26-074877-index.htm |
+| 2026-11-18 | NPCE | Huennekens R Scott |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1365493/000162828026074869/0001628280-26-074869-index.htm |

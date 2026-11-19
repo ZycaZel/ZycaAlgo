@@ -1,16 +1,4 @@
 {
-  "PFE": {
-    "entry_date": "2026-08-05",
-    "entry_price": 25.79,
-    "qty": 77,
-    "mode": "trailing",
-    "stop_price": 27.95,
-    "high_water_mark": 31.055,
-    "insider": "BLAYLOCK RONALD E",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1214686/000122520826006944/0001225208-26-006944-index.htm",
-    "buy_order_id": "6db25fcb-225e-44d5-888c-fb77b0ea8872",
-    "stop_order_id": "ea967a0b-d8af-4fa6-b3d8-16548fa0533f"
-  },
   "TSCO": {
     "entry_date": "2026-08-05",
     "entry_price": 33.41,
@@ -99,9 +87,9 @@
     "entry_date": "2026-10-27",
     "entry_price": 43.17,
     "qty": 44,
-    "mode": "initial_stop",
-    "stop_price": 36.69,
-    "high_water_mark": 43.17,
+    "mode": "trailing",
+    "stop_price": 45.13,
+    "high_water_mark": 50.15,
     "insider": "AKKARAJU SRINIVAS",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm",
     "buy_order_id": "3458cb6d-1bb4-4a8f-8682-4d8720344828",
@@ -178,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1062579/000119312526463369/0001193125-26-463369-index.htm",
     "buy_order_id": "e1e2fabb-2829-4537-a00c-53c39163c004",
     "stop_order_id": "55dbe100-6776-417a-85a9-4ef584c67870"
+  },
+  "CGON": {
+    "entry_date": "2026-11-18",
+    "entry_price": 81.22,
+    "qty": 23,
+    "mode": "initial_stop",
+    "stop_price": 69.04,
+    "high_water_mark": 81.22,
+    "insider": "Kuan Arthur",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1991792/000119312526467162/0001193125-26-467162-index.htm",
+    "buy_order_id": "467fa9ff-0acb-4d5b-9056-06cf2cc52731",
+    "stop_order_id": "76680d7c-ca6b-44a6-8435-c7c4951ddb98"
   }
 }

@@ -5082,5 +5082,137 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1365493/000162828026074869/0001628280-26-074869-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.531731+00:00",
+    "date": "2026-11-19",
+    "ticker": "HMH",
+    "insider": "McGee Thomas W.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2021880/000162828026075005/0001628280-26-075005-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.536454+00:00",
+    "date": "2026-11-19",
+    "ticker": "IRTC",
+    "insider": "TALWALKAR ABHIJIT Y",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1316065/000131606526000016/0001316065-26-000016-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.540882+00:00",
+    "date": "2026-11-19",
+    "ticker": "PLD",
+    "insider": "KELLY ALFRED F JR",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1209454/000119312526468660/0001193125-26-468660-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.545260+00:00",
+    "date": "2026-11-19",
+    "ticker": "CCB",
+    "insider": "HOVDE STEVEN D",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1437958/000101996626000008/0001019966-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.549700+00:00",
+    "date": "2026-11-19",
+    "ticker": "CWBC",
+    "insider": "GILL JAGROOP",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1127371/000162828026075017/0001628280-26-075017-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.554066+00:00",
+    "date": "2026-11-19",
+    "ticker": "APC",
+    "insider": "HEYER ANDREW R",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2080921/000119312526468657/0001193125-26-468657-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.558434+00:00",
+    "date": "2026-11-19",
+    "ticker": "SRTS",
+    "insider": "Sachetta Eric",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2097345/000209734526000018/0002097345-26-000018-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.562860+00:00",
+    "date": "2026-11-19",
+    "ticker": "AFCG",
+    "insider": "TANNENBAUM LEONARD M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1822523/000162828026075135/0001628280-26-075135-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.567244+00:00",
+    "date": "2026-11-19",
+    "ticker": "BCML",
+    "insider": "PERDUE MICHAEL J",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1730984/000143774926037732/0001437749-26-037732-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.571683+00:00",
+    "date": "2026-11-19",
+    "ticker": "CRVO",
+    "insider": "ALAM JOHN J",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1197014/000143774926037784/0001437749-26-037784-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.576209+00:00",
+    "date": "2026-11-19",
+    "ticker": "FBIO",
+    "insider": "ROSENWALD LINDSAY A MD",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1429260/000094184126000005/0000941841-26-000005-index.htm"
+  },
+  {
+    "timestamp": "2026-11-20T16:35:37.580647+00:00",
+    "date": "2026-11-19",
+    "ticker": "RMIX",
+    "insider": "HEYER ANDREW R",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1259062/000119312526469031/0001193125-26-469031-index.htm"
   }
 ]

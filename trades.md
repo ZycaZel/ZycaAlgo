@@ -464,3 +464,15 @@
 | 2026-11-18 | SLRC | GROSS MICHAEL S |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1186884/000119312526467052/0001193125-26-467052-index.htm |
 | 2026-11-18 | GWRS | Cohn Andrew M. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1696663/000162828026074877/0001628280-26-074877-index.htm |
 | 2026-11-18 | NPCE | Huennekens R Scott |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1365493/000162828026074869/0001628280-26-074869-index.htm |
+| 2026-11-19 | HMH | McGee Thomas W. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2021880/000162828026075005/0001628280-26-075005-index.htm |
+| 2026-11-19 | IRTC | TALWALKAR ABHIJIT Y |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1316065/000131606526000016/0001316065-26-000016-index.htm |
+| 2026-11-19 | PLD | KELLY ALFRED F JR |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1209454/000119312526468660/0001193125-26-468660-index.htm |
+| 2026-11-19 | CCB | HOVDE STEVEN D |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1437958/000101996626000008/0001019966-26-000008-index.htm |
+| 2026-11-19 | CWBC | GILL JAGROOP |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1127371/000162828026075017/0001628280-26-075017-index.htm |
+| 2026-11-19 | APC | HEYER ANDREW R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2080921/000119312526468657/0001193125-26-468657-index.htm |
+| 2026-11-19 | SRTS | Sachetta Eric |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2097345/000209734526000018/0002097345-26-000018-index.htm |
+| 2026-11-19 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026075135/0001628280-26-075135-index.htm |
+| 2026-11-19 | BCML | PERDUE MICHAEL J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1730984/000143774926037732/0001437749-26-037732-index.htm |
+| 2026-11-19 | CRVO | ALAM JOHN J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1197014/000143774926037784/0001437749-26-037784-index.htm |
+| 2026-11-19 | FBIO | ROSENWALD LINDSAY A MD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1429260/000094184126000005/0000941841-26-000005-index.htm |
+| 2026-11-19 | RMIX | HEYER ANDREW R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1259062/000119312526469031/0001193125-26-469031-index.htm |

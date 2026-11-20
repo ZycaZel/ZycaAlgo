@@ -88,12 +88,12 @@
     "entry_price": 43.17,
     "qty": 44,
     "mode": "trailing",
-    "stop_price": 45.13,
-    "high_water_mark": 50.15,
+    "stop_price": 45.86,
+    "high_water_mark": 50.95,
     "insider": "AKKARAJU SRINIVAS",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm",
     "buy_order_id": "3458cb6d-1bb4-4a8f-8682-4d8720344828",
-    "stop_order_id": "5ad45613-ac1b-4b8d-b419-c52d62541740"
+    "stop_order_id": "d997c3fd-4fd9-4aca-811d-b099634591af"
   },
   "ACN": {
     "entry_date": "2026-10-28",

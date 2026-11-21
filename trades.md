@@ -476,3 +476,19 @@
 | 2026-11-19 | CRVO | ALAM JOHN J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1197014/000143774926037784/0001437749-26-037784-index.htm |
 | 2026-11-19 | FBIO | ROSENWALD LINDSAY A MD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1429260/000094184126000005/0000941841-26-000005-index.htm |
 | 2026-11-19 | RMIX | HEYER ANDREW R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1259062/000119312526469031/0001193125-26-469031-index.htm |
+| 2026-11-20 | GLXY | Novogratz Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1859392/000138061526000016/0001380615-26-000016-index.htm |
+| 2026-11-20 | UPST | Girouard Dave |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1832805/000183280526000011/0001832805-26-000011-index.htm |
+| 2026-11-20 | UPBD | LEWIS HAROLD G |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1232539/000119312526470347/0001193125-26-470347-index.htm |
+| 2026-11-20 | ELV | PERU RAMIRO G |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1156039/000119204526000006/0001192045-26-000006-index.htm |
+| 2026-11-20 | INOD | Massey Stewart R |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/903651/000110465926130596/0001104659-26-130596-index.htm |
+| 2026-11-20 | HBCP | Hill Darren M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1436425/000143642526000078/0001436425-26-000078-index.htm |
+| 2026-11-20 | PICS | Teixeira Linares Marcio Antonio |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1841644/000121390026122444/0001213900-26-122444-index.htm |
+| 2026-11-20 | TTMI | FRANKLIN PHILIP G |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1186522/000119312526470573/0001193125-26-470573-index.htm |
+| 2026-11-20 | SAGT | Ng Chen Lok |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2070001/000121390026122442/0001213900-26-122442-index.htm |
+| 2026-11-20 | PLBY | Docler Holding S.a r.l. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2044291/000101297526001097/0001012975-26-001097-index.htm |
+| 2026-11-20 | TJX | PINTOFF CRAIG ADAM |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1664921/000166492126000002/0001664921-26-000002-index.htm |
+| 2026-11-20 | EQPT | Schlacks Jabbok |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1693736/000162828026075309/0001628280-26-075309-index.htm |
+| 2026-11-20 | LEGN | Zhang Ingrid |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1801198/000196434226000006/0001964342-26-000006-index.htm |
+| 2026-11-20 | ECX | Shen Ziyu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1861974/000110465926130358/0001104659-26-130358-index.htm |
+| 2026-11-20 | LPCN | Higuchi John W. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1579891/000149315226053570/0001493152-26-053570-index.htm |
+| 2026-11-20 | BHRB | Poillon Diane |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1964333/000194503126000015/0001945031-26-000015-index.htm |

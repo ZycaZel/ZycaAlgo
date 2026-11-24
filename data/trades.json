@@ -5390,5 +5390,170 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1964333/000194503126000015/0001945031-26-000015-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.237568+00:00",
+    "date": "2026-11-23",
+    "ticker": "FRMI",
+    "insider": "Wentz George R. Jr.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2071778/000121390026123347/0001213900-26-123347-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.242038+00:00",
+    "date": "2026-11-23",
+    "ticker": "ANT",
+    "insider": "LIDDELL CHRISTOPHER P",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2130357/000122182026000005/0001221820-26-000005-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.246392+00:00",
+    "date": "2026-11-23",
+    "ticker": "ANAB",
+    "insider": "EcoR1 Capital, LLC",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1370053/000093583626000658/0000935836-26-000658-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.250778+00:00",
+    "date": "2026-11-23",
+    "ticker": "LAB",
+    "insider": "Casdin Partners Master Fund, L.P.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1864554/000091957426008232/0000919574-26-008232-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.255037+00:00",
+    "date": "2026-11-23",
+    "ticker": "BG",
+    "insider": "Mahoney Christopher",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1996862/000162828026075421/0001628280-26-075421-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.259248+00:00",
+    "date": "2026-11-23",
+    "ticker": "TMS",
+    "insider": "Brown Michael Ashby Sutherland",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2134354/000162828026075377/0001628280-26-075377-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.263592+00:00",
+    "date": "2026-11-23",
+    "ticker": "RMIX",
+    "insider": "Rees-Jones David",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2124337/000119312526472825/0001193125-26-472825-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.267965+00:00",
+    "date": "2026-11-23",
+    "ticker": "WMB",
+    "insider": "Turner Robb E",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1405444/000140544426000008/0001405444-26-000008-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.272353+00:00",
+    "date": "2026-11-23",
+    "ticker": "SUNS",
+    "insider": "TANNENBAUM LEONARD M",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2012706/000162828026075460/0001628280-26-075460-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.276837+00:00",
+    "date": "2026-11-23",
+    "ticker": "SCOR",
+    "insider": "McLaughlin Matthew F.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1158172/000185387426000016/0001853874-26-000016-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.281335+00:00",
+    "date": "2026-11-23",
+    "ticker": "URI",
+    "insider": "Taussig Alexander R.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2111745/000119312526472335/0001193125-26-472335-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.285898+00:00",
+    "date": "2026-11-23",
+    "ticker": "OIG",
+    "insider": "DEUTSCH ROBERT V",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1101998/000149315226053773/0001493152-26-053773-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.290411+00:00",
+    "date": "2026-11-23",
+    "ticker": "FBIO",
+    "insider": "ROSENWALD LINDSAY A MD",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1429260/000094184126000007/0000941841-26-000007-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.294980+00:00",
+    "date": "2026-11-23",
+    "ticker": "MPLT",
+    "insider": "Pavlov George",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1770069/000147079826000007/0001470798-26-000007-index.htm"
+  },
+  {
+    "timestamp": "2026-11-24T19:17:53.299544+00:00",
+    "date": "2026-11-23",
+    "ticker": "AEYE",
+    "insider": "HAWKINS JAMES B",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1362190/000089824326000031/0000898243-26-000031-index.htm"
   }
 ]

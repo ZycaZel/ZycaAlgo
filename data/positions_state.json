@@ -4,12 +4,12 @@
     "entry_price": 33.41,
     "qty": 59,
     "mode": "trailing",
-    "stop_price": 35.39,
-    "high_water_mark": 39.32,
+    "stop_price": 35.43,
+    "high_water_mark": 39.37,
     "insider": "Lawton III Harry A",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1647222/000164722226000012/0001647222-26-000012-index.htm",
     "buy_order_id": "e4e402e5-7341-42f5-b7b1-4f8c5b3baf66",
-    "stop_order_id": "3d341c76-d1b2-4c67-bb77-123cb3d387dc"
+    "stop_order_id": "bc7e7506-e666-4f76-8da7-66b13148f1a8"
   },
   "AME": {
     "entry_date": "2026-08-12",
@@ -88,12 +88,12 @@
     "entry_price": 43.17,
     "qty": 44,
     "mode": "trailing",
-    "stop_price": 45.86,
-    "high_water_mark": 50.95,
+    "stop_price": 48.41,
+    "high_water_mark": 53.785,
     "insider": "AKKARAJU SRINIVAS",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1253170/000125317026000014/0001253170-26-000014-index.htm",
     "buy_order_id": "3458cb6d-1bb4-4a8f-8682-4d8720344828",
-    "stop_order_id": "d997c3fd-4fd9-4aca-811d-b099634591af"
+    "stop_order_id": "66aed19b-e2fe-48e8-b857-f67a60b1abfc"
   },
   "ACN": {
     "entry_date": "2026-10-28",

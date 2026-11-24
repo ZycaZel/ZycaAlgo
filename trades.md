@@ -492,3 +492,18 @@
 | 2026-11-20 | ECX | Shen Ziyu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1861974/000110465926130358/0001104659-26-130358-index.htm |
 | 2026-11-20 | LPCN | Higuchi John W. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1579891/000149315226053570/0001493152-26-053570-index.htm |
 | 2026-11-20 | BHRB | Poillon Diane |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1964333/000194503126000015/0001945031-26-000015-index.htm |
+| 2026-11-23 | FRMI | Wentz George R. Jr. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2071778/000121390026123347/0001213900-26-123347-index.htm |
+| 2026-11-23 | ANT | LIDDELL CHRISTOPHER P |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2130357/000122182026000005/0001221820-26-000005-index.htm |
+| 2026-11-23 | ANAB | EcoR1 Capital, LLC |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1370053/000093583626000658/0000935836-26-000658-index.htm |
+| 2026-11-23 | LAB | Casdin Partners Master Fund, L.P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1864554/000091957426008232/0000919574-26-008232-index.htm |
+| 2026-11-23 | BG | Mahoney Christopher |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1996862/000162828026075421/0001628280-26-075421-index.htm |
+| 2026-11-23 | TMS | Brown Michael Ashby Sutherland |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2134354/000162828026075377/0001628280-26-075377-index.htm |
+| 2026-11-23 | RMIX | Rees-Jones David |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2124337/000119312526472825/0001193125-26-472825-index.htm |
+| 2026-11-23 | WMB | Turner Robb E |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1405444/000140544426000008/0001405444-26-000008-index.htm |
+| 2026-11-23 | SUNS | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2012706/000162828026075460/0001628280-26-075460-index.htm |
+| 2026-11-23 | SCOR | McLaughlin Matthew F. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000185387426000016/0001853874-26-000016-index.htm |
+| 2026-11-23 | URI | Taussig Alexander R. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2111745/000119312526472335/0001193125-26-472335-index.htm |
+| 2026-11-23 | OIG | DEUTSCH ROBERT V |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1101998/000149315226053773/0001493152-26-053773-index.htm |
+| 2026-11-23 | FBIO | ROSENWALD LINDSAY A MD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1429260/000094184126000007/0000941841-26-000007-index.htm |
+| 2026-11-23 | MPLT | Pavlov George |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1770069/000147079826000007/0001470798-26-000007-index.htm |
+| 2026-11-23 | AEYE | HAWKINS JAMES B |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1362190/000089824326000031/0000898243-26-000031-index.htm |

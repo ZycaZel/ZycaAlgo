@@ -507,3 +507,16 @@
 | 2026-11-23 | FBIO | ROSENWALD LINDSAY A MD |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1429260/000094184126000007/0000941841-26-000007-index.htm |
 | 2026-11-23 | MPLT | Pavlov George |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1770069/000147079826000007/0001470798-26-000007-index.htm |
 | 2026-11-23 | AEYE | HAWKINS JAMES B |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1362190/000089824326000031/0000898243-26-000031-index.htm |
+| 2026-11-25 | COHR | ANDERSON JAMES ROBERT | $210.62 | 9 sh | $178.81 | EXIT - stop filled at $178.81 (-15.1%) | https://www.sec.gov/Archives/edgar/data/1644651/000089914026001276/0000899140-26-001276-index.htm |
+| 2026-11-24 | COHR | PAGLIUCA STEPHEN G | $190.61 | 10 sh ($1,906) | $162.02 | ENTRY | https://www.sec.gov/Archives/edgar/data/820318/000089914026001411/0000899140-26-001411-index.htm |
+| 2026-11-24 | VANI | Williams Gregg |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1266806/000175392626002241/0001753926-26-002241-index.htm |
+| 2026-11-24 | ASTS | Cisneros Adriana |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1780312/000110465926131559/0001104659-26-131559-index.htm |
+| 2026-11-24 | SNEX | Lyon Charles M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1620576/000162057626000010/0001620576-26-000010-index.htm |
+| 2026-11-24 | CTSO | Chan Phillip P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1442786/000110465926131710/0001104659-26-131710-index.htm |
+| 2026-11-24 | XGPU | Beyman Ezra |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1886817/000149315226053875/0001493152-26-053875-index.htm |
+| 2026-11-24 | PRE | Rosin Brian J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1876431/000162828026075614/0001628280-26-075614-index.htm |
+| 2026-11-24 | AMCI | Da Shengwei (Sean) |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1937891/000109489126000320/0001094891-26-000320-index.htm |
+| 2026-11-24 | RNA | Winslow Brendan R. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2093101/000119312526475635/0001193125-26-475635-index.htm |
+| 2026-11-24 | ALDX | Brady Todd C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1341235/000119312526473131/0001193125-26-473131-index.htm |
+| 2026-11-24 | FRD | Taylor Mike J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/39092/000143774926038140/0001437749-26-038140-index.htm |
+| 2026-11-24 | SCOR | McLaughlin Matthew F. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1158172/000185387426000018/0001853874-26-000018-index.htm |

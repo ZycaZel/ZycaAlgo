@@ -4,12 +4,12 @@
     "entry_price": 33.41,
     "qty": 59,
     "mode": "trailing",
-    "stop_price": 35.43,
-    "high_water_mark": 39.37,
+    "stop_price": 35.65,
+    "high_water_mark": 39.61,
     "insider": "Lawton III Harry A",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1647222/000164722226000012/0001647222-26-000012-index.htm",
     "buy_order_id": "e4e402e5-7341-42f5-b7b1-4f8c5b3baf66",
-    "stop_order_id": "bc7e7506-e666-4f76-8da7-66b13148f1a8"
+    "stop_order_id": "91a251f4-b5ec-4f9f-b68c-dc8a7d64c909"
   },
   "AME": {
     "entry_date": "2026-08-12",
@@ -119,18 +119,6 @@
     "buy_order_id": "f7ec4bc2-5f11-4b6f-a592-e618d71d049c",
     "stop_order_id": "7cd8a9f5-08f9-4fc1-b274-187ceb69af35"
   },
-  "COHR": {
-    "entry_date": "2026-11-12",
-    "entry_price": 210.62,
-    "qty": 9,
-    "mode": "initial_stop",
-    "stop_price": 179.03,
-    "high_water_mark": 210.62,
-    "insider": "ANDERSON JAMES ROBERT",
-    "filing_url": "https://www.sec.gov/Archives/edgar/data/1644651/000089914026001276/0000899140-26-001276-index.htm",
-    "buy_order_id": "a806a9b1-c5c2-4fd0-bf64-cf4953b3a676",
-    "stop_order_id": "e7eaa53c-466d-430c-acd9-eadb5ad9d082"
-  },
   "SONO": {
     "entry_date": "2026-11-16",
     "entry_price": 17.365,
@@ -178,5 +166,17 @@
     "filing_url": "https://www.sec.gov/Archives/edgar/data/1991792/000119312526467162/0001193125-26-467162-index.htm",
     "buy_order_id": "467fa9ff-0acb-4d5b-9056-06cf2cc52731",
     "stop_order_id": "76680d7c-ca6b-44a6-8435-c7c4951ddb98"
+  },
+  "COHR": {
+    "entry_date": "2026-11-24",
+    "entry_price": 190.61,
+    "qty": 10,
+    "mode": "initial_stop",
+    "stop_price": 162.02,
+    "high_water_mark": 190.61,
+    "insider": "PAGLIUCA STEPHEN G",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/820318/000089914026001411/0000899140-26-001411-index.htm",
+    "buy_order_id": "73c4a268-95fa-4802-8bae-49bc1959bf59",
+    "stop_order_id": "9418abdc-3c23-4ba7-84d2-dea82aaa9a63"
   }
 }

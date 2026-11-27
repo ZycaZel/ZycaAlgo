@@ -538,3 +538,21 @@
 | 2026-11-25 | SANM | Loparco Michael J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1621146/000110465926132051/0001104659-26-132051-index.htm |
 | 2026-11-25 | ROAD | Fleming Ned N III |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1718227/000119312526478515/0001193125-26-478515-index.htm |
 | 2026-11-25 | TMS | Moore Evan Charles |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2134155/000162828026076029/0001628280-26-076029-index.htm |
+| 2026-11-25 | SHMD | Schuetz Arthur Josef Hermann |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1987240/000212566726000005/0002125667-26-000005-index.htm |
+| 2026-11-25 | KDK | Burnette Donald L. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2080471/000208047126000003/0002080471-26-000003-index.htm |
+| 2026-11-25 | PLBY | Docler Holding S.a r.l. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2044291/000101297526001116/0001012975-26-001116-index.htm |
+| 2026-11-25 | GLXY | Novogratz Michael |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1859392/000138061526000018/0001380615-26-000018-index.htm |
+| 2026-11-25 | TMC | Karkar Andrei |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1881973/000110465926131894/0001104659-26-131894-index.htm |
+| 2026-11-25 | WMB | Turner Robb E |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1405444/000140544426000010/0001405444-26-000010-index.htm |
+| 2026-11-25 | VIVO | Chin Kevin |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1641024/000149315226054124/0001493152-26-054124-index.htm |
+| 2026-11-25 | PATK | WELCH M SCOTT |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/76605/000118942226000034/0001189422-26-000034-index.htm |
+| 2026-11-25 | EMPD | READ IAN C |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1829794/000168316826009142/0001683168-26-009142-index.htm |
+| 2026-11-25 | AFCG | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1822523/000162828026076003/0001628280-26-076003-index.htm |
+| 2026-11-25 | PRE | Yeung Danny Sheng Wu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1876431/000162828026075886/0001628280-26-075886-index.htm |
+| 2026-11-25 | BG | Zenuk Mark N |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1996862/000162828026076025/0001628280-26-076025-index.htm |
+| 2026-11-25 | NANO | Smith Shane |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2101833/000095014226003161/0000950142-26-003161-index.htm |
+| 2026-11-25 | VANI | Williams Gregg |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1266806/000175392626002250/0001753926-26-002250-index.htm |
+| 2026-11-25 | SUNS | TANNENBAUM LEONARD M |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2012706/000162828026075998/0001628280-26-075998-index.htm |
+| 2026-11-25 | SANM | Loparco Michael J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1621146/000110465926132051/0001104659-26-132051-index.htm |
+| 2026-11-25 | ROAD | Fleming Ned N III |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1718227/000119312526478515/0001193125-26-478515-index.htm |
+| 2026-11-25 | TMS | Moore Evan Charles |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2134155/000162828026076029/0001628280-26-076029-index.htm |

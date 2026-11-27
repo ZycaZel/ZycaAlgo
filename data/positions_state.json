@@ -171,12 +171,12 @@
     "entry_date": "2026-11-24",
     "entry_price": 190.61,
     "qty": 10,
-    "mode": "initial_stop",
-    "stop_price": 162.02,
-    "high_water_mark": 190.61,
+    "mode": "trailing",
+    "stop_price": 199.74,
+    "high_water_mark": 221.93,
     "insider": "PAGLIUCA STEPHEN G",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/820318/000089914026001411/0000899140-26-001411-index.htm",
     "buy_order_id": "73c4a268-95fa-4802-8bae-49bc1959bf59",
-    "stop_order_id": "9418abdc-3c23-4ba7-84d2-dea82aaa9a63"
+    "stop_order_id": "a09f76b9-cc8b-4992-ac2b-96906158aafd"
   }
 }

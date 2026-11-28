@@ -6094,5 +6094,71 @@
     "stop": "",
     "event": "SKIPPED - at 15-position cap",
     "filing_url": "https://www.sec.gov/Archives/edgar/data/2134155/000162828026076029/0001628280-26-076029-index.htm"
+  },
+  {
+    "timestamp": "2026-11-28T16:32:26.674142+00:00",
+    "date": "2026-11-27",
+    "ticker": "LAB",
+    "insider": "Casdin Partners Master Fund, L.P.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1864554/000091957426008286/0000919574-26-008286-index.htm"
+  },
+  {
+    "timestamp": "2026-11-28T16:32:26.678410+00:00",
+    "date": "2026-11-27",
+    "ticker": "CCG",
+    "insider": "Zhang Lei",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1965473/000149315226054493/0001493152-26-054493-index.htm"
+  },
+  {
+    "timestamp": "2026-11-28T16:32:26.682327+00:00",
+    "date": "2026-11-27",
+    "ticker": "WRD",
+    "insider": "Han Tony Xu",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2056390/000110465926132349/0001104659-26-132349-index.htm"
+  },
+  {
+    "timestamp": "2026-11-28T16:32:26.686239+00:00",
+    "date": "2026-11-27",
+    "ticker": "QTRX",
+    "insider": "DONNELLY WILLIAM P",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1207928/000120792826000012/0001207928-26-000012-index.htm"
+  },
+  {
+    "timestamp": "2026-11-28T16:32:26.690137+00:00",
+    "date": "2026-11-27",
+    "ticker": "IESC",
+    "insider": "Gendell David B.",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/1408176/000104826826000191/0001048268-26-000191-index.htm"
+  },
+  {
+    "timestamp": "2026-11-28T16:32:26.694417+00:00",
+    "date": "2026-11-27",
+    "ticker": "GLBS",
+    "insider": "Feidakis Georgios",
+    "entry": "",
+    "size": "",
+    "stop": "",
+    "event": "SKIPPED - at 15-position cap",
+    "filing_url": "https://www.sec.gov/Archives/edgar/data/2112540/000110465926132362/0001104659-26-132362-index.htm"
   }
 ]

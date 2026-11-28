@@ -556,3 +556,9 @@
 | 2026-11-25 | SANM | Loparco Michael J |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1621146/000110465926132051/0001104659-26-132051-index.htm |
 | 2026-11-25 | ROAD | Fleming Ned N III |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1718227/000119312526478515/0001193125-26-478515-index.htm |
 | 2026-11-25 | TMS | Moore Evan Charles |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2134155/000162828026076029/0001628280-26-076029-index.htm |
+| 2026-11-27 | LAB | Casdin Partners Master Fund, L.P. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1864554/000091957426008286/0000919574-26-008286-index.htm |
+| 2026-11-27 | CCG | Zhang Lei |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1965473/000149315226054493/0001493152-26-054493-index.htm |
+| 2026-11-27 | WRD | Han Tony Xu |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2056390/000110465926132349/0001104659-26-132349-index.htm |
+| 2026-11-27 | QTRX | DONNELLY WILLIAM P |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1207928/000120792826000012/0001207928-26-000012-index.htm |
+| 2026-11-27 | IESC | Gendell David B. |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/1408176/000104826826000191/0001048268-26-000191-index.htm |
+| 2026-11-27 | GLBS | Feidakis Georgios |  |  |  | SKIPPED - at 15-position cap | https://www.sec.gov/Archives/edgar/data/2112540/000110465926132362/0001104659-26-132362-index.htm |

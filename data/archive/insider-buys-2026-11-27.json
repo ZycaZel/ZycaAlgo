@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-27",
+  "qualifying_buys": [
+    {
+      "ticker": "LAB",
+      "company": "STANDARD BIOTOOLS INC.",
+      "cik": "0001162194",
+      "insider": "Casdin Partners Master Fund, L.P.",
+      "title": "Director",
+      "shares": 3361393.0,
+      "price": 0.5908,
+      "total": 1985910.9844,
+      "txn_date": "2026-11-24",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1864554/000091957426008286/0000919574-26-008286-index.htm"
+    },
+    {
+      "ticker": "CCG",
+      "company": "Cheche Group Inc.",
+      "cik": "0001965473",
+      "insider": "Zhang Lei",
+      "title": "Chief Executive Officer, Director",
+      "shares": 120000.0,
+      "price": 10.36,
+      "total": 1243200.0,
+      "txn_date": "2026-11-25",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1965473/000149315226054493/0001493152-26-054493-index.htm"
+    },
+    {
+      "ticker": "WRD",
+      "company": "WeRide Inc.",
+      "cik": "0001867729",
+      "insider": "Han Tony Xu",
+      "title": "Chairman and CEO, Director",
+      "shares": 597918.0,
+      "price": 0.9933,
+      "total": 593911.9493999999,
+      "txn_date": "2026-11-24",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2056390/000110465926132349/0001104659-26-132349-index.htm"
+    },
+    {
+      "ticker": "QTRX",
+      "company": "Quanterix Corp",
+      "cik": "0001503274",
+      "insider": "DONNELLY WILLIAM P",
+      "title": "Director",
+      "shares": 250000.0,
+      "price": 2.17,
+      "total": 542500.0,
+      "txn_date": "2026-11-24",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1207928/000120792826000012/0001207928-26-000012-index.htm"
+    },
+    {
+      "ticker": "IESC",
+      "company": "IES Holdings, Inc.",
+      "cik": "0001048268",
+      "insider": "Gendell David B.",
+      "title": "Director",
+      "shares": 3000.0,
+      "price": 163.0,
+      "total": 489000.0,
+      "txn_date": "2026-11-24",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1408176/000104826826000191/0001048268-26-000191-index.htm"
+    },
+    {
+      "ticker": "GLBS",
+      "company": "GLOBUS MARITIME LTD",
+      "cik": "0001499780",
+      "insider": "Feidakis Georgios",
+      "title": "Director",
+      "shares": 90000.0,
+      "price": 2.45,
+      "total": 220500.00000000003,
+      "txn_date": "2026-11-24",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/2112540/000110465926132362/0001104659-26-132362-index.htm"
+    },
+    {
+      "ticker": "IESC",
+      "company": "IES Holdings, Inc.",
+      "cik": "0001048268",
+      "insider": "Gendell David B.",
+      "title": "Director",
+      "shares": 1000.0,
+      "price": 164.0,
+      "total": 164000.0,
+      "txn_date": "2026-11-24",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1408176/000104826826000191/0001048268-26-000191-index.htm"
+    },
+    {
+      "ticker": "SKYD",
+      "company": "Skydance Corp",
+      "cik": "0002041610",
+      "insider": "Cardinale Gerald J.",
+      "title": "Director",
+      "shares": 15060.0,
+      "price": 6.6481,
+      "total": 100120.386,
+      "txn_date": "2026-11-24",
+      "date_filed": "2026-11-27",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1447258/000089534526000510/0000895345-26-000510-index.htm"
+    }
+  ],
+  "cluster_tickers": {}
+}
